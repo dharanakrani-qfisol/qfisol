@@ -1,26 +1,357 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tw-animate-css";
 
 @theme inline {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Core Quantifi Brand Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Quantifi Primary Brand Colors - Professional Blue/Indigo palette */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  /* Accent colors for highlights */
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  /* Muted tones for backgrounds and subtle elements */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  /* Cards and surfaces */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  /* Interactive elements */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  
+  /* Legacy sidebar colors (keeping for compatibility) */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Chart colors for analytics */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* Enhanced border radius system */
+  --radius: 1rem; /* Base radius - doubled for modern look */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  
+  /* Spacing scale enhancements */
+  --spacing-section: 6rem;
+  --spacing-container: 1.5rem;
+  --spacing-container-lg: 2rem;
+  --spacing-gutter: 1rem;
+  
+  /* Shadow system */
+  --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Enhanced radius for modern design */
+  --radius: 1rem;
+  
+  /* Core Brand Colors */
+  --color-primary: #0a1a2f;    /* Deep Navy Blue */
+  --color-accent: #1e90ff;     /* Vivid Blue */
+  --color-neutral: #f5f7fa;    /* Soft Off-White */
+  
+  /* Light Mode Theme */
+  --background: oklch(0.98 0.005 240); /* Soft Off-White background */
+  --foreground: oklch(0.15 0.04 240); /* Deep Navy Blue text */
+  
+  /* Component backgrounds */
+  --card: oklch(1 0 0); /* White cards */
+  --card-foreground: oklch(0.15 0.04 240); /* Deep Navy Blue */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.04 240);
+  
+  /* Primary brand color - Deep Navy Blue */
+  --primary: oklch(0.15 0.04 240); /* Deep Navy Blue (#0a1a2f) */
+  --primary-foreground: oklch(0.98 0.005 240);
+  
+  /* Secondary - Neutral */
+  --secondary: oklch(0.97 0.005 240); /* Soft Off-White */
+  --secondary-foreground: oklch(0.15 0.04 240);
+  
+  /* Neutral muted backgrounds */
+  --muted: oklch(0.97 0.005 240); /* Soft Off-White */
+  --muted-foreground: oklch(0.45 0.04 240);
+  
+  /* Accent - Vivid Blue */
+  --accent: oklch(0.6 0.19 250); /* Vivid Blue (#1e90ff) */
+  --accent-foreground: oklch(0.98 0.005 240);
+  
+  /* Alert colors */
+  --destructive: oklch(0.65 0.195 25); /* Professional error red */
+  
+  /* Input and border colors */
+  --border: oklch(0.9 0.01 240); /* Light border */
+  --input: oklch(0.9 0.01 240);
+  --ring: oklch(0.6 0.19 250); /* Vivid Blue focus ring */
+  
+  /* Chart colors */
+  --chart-1: oklch(0.15 0.04 240); /* Deep Navy Blue */
+  --chart-2: oklch(0.6 0.19 250); /* Vivid Blue */
+  --chart-3: oklch(0.5 0.15 250); /* Medium Blue */
+  --chart-4: oklch(0.7 0.15 250); /* Light Blue */
+  --chart-5: oklch(0.35 0.08 240); /* Dark Blue */
+  
+  /* Sidebar navigation */
+  --sidebar: oklch(0.98 0.005 240);
+  --sidebar-foreground: oklch(0.15 0.04 240);
+  --sidebar-primary: oklch(0.15 0.04 240);
+  --sidebar-primary-foreground: oklch(0.98 0.005 240);
+  --sidebar-accent: oklch(0.97 0.005 240);
+  --sidebar-accent-foreground: oklch(0.15 0.04 240);
+  --sidebar-border: oklch(0.9 0.01 240);
+  --sidebar-ring: oklch(0.6 0.19 250);
+}
+
+.dark {
+  /* Dark Mode Theme */
+  --background: oklch(0.15 0.04 240); /* Deep Navy Blue - Dark background */
+  --foreground: oklch(0.97 0.005 240); /* Soft Off-White - Light text */
+  
+  /* Dark component backgrounds */
+  --card: oklch(0.2 0.05 240); /* Slightly lighter navy for cards */
+  --card-foreground: oklch(0.97 0.005 240);
+  --popover: oklch(0.2 0.05 240);
+  --popover-foreground: oklch(0.97 0.005 240);
+  
+  /* Primary - Vivid Blue on dark */
+  --primary: oklch(0.6 0.19 250); /* Vivid Blue - Bright on dark */
+  --primary-foreground: oklch(0.15 0.04 240); /* Deep Navy Blue */
+  
+  /* Secondary - Darker neutral */
+  --secondary: oklch(0.25 0.05 240); /* Dark navy */
+  --secondary-foreground: oklch(0.97 0.005 240);
+  
+  /* Dark muted */
+  --muted: oklch(0.22 0.05 240); /* Dark muted navy */
+  --muted-foreground: oklch(0.7 0.01 240);
+  
+  /* Accent - Vivid Blue */
+  --accent: oklch(0.6 0.19 250); /* Vivid Blue */
+  --accent-foreground: oklch(0.97 0.005 240);
+  
+  /* Error states in dark mode */
+  --destructive: oklch(0.7 0.18 25);
+  
+  /* Dark borders and inputs */
+  --border: oklch(0.3 0.06 240); /* Subtle borders */
+  --input: oklch(0.25 0.05 240);
+  --ring: oklch(0.6 0.19 250); /* Vivid Blue focus ring */
+  
+  /* Enhanced chart colors for dark mode */
+  --chart-1: oklch(0.6 0.19 250); /* Vivid Blue */
+  --chart-2: oklch(0.5 0.15 250); /* Medium Blue */
+  --chart-3: oklch(0.7 0.15 250); /* Light Blue */
+  --chart-4: oklch(0.65 0.12 260); /* Blue-Purple */
+  --chart-5: oklch(0.55 0.18 240); /* Deep Blue */
+  
+  /* Dark sidebar navigation */
+  --sidebar: oklch(0.15 0.04 240); /* Deep Navy Blue */
+  --sidebar-foreground: oklch(0.97 0.005 240);
+  --sidebar-primary: oklch(0.6 0.19 250); /* Vivid Blue */
+  --sidebar-primary-foreground: oklch(0.15 0.04 240);
+  --sidebar-accent: oklch(0.25 0.05 240);
+  --sidebar-accent-foreground: oklch(0.97 0.005 240);
+  --sidebar-border: oklch(0.3 0.06 240);
+  --sidebar-ring: oklch(0.6 0.19 250);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Quantifi Utility Classes */
+@layer utilities {
+  /* Container spacing utilities */
+  .section-gutter {
+    @apply px-4 lg:px-8 xl:px-16;
+  }
+  
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+  
+  .container-standard {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Enhanced masked gradient utility */
+  .masked-gradient {
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    -webkit-mask: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    mask: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  }
+  
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+  
+  .animate-blur-in {
+    animation: blurIn 0.8s ease-out forwards;
+  }
+  
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+  
+  .animate-scroll-right {
+    animation: scroll-right 30s linear infinite;
+  }
+  
+  /* Scroll performance optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* Modern animation keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes parallax {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Scroll timeline utilities */
+@supports (scroll-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-driven {
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

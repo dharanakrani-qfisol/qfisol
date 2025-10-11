@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone } from "lucide-react"
+import { Calendar } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { useState } from "react"
@@ -11,7 +11,7 @@ interface BookCallButtonProps {
   children?: React.ReactNode
 }
 
-export function BookCallButton({ className, onClick, children = "Book A Call" }: BookCallButtonProps) {
+export function BookCallButton({ className, onClick, children = "Book a Call" }: BookCallButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -41,7 +41,7 @@ export function BookCallButton({ className, onClick, children = "Book A Call" }:
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
             style={{ position: "absolute", left: 0, right: 0 }}
           >
-            <Phone className="w-4 h-4 text-white" />
+            <Calendar className="w-4 h-4 text-white" />
           </motion.span>
           <motion.span
             initial={false}
@@ -49,7 +49,7 @@ export function BookCallButton({ className, onClick, children = "Book A Call" }:
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
             style={{ position: "absolute", left: 0, right: 0 }}
           >
-            <Phone className="w-4 h-4 text-white" />
+            <Calendar className="w-4 h-4 text-white" />
           </motion.span>
         </span>
 

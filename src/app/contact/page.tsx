@@ -132,8 +132,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">Email</p>
-                        <a href="mailto:hello@quantifi.com" className="text-muted-foreground hover:text-primary transition-colors">
-                          hello@quantifi.com
+                        <a href="mailto:info@qfisol.com" className="text-muted-foreground hover:text-primary transition-colors">
+                          info@qfisol.com
                         </a>
                       </div>
                     </div>
@@ -144,8 +144,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">Phone</p>
-                        <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary transition-colors">
-                          +1 (555) 123-4567
+                        <a href="tel:+13016595995" className="text-muted-foreground hover:text-primary transition-colors">
+                          +1 (301) 659-5995
                         </a>
                       </div>
                     </div>
@@ -155,10 +155,12 @@ export default function ContactPage() {
                         <MapPin className="h-5 w-5 text-purple-600" />
                       </div>
                       <div>
-                        <p className="font-medium">Address</p>
+                        <p className="font-medium">Locations</p>
                         <p className="text-muted-foreground">
-                          San Francisco, CA<br />
-                          Remote services available nationwide
+                          Atlanta, Georgia<br />
+                          Los Angeles, California<br />
+                          Dallas, Texas<br />
+                          <span className="text-sm mt-2 block">Remote services available nationwide</span>
                         </p>
                       </div>
                     </div>

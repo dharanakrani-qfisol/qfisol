@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { BookCallButton } from '@/components/ui/book-call-button';
 import { TrueFocus } from '@/components/ui/true-focus';
-import { ArrowRight, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
@@ -66,7 +66,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1.3, ease: "easeOut" }}
         >
           {/* Main headline */}
           <div className="mb-6">
@@ -98,12 +98,11 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            <Button asChild size="lg" className="text-lg px-8 py-6 group bg-foreground hover:bg-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 transition-all duration-300">
-              <Link href="/contact">
-                Book Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            <Link href="/contact">
+              <BookCallButton className="text-lg px-8 py-6">
+                Book a Call
+              </BookCallButton>
+            </Link>
             
             <Link
               href="#industries"

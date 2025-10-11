@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowRight, Hammer, Calculator, FileText, BarChart } from 'lucide-react';
+import { CheckCircle, Hammer, Calculator, FileText, BarChart, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -194,9 +195,11 @@ export default function ConstructionPage() {
               Schedule a free consultation and see how our construction expertise can transform your financial operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/contact">Book Your Free Consultation</Link>
-              </Button>
+              <Link href="/contact">
+                <BookCallButton className="text-lg px-8 py-6">
+                  Book a Call
+                </BookCallButton>
+              </Link>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
                 <Link href="/process">Learn About Our Process</Link>
               </Button>
@@ -207,6 +210,9 @@ export default function ConstructionPage() {
     </MarketingLayout>
   );
 }
+
+
+
 
 
 

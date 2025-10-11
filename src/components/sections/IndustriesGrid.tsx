@@ -41,7 +41,7 @@ const industries = [
   },
   {
     id: 5,
-    title: 'IT/Staffing',
+    title: 'Professional Services',
     description: 'Project-based accounting and resource allocation for technology and staffing firms.',
     href: '/industries/it-staffing',
     imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
@@ -49,8 +49,8 @@ const industries = [
   },
   {
     id: 6,
-    title: 'Retail',
-    description: 'Inventory tracking, multi-location management, and point-of-sale reconciliation.',
+    title: 'Manufacturing/Retail',
+    description: 'Optimize supply chains and retail operations with comprehensive inventory tracking, cost management, and multi-location financial reporting.',
     href: '/industries/retail',
     imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-pink-500 to-rose-600',
@@ -105,18 +105,18 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
           transition-all duration-500 ease-in-out
           ${
             isActive
-              ? `${['Healthcare','IT/Staffing'].includes(item.title) ? 'bottom-44' : 'bottom-40'} left-8 right-8` // Extra space for Healthcare & IT/Staffing
+              ? `${item.title === 'Manufacturing/Retail' ? 'bottom-64' : ['Healthcare','Professional Services'].includes(item.title) ? 'bottom-44' : 'bottom-40'} left-8 right-8` // Extra space for Manufacturing/Retail, Healthcare & Professional Services
               : 'bottom-32 left-1/2 -translate-x-1/2' // Inactive: vertical, centered
           }
         `}
       >
         <h3 
           className={`
-            whitespace-nowrap
+            ${['Manufacturing/Retail', 'Professional Services'].includes(item.title) && isActive ? '' : 'whitespace-nowrap'}
             transition-all duration-500 ease-in-out
             ${
               isActive
-                ? 'text-2xl md:text-3xl rotate-0 tracking-tight' // Active: horizontal
+                ? `${['Manufacturing/Retail', 'Professional Services'].includes(item.title) ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} rotate-0 tracking-tight` // Active: horizontal, smaller for long titles
                 : 'rotate-90 text-lg tracking-wide' // Inactive: vertical
             }
           `}
@@ -133,7 +133,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
           y: isActive ? 0 : 20
         }}
         transition={{ duration: 0.4, delay: isActive ? 0.2 : 0 }}
-        className={`absolute ${['Healthcare','IT/Staffing'].includes(item.title) ? 'bottom-8 mt-4' : 'bottom-8'} left-8 right-8 z-10`}
+        className={`absolute ${['Healthcare','Professional Services','Manufacturing/Retail'].includes(item.title) ? 'bottom-8 mt-4' : 'bottom-8'} left-8 right-8 z-10`}
       >
         <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
           {item.description}
@@ -163,7 +163,14 @@ export function IndustriesGrid() {
   };
 
   return (
-    <section id="industries" className="bg-background py-16 md:py-24 overflow-hidden">
+    <motion.section 
+      id="industries" 
+      className="bg-background py-16 md:py-24 overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
@@ -244,6 +251,6 @@ export function IndustriesGrid() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

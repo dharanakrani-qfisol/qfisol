@@ -1,4 +1,4 @@
-import { Building2, ChefHat, Heart, Factory, UserCheck, Calculator, DollarSign, TrendingUp, Lightbulb, Settings, Users, Home, Briefcase, FileText, BarChart3, Info, Phone } from 'lucide-react';
+import { Building2, ChefHat, Heart, Factory, UserCheck, Calculator, DollarSign, TrendingUp, Lightbulb, Settings, Users, Home, Briefcase, BarChart3, Info, Phone } from 'lucide-react';
 
 export const navigationItems = [
   { 
@@ -94,12 +94,6 @@ export const navigationItems = [
         icon: Users,
       }
     ]
-  },
-  { 
-    title: 'Process', 
-    href: '/process', 
-    type: 'link',
-    icon: FileText
   },
   { 
     title: 'Case Studies', 

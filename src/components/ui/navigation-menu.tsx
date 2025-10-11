@@ -165,11 +165,11 @@ function NavGridCard({
 }) {
 	return (
 		<NavigationMenuPrimitive.Link asChild>
-			<GridCard {...props}>
+			<GridCard className="!flex-row !justify-start items-start gap-3 !bg-white dark:!bg-gray-950 [&>div[class*='absolute']]:!hidden [&>div[class*='inset']]:!hidden overflow-visible" {...props}>
 				{link.icon && (
-					<link.icon className="text-foreground/80 relative size-5" />
+					<link.icon className="text-foreground/80 relative !inline-flex size-5 flex-shrink-0 z-10" />
 				)}
-				<div className="relative">
+				<div className="relative z-10">
 					<span className="text-foreground/80 text-sm font-medium">
 						{link.title}
 					</span>
@@ -218,12 +218,13 @@ function NavLargeItem({
 	return (
 		<NavigationMenuLink
 			className={cn(
-				'bg-background group relative flex flex-col justify-center border p-0',
+				'!bg-white dark:!bg-gray-950 group relative flex flex-col justify-center border p-0',
 				className,
 			)}
 			{...props}
 		>
-			<div className="flex items-center justify-between px-5 py-4">
+			<div className="flex items-center gap-3 px-5 py-4">
+				{link.icon && <link.icon className="text-muted-foreground size-6 flex-shrink-0" />}
 				<div className="space-y-1">
 					<span className="text-sm leading-none font-medium">{link.title}</span>
 					{link.description && (
@@ -232,7 +233,6 @@ function NavLargeItem({
 						</p>
 					)}
 				</div>
-				{link.icon && <link.icon className="text-muted-foreground size-6" />}
 			</div>
 		</NavigationMenuLink>
 	);
@@ -285,6 +285,9 @@ export {
 	NavItemMobile,
 	type NavItemType,
 };
+
+
+
 
 
 

@@ -1,80 +1,104 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Quote } from 'lucide-react';
+import { TestimonialsColumn } from '@/components/ui/testimonials-columns-1';
+
+const testimonials = [
+  {
+    text: "Quantifi transformed our financial clarity and gave us the confidence to scale strategically. Their industry expertise saved us months of setup time.",
+    name: "Jennifer Davis",
+    role: "CEO, Davis Construction",
+    gender: 'female' as const,
+  },
+  {
+    text: "Working with Quantifi has been a game-changer for our practice. Their seamless CPA collaboration and accurate reporting have streamlined our entire tax season workflow.",
+    name: "Michael Chen",
+    role: "Managing Partner, Chen & Associates CPA",
+    gender: 'male' as const,
+  },
+  {
+    text: "The controller services from Quantifi gave us executive-level financial insights without the executive-level price tag. Their dashboards and forecasting have been invaluable for our growth.",
+    name: "Sarah Martinez",
+    role: "CFO, HealthFirst Medical Group",
+    gender: 'female' as const,
+  },
+  {
+    text: "Quantifi's expertise in multi-location accounting and their deep understanding of hospitality operations has been instrumental in managing our portfolio of properties efficiently.",
+    name: "David Thompson",
+    role: "Operations Director, Thompson Hotel Group",
+    gender: 'male' as const,
+  },
+  {
+    text: "The payroll and compliance services have been a lifesaver. Quantifi handles everything from multi-state reporting to certified payroll, allowing us to focus on patient care instead of paperwork.",
+    name: "Dr. Patricia Williams",
+    role: "Practice Owner, Williams Dental Care",
+    gender: 'female' as const,
+  },
+  {
+    text: "Their ERP migration expertise was invaluable. Moving from QuickBooks to NetSuite was seamless, with zero downtime and perfect data integrity. Couldn't have done it without them.",
+    name: "Robert Anderson",
+    role: "VP of Finance, TechVision Solutions",
+    gender: 'male' as const,
+  },
+  {
+    text: "As a growing manufacturing business, we needed sophisticated financial reporting without hiring a full finance team. Quantifi's controller services provide exactly what we need at the right price point.",
+    name: "Maria Rodriguez",
+    role: "President, Precision Manufacturing Inc.",
+    gender: 'female' as const,
+  },
+  {
+    text: "The automation and reporting capabilities they've implemented have transformed how we make business decisions. Real-time dashboards and Power BI integration give us insights we never had before.",
+    name: "James Kim",
+    role: "CEO, Urban Retail Group",
+    gender: 'male' as const,
+  },
+  {
+    text: "Working with multiple restaurants across three states was a nightmare until Quantifi stepped in. Their understanding of restaurant accounting and multi-location management has been phenomenal.",
+    name: "Anthony Russo",
+    role: "Owner, Russo's Restaurant Group",
+    gender: 'male' as const,
+  },
+];
+
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
 
 export function TestimonialSection() {
   return (
-    <section className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200/10 dark:bg-blue-800/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-200/10 dark:bg-purple-800/10 rounded-full blur-3xl" />
-      </div>
+    <motion.section 
+      className="bg-background py-20 relative"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <div className="container-standard section-gutter relative z-10 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
+        >
+          <div className="flex justify-center">
+            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
+          </div>
 
-      <div className="container-standard section-gutter relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* Quote mark decoration */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 text-6xl text-primary/20 overflow-hidden">
-              <Quote className="absolute -top-4 -left-4" />
-            </div>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-center">
+          See what our Clients have to say about us.
+          </h2>
+          <p className="text-center mt-5 opacity-75">
+            
+          </p>
+        </motion.div>
 
-            {/* Main quote */}
-            <blockquote className="text-2xl md:text-3xl font-semibold text-foreground mb-8 leading-relaxed">
-              Quantifi transformed our financial clarity and gave us the confidence to scale strategically. 
-              Their industry expertise saved us months of setup time.&quot;
-            </blockquote>
-
-            {/* Attribution */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  JD
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-foreground">Jennifer Davis</div>
-                  <div className="text-sm text-muted-foreground">CEO, Davis Construction</div>
-                </div>
-              </div>
-              
-              <Badge variant="secondary" className="bg-blue-100 text-blue-700">
-                Construction Industry
-              </Badge>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mt-8"
-            >
-              <Link 
-                href="/case-studies" 
-                className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors group"
-              >
-                Read the full case study
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-          </motion.div>
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

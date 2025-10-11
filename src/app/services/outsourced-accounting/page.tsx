@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowRight, Calculator, BarChart, Clock, Users, FileText, Shield } from 'lucide-react';
+import { CheckCircle, Calculator, BarChart, Clock, Users, FileText, Shield, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -238,9 +239,11 @@ export default function OutsourcedAccountingPage() {
             <p className="text-xl mb-8 opacity-90">
               Discover how outsourced accounting can streamline your business operations.
             </p>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">Book Free Consultation</Link>
-            </Button>
+            <Link href="/contact">
+              <BookCallButton className="text-lg px-8 py-6">
+                Book a Call
+              </BookCallButton>
+            </Link>
           </div>
         </section>
       </div>

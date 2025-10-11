@@ -33,61 +33,14 @@ const differentiators = [
 
 export function PainPoints() {
   return (
-    <section 
+    <motion.section 
       id="differentiators" 
       className="relative py-32 md:py-40 overflow-hidden bg-[linear-gradient(to_bottom,#fff,#f8f9fa_30%,#f1f3f5_98%)] dark:bg-[linear-gradient(to_bottom,#000_10%,#0a0a0a_30%,#0f0f0f_98%)]"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
     >
-      {/* Animated jelly blob effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Blob 1 - Blue */}
-        <div 
-          className="absolute left-0 top-20 h-[500px] w-[500px] opacity-40 bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-500 dark:from-blue-500/30 dark:via-cyan-500/30 dark:to-blue-600/30 blur-[150px] rounded-full animate-blob"
-          style={{ 
-            transform: 'rotate(-30deg)',
-            animation: 'blob 25s infinite'
-          }}
-        />
-        {/* Blob 2 - Purple */}
-        <div 
-          className="absolute right-0 top-40 h-[450px] w-[450px] opacity-40 bg-gradient-to-br from-purple-400 via-pink-400 to-purple-500 dark:from-purple-500/30 dark:via-pink-500/30 dark:to-purple-600/30 blur-[150px] rounded-full"
-          style={{ 
-            transform: 'rotate(30deg)',
-            animation: 'blob 20s infinite 2s'
-          }}
-        />
-        {/* Blob 3 - Green */}
-        <div 
-          className="absolute left-1/4 bottom-20 h-[400px] w-[400px] opacity-30 bg-gradient-to-br from-green-400 via-emerald-400 to-teal-500 dark:from-green-500/20 dark:via-emerald-500/20 dark:to-teal-600/20 blur-[120px] rounded-full"
-          style={{ 
-            animation: 'blob 30s infinite 4s'
-          }}
-        />
-        {/* Blob 4 - Accent Yellow/Orange */}
-        <div 
-          className="absolute right-1/3 bottom-10 h-[350px] w-[350px] opacity-25 bg-gradient-to-br from-orange-300 via-yellow-300 to-orange-400 dark:from-orange-400/20 dark:via-yellow-400/20 dark:to-orange-500/20 blur-[100px] rounded-full"
-          style={{ 
-            animation: 'blob 28s infinite 6s'
-          }}
-        />
-      </div>
-
-      {/* Keyframe styles */}
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% {
-            transform: translate(0, 0) scale(1) rotate(0deg);
-          }
-          25% {
-            transform: translate(30px, -50px) scale(1.1) rotate(90deg);
-          }
-          50% {
-            transform: translate(-20px, 40px) scale(0.9) rotate(180deg);
-          }
-          75% {
-            transform: translate(50px, 30px) scale(1.05) rotate(270deg);
-          }
-        }
-      `}</style>
 
       <div className="container-standard section-gutter relative z-10">
         {/* Section Header */}
@@ -146,48 +99,33 @@ export function PainPoints() {
               viewport={{ once: true }}
             >
               <Card
-                className="group relative p-8 h-full backdrop-blur-xl bg-white/60 dark:bg-black/40 border border-white/20 dark:border-white/10 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-2 transition-all duration-700 overflow-hidden rounded-3xl"
+                className="group relative p-6 h-full backdrop-blur-xl bg-white/60 dark:bg-black/40 border border-white/20 dark:border-white/10 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-2 transition-all duration-700 overflow-hidden rounded-3xl"
               >
-                {/* Gradient glow effect */}
-                <div 
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} blur-2xl -z-10`}
-                  style={{ transform: 'scale(0.8)' }}
-                />
-                
                 {/* Top gradient line */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} opacity-60`} />
 
                 {/* Icon with animated gradient */}
-                <div className="relative mb-8">
+                <div className="relative mb-6">
                   <div 
-                    className={`w-20 h-20 rounded-3xl flex items-center justify-center shadow-xl bg-gradient-to-br ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-xl bg-gradient-to-br ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
                   >
-                    <item.icon className="h-10 w-10 text-white" strokeWidth={2.5} />
+                    <item.icon className="h-8 w-8 text-white" strokeWidth={2.5} />
                   </div>
-                  {/* Glow behind icon */}
-                  <div 
-                    className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} blur-xl opacity-50 -z-10`}
-                  />
                 </div>
 
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 tracking-tight">
+                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-3 tracking-tight">
                   {item.title}
                 </h3>
 
-                <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
+                <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
                   {item.description}
                 </p>
 
                 {/* Animated gradient bar */}
-                <div className="mt-8 overflow-hidden rounded-full">
+                <div className="mt-6 overflow-hidden rounded-full">
                   <div 
                     className={`h-1.5 w-0 group-hover:w-full bg-gradient-to-r ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} transition-all duration-1000 ease-out rounded-full`}
                   />
-                </div>
-
-                {/* Corner decoration */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                  <div className={`absolute inset-0 bg-gradient-to-tl ${item.gradientFrom} ${item.gradientTo} rounded-tl-full`} />
                 </div>
               </Card>
             </motion.div>
@@ -211,6 +149,6 @@ export function PainPoints() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -47,10 +47,10 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 left-8 right-8 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border border-border shadow-lg drop-shadow-xl rounded-2xl'
-          : 'bg-background/80 backdrop-blur-sm border border-border/50 shadow-md drop-shadow-lg rounded-2xl'
+          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg'
+          : 'bg-background/80 backdrop-blur-sm border-b border-border/50 shadow-md'
       }`}
     >
       <div className="container mx-auto px-6">
@@ -76,27 +76,16 @@ export function Navbar() {
                       const IconComponent = item.icon;
                       return (
                         <NavigationMenuItem key={item.title}>
-                          <NavigationMenuTrigger className="flex items-center space-x-2">
+                          <NavigationMenuTrigger className="flex items-center space-x-2 font-semibold">
                             {IconComponent && <IconComponent className="h-4 w-4" />}
                             <span>Industries</span>
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <div className="grid w-full md:w-4xl md:grid-cols-[1fr_.30fr]">
-                              <ul className="grid grow gap-4 p-4 md:grid-cols-3 md:border-r">
-                                {item.submenu?.slice(0, 3).map((link) => (
+                            <div className="w-full md:w-4xl">
+                              <ul className="grid gap-4 p-4 md:grid-cols-3">
+                                {item.submenu?.map((link) => (
                                   <li key={`${item.title}-${link.href}`}>
                                     <NavGridCard link={link} />
-                                  </li>
-                                ))}
-                              </ul>
-                              <ul className="space-y-1 p-4">
-                                {item.submenu?.slice(3).map((link) => (
-                                  <li key={`${item.title}-${link.href}`}>
-                                    <NavSmallItem
-                                      item={link}
-                                      href={link.href}
-                                      className="gap-x-1"
-                                    />
                                   </li>
                                 ))}
                               </ul>
@@ -108,30 +97,16 @@ export function Navbar() {
                       const IconComponent = item.icon;
                       return (
                         <NavigationMenuItem key={item.title}>
-                          <NavigationMenuTrigger className="flex items-center space-x-2">
+                          <NavigationMenuTrigger className="flex items-center space-x-2 font-semibold">
                             {IconComponent && <IconComponent className="h-4 w-4" />}
                             <span>Services</span>
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <div className="grid w-full md:w-4xl md:grid-cols-[1fr_.40fr]">
-                              <ul className="grid grow grid-cols-2 gap-4 p-4 md:border-r">
-                                {item.submenu?.slice(0, 2).map((link) => (
+                            <div className="w-full md:w-4xl">
+                              <ul className="grid gap-4 p-4 md:grid-cols-3">
+                                {item.submenu?.map((link) => (
                                   <li key={`${item.title}-${link.href}`}>
-                                    <NavGridCard link={link} className="min-h-36" />
-                                  </li>
-                                ))}
-                                <div className="col-span-2 grid grid-cols-3 gap-x-4">
-                                  {item.submenu?.slice(2, 5).map((link) => (
-                                    <li key={`${item.title}-${link.href}`}>
-                                      <NavLargeItem href={link.href} link={link} />
-                                    </li>
-                                  ))}
-                                </div>
-                              </ul>
-                              <ul className="space-y-2 p-4">
-                                {item.submenu?.slice(5).map((link) => (
-                                  <li key={`${item.title}-${link.href}`}>
-                                    <NavLargeItem href={link.href} link={link} />
+                                    <NavGridCard link={link} />
                                   </li>
                                 ))}
                               </ul>
@@ -146,7 +121,7 @@ export function Navbar() {
                     return (
                       <NavigationMenuItem key={item.title}>
                         <NavigationMenuLink asChild>
-                          <Link href={item.href} className="flex items-center space-x-2">
+                          <Link href={item.href} className="flex items-center space-x-2 font-semibold">
                             {IconComponent && <IconComponent className="h-4 w-4" />}
                             <span>{item.title}</span>
                           </Link>
@@ -163,7 +138,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link href="/contact">
               <BookCallButton>
-                Book Free Consultation
+                Book a Call
               </BookCallButton>
             </Link>
           </div>
@@ -195,7 +170,7 @@ export function Navbar() {
                         const IconComponent = item.icon;
                         return (
                           <AccordionItem key={item.title.toLowerCase()} value={item.title.toLowerCase()}>
-                            <AccordionTrigger className="capitalize hover:no-underline flex items-center space-x-2">
+                            <AccordionTrigger className="capitalize hover:no-underline flex items-center space-x-2 font-semibold">
                               {IconComponent && <IconComponent className="h-4 w-4" />}
                               <span>{item.title}</span>
                             </AccordionTrigger>
@@ -217,7 +192,7 @@ export function Navbar() {
                         return (
                           <div key={item.title} className="px-4 py-2 border-b">
                             <SheetClose asChild>
-                              <Link href={item.href} className="flex items-center space-x-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded px-2 py-1">
+                              <Link href={item.href} className="flex items-center space-x-2 text-sm font-semibold hover:bg-accent hover:text-accent-foreground rounded px-2 py-1">
                                 {IconComponent && <IconComponent className="h-4 w-4" />}
                                 <span>{item.title}</span>
                               </Link>

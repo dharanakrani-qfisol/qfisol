@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
 import { TrustBar } from '@/components/sections/TrustBar';
 import { PainPoints } from '@/components/sections/PainPoints';
+import { HowWeWork } from '@/components/sections/HowWeWork';
 import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
@@ -14,11 +15,12 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
         <PainPoints />
+        <HowWeWork />
         <IndustriesGrid />
         <ServicesSection />
         <TestimonialSection />
+        <TrustBar />
         <FinalCTA />
       </main>
       <Footer />

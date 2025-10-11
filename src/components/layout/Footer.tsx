@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { BookCallButton } from '@/components/ui/book-call-button';
 
 const services = [
   { name: 'Outsourced Accounting', href: '/services/outsourced-accounting' },
@@ -93,21 +93,25 @@ export function Footer() {
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>hello@quantifi.com</span>
+                <span>info@qfisol.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (301) 659-5995</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4" />
-                <span>San Francisco, CA</span>
+              <div className="flex items-start space-x-2">
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                <div className="space-y-1">
+                  <p>Atlanta, Georgia</p>
+                  <p>Los Angeles, California</p>
+                  <p>Dallas, Texas</p>
+                </div>
               </div>
             </div>
             <div className="mt-4">
-              <Button asChild>
-                <Link href="/contact">Book Consultation</Link>
-              </Button>
+              <Link href="/contact">
+                <BookCallButton>Book a Call</BookCallButton>
+              </Link>
             </div>
           </div>
         </div>

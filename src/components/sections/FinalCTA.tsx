@@ -1,14 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { BookCallButton } from '@/components/ui/book-call-button';
 import Link from 'next/link';
-import { ArrowRight, Sparkles } from 'lucide-react';
 import { BlurredStagger } from '@/components/ui/blurred-stagger-text';
 
 export function FinalCTA() {
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <motion.section 
+      className="py-20 bg-background relative overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-950 dark:via-navy-950 dark:to-indigo-950" />
       
@@ -66,25 +71,11 @@ export function FinalCTA() {
             {/* Primary CTA with animated gradient border */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity animate-pulse" />
-              <Button
-                asChild
-                size="lg"
-                className="relative text-lg px-8 py-6 bg-transparent hover:bg-primary"
-                style={{
-                  background: 'linear-gradient(135deg, transparent 0%, transparent 100%)',
-                  border: '2px solid transparent',
-                  backgroundClip: 'padding-box',
-                }}
-              >
-                <Link 
-                  href="/contact"
-                  className="flex items-center"
-                >
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  Book Your Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+              <Link href="/contact" className="relative block">
+                <BookCallButton className="text-lg px-8 py-6">
+                  Book a Call
+                </BookCallButton>
+              </Link>
             </div>
             
             {/* Secondary link */}
@@ -97,7 +88,7 @@ export function FinalCTA() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

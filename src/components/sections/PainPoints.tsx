@@ -81,6 +81,7 @@ export function PainPoints() {
   });
 
   return (
+    <>
     <motion.section 
       id="differentiators" 
       className="relative py-32 md:py-40 overflow-hidden bg-[linear-gradient(to_bottom,#fff,#f8f9fa_30%,#f1f3f5_98%)] dark:bg-[linear-gradient(to_bottom,#000_10%,#0a0a0a_30%,#0f0f0f_98%)]"
@@ -101,7 +102,7 @@ export function PainPoints() {
             className="inline-block mb-6"
           >
             <span className="text-sm font-semibold tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
-              How We&apos;re Different
+              WHO WE ARE AND HOW WE ARE DIFFERENT
             </span>
           </motion.div>
           
@@ -225,5 +226,236 @@ export function PainPoints() {
         </motion.div>
       </div>
     </motion.section>
+
+    {/* New Section: Who We Are — And How We're Different */}
+    <motion.section 
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {/* Floating numbers background animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-6xl font-bold text-blue-500/5 select-none"
+            initial={{ 
+              x: Math.random() * 1200,
+              y: Math.random() * 800,
+              opacity: 0
+            }}
+            animate={{ 
+              y: [null, -100],
+              opacity: [0, 0.05, 0]
+            }}
+            transition={{
+              duration: 8 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "linear"
+            }}
+          >
+            {Math.floor(Math.random() * 10)}
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="container-standard section-gutter relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.3, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* H2 Title */}
+            <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                👉 Who We Are — And How We&apos;re Different
+              </h2>
+            </div>
+
+            {/* H3 Subheading */}
+            <div>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground leading-tight">
+                Not Outsourced. Not Detached. Integrated.
+                <br />
+                <span className="text-muted-foreground">Your Modern Virtual Accounting Partner.</span>
+              </h3>
+            </div>
+
+            {/* Body Copy */}
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                QuantiFi is a modern outsourced accounting and virtual CFO partner for small and mid-sized businesses across the U.S.
+              </p>
+              <p>
+                We combine CPA-level expertise, technology, and personalized strategy to deliver clarity, control, and confidence over your finances.
+              </p>
+              <p>
+                Unlike traditional accounting firms that operate outside your business, we work inside it.
+              </p>
+              <p>
+                Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations — functioning as your in-house accounting and finance team, not a distant vendor.
+              </p>
+              <p>
+                Whether you need outsourced bookkeeping, tax support, or fractional CFO strategy, we provide the structure, insight, and scalability your business needs to grow — virtually, efficiently, and nationwide.
+              </p>
+            </div>
+
+            {/* Trust Signals */}
+            <motion.div
+              className="pt-6 border-t border-border/50"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-base font-semibold text-foreground mb-3">
+                Trusted by 100+ businesses nationwide.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                CPA-led expertise • Transparent pricing • 99% client retention
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - Visual Composition */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.3, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            {/* Main Visual Container */}
+            <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-2xl p-8 shadow-2xl">
+              {/* Illustrated Scene */}
+              <div className="relative z-10">
+                {/* Business Owner & Accountant */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">👨‍💼</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Business Owner</p>
+                      <p className="text-sm text-muted-foreground">Sarah Chen</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">👩‍💻</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">QuantiFi Partner</p>
+                      <p className="text-sm text-muted-foreground">Dhara N.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video Call Interface */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg mb-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <span className="text-xs text-muted-foreground">Monthly Review Call</span>
+                  </div>
+                  <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-3">
+                    <p className="text-sm text-muted-foreground">📊 Reviewing Q4 Financial Dashboard</p>
+                  </div>
+                </div>
+
+                {/* Floating UI Elements */}
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                  ✅ Books Reconciled
+                </div>
+                <div className="absolute -bottom-2 -left-2 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                  📊 Revenue ↑15%
+                </div>
+                <div className="absolute top-1/2 -right-8 bg-white dark:bg-gray-800 text-foreground px-3 py-2 rounded-lg text-xs shadow-lg border">
+                  💬 &quot;Monthly Report Ready&quot;
+                </div>
+              </div>
+
+              {/* Subtle chart overlay */}
+              <div className="absolute inset-0 opacity-5">
+                <svg className="w-full h-full" viewBox="0 0 400 300">
+                  <path d="M20 250 L80 200 L140 180 L200 150 L260 120 L320 80" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        fill="none" 
+                        className="text-blue-500" />
+                  <path d="M20 220 L80 190 L140 170 L200 140 L260 110 L320 70" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        fill="none" 
+                        className="text-indigo-500" />
+                </svg>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Trusted By Bar */}
+        <motion.div
+          className="mt-16 pt-8 border-t border-border/30"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-6">
+            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Trusted Across Industries
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+            {[
+              { icon: "🏗️", label: "Construction" },
+              { icon: "🩺", label: "Healthcare" },
+              { icon: "🏨", label: "Hospitality" },
+              { icon: "🏠", label: "Real Estate" },
+              { icon: "💻", label: "Startups" },
+              { icon: "🏭", label: "Manufacturing" }
+            ].map((industry, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center space-y-2 group cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="text-2xl group-hover:scale-110 transition-transform duration-200">
+                  {industry.icon}
+                </div>
+                <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+                  {industry.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Divider / Transition */}
+        <motion.div
+          className="mt-16 flex justify-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent" />
+        </motion.div>
+      </div>
+    </motion.section>
+    </>
   );
 }

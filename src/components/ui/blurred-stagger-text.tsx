@@ -40,7 +40,7 @@ export const BlurredStagger = ({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className={`inline-block ${className || ''}`}
+      className={className || 'inline-block'}
     >
       {headingText.split("").map((char, index) => (
         <motion.span

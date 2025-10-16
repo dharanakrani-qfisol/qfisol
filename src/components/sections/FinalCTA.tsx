@@ -45,43 +45,42 @@ export function FinalCTA() {
         />
       </div>
 
-      <div className="container-standard section-gutter relative z-10">
+      <div className="container-standard section-gutter relative z-10 px-4 sm:px-6 md:px-8 max-w-screen-xl mx-auto">
         <motion.div
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-2xl md:max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 text-center flex justify-center">
-            <BlurredStagger text="Ready for Clarity and Confidence?" />
+          <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 text-center flex justify-center leading-tight">
+            <BlurredStagger text="Ready for Clarity and Confidence?" className="inline-block" />
           </div>
 
-          <div className="text-xl text-muted-foreground mb-8 text-center flex justify-center">
-            <BlurredStagger text="Book your free consultation and discover how we can transform your financial management into a strategic advantage for growth." />
-          </div>
+          <p className="text-base xs:text-lg sm:text-xl text-muted-foreground mb-8 text-center max-w-[30rem] md:max-w-2xl mx-auto leading-relaxed">
+            Book your free consultation and discover how we can transform your financial management into a strategic advantage for growth.
+          </p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
             {/* Primary CTA with animated gradient border */}
-            <div className="relative group">
+            <div className="relative group w-full sm:w-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity animate-pulse" />
-              <Link href="/contact" className="relative block">
-                <BookCallButton className="text-lg px-8 py-6">
+              <Link href="/contact" className="relative block w-full sm:w-auto">
+                <BookCallButton className="text-base xs:text-lg px-4 xs:px-6 sm:px-8 py-4 xs:py-5 sm:py-6 w-full sm:w-auto">
                   Book a Call
                 </BookCallButton>
               </Link>
             </div>
-            
             {/* Secondary link */}
             <Link
               href="/contact"
-              className="text-muted-foreground hover:text-primary transition-colors font-medium underline"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium underline text-base xs:text-lg text-center sm:text-left"
             >
               Or learn more about our process
             </Link>

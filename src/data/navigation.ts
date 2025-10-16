@@ -1,4 +1,4 @@
-import { Building2, ChefHat, Heart, Factory, UserCheck, Calculator, DollarSign, TrendingUp, Lightbulb, Settings, Users, Home, Briefcase, BarChart3, Info, Phone } from 'lucide-react';
+import { Building2, Heart, Factory, UserCheck, Calculator, DollarSign, TrendingUp, Lightbulb, Settings, Users, Home, Briefcase, BarChart3, Info, Phone, BookOpen, FileText } from 'lucide-react';
 
 export const navigationItems = [
   { 
@@ -9,7 +9,7 @@ export const navigationItems = [
   },
   { 
     title: 'Industries', 
-    href: '#', 
+    href: '/industries', 
     type: 'submenu',
     icon: Building2,
     submenu: [
@@ -20,86 +20,100 @@ export const navigationItems = [
         icon: Building2,
       },
       {
-        title: 'Hospitality', 
-        href: '/industries/hospitality',
-        description: 'Optimize hospitality operations with expert financial management',
-        icon: Heart,
-      },
-      {
-        title: 'Restaurants',
-        href: '/industries/restaurants', 
-        description: 'Boost restaurant profitability through strategic accounting',
-        icon: ChefHat,
+        title: 'CPA Firms',
+        href: '#',
+        description: 'Enhance accounting workflow for professional services',
+        icon: UserCheck,
       },
       {
         title: 'Healthcare',
-        href: '/industries/healthcare',
+        href: '#',
         description: 'Navigate complex healthcare compliance and reporting',
         icon: Heart,
       },
       {
+        title: 'Hospitality', 
+        href: '#',
+        description: 'Optimize hospitality operations with expert financial management',
+        icon: Heart,
+      },
+      {
+        title: 'Professional Services',
+        href: '#', 
+        description: 'Strategic financial ops for agencies, legal, and consulting',
+        icon: UserCheck,
+      },
+      {
         title: 'Manufacturing/Retail',
-        href: '/industries/manufacturing',
+        href: '#',
         description: 'Optimize supply chains and retail operations financially',
         icon: Factory,
       },
-      {
-        title: 'CPA & Pro Services',
-        href: '/industries/cpa-professional',
-        description: 'Enhance accounting workflow for professional services',
-        icon: UserCheck,
-      }
     ]
   },
   { 
     title: 'Services', 
-    href: '#', 
+    href: '/services', 
     type: 'submenu',
     icon: Briefcase,
     submenu: [
       {
-        title: 'Core Accounting',
-        href: '/services/core-accounting',
+        title: 'Outsourced Accounting',
+        href: '/services/outsourced-accounting',
         description: 'Complete bookkeeping and transaction management',
         icon: Calculator,
       },
       {
         title: 'Tax',
-        href: '/services/tax',
+        href: '#',
         description: 'Comprehensive tax preparation and planning services',
         icon: DollarSign,
       },
       {
         title: 'FP&A',
-        href: '/services/financial-planning',
+        href: '#',
         description: 'Financial planning and analysis for business growth',
         icon: TrendingUp,
       },
       {
         title: 'Advisory',
-        href: '/services/advisory',
+        href: '#',
         description: 'Strategic business consulting and financial guidance',
         icon: Lightbulb,
       },
       {
         title: 'Systems & Tech',
-        href: '/services/systems-tech',
+        href: '#',
         description: 'Technology integration and systems optimization',
         icon: Settings,
       },
       {
         title: 'PFS',
-        href: '/services/pfs',
+        href: '#',
         description: 'Personal financial services and wealth management',
         icon: Users,
       }
     ]
   },
   { 
-    title: 'Case Studies', 
-    href: '/case-studies', 
-    type: 'link',
-    icon: BarChart3
+    title: 'Resources', 
+    href: '/resources', 
+    type: 'submenu',
+    icon: BookOpen,
+    submenu: [
+      {
+        title: 'Case Studies',
+        href: '/case-studies',
+        description: 'Real-world success stories and client transformations',
+        icon: BarChart3,
+      },
+      {
+        title: 'Blogs',
+        href: '#',
+        description: 'Insights, tips, and industry best practices',
+        icon: FileText,
+      }
+    ]
   },
   { 
     title: 'About', 
@@ -108,7 +122,7 @@ export const navigationItems = [
     icon: Info
   },
   { 
-    title: 'Contact Us', 
+    title: 'Contact', 
     href: '/contact', 
     type: 'link',
     icon: Phone

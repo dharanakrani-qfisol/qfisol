@@ -199,7 +199,7 @@ export function IndustriesGrid() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6"
             >
-              <BlurredStagger text="Industries We Serve" />
+              <BlurredStagger text="Industries We Serve" className="inline-block" />
             </motion.div>
             
             <motion.div

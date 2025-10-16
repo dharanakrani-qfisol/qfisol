@@ -74,7 +74,7 @@ function NavigationMenuTrigger({
 		<NavigationMenuPrimitive.Trigger
 			data-slot="navigation-menu-trigger"
 			className={cn(
-				'group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 inline-flex w-max items-center justify-center rounded-md px-4 py-1 text-sm font-medium transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50',
+				'group hover:bg-[#0015ff] hover:text-white focus:bg-[#0015ff] focus:text-white data-[state=open]:hover:bg-[#0015ff] data-[state=open]:text-white data-[state=open]:focus:bg-[#0015ff] data-[state=open]:bg-[#0015ff]/50 focus-visible:ring-ring/50 hover:[&_svg]:text-white inline-flex w-max items-center justify-center rounded-md px-4 py-1 text-sm font-medium transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50',
 				className,
 			)}
 			{...props}
@@ -131,7 +131,7 @@ function NavigationMenuLink({
 		<NavigationMenuPrimitive.Link
 			data-slot="navigation-menu-link"
 			className={cn(
-				"data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col justify-center gap-1 rounded-sm px-4 py-1 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+				"data-[active=true]:focus:bg-[#0015ff] data-[active=true]:hover:bg-[#0015ff] data-[active=true]:bg-[#0015ff]/50 data-[active=true]:text-white hover:bg-[#0015ff] hover:text-white focus:bg-[#0015ff] focus:text-white focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground hover:[&_svg]:text-white flex flex-row items-center gap-2 rounded-sm px-4 py-1 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -165,21 +165,23 @@ function NavGridCard({
 }) {
 	return (
 		<NavigationMenuPrimitive.Link asChild>
-			<GridCard className="!flex-row !justify-start items-start gap-3 !bg-white dark:!bg-gray-950 [&>div[class*='absolute']]:!hidden [&>div[class*='inset']]:!hidden overflow-visible" {...props}>
-				{link.icon && (
-					<link.icon className="text-foreground/80 relative !inline-flex size-5 flex-shrink-0 z-10" />
-				)}
-				<div className="relative z-10">
-					<span className="text-foreground/80 text-sm font-medium">
-						{link.title}
-					</span>
-					{link.description && (
-						<p className="text-muted-foreground mt-2 text-xs">
-							{link.description}
-						</p>
+			<a href={link.href} className="block">
+				<GridCard className="!flex-row !justify-start items-start gap-3 !bg-white dark:!bg-gray-950 [&>div[class*='absolute']]:!hidden [&>div[class*='inset']]:!hidden overflow-visible" {...props}>
+					{link.icon && (
+						<link.icon className="text-foreground/80 relative !inline-flex size-5 flex-shrink-0 z-10" />
 					)}
-				</div>
-			</GridCard>
+					<div className="relative z-10">
+						<span className="text-foreground/80 text-sm font-medium">
+							{link.title}
+						</span>
+						{link.description && (
+							<p className="text-muted-foreground mt-2 text-xs">
+								{link.description}
+							</p>
+						)}
+					</div>
+				</GridCard>
+			</a>
 		</NavigationMenuPrimitive.Link>
 	);
 }

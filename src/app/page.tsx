@@ -1,5 +1,4 @@
 import { Hero } from '@/components/sections/Hero';
-import { TrustBar } from '@/components/sections/TrustBar';
 import { PainPoints } from '@/components/sections/PainPoints';
 import { HowWeWork } from '@/components/sections/HowWeWork';
 import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
@@ -20,7 +19,6 @@ export default function HomePage() {
         <IndustriesGrid />
         <ServicesSection />
         <TestimonialSection />
-        <TrustBar />
         <FinalCTA />
       </main>
       <Footer />

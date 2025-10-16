@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { BookCallButton } from '@/components/ui/book-call-button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { MenuIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,8 +15,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavGridCard,
-  NavSmallItem,
-  NavLargeItem,
   NavItemMobile,
 } from '@/components/ui/navigation-menu';
 import {
@@ -54,9 +51,9 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3 relative z-10">
             <Image
               src="/QuantiFi.svg"
               alt="QuantiFi Logo"
@@ -67,62 +64,42 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 absolute left-1/2 -translate-x-1/2 z-0">
             <NavigationMenu>
               <NavigationMenuList>
                 {navigationItems.map((item) => {
                   if (item.type === 'submenu') {
-                    if (item.title === 'Industries') {
-                      const IconComponent = item.icon;
-                      return (
-                        <NavigationMenuItem key={item.title}>
-                          <NavigationMenuTrigger className="flex items-center space-x-2 font-semibold">
-                            {IconComponent && <IconComponent className="h-4 w-4" />}
-                            <span>Industries</span>
-                          </NavigationMenuTrigger>
-                          <NavigationMenuContent>
-                            <div className="w-full md:w-4xl">
-                              <ul className="grid gap-4 p-4 md:grid-cols-3">
-                                {item.submenu?.map((link) => (
-                                  <li key={`${item.title}-${link.href}`}>
-                                    <NavGridCard link={link} />
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </NavigationMenuContent>
-                        </NavigationMenuItem>
-                      );
-                    } else if (item.title === 'Services') {
-                      const IconComponent = item.icon;
-                      return (
-                        <NavigationMenuItem key={item.title}>
-                          <NavigationMenuTrigger className="flex items-center space-x-2 font-semibold">
-                            {IconComponent && <IconComponent className="h-4 w-4" />}
-                            <span>Services</span>
-                          </NavigationMenuTrigger>
-                          <NavigationMenuContent>
-                            <div className="w-full md:w-4xl">
-                              <ul className="grid gap-4 p-4 md:grid-cols-3">
-                                {item.submenu?.map((link) => (
-                                  <li key={`${item.title}-${link.href}`}>
-                                    <NavGridCard link={link} />
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </NavigationMenuContent>
-                        </NavigationMenuItem>
-                      );
-                    }
-                    return null;
+                    const IconComponent = item.icon;
+                    return (
+                      <NavigationMenuItem key={item.title}>
+                        <NavigationMenuTrigger className="flex items-center space-x-2 font-semibold group/trigger">
+                          {IconComponent && <IconComponent className="h-4 w-4 text-muted-foreground group-hover/trigger:text-white transition-colors" />}
+                          <span>{item.title}</span>
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <div className="w-full md:w-4xl">
+                            <ul className={`grid gap-4 p-4 ${
+                              item.submenu && item.submenu.length <= 2 
+                                ? 'md:grid-cols-2' 
+                                : 'md:grid-cols-3'
+                            }`}>
+                              {item.submenu?.map((link, index) => (
+                                <li key={`${item.title}-${link.title}-${index}`}>
+                                  <NavGridCard link={link} />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    );
                   } else {
                     const IconComponent = item.icon;
                     return (
                       <NavigationMenuItem key={item.title}>
                         <NavigationMenuLink asChild>
-                          <Link href={item.href} className="flex items-center space-x-2 font-semibold">
-                            {IconComponent && <IconComponent className="h-4 w-4" />}
+                          <Link href={item.href} className="flex items-center space-x-2 font-semibold group/link hover:bg-[#0015ff] hover:text-white">
+                            {IconComponent && <IconComponent className="h-4 w-4 text-muted-foreground group-hover/link:text-white transition-colors" />}
                             <span>{item.title}</span>
                           </Link>
                         </NavigationMenuLink>
@@ -134,17 +111,8 @@ export function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/contact">
-              <BookCallButton>
-                Book a Call
-              </BookCallButton>
-            </Link>
-          </div>
-
           {/* Mobile Menu */}
-          <div className="lg:hidden">
+          <div className="lg:hidden relative z-10">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -155,6 +123,7 @@ export function Navbar() {
               <SheetContent
                 className="bg-background/95 supports-[backdrop-filter]:bg-background/80 w-full gap-0 backdrop-blur-lg"
               >
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex h-14 items-center justify-end border-b px-4">
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon">
@@ -170,14 +139,14 @@ export function Navbar() {
                         const IconComponent = item.icon;
                         return (
                           <AccordionItem key={item.title.toLowerCase()} value={item.title.toLowerCase()}>
-                            <AccordionTrigger className="capitalize hover:no-underline flex items-center space-x-2 font-semibold">
-                              {IconComponent && <IconComponent className="h-4 w-4" />}
+                            <AccordionTrigger className="capitalize hover:no-underline flex items-center space-x-2 font-semibold group/mobile-accordion">
+                              {IconComponent && <IconComponent className="h-4 w-4 text-muted-foreground group-hover/mobile-accordion:text-white transition-colors" />}
                               <span>{item.title}</span>
                             </AccordionTrigger>
                             <AccordionContent className="space-y-1">
                               <ul className="grid gap-1">
-                                {item.submenu?.map((link) => (
-                                  <li key={`${item.title}-${link.href}`}>
+                                {item.submenu?.map((link, index) => (
+                                  <li key={`${item.title}-${link.title}-${index}`}>
                                     <SheetClose asChild>
                                       <NavItemMobile item={link} href={link.href} />
                                     </SheetClose>
@@ -192,8 +161,8 @@ export function Navbar() {
                         return (
                           <div key={item.title} className="px-4 py-2 border-b">
                             <SheetClose asChild>
-                              <Link href={item.href} className="flex items-center space-x-2 text-sm font-semibold hover:bg-accent hover:text-accent-foreground rounded px-2 py-1">
-                                {IconComponent && <IconComponent className="h-4 w-4" />}
+                              <Link href={item.href} className="flex items-center space-x-2 text-sm font-semibold hover:bg-[#0015ff] hover:text-white group/mobile-link rounded px-2 py-1">
+                                {IconComponent && <IconComponent className="h-4 w-4 text-muted-foreground group-hover/mobile-link:text-white transition-colors" />}
                                 <span>{item.title}</span>
                               </Link>
                             </SheetClose>

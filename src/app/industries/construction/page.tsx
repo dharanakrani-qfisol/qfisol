@@ -78,12 +78,12 @@ export default function ConstructionPage() {
           </div>
         </section>
 
-        {/* Why Construction Businesses Choose Quantifi */}
+        {/* Why Construction Businesses Choose QuantiFi */}
         <section className="py-20 bg-background">
           <div className="container-standard section-gutter">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Why Construction Companies Choose Quantifi
+                Why Construction Companies Choose QuantiFi
               </h2>
               <p className="text-lg text-muted-foreground">
                 We understand the unique financial challenges of the construction industry.

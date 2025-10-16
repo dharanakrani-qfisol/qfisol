@@ -27,15 +27,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Core Quantifi Brand Colors */
+  /* Core QuantiFi Brand Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   
-  /* Quantifi Primary Brand Colors - Professional Blue/Indigo palette */
+  /* QuantiFi Primary Brand Colors - Professional Blue/Indigo palette */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-quantifi-primary: var(--quantifi-primary);
+  --color-quantifi-primary-foreground: var(--quantifi-primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   
@@ -105,6 +107,7 @@
   --color-primary: #0a1a2f;    /* Deep Navy Blue */
   --color-accent: #1e90ff;     /* Vivid Blue */
   --color-neutral: #f5f7fa;    /* Soft Off-White */
+  --color-quantifi-primary: #0015ff; /* QuantiFi Primary Brand Color */
   
   /* Light Mode Theme */
   --background: oklch(0.98 0.005 240); /* Soft Off-White background */
@@ -119,6 +122,10 @@
   /* Primary brand color - Deep Navy Blue */
   --primary: oklch(0.15 0.04 240); /* Deep Navy Blue (#0a1a2f) */
   --primary-foreground: oklch(0.98 0.005 240);
+  
+  /* QuantiFi Primary Brand Color */
+  --quantifi-primary: #0015ff; /* QuantiFi Primary Blue */
+  --quantifi-primary-foreground: oklch(1 0 0); /* White text on quantifi-primary */
   
   /* Secondary - Neutral */
   --secondary: oklch(0.97 0.005 240); /* Soft Off-White */
@@ -173,6 +180,10 @@
   --primary: oklch(0.6 0.19 250); /* Vivid Blue - Bright on dark */
   --primary-foreground: oklch(0.15 0.04 240); /* Deep Navy Blue */
   
+  /* QuantiFi Primary Brand Color - Dark Mode */
+  --quantifi-primary: #0015ff; /* QuantiFi Primary Blue */
+  --quantifi-primary-foreground: oklch(1 0 0); /* White text on quantifi-primary */
+  
   /* Secondary - Darker neutral */
   --secondary: oklch(0.25 0.05 240); /* Dark navy */
   --secondary-foreground: oklch(0.97 0.005 240);
@@ -220,7 +231,7 @@
   }
 }
 
-/* Custom Quantifi Utility Classes */
+/* Custom QuantiFi Utility Classes */
 @layer utilities {
   /* Container spacing utilities */
   .section-gutter {

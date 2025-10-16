@@ -62,7 +62,7 @@ export function ServicesSection() {
       viewport={{ once: true, margin: "-100px" }}
     >
       {/* Header Section */}
-      <div className="h-[70vh] w-full grid place-content-center relative overflow-hidden">
+      <div className="w-full pt-24 md:pt-32 pb-8 flex flex-col justify-center relative overflow-hidden">
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -76,10 +76,10 @@ export function ServicesSection() {
 
         <div className='relative z-10 px-8'>
           <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight tracking-tight mb-6 text-foreground">
-            <BlurredStagger text="Our Core Services" />
+            <BlurredStagger text="Our Core Services" className="inline-block" />
           </div>
           <div className="text-base md:text-lg text-center text-muted-foreground leading-relaxed max-w-[560px] mx-auto">
-            <BlurredStagger text="Every Service. One Connected Approach." />
+            <BlurredStagger text="Every Service. One Connected Approach." className="inline-block" />
           </div>
         </div>
       </div>
@@ -91,6 +91,7 @@ export function ServicesSection() {
     </motion.section>
   );
 }
+
 
 
 

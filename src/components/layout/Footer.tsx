@@ -155,7 +155,7 @@ export function Footer() {
             </div>
           </div>
           <div className="text-center text-sm text-muted-foreground mt-4">
-            © 2024 Quantifi. All rights reserved.
+            © 2024 QuantiFi. All rights reserved.
           </div>
         </div>
       </div>

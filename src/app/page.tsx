@@ -1,6 +1,6 @@
 import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
-import { HowWeWork } from '@/components/sections/HowWeWork';
+import { HowWeWorkEnhanced } from '@/components/sections/HowWeWorkEnhanced';
 import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
@@ -15,7 +15,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <PainPoints />
-        <HowWeWork />
+        <HowWeWorkEnhanced />
         <IndustriesGrid />
         <ServicesSection />
         <TestimonialSection />

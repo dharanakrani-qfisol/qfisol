@@ -9,51 +9,51 @@ import { BlurredStagger } from '@/components/ui/blurred-stagger-text';
 const industries = [
   {
     id: 1,
-    title: 'Construction',
-    description: 'Accurate job costing and WIP reporting for growing contractors.',
+    title: 'Construction & Contracting',
+    description: 'Track job costs, manage payroll, and forecast cash flow with precision from bid to build.',
     href: '/industries/construction',
     imageUrl: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-orange-500 to-red-600',
   },
   {
     id: 2,
-    title: 'CPA Firms',
-    description: 'Seasonal capacity and specialized workflow support.',
-    href: '/industries/cpa-firms',
-    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
-    gradient: 'from-blue-500 to-indigo-600',
-  },
-  {
-    id: 3,
-    title: 'Healthcare',
-    description: 'Comprehensive financial management for medical practices and healthcare facilities.',
-    href: '/industries/healthcare',
-    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2070&auto=format&fit=crop',
-    gradient: 'from-emerald-500 to-teal-600',
-  },
-  {
-    id: 4,
-    title: 'Hospitality',
-    description: 'Revenue management and comprehensive reporting for hotels.',
+    title: 'Hospitality & Restaurants',
+    description: 'Automate POS reconciliations, payroll, and daily reporting for faster, more profitable operations.',
     href: '/industries/hospitality',
     imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-purple-500 to-pink-600',
   },
   {
+    id: 3,
+    title: 'Retail & E-Commerce',
+    description: 'Simplify sales tax, inventory, and multi-channel bookkeeping across Shopify, Amazon, and POS.',
+    href: '/industries/retail',
+    imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
+    gradient: 'from-pink-500 to-rose-600',
+  },
+  {
+    id: 4,
+    title: 'Healthcare (Medical, Dental & Pharmacy)',
+    description: 'HIPAA-compliant accounting for practices that demand precision, confidentiality, and control.',
+    href: '/industries/healthcare',
+    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2070&auto=format&fit=crop',
+    gradient: 'from-emerald-500 to-teal-600',
+  },
+  {
     id: 5,
-    title: 'Professional Services',
-    description: 'Project-based accounting and resource allocation for technology and staffing firms.',
-    href: '/industries/it-staffing',
+    title: 'Startups',
+    description: 'Fractional CFO and automated bookkeeping for startups that need clarity, not complexity.',
+    href: '/industries/startups',
     imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-indigo-500 to-purple-600',
   },
   {
     id: 6,
-    title: 'Manufacturing/Retail',
-    description: 'Optimize supply chains and retail operations with comprehensive inventory tracking, cost management, and multi-location financial reporting.',
-    href: '/industries/retail',
-    imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
-    gradient: 'from-pink-500 to-rose-600',
+    title: 'Real Estate',
+    description: 'From cost segregation to investor reporting, we bring clarity and compliance to every property.',
+    href: '/industries/real-estate',
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop',
+    gradient: 'from-blue-500 to-indigo-600',
   },
 ];
 
@@ -105,18 +105,18 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
           transition-all duration-500 ease-in-out
           ${
             isActive
-              ? `${item.title === 'Manufacturing/Retail' ? 'bottom-64' : ['Healthcare','Professional Services'].includes(item.title) ? 'bottom-44' : 'bottom-40'} left-8 right-8` // Extra space for Manufacturing/Retail, Healthcare & Professional Services
+              ? `${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'bottom-64' : 'bottom-44'} left-8 right-8` // Extra space for long titles
               : 'bottom-32 left-1/2 -translate-x-1/2' // Inactive: vertical, centered
           }
         `}
       >
         <h3 
           className={`
-            ${['Manufacturing/Retail', 'Professional Services'].includes(item.title) && isActive ? '' : 'whitespace-nowrap'}
+            ${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) && isActive ? '' : 'whitespace-nowrap'}
             transition-all duration-500 ease-in-out
             ${
               isActive
-                ? `${['Manufacturing/Retail', 'Professional Services'].includes(item.title) ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} rotate-0 tracking-tight` // Active: horizontal, smaller for long titles
+                ? `${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} rotate-0 tracking-tight` // Active: horizontal, smaller for long titles
                 : 'rotate-90 text-lg tracking-wide' // Inactive: vertical
             }
           `}
@@ -133,7 +133,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
           y: isActive ? 0 : 20
         }}
         transition={{ duration: 0.4, delay: isActive ? 0.2 : 0 }}
-        className={`absolute ${['Healthcare','Professional Services','Manufacturing/Retail'].includes(item.title) ? 'bottom-8 mt-4' : 'bottom-8'} left-8 right-8 z-10`}
+        className={`absolute ${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'bottom-8 mt-4' : 'bottom-8'} left-8 right-8 z-10`}
       >
         <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
           {item.description}
@@ -197,9 +197,19 @@ export function IndustriesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-2"
             >
               <BlurredStagger text="Industries We Serve" className="inline-block" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="text-sm font-medium text-muted-foreground mb-6"
+            >
+              Expertise That Understands Your Business
             </motion.div>
             
             <motion.div
@@ -210,7 +220,11 @@ export function IndustriesGrid() {
               className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-[560px] mx-auto lg:mx-0"
             >
               <p className="whitespace-normal break-words">
-                Specialized accounting solutions tailored to your industry&apos;s unique challenges and opportunities.
+                Every industry operates differently and so should your accounting.
+                <br />
+                At QuantiFi, we deliver outsourced accounting, bookkeeping, and CFO-level insight tailored to your field from construction and hospitality to healthcare, real estate, and beyond.
+                <br />
+                Our CPA-led team understands the challenges unique to each industry and builds financial systems designed for precision, compliance, and growth.
               </p>
             </motion.div>
             
@@ -250,6 +264,33 @@ export function IndustriesGrid() {
             </div>
           </motion.div>
         </div>
+
+        {/* Bottom CTA Section */}
+        <motion.div
+          className="text-center bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-sm border border-gray-200 dark:border-gray-700 mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+              Don&apos;t see your industry listed?
+            </h3>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+              We&apos;ve supported hundreds of businesses across dozens of sectors and we can tailor an accounting solution for yours too.
+            </p>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-quantifi-primary hover:bg-quantifi-primary/90 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              Contact Us
+              <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );

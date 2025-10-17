@@ -12,20 +12,20 @@ const leadership = [
   {
     name: 'Dhara Nakrani, MAcc',
     title: 'Founder & President',
-    bio: 'A financial leader with deep expertise in accounting and business strategy, Dhara Nakrani founded QuantiFi (QFISOL) with one mission — to transform how businesses experience accounting. With over a decade of experience across both public and private sectors, she brings a forward-thinking approach that blends strategic financial insight with operational excellence.',
-    detailedBio: 'Under her leadership, QuantiFi has grown into a trusted partner for businesses nationwide — simplifying processes, strengthening financial control, and empowering smarter, data-driven decisions. Dhara\'s expertise lies in bridging the gap between accounting systems, technology, and business growth — ensuring every client operates with clarity, precision, and purpose.',
-    philosophy: 'She believes accounting should do more than report the past — it should empower the future. Her focus remains on turning complex numbers into meaningful insights that drive measurable results and long-term success.',
-    quote: 'Accounting isn\'t just about accuracy — it\'s about alignment. When your numbers make sense, your business moves forward with confidence.',
+    bio: 'A financial leader with deep expertise in accounting and business strategy, Dhara Nakrani founded QuantiFi (QFISOL) with one mission to transform how businesses experience accounting. With over a decade of experience across both public and private sectors, she brings a forward-thinking approach that blends strategic financial insight with operational excellence.',
+    detailedBio: 'Under her leadership, QuantiFi has grown into a trusted partner for businesses nationwide simplifying processes, strengthening financial control, and empowering smarter, data-driven decisions. Dhara\'s expertise lies in bridging the gap between accounting systems, technology, and business growth ensuring every client operates with clarity, precision, and purpose.',
+    philosophy: 'She believes accounting should do more than report the past it should empower the future. Her focus remains on turning complex numbers into meaningful insights that drive measurable results and long-term success.',
+    quote: 'Accounting isn\'t just about accuracy it\'s about alignment. When your numbers make sense, your business moves forward with confidence.',
     credentials: ['Master of Accounting (MAcc)', '10+ Years Experience', 'Strategic Financial Leadership'],
     linkedin: 'https://linkedin.com/in/dhara-nakrani'
   },
   {
     name: 'Deep Patel, B.Com., F.C.A., L.L.B., CPA',
     title: 'Chief Operating Officer',
-    bio: 'A professional with over 15 years of experience, Deep Patel leads QuantiFi\'s operational strategy with precision and foresight. His expertise spans accounting, auditing, valuation, cost segregation, and regulatory compliance — backed by a comprehensive understanding of both U.S. and international financial standards.',
+    bio: 'A professional with over 15 years of experience, Deep Patel leads QuantiFi\'s operational strategy with precision and foresight. His expertise spans accounting, auditing, valuation, cost segregation, and regulatory compliance backed by a comprehensive understanding of both U.S. and international financial standards.',
     detailedBio: 'As QuantiFi\'s Chief Operating Officer, Deep ensures every client engagement is executed with structure, transparency, and measurable impact. His advisory experience and holistic financial insight allow him to guide businesses through complex regulatory and operational challenges with clarity and confidence.',
     philosophy: 'Deep plays a pivotal role in strengthening client relationships and fostering long-term trust through thoughtful, results-driven leadership.',
-    quote: 'True financial clarity isn\'t about perfection — it\'s about purpose. Every number should guide, not confuse.',
+    quote: 'True financial clarity isn\'t about perfection it\'s about purpose. Every number should guide, not confuse.',
     credentials: ['CPA Certified', '15+ Years Experience', 'International Standards Expert'],
     linkedin: 'https://linkedin.com/in/deep-patel'
   },
@@ -33,7 +33,7 @@ const leadership = [
     name: 'Richa Patel, MAcc, CPA Candidate',
     title: 'Senior Accounting Manager',
     bio: 'A results-driven accounting professional, Richa Patel brings over six years of experience in financial reporting, taxation, and audit support. Her expertise spans complex federal and multi-state tax returns, audit preparation, and ensuring full compliance with IRS and state regulations.',
-    detailedBio: 'At QuantiFi, Richa bridges financial precision with strategic insight — leading accounting operations that combine accuracy, timeliness, and forward-thinking analysis. Her approach goes beyond compliance; she focuses on turning numbers into meaningful insights that drive smarter, more confident business decisions.',
+    detailedBio: 'At QuantiFi, Richa bridges financial precision with strategic insight leading accounting operations that combine accuracy, timeliness, and forward-thinking analysis. Her approach goes beyond compliance; she focuses on turning numbers into meaningful insights that drive smarter, more confident business decisions.',
     philosophy: 'Known for her analytical mindset and leadership, Richa ensures every engagement reflects QuantiFi\'s commitment to quality, consistency, and measurable results.',
     quote: 'Behind every accurate number is a story of strategy, clarity, and progress.',
     credentials: ['MAcc Certified', '6+ Years Experience', 'Tax & Compliance Expert'],
@@ -117,7 +117,7 @@ export default function AboutPage() {
                           &quot;{member.quote}&quot;
                         </blockquote>
                         <div className="mt-2 text-xs text-muted-foreground">
-                          — {member.name.split(',')[0]}
+                          {member.name.split(',')[0]}
                         </div>
                       </Card>
 
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 {/* Content */}
                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Dhara established QuantiFi to redefine accounting as a true partnership — not an outsourced function.
+                    Dhara established QuantiFi to redefine accounting as a true partnership not an outsourced function.
                     Her philosophy is built on collaboration, precision, and transparency.
                     At its core, QuantiFi is designed for the modern business: nimble, strategic, and deeply invested in long-term success.
                   </p>
@@ -214,10 +214,10 @@ export default function AboutPage() {
                   </h2>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      Under Dhara&apos;s leadership, QuantiFi provides strategic accounting, financial consulting, and process optimization to clients across multiple industries — including construction, healthcare, hospitality, retail, and professional services.
+                      Under Dhara&apos;s leadership, QuantiFi provides strategic accounting, financial consulting, and process optimization to clients across multiple industries including construction, healthcare, hospitality, retail, and professional services.
                     </p>
                     <p>
-                      She and her team bridge the gap between financial systems, internal operations, and leadership strategy — ensuring every client has accurate data, meaningful insights, and a clear financial direction.
+                      She and her team bridge the gap between financial systems, internal operations, and leadership strategy ensuring every client has accurate data, meaningful insights, and a clear financial direction.
                     </p>
                   </div>
                 </div>
@@ -227,7 +227,7 @@ export default function AboutPage() {
                       <path d="M10 8c-3.3 0-6 2.7-6 6s2.7 6 6 6c1.4 0 2.7-.5 3.7-1.3l.3.3v1l4.5 4.5 1.5-1.5-4.5-4.5h-1l-.3-.3c.8-1 1.3-2.3 1.3-3.7 0-3.3-2.7-6-6-6z"/>
                     </svg>
                     <blockquote className="text-xl md:text-2xl font-semibold text-foreground italic leading-relaxed pt-8">
-                      &quot;Accounting isn&apos;t just about accuracy — it&apos;s about alignment with your goals, your growth, and your vision.&quot;
+                      &quot;Accounting isn&apos;t just about accuracy it&apos;s about alignment with your goals, your growth, and your vision.&quot;
                     </blockquote>
                     <div className="mt-6 pt-4 border-t border-border">
                       <p className="font-semibold text-foreground">Dhara Nakrani</p>

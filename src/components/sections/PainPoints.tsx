@@ -2,8 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
-import { Card } from '@/components/ui/card';
-import { Link2, Briefcase, FileCheck } from 'lucide-react';
 
 // Company logos
 const ICONS_ROW1 = [
@@ -30,32 +28,6 @@ const ICONS_ROW1 = [
 // Utility to repeat icons enough times
 const repeatedIcons = (icons: string[], repeat = 4) => Array.from({ length: repeat }).flatMap(() => icons);
 
-const differentiators = [
-  {
-    icon: Link2,
-    title: 'Liaison Model',
-    description: 'We act as your in-house financial bridge.',
-    gradientFrom: 'from-blue-400',
-    gradientVia: 'via-blue-500',
-    gradientTo: 'to-blue-600',
-  },
-  {
-    icon: Briefcase,
-    title: 'Fully Outsourced Option',
-    description: 'No accounting team? We become one.',
-    gradientFrom: 'from-blue-400',
-    gradientVia: 'via-blue-500',
-    gradientTo: 'to-blue-600',
-  },
-  {
-    icon: FileCheck,
-    title: 'CPA-Ready Accuracy',
-    description: 'Every report, audit-ready and verified.',
-    gradientFrom: 'from-blue-400',
-    gradientVia: 'via-blue-500',
-    gradientTo: 'to-blue-600',
-  },
-];
 
 export function PainPoints() {
   const x = useMotionValue(0);
@@ -82,152 +54,8 @@ export function PainPoints() {
 
   return (
     <>
-    <motion.section 
-      id="differentiators" 
-      className="relative py-32 md:py-40 overflow-hidden bg-[linear-gradient(to_bottom,#fff,#f8f9fa_30%,#f1f3f5_98%)] dark:bg-[linear-gradient(to_bottom,#000_10%,#0a0a0a_30%,#0f0f0f_98%)]"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.3, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
 
-      <div className="container-standard section-gutter relative z-10">
-        {/* Section Header */}
-        <div className="text-center pb-12 md:pb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-block mb-6"
-          >
-            <span className="text-sm font-semibold tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
-              WHO WE ARE AND HOW WE ARE DIFFERENT
-            </span>
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="mb-6 text-4xl md:text-5xl lg:text-6xl max-w-4xl mx-auto font-bold tracking-tighter p-4 bg-clip-text text-transparent bg-gradient-to-b from-foreground via-foreground/90 to-foreground/70"
-          >
-            Not Outsourced. Not Detached.
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
-              Integrated.
-            </span>
-          </motion.h2>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative mx-auto max-w-3xl"
-          >
-            <div className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed space-y-2">
-              <p>Traditional accounting firms work <span className="text-foreground font-semibold">outside</span> your business. We work <span className="text-foreground font-semibold">inside</span> it.</p>
-              <p className="mt-4 text-base md:text-lg">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-bold">Liaison accounting and advisory integrated with your team, built for growth.</span>
-              </p>
-              <p className="mt-2 text-base md:text-lg text-muted-foreground italic">
-                We integrate with your existing ERP and tools — no retraining required.
-              </p>
-            </div>
-
-            {/* Logo Slider */}
-            <div className="mt-8 overflow-hidden relative pb-2 cursor-grab active:cursor-grabbing">
-              <motion.div 
-                ref={containerRef}
-                className="flex gap-10 whitespace-nowrap"
-                style={{ x }}
-                drag="x"
-                dragConstraints={{ left: -2000, right: 0 }}
-                dragElastic={0.1}
-                dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
-                onDragStart={() => { isDragging.current = true; }}
-                onDragEnd={() => { isDragging.current = false; }}
-              >
-                {repeatedIcons(ICONS_ROW1, 4).map((src, i) => (
-                  <div key={i} className="h-16 w-16 flex-shrink-0 rounded-full bg-background dark:bg-gray-300 shadow-md flex items-center justify-center border border-border">
-                    <img src={src} alt="company logo" className="h-10 w-10 object-contain pointer-events-none" />
-                  </div>
-                ))}
-              </motion.div>
-
-              {/* Fade overlays */}
-              <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#f8f9fa] dark:from-[#0a0a0a] to-transparent pointer-events-none" />
-              <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#f8f9fa] dark:from-[#0a0a0a] to-transparent pointer-events-none" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Three Columns with Glassmorphism */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-16 relative">
-          {differentiators.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-              viewport={{ once: true }}
-            >
-              <Card
-                className="group relative p-6 h-full backdrop-blur-xl bg-white/60 dark:bg-black/40 border border-white/20 dark:border-white/10 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-2 transition-all duration-700 overflow-hidden rounded-3xl"
-              >
-                {/* Top gradient line */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} opacity-60`} />
-
-                {/* Icon with animated gradient */}
-                <div className="relative mb-6">
-                  <div 
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-xl bg-gradient-to-br ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
-                  >
-                    <item.icon className="h-8 w-8 text-white" strokeWidth={2.5} />
-                  </div>
-                </div>
-
-                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-3 tracking-tight">
-                  {item.title}
-                </h3>
-
-                <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
-                  {item.description}
-                </p>
-
-                {/* Animated gradient bar */}
-                <div className="mt-6 overflow-hidden rounded-full">
-                  <div 
-                    className={`h-1.5 w-0 group-hover:w-full bg-gradient-to-r ${item.gradientFrom} ${item.gradientVia} ${item.gradientTo} transition-all duration-1000 ease-out rounded-full`}
-                  />
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom accent */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-3 text-sm font-medium">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent" />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-muted-foreground via-foreground to-muted-foreground">
-              Experience the integrated difference
-            </span>
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent" />
-          </div>
-        </motion.div>
-      </div>
-    </motion.section>
-
-    {/* New Section: Who We Are — And How We're Different */}
+    {/* New Section: Who We Are And How We're Different */}
     <motion.section 
       className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
       initial={{ opacity: 0, y: 50 }}
@@ -252,9 +80,8 @@ export function PainPoints() {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full border border-blue-200/50 dark:border-blue-800/50 mb-6">
-            <span className="text-lg">👉</span>
             <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
-              Who We Are — And How We&apos;re Different
+              Who We Are and How We&apos;re Different
             </span>
           </div>
           
@@ -329,44 +156,12 @@ export function PainPoints() {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">LAP Integration Model</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations — functioning as your in-house accounting and finance team, not a distant vendor.
+                    Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations functioning as your in-house accounting and finance team, not a distant vendor.
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Trust Signals Card */}
-            <motion.div
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-lg">✅</span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">Trusted Nationwide</h3>
-              </div>
-              <p className="text-base font-semibold text-foreground mb-3">
-                Trusted by 100+ businesses nationwide.
-              </p>
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  CPA-led expertise
-                </span>
-                <span className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                  Transparent pricing
-                </span>
-                <span className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                  99% client retention
-                </span>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right Column - Enhanced Visual */}
@@ -455,6 +250,39 @@ export function PainPoints() {
                 </div>
               </div>
             </div>
+
+            {/* Trust Signals Card */}
+            <motion.div
+              className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-lg">✅</span>
+                </div>
+                <h3 className="text-lg font-semibold text-foreground">Trusted Nationwide</h3>
+              </div>
+              <p className="text-base font-semibold text-foreground mb-3">
+                Trusted by 100+ businesses nationwide.
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  CPA-led expertise
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                  Transparent pricing
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                  99% client retention
+                </span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -514,6 +342,246 @@ export function PainPoints() {
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-blue-500"></div>
             <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-blue-500"></div>
+          </div>
+        </motion.div>
+      </div>
+    </motion.section>
+
+    {/* Enhanced Section: Seamless Integration with Your Tools */}
+    <motion.section
+      className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50/50 dark:from-blue-950/30 dark:via-slate-900 dark:to-indigo-950/20"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {/* Enhanced geometric background with animated elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating geometric shapes */}
+        <motion.div
+          className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-full blur-3xl"
+          animate={{
+            y: [-20, 20, -20],
+            x: [-10, 10, -10],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-indigo-500/10 to-purple-500/5 rounded-full blur-3xl"
+          animate={{
+            y: [20, -20, 20],
+            x: [10, -10, 10],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-blue-500/5 via-indigo-500/3 to-transparent rounded-full"
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
+          <div className="h-full w-full" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+      </div>
+
+      <div className="container-standard section-gutter relative z-10">
+        {/* Enhanced Header Section with Badge */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {/* Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full border border-blue-200/50 dark:border-blue-800/50 shadow-lg mb-8"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+              Integration Excellence
+            </span>
+          </motion.div>
+
+          {/* Main Title with Enhanced Typography */}
+          <motion.h2
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 bg-clip-text text-transparent">
+              Seamless Integration
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
+              with Your Tools
+            </span>
+          </motion.h2>
+
+          {/* Enhanced Subtitle */}
+          <motion.div
+            className="space-y-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
+              We work within your existing financial ecosystem connecting with the tools you already use.
+            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-950/30 rounded-full border border-green-200/50 dark:border-green-800/50">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-lg font-semibold text-green-700 dark:text-green-400">
+                No retraining. No disruption. Just smoother accounting.
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Enhanced Supporting Line with Visual Elements */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/50 dark:border-slate-700/50">
+              From ERP and payroll systems to project management and POS platforms, QuantiFi integrates directly into your operations bridging data, people, and performance.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Enhanced Logo Slider with Better Visual Design */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {/* Slider Container with Enhanced Styling */}
+          <div className="relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 border border-white/50 dark:border-slate-700/50 shadow-2xl">
+            {/* Header */}
+            <div className="text-center mb-8">
+              <h3 className="text-lg font-semibold text-foreground mb-2">Trusted Integration Partners</h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mx-auto"></div>
+            </div>
+
+            {/* Enhanced Logo Slider */}
+            <div className="relative">
+              <motion.div
+                className="flex gap-10 items-center"
+                style={{ x }}
+                animate={{ x: [0, -100 * ICONS_ROW1.length] }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                drag="x"
+                dragConstraints={{ left: -100 * ICONS_ROW1.length, right: 0 }}
+                dragElastic={0.1}
+                dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
+                onDragStart={() => { isDragging.current = true; }}
+                onDragEnd={() => { isDragging.current = false; }}
+              >
+                {repeatedIcons(ICONS_ROW1, 4).map((src, i) => (
+                  <motion.div
+                    key={i}
+                    className="h-20 w-20 flex-shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-600 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-200/50 dark:border-slate-600/50 hover:scale-110 transition-all duration-300"
+                    whileHover={{ y: -5, scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <img src={src} alt="company logo" className="h-12 w-12 object-contain pointer-events-none" />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Enhanced Fade Overlays */}
+              <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white/90 dark:from-slate-800/90 to-transparent pointer-events-none" />
+              <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white/90 dark:from-slate-800/90 to-transparent pointer-events-none" />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Enhanced Mini Tagline with Better Visual Design */}
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative inline-block">
+            {/* Background Glow */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
+            
+            {/* Main Tagline Container */}
+            <div className="relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50 backdrop-blur-sm rounded-2xl border border-blue-200/50 dark:border-blue-800/50 shadow-xl">
+              <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></div>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
+                Your systems stay the same. Your financial clarity improves.
+              </span>
+              <div className="w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Enhanced Divider with Animated Elements */}
+        <motion.div
+          className="mt-24 flex justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-6">
+            <motion.div
+              className="h-px w-20 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+              animate={{ scaleX: [0, 1, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full shadow-lg"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+              className="h-px w-20 bg-gradient-to-l from-transparent via-indigo-500 to-transparent"
+              animate={{ scaleX: [0, 1, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            />
           </div>
         </motion.div>
       </div>

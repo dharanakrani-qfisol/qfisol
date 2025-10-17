@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { TrueFocus } from '@/components/ui/true-focus';
-import { ArrowDown, Target, Clock, Calendar, Users } from 'lucide-react';
+import { ArrowDown, TrendingUp, CheckCircle, MapPin } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -61,7 +61,7 @@ export function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 container-standard section-gutter pt-32 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Text Content */}
           <motion.div
             className="text-left"
@@ -69,8 +69,8 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.3, ease: "easeOut" }}
           >
-            {/* Main headline */}
-            <div className="mb-6">
+            {/* Main headline with True Focus animation */}
+            <div className="mb-8">
               <TrueFocus
                 sentence="Clarity in Numbers, Confidence in Decisions."
                 manualMode={false}
@@ -82,82 +82,30 @@ export function Hero() {
               />
             </div>
 
-            {/* Subhead */}
-            <motion.p
-              className="text-xl md:text-2xl text-muted-foreground mb-8"
+            {/* H2 Subhead */}
+            <motion.h2
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
-              Professional outsourced accounting and advisory services that transform your financial management into a strategic advantage.
-            </motion.p>
+              Your Virtual Accounting & CFO Team Nationwide.
+            </motion.h2>
 
-            {/* Trust indicators */}
-            <motion.div
-              className="grid grid-cols-2 gap-6"
+            {/* Body/Supporting line */}
+            <motion.p
+              className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                  <Users className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">200+</div>
-                  <div className="text-sm text-muted-foreground">Businesses Served</div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                  <Calendar className="h-5 w-5 text-green-600 dark:text-green-400" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">15</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                  <Clock className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                  <div className="text-sm text-muted-foreground">Support Available</div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg">
-                  <Target className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">99.5%</div>
-                  <div className="text-sm text-muted-foreground">Accuracy Rate</div>
-                </div>
-              </motion.div>
-            </motion.div>
+              Outsourced accounting, bookkeeping, and virtual CFO services for small businesses led by experienced CPAs who simplify finances, ensure compliance, and drive profitable growth.
+            </motion.p>
+
+
           </motion.div>
 
-          {/* Right Column - Animated Visual */}
+          {/* Right Column - Enhanced Dashboard Visual */}
           <motion.div
             className="flex justify-center lg:justify-end"
             initial={{ opacity: 0, x: 40 }}
@@ -165,106 +113,157 @@ export function Hero() {
             transition={{ duration: 1.3, ease: "easeOut", delay: 0.2 }}
           >
             <div className="relative w-full max-w-lg">
-              {/* Animated Dashboard/Chart Visual */}
-              <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20">
-                {/* Floating elements */}
+              {/* Enhanced Dashboard Visual */}
+              <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
+                {/* Floating notification elements */}
                 <motion.div
-                  className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full"
+                  className="absolute -top-6 -right-6 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg"
                   animate={{
-                    y: [-5, 5, -5],
-                    scale: [1, 1.1, 1],
+                    y: [-3, 3, -3],
+                    scale: [1, 1.05, 1],
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 2,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                />
+                >
+                  <CheckCircle className="h-6 w-6 text-white" />
+                </motion.div>
+                
                 <motion.div
-                  className="absolute -bottom-4 -left-4 w-6 h-6 bg-indigo-500 rounded-full"
+                  className="absolute -bottom-6 -left-6 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg"
                   animate={{
-                    y: [5, -5, 5],
-                    scale: [1, 1.2, 1],
+                    y: [3, -3, 3],
+                    scale: [1, 1.1, 1],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 2.5,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: 0.5,
                   }}
-                />
+                >
+                  <TrendingUp className="h-5 w-5 text-white" />
+                </motion.div>
                 
-                {/* Chart/Graph representation */}
-                <div className="space-y-6">
+                {/* Dashboard Header */}
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Financial Dashboard</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Real-time insights</p>
+                  </div>
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                  </div>
+                </div>
+                
+                {/* Key Metrics Cards */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <motion.div
+                    className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">$847K</div>
+                    <div className="text-xs text-blue-700 dark:text-blue-300">Monthly Revenue</div>
+                    <div className="text-xs text-green-600 font-semibold">+12.5% ↗</div>
+                  </motion.div>
+                  
+                  <motion.div
+                    className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl p-4 border border-green-200 dark:border-green-800"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                  >
+                    <div className="text-2xl font-bold text-green-600 dark:text-green-400">94.2%</div>
+                    <div className="text-xs text-green-700 dark:text-green-300">Accuracy Rate</div>
+                    <div className="text-xs text-green-600 font-semibold">+2.1% ↗</div>
+                  </motion.div>
+                </div>
+                
+                {/* Profit Growth Chart */}
+                <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Financial Overview</h3>
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    </div>
+                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Profit Growth Trend</h4>
+                    <span className="text-xs text-green-600 font-semibold">+28.4%</span>
                   </div>
                   
-                  {/* Animated bars */}
-                  <div className="space-y-4">
+                  {/* Animated chart bars */}
+                  <div className="flex items-end space-x-2 h-20">
                     {[
-                      { height: "h-16", color: "bg-blue-500", label: "Revenue", delay: 0 },
-                      { height: "h-12", color: "bg-green-500", label: "Growth", delay: 0.2 },
-                      { height: "h-20", color: "bg-purple-500", label: "Profit", delay: 0.4 },
-                      { height: "h-14", color: "bg-indigo-500", label: "Assets", delay: 0.6 },
+                      { height: 12, color: "bg-blue-400", delay: 0.8 },
+                      { height: 20, color: "bg-blue-500", delay: 1.0 },
+                      { height: 28, color: "bg-blue-600", delay: 1.2 },
+                      { height: 35, color: "bg-blue-700", delay: 1.4 },
+                      { height: 42, color: "bg-green-500", delay: 1.6 },
+                      { height: 48, color: "bg-green-600", delay: 1.8 },
                     ].map((bar, index) => (
                       <motion.div
                         key={index}
-                        className="flex items-center space-x-4"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: bar.delay }}
-                      >
-                        <div className="w-16 text-sm text-gray-600 dark:text-gray-400">{bar.label}</div>
-                        <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                          <motion.div
-                            className={`${bar.height} ${bar.color} rounded-full`}
-                            initial={{ width: 0 }}
-                            animate={{ width: "100%" }}
-                            transition={{ duration: 1.5, delay: bar.delay + 0.5, ease: "easeOut" }}
-                          />
-                        </div>
-                      </motion.div>
+                        className={`flex-1 ${bar.color} rounded-t-sm`}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${bar.height * 2}px` }}
+                        transition={{ duration: 1, delay: bar.delay, ease: "easeOut" }}
+                      />
                     ))}
                   </div>
                   
-                  {/* Animated numbers */}
-                  <div className="grid grid-cols-3 gap-4 pt-4">
-                    <motion.div
-                      className="text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1.2 }}
-                    >
-                      <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">$2.4M</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Revenue</div>
-                    </motion.div>
-                    <motion.div
-                      className="text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1.4 }}
-                    >
-                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">+24%</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Growth</div>
-                    </motion.div>
-                    <motion.div
-                      className="text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1.6 }}
-                    >
-                      <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">98%</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Accuracy</div>
-                    </motion.div>
+                  {/* Chart labels */}
+                  <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
                   </div>
                 </div>
+                
+                {/* Bottom status */}
+                <motion.div
+                  className="mt-6 flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 2 }}
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-gray-600 dark:text-gray-400">All systems operational</span>
+                  </div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">Updated 2 min ago</span>
+                </motion.div>
               </div>
+
+              {/* Trust signals below the dashboard */}
+              <motion.div
+                className="mt-8 space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
+              >
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">
+                    100% virtual. Serving clients across Los Angeles, Dallas, Atlanta, and nationwide.
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">
+                    We handle your books, reporting, and tax strategy so you can focus on growth.
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <TrendingUp className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">
+                    Trusted by 100+ businesses across construction, hospitality, healthcare, real estate & more.
+                  </span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

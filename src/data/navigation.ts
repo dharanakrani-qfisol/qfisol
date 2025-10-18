@@ -1,4 +1,4 @@
-import { Building2, Heart, Factory, UserCheck, Calculator, DollarSign, TrendingUp, Lightbulb, Settings, Users, Home, Briefcase, BarChart3, Info, Phone, BookOpen, FileText } from 'lucide-react';
+import { Building2, Heart, Factory, UserCheck, Calculator, DollarSign, TrendingUp, Settings, Users, Home, Briefcase, BarChart3, Info, Phone, BookOpen, FileText } from 'lucide-react';
 
 export const navigationItems = [
   { 
@@ -6,6 +6,50 @@ export const navigationItems = [
     href: '/', 
     type: 'link',
     icon: Home
+  },
+  { 
+    title: 'Services', 
+    href: '/services', 
+    type: 'submenu',
+    icon: Briefcase,
+    submenu: [
+      {
+        title: 'Outsourced Bookkeeping & Accounting',
+        href: '/services/outsourced-accounting',
+        description: 'Complete bookkeeping and transaction management',
+        icon: Calculator,
+      },
+      {
+        title: 'Controller & CFO Services',
+        href: '/services/cfo-controller',
+        description: 'Strategic financial leadership and executive support',
+        icon: BarChart3,
+      },
+      {
+        title: 'Tax Preparation & Compliance',
+        href: '/services/tax-preparation-compliance',
+        description: 'Comprehensive tax preparation and planning services',
+        icon: DollarSign,
+      },
+      {
+        title: 'Payroll & HR Support',
+        href: '/services/payroll-hr',
+        description: 'Complete payroll processing and HR management',
+        icon: Users,
+      },
+      {
+        title: 'Systems Integration & Tech Consulting',
+        href: '/services/systems-integration',
+        description: 'Technology integration and systems optimization',
+        icon: Settings,
+      },
+      {
+        title: 'Financial Analytics & Reporting',
+        href: '/services/financial-analytics',
+        description: 'Advanced analytics and comprehensive reporting',
+        icon: TrendingUp,
+      }
+    ]
   },
   { 
     title: 'Industries', 
@@ -49,50 +93,6 @@ export const navigationItems = [
         description: 'Optimize supply chains and retail operations financially',
         icon: Factory,
       },
-    ]
-  },
-  { 
-    title: 'Services', 
-    href: '/services', 
-    type: 'submenu',
-    icon: Briefcase,
-    submenu: [
-      {
-        title: 'Outsourced Accounting',
-        href: '/services/outsourced-accounting',
-        description: 'Complete bookkeeping and transaction management',
-        icon: Calculator,
-      },
-      {
-        title: 'Tax',
-        href: '#',
-        description: 'Comprehensive tax preparation and planning services',
-        icon: DollarSign,
-      },
-      {
-        title: 'FP&A',
-        href: '#',
-        description: 'Financial planning and analysis for business growth',
-        icon: TrendingUp,
-      },
-      {
-        title: 'Advisory',
-        href: '#',
-        description: 'Strategic business consulting and financial guidance',
-        icon: Lightbulb,
-      },
-      {
-        title: 'Systems & Tech',
-        href: '#',
-        description: 'Technology integration and systems optimization',
-        icon: Settings,
-      },
-      {
-        title: 'PFS',
-        href: '#',
-        description: 'Personal financial services and wealth management',
-        icon: Users,
-      }
     ]
   },
   { 

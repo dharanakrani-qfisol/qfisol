@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
+import { Building2, Award, Link, Heart, Utensils, ShoppingCart, Home, Rocket } from 'lucide-react';
 
 // Company logos
 const ICONS_ROW1 = [
@@ -95,16 +96,17 @@ export function PainPoints() {
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Your Modern Virtual Accounting Partner.
+            We work inside your business not outside it. Through our Liaison Accounting Partnership (LAP) model, we act as an extension of your team, combining CPA-level expertise, technology, and financial strategy for clarity and confident growth.
           </p>
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          {/* Left Column - Content Cards */}
+        <div className="max-w-6xl mx-auto">
+          {/* Content Cards - Horizontal Layout */}
           <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
           >
@@ -115,12 +117,12 @@ export function PainPoints() {
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">🏢</span>
+                  <Building2 className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">Modern Partnership</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    QuantiFi is a modern outsourced accounting and virtual CFO partner for small and mid-sized businesses across the U.S.
+                    QuantiFi is a modern outsourced accounting and virtual CFO partner for small and mid-sized businesses across the U.S., delivering clarity, control, and measurable growth.
                   </p>
                 </div>
               </div>
@@ -133,12 +135,12 @@ export function PainPoints() {
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">🎯</span>
+                  <Award className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">CPA-Level Expertise</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    We combine CPA-level expertise, technology, and personalized strategy to deliver clarity, control, and confidence over your finances.
+                    Every client engagement is led by experienced CPAs and controllers who combine financial precision, automation, and strategy — ensuring accuracy, compliance, and insight that drive smarter decisions.
                   </p>
                 </div>
               </div>
@@ -151,12 +153,12 @@ export function PainPoints() {
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">🔗</span>
+                  <Link className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">LAP Integration Model</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations functioning as your in-house accounting and finance team, not a distant vendor.
+                    Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations — functioning as your in-house accounting and finance team, not a distant vendor.
                   </p>
                 </div>
               </div>
@@ -164,171 +166,252 @@ export function PainPoints() {
 
           </motion.div>
 
-          {/* Right Column - Enhanced Visual */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.3, ease: "easeOut", delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {/* Main Visual Container */}
-            <div className="relative">
-              {/* Background glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
-              
-              {/* Main card */}
-              <div className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50 dark:border-slate-700/50">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div className="text-xs font-medium text-muted-foreground bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full">
-                    Monthly Review Call
-                  </div>
-                </div>
+        </div>
 
-                {/* Participants */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                      <span className="text-white text-2xl">👨‍💼</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">Sarah Chen</p>
-                      <p className="text-sm text-muted-foreground">Business Owner</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
-                      <span className="text-white text-2xl">👩‍💻</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">Dhara N.</p>
-                      <p className="text-sm text-muted-foreground">QuantiFi Partner</p>
-                    </div>
-                  </div>
-                </div>
+        {/* New Section: Trusted Nationwide */}
+        <motion.section 
+          className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.3, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {/* Background decoration */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+          </div>
 
-                {/* Dashboard mockup */}
-                <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-600 rounded-2xl p-6 mb-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-lg">📊</span>
-                    <span className="font-semibold text-foreground">Q4 Financial Dashboard</span>
-                  </div>
-                  
-                  {/* Mini charts */}
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-emerald-600 mb-1">+15%</div>
-                      <div className="text-xs text-muted-foreground">Revenue</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-600 mb-1">99%</div>
-                      <div className="text-xs text-muted-foreground">Accuracy</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-indigo-600 mb-1">24h</div>
-                      <div className="text-xs text-muted-foreground">Response</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating notifications */}
-                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  ✅ Books Reconciled
-                </div>
-                <div className="absolute -bottom-3 -left-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  📊 Revenue ↑15%
-                </div>
-                <div className="absolute top-1/2 -right-12 bg-white dark:bg-slate-800 text-foreground px-4 py-3 rounded-xl text-sm shadow-xl border border-slate-200 dark:border-slate-700">
-                  💬 &quot;Monthly Report Ready&quot;
-                </div>
-              </div>
-            </div>
-
-            {/* Trust Signals Card */}
+          <div className="container-standard section-gutter relative z-10">
+            {/* Header Section */}
             <motion.div
-              className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50"
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full border border-blue-200/50 dark:border-blue-800/50 mb-6">
+                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                  Trusted Nationwide
+                </span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 max-w-4xl mx-auto">
+                Trusted Nationwide Across Industries & States
+              </h2>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                We deliver outsourced accounting, bookkeeping for small businesses, and virtual CFO services to clients across the U.S. with industry-specific expertise and local compliance know-how.
+              </p>
+            </motion.div>
+
+            {/* Industries Section */}
+            <motion.div
+              className="mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Industries We Serve</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                {[
+                  { 
+                    icon: Building2, 
+                    label: "Construction & Contracting", 
+                    description: "Job costing, WIP, certified payroll",
+                    href: "/industries/construction-accounting",
+                    color: "from-orange-500 to-orange-600",
+                    alt: "Construction accounting services and contractor bookkeeping"
+                  },
+                  { 
+                    icon: Heart, 
+                    label: "Healthcare", 
+                    description: "Medical, Dental & Pharmacy – HIPAA-aware accounting",
+                    href: "/industries/healthcare-accounting",
+                    color: "from-emerald-500 to-emerald-600",
+                    alt: "Healthcare accounting for medical, dental and pharmacy practices"
+                  },
+                  { 
+                    icon: Utensils, 
+                    label: "Hospitality & Restaurants", 
+                    description: "POS reconciliation, tip reporting",
+                    href: "/industries/hospitality-accounting",
+                    color: "from-blue-500 to-blue-600",
+                    alt: "Restaurant bookkeeping and hospitality accounting"
+                  },
+                  { 
+                    icon: ShoppingCart, 
+                    label: "Retail & E-Commerce", 
+                    description: "Shopify/Amazon, sales tax, returns",
+                    href: "/industries/retail-ecommerce",
+                    color: "from-purple-500 to-purple-600",
+                    alt: "Retail and e-commerce accounting services"
+                  },
+                  { 
+                    icon: Home, 
+                    label: "Real Estate", 
+                    description: "Property, investor reporting, cost segregation",
+                    href: "/industries/real-estate-accounting",
+                    color: "from-indigo-500 to-indigo-600",
+                    alt: "Real estate accounting and property management bookkeeping"
+                  },
+                  { 
+                    icon: Rocket, 
+                    label: "Startups", 
+                    description: "Burn rate, forecasting, investor-ready reporting",
+                    href: "/industries/startups",
+                    color: "from-pink-500 to-pink-600",
+                    alt: "Startup accounting and fractional CFO services"
+                  }
+                ].map((industry, index) => (
+                  <motion.a
+                    key={index}
+                    href={industry.href}
+                    className="group cursor-pointer block"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 300 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-2xl p-6 border border-white/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${industry.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-200`}>
+                        <industry.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <h4 className="text-sm font-semibold text-foreground mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {industry.label}
+                      </h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {industry.description}
+                      </p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* States Section */}
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">States We Serve</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { 
+                    state: "California", 
+                    abbreviation: "CA",
+                    cities: "Los Angeles, Bay Area, San Diego",
+                    href: "/locations/california-accounting",
+                    alt: "Virtual accounting services in California"
+                  },
+                  { 
+                    state: "Texas", 
+                    abbreviation: "TX",
+                    cities: "Dallas, Austin, Houston",
+                    href: "/locations/texas-accounting",
+                    alt: "Virtual accounting services in Texas"
+                  },
+                  { 
+                    state: "Georgia", 
+                    abbreviation: "GA",
+                    cities: "Atlanta",
+                    href: "/locations/georgia-accounting",
+                    alt: "Virtual accounting services in Georgia"
+                  },
+                  { 
+                    state: "North Carolina", 
+                    abbreviation: "NC",
+                    cities: "Charlotte, Raleigh",
+                    href: "/locations/north-carolina-accounting",
+                    alt: "Virtual accounting services in North Carolina"
+                  },
+                  { 
+                    state: "New York", 
+                    abbreviation: "NY",
+                    cities: "NYC",
+                    href: "/locations/new-york-accounting",
+                    alt: "Virtual accounting services in New York"
+                  },
+                  { 
+                    state: "Florida", 
+                    abbreviation: "FL",
+                    cities: "Miami, Orlando, Tampa",
+                    href: "/locations/florida-accounting",
+                    alt: "Virtual accounting services in Florida"
+                  },
+                  { 
+                    state: "Arizona", 
+                    abbreviation: "AZ",
+                    cities: "Phoenix",
+                    href: "/locations/arizona-accounting",
+                    alt: "Virtual accounting services in Arizona"
+                  },
+                  { 
+                    state: "Washington", 
+                    abbreviation: "WA",
+                    cities: "Seattle",
+                    href: "/locations/washington-accounting",
+                    alt: "Virtual accounting services in Washington"
+                  }
+                ].map((state, index) => (
+                  <motion.a
+                    key={index}
+                    href={state.href}
+                    className="group cursor-pointer block"
+                    whileHover={{ scale: 1.02 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.05, type: "spring", stiffness: 300 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-5 border border-gray-200/50 dark:border-slate-700/50 shadow-sm hover:shadow-md transition-all duration-300 text-center h-full">
+                      {/* State Abbreviation Badge */}
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200">
+                        <span className="text-white font-bold text-lg">
+                          {state.abbreviation}
+                        </span>
+                      </div>
+                      
+                      {/* State Name */}
+                      <h4 className="text-base font-semibold text-foreground mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {state.state}
+                      </h4>
+                      
+                      {/* Cities */}
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {state.cities}
+                      </p>
+                      
+                      {/* Subtle hover indicator */}
+                      <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-6 h-0.5 bg-blue-500 mx-auto rounded-full"></div>
+                      </div>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Footer line */}
+            <motion.div
+              className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-lg">✅</span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">Trusted Nationwide</h3>
-              </div>
-              <p className="text-base font-semibold text-foreground mb-3">
-                Trusted by 100+ businesses nationwide.
+              <p className="text-sm text-muted-foreground font-medium">
+                100% virtual. We serve clients in all 50 states.
               </p>
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  CPA-led expertise
-                </span>
-                <span className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                  Transparent pricing
-                </span>
-                <span className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                  99% client retention
-                </span>
-              </div>
             </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Enhanced Industry Trust Bar */}
-        <motion.div
-          className="mt-24"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-full border border-slate-200/50 dark:border-slate-700/50 mb-4">
-              <span className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-                Trusted Across Industries
-              </span>
-            </div>
           </div>
-          
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
-            {[
-              { icon: "🏗️", label: "Construction", color: "from-orange-500 to-orange-600" },
-              { icon: "🩺", label: "Healthcare", color: "from-emerald-500 to-emerald-600" },
-              { icon: "🏨", label: "Hospitality", color: "from-blue-500 to-blue-600" },
-              { icon: "🏠", label: "Real Estate", color: "from-purple-500 to-purple-600" },
-              { icon: "💻", label: "Startups", color: "from-indigo-500 to-indigo-600" },
-              { icon: "🏭", label: "Manufacturing", color: "from-slate-500 to-slate-600" }
-            ].map((industry, index) => (
-              <motion.div
-                key={index}
-                className="group cursor-pointer"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-2xl p-6 border border-white/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${industry.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-200`}>
-                    <span className="text-2xl">{industry.icon}</span>
-                  </div>
-                  <span className="text-sm font-medium text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {industry.label}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        </motion.section>
 
         {/* Enhanced Divider */}
         <motion.div

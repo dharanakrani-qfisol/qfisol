@@ -223,7 +223,7 @@ export default function OutsourcedAccountingContent() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
                   <Link href="/contact">
                     Schedule a Call
                   </Link>

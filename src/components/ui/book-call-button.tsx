@@ -54,7 +54,7 @@ export function BookCallButton({ className, onClick, children = "Book a Call" }:
         </span>
 
         {/* Text with subtle shift */}
-        <span className="transition-transform duration-300 ease-out group-hover:translate-x-1">
+        <span className="transition-transform duration-300 ease-out group-hover:translate-x-1 flex items-center gap-2">
           {children}
         </span>
       </div>

@@ -13,10 +13,61 @@ import {
   Users,
   Shield,
   PieChart,
-  LineChart
+  LineChart,
+  FileText,
+  Calculator,
+  DollarSign,
+  Building2,
+  Key,
+  ClipboardList,
+  CheckCircle,
+  Handshake
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+
+const capabilities = [
+  {
+    icon: FileText,
+    title: 'Manual & Automated Reporting',
+    description: 'We compile monthly, quarterly, or annual financial reports that highlight performance trends and key metrics — all manually verified for accuracy.'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Variance & Trend Analysis',
+    description: 'Our team reviews actual results vs. budgeted forecasts to identify deviations, explain underlying causes, and recommend course corrections.'
+  },
+  {
+    icon: DollarSign,
+    title: 'Cash Flow & Profit Margin Tracking',
+    description: 'We analyze liquidity and profitability trends to ensure your business maintains healthy cash reserves and operational efficiency.'
+  },
+  {
+    icon: Building2,
+    title: 'Departmental & Project-Level Analysis',
+    description: 'For multi-entity or multi-location companies, we segment data to compare department, project, or region-level performance.'
+  },
+  {
+    icon: Key,
+    title: 'Custom KPI Development',
+    description: 'We help identify the most meaningful financial KPIs for your business — like AR turnover, expense ratios, or gross margin trends.'
+  },
+  {
+    icon: ClipboardList,
+    title: 'Executive Summary Reports',
+    description: 'Clear, concise monthly summaries designed for leadership and stakeholders — highlighting financial health and strategic priorities.'
+  },
+  {
+    icon: CheckCircle,
+    title: 'Data Reconciliation & Consistency Checks',
+    description: 'We ensure that data across your accounting, payroll, and CRM systems remain consistent and free from reporting discrepancies.'
+  },
+  {
+    icon: Handshake,
+    title: 'Collaborative Review Sessions',
+    description: 'Each month, we walk you through findings, helping you interpret the results and make confident, informed decisions.'
+  }
+];
 
 const benefits = [
   {
@@ -82,7 +133,7 @@ export default function FinancialAnalyticsContent() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-cyan-950/30">
+      <section className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-cyan-950/30">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="h-full w-full" style={{
@@ -122,7 +173,7 @@ export default function FinancialAnalyticsContent() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
                   <Link href="/contact">
                     Schedule a Review
                   </Link>
@@ -212,7 +263,7 @@ export default function FinancialAnalyticsContent() {
       </section>
 
       {/* Overview / Value Statement */}
-      <section className="py-32 md:py-40 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-20 md:py-24 bg-slate-50 dark:bg-slate-900/50">
         <div className="container-standard section-gutter">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -234,7 +285,7 @@ export default function FinancialAnalyticsContent() {
 
           {/* Stat Box */}
           <motion.div
-            className="mt-16 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50 max-w-2xl mx-auto text-center"
+            className="mt-10 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50 max-w-2xl mx-auto text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -247,11 +298,97 @@ export default function FinancialAnalyticsContent() {
         </div>
       </section>
 
-      {/* Why Businesses Choose QuantiFi */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-blue-50/30 via-white to-cyan-50/30 dark:from-blue-950/20 dark:via-slate-900 dark:to-cyan-950/20">
+      {/* Core Capabilities Section */}
+      <section className="py-20 md:py-24 bg-white dark:bg-slate-900">
         <div className="container-standard section-gutter">
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
+              Core Capabilities
+            </h2>
+            <h3 className="text-xl md:text-2xl font-semibold text-muted-foreground mb-6">
+              Our Financial Analytics & Reporting Services Include:
+            </h3>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {capabilities.map((capability, index) => (
+              <motion.div
+                key={index}
+                className={`group relative overflow-hidden rounded-2xl p-8 transition-all duration-300 hover:shadow-xl ${
+                  index % 2 === 0 
+                    ? 'bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700' 
+                    : 'bg-slate-50 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700'
+                }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {/* Hover Effect Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                    <capability.icon className="h-7 w-7 text-white" />
+                  </div>
+                  
+                  {/* Number Badge */}
+                  <div className="absolute top-6 right-6 w-8 h-8 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-slate-600 dark:text-slate-300">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-foreground mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                    {capability.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {capability.description}
+                  </p>
+                </div>
+                
+                {/* Bottom Border Accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            className="text-center mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50 max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">
+                Ready to Transform Your Financial Data into Strategic Insights?
+              </p>
+              <Button asChild size="lg" className="bg-quantifi-primary hover:bg-quantifi-primary/90 text-lg px-8 py-6">
+                <Link href="/contact">
+                  Get Started with Financial Analytics
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Businesses Choose QuantiFi */}
+      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50/30 via-white to-cyan-50/30 dark:from-blue-950/20 dark:via-slate-900 dark:to-cyan-950/20">
+        <div className="container-standard section-gutter">
+          <motion.div
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -292,7 +429,7 @@ export default function FinancialAnalyticsContent() {
           </div>
 
           <motion.div
-            className="text-center mt-16"
+            className="text-center mt-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -309,10 +446,10 @@ export default function FinancialAnalyticsContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 md:py-40 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-20 md:py-24 bg-slate-50 dark:bg-slate-900/50">
         <div className="container-standard section-gutter">
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -348,7 +485,7 @@ export default function FinancialAnalyticsContent() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
               <Link href="/contact">
                 Still Have Questions? Contact QuantiFi
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -359,7 +496,7 @@ export default function FinancialAnalyticsContent() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-cyan-600 via-cyan-700 to-slate-900 text-white relative overflow-hidden">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-cyan-600 via-cyan-700 to-slate-900 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="h-full w-full" style={{
@@ -397,7 +534,7 @@ export default function FinancialAnalyticsContent() {
             </div>
 
             {/* Internal Links */}
-            <div className="mt-16 pt-8 border-t border-white/20">
+            <div className="mt-10 pt-8 border-t border-white/20">
               <p className="text-sm opacity-75 mb-4">Explore our related services:</p>
               <div className="flex flex-wrap justify-center gap-6">
                 <Link href="/services/outsourced-accounting" className="text-sm hover:text-cyan-300 transition-colors flex items-center gap-1">

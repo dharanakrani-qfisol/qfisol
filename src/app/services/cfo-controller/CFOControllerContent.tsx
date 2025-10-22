@@ -165,7 +165,7 @@ export default function CFOControllerContent() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
                   <Link href="/contact">
                     Schedule a Call
                   </Link>
@@ -536,7 +536,7 @@ export default function CFOControllerContent() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
               <Link href="/contact">
                 Still Have Questions? Contact QuantiFi
                 <ArrowRight className="ml-2 h-5 w-5" />

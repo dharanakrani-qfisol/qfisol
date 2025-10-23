@@ -174,11 +174,6 @@ function NavGridCard({
 						<span className="text-foreground/80 text-sm font-medium">
 							{link.title}
 						</span>
-						{link.description && (
-							<p className="text-muted-foreground mt-2 text-xs">
-								{link.description}
-							</p>
-						)}
 					</div>
 				</GridCard>
 			</a>
@@ -229,11 +224,6 @@ function NavLargeItem({
 				{link.icon && <link.icon className="text-muted-foreground size-6 flex-shrink-0" />}
 				<div className="space-y-1">
 					<span className="text-sm leading-none font-medium">{link.title}</span>
-					{link.description && (
-						<p className="text-muted-foreground line-clamp-1 text-xs">
-							{link.description}
-						</p>
-					)}
 				</div>
 			</div>
 		</NavigationMenuLink>

@@ -238,7 +238,7 @@ export function Hero() {
                   </div>
                   <div className="text-left">
                     <div className="text-lg font-medium text-foreground">Hours</div>
-                    <div className="text-sm text-muted-foreground">of Services Provided</div>
+                    <div className="text-sm text-muted-foreground">Services Provided</div>
                   </div>
                 </motion.div>
               </div>

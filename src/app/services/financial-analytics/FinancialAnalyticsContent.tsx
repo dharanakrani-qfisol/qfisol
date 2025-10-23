@@ -15,7 +15,6 @@ import {
   PieChart,
   LineChart,
   FileText,
-  Calculator,
   DollarSign,
   Building2,
   Key,

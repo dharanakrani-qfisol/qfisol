@@ -1,3 +1,4 @@
+import React from 'react';
 import { Metadata } from 'next';
 import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,10 +6,10 @@ import { Button } from '@/components/ui/button';
 import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { 
   CheckCircle, 
   Calculator, 
-  FileText, 
   BarChart, 
   ArrowRight, 
   DollarSign, 
@@ -19,10 +20,7 @@ import {
   Clock, 
   Zap,
   Target,
-  Award,
-  CreditCard,
   Receipt,
-  ShoppingCart,
   Package,
   Store,
   Globe,
@@ -39,61 +37,61 @@ export const metadata: Metadata = {
 const retailServices = [
   {
     title: 'Bookkeeping & Daily Sales Reconciliation',
-    description: 'We take the day-to-day number crunching off your plate. Our team records all your sales and expenses, reconciling daily register/POS totals and online payment reports to your bank deposits.',
+    description: 'We take the day-to-day number crunching off your plate. Our team records all your sales and expenses, reconciling daily register/POS totals and online payment reports to your bank deposits. Whether you have a cash register in a boutique or receive dozens of PayPal/Stripe transactions from an online store, we ensure every sale is captured. We also reconcile credit card statements and platform payouts (like Shopify or Amazon disbursements) to verify you received what you\'re owed. This vigilant bookkeeping means your financial records are always up to date and accurate.',
     icon: Calculator,
     features: ['Daily POS reconciliation', 'Online payment tracking', 'Credit card statement matching', 'Bank deposit verification']
   },
   {
     title: 'Inventory Tracking & Cost of Goods Sold (COGS)',
-    description: 'Inventory is the heart of retail. We implement systems to track your inventory purchases, usage, and shrinkage. When you buy merchandise or stock, we record it properly; as you sell items, we adjust inventory and calculate COGS.',
+    description: 'Inventory is the heart of retail. We implement systems to track your inventory purchases, usage, and shrinkage. When you buy merchandise or stock, we record it properly; as you sell items, we adjust inventory and calculate COGS. For e-commerce, we can sync with your platform to automatically update inventory levels and valuation. We\'ll also help identify and account for shrinkage – losses due to theft, damage, or errors – so you truly understand your product costs. By accurately calculating COGS, you\'ll know your gross margins on each product line, enabling smarter pricing and purchasing decisions.',
     icon: Package,
     features: ['Inventory purchase tracking', 'Shrinkage identification', 'COGS calculation', 'SKU-level profitability']
   },
   {
     title: 'Accounts Payable & Supplier Management',
-    description: 'QuantiFi handles your payables so you maintain great supplier relationships and avoid late fees. We manage the entire bill pay process: receiving vendor bills, coding them correctly, and scheduling payments.',
+    description: 'QuantiFi handles your payables so you maintain great supplier relationships and avoid late fees. We manage the entire bill pay process: receiving vendor bills (stock purchases, utilities, rent, shipping fees, etc.), coding them to the correct expense or inventory accounts, and scheduling payments. We optimize payment timing to aid cash flow – for instance, taking advantage of early pay discounts from wholesalers or making sure critical inventory vendors are paid promptly to avoid supply disruptions. You\'ll always know what\'s due and when, and we\'ll provide cash requirements forecasts so there are no surprises.',
     icon: Receipt,
     features: ['Vendor bill processing', 'Payment optimization', 'Early pay discounts', 'Cash flow forecasting']
   },
   {
     title: 'Payroll & Labor Cost Management',
-    description: 'In the world of retail, staff scheduling and wages directly impact your bottom line. We process payroll for your store employees or fulfillment team accurately and on time.',
+    description: 'In the world of retail, staff scheduling and wages directly impact your bottom line. We process payroll for your store employees or fulfillment team accurately and on time. Whether you have salaried managers, hourly sales associates, or seasonal/temp staff, we handle all wage calculations, withholdings, and payroll tax filings. Importantly, we also track your labor costs as a percentage of sales and can help implement controls (like alerts if weekly hours exceed a threshold). This ensures you\'re not overspending on staffing relative to your revenue. We\'ll also manage sales commissions or bonus calculations if you have them for your sales team.',
     icon: Users,
     features: ['Multi-employee payroll', 'Labor cost tracking', 'Commission calculations', 'Payroll tax compliance']
   },
   {
     title: 'Sales Tax Compliance (Multi-State)',
-    description: 'Selling products means navigating sales tax, which can be especially tricky for e-commerce. Different states have different rules about when you need to collect tax and how to file.',
+    description: 'Selling products means navigating sales tax, which can be especially tricky for e-commerce. Different states (and countries) have different rules about when you need to collect tax (nexus) and how to file. QuantiFi monitors your sales by state and advises where you have tax obligations. We handle obtaining any necessary sales tax permits, calculating the tax on each sale (in-store or online), and filing the required sales tax returns in each jurisdiction on time. This includes handling state-specific quirks, like threshold-based filings or local district taxes. By entrusting sales tax to us, you avoid the nightmare of audits and penalties, and ensure compliance even as laws (like economic nexus rules) evolve.',
     icon: Shield,
     features: ['Multi-state nexus tracking', 'Tax permit management', 'Automated tax calculations', 'Compliance filing']
   },
   {
     title: 'Financial Reporting & Multi-Store Consolidation',
-    description: 'Get a clear view of your business performance with our tailored financial reports. We produce monthly financial statements and create segment reports for different locations or channels.',
+    description: 'Get a clear view of your business performance with our tailored financial reports. We produce monthly financial statements (P&L, Balance Sheet, Cash Flow) and also create segment reports if needed – for example, separate P&Ls for your retail storefront vs. your e-commerce operations, or by location if you have multiple stores. We then consolidate these so you can see the overall picture. Our reports highlight key retail metrics: gross margin, inventory turnover, same-store sales growth, online vs. offline sales mix, etc. We\'ll review these numbers with you, translating accounting talk into plain English. With this insight, you can quickly spot trends, like a drop in one category\'s sales or an improvement in one store\'s performance, and act accordingly.',
     icon: BarChart,
     features: ['Multi-location reporting', 'Channel performance analysis', 'Key retail metrics', 'Consolidated statements']
   },
   {
     title: 'Cash Flow Forecasting & Budgeting',
-    description: 'Cash is king in retail. We help you project and manage your cash flow so you\'re not caught off guard. Our team creates budgets and rolling cash flow forecasts.',
+    description: 'Cash is king in retail. We help you project and manage your cash flow so you\'re not caught off guard. Our team will work with you to create a budget for revenues and expenses, often broken down by month and by category (merchandise, rent, marketing, etc.). We factor in seasonal trends – e.g., higher sales and stock purchasing before holidays, or slow periods where cash might dip. Additionally, we prepare rolling cash flow forecasts that look ahead 8–12 weeks, predicting inflows (sales, tax refunds, etc.) and outflows (payroll, inventory purchases, loan payments). We\'ll alert you if we foresee a cash crunch and advise on strategies (like adjusting inventory orders or securing short-term financing). This proactive planning helps ensure you can meet obligations (like buying next season\'s inventory) and take advantage of opportunities (like bulk buying at a discount) without financial strain.',
     icon: TrendingUp,
     features: ['Seasonal budgeting', 'Cash flow projections', 'Inventory planning', 'Growth planning']
   },
   {
     title: 'Systems Integration & E-Commerce Automation',
-    description: 'We make sure your various systems talk to each other to reduce manual work. We can help you integrate your e-commerce platforms and payment processors with your accounting software.',
+    description: 'QuantiFi is tech-forward – we make sure your various systems talk to each other to reduce manual work. We can help you integrate your e-commerce platforms (Shopify, WooCommerce, Amazon Marketplace, Etsy, etc.) and payment processors (Stripe, PayPal, Square) with your accounting software. Daily sales, fees, and payouts can be imported automatically. We\'ll also integrate POS systems from your physical store and any third-party apps like expense tracking (Expensify) or bill payments. If you don\'t have an accounting system in place, we\'ll set up a robust cloud accounting platform (like QuickBooks Online or Xero) for you. Our goal is to create a unified, real-time financial dashboard for your business. No more disparate spreadsheets – you\'ll have one source of truth for all your sales channels and expenses.',
     icon: Zap,
     features: ['POS system integration', 'E-commerce platform sync', 'Payment processor linking', 'Automated reporting']
   },
   {
     title: 'Benchmarking & KPI Dashboard',
-    description: 'We help you understand how your business stacks up and where to improve. We establish key performance indicators and track them against industry benchmarks.',
+    description: 'We help you understand how your business stacks up and where to improve. QuantiFi can establish key performance indicators (KPIs) for your retail or e-commerce business – like conversion rate (for online), average transaction value, customer acquisition cost, and inventory sell-through rate. We\'ll then track these KPIs and even compare them to retail industry benchmarks when available. For example, if the industry average gross margin in your niche is 45% and you\'re at 38%, that\'s a flag we\'ll raise with suggestions (maybe renegotiate vendor costs or adjust pricing). Or if your online store\'s cart abandonment is high, we\'ll highlight that so you can investigate marketing or site improvements. We present this info in a simple dashboard that you can view anytime. By benchmarking, you gain context for your numbers and clarity on what "good" looks like, helping you prioritize improvements.',
     icon: PieChart,
     features: ['KPI establishment', 'Industry benchmarking', 'Performance tracking', 'Improvement insights']
   },
   {
     title: 'Fractional CFO Advisory & Growth Planning',
-    description: 'When it\'s time to level up your business, our fractional CFO services are here to guide you. We provide high-level financial advice on strategic decisions.',
+    description: 'When it\'s time to level up your business, our fractional CFO services are here to guide you. For growing retailers and startups, we provide high-level financial advice on strategic decisions. Considering opening a new store or expanding your product line? We\'ll analyze the financial feasibility and help build a business case. Preparing to approach a bank or investor for funding? We make sure your financial model and statements are pitch-ready and we can even join conversations with lenders/investors to answer questions. We help with pricing strategy (ensuring your markups cover all overhead), profitability analysis by product/category, and cost reduction strategies. If you\'re an e-commerce startup, we can assist with metrics that investors scrutinize (CAC, LTV, monthly burn, etc.). Essentially, you get a seasoned financial partner who understands retail dynamics and can provide clarity and confidence as you make big decisions.',
     icon: Building2,
     features: ['Strategic planning', 'Feasibility analysis', 'Investor preparation', 'Growth strategy']
   }
@@ -102,32 +100,32 @@ const retailServices = [
 const whyChooseQuantiFi = [
   {
     title: 'Retail-Focused Expertise',
-    description: 'We have hands-on experience across the retail spectrum – from brick-and-mortar shops to online sellers. We understand industry specifics like managing inventory shrinkage and tracking SKU-level profitability.',
+    description: 'We have hands-on experience across the retail spectrum – from brick-and-mortar shops to online sellers. This means we\'re familiar with industry specifics like managing inventory shrinkage, tracking SKU-level profitability, handling seasonal swings, and integrating POS/e-commerce systems. We also understand niche retail segments; whether you sell fashion, electronics, fuel, or groceries, we grasp the particular margins and challenges involved. Our expertise ensures your accounting is done right and reflects the realities of your business (for instance, we know to separate sales by category, to account for gift card liabilities, or to manage layaway transactions properly). You won\'t have to teach us – we\'re ready to hit the ground running and offer insights from day one.',
     icon: Store
   },
   {
     title: 'Cost Savings & Efficiency',
-    description: 'QuantiFi provides professional accounting at a fraction of the cost of hiring full-time staff. Our efficient processes and automations often reduce administrative overhead.',
+    description: 'QuantiFi provides professional accounting at a fraction of the cost of hiring full-time staff. For many retailers, especially small businesses or startups, employing an in-house accountant or CFO isn\'t feasible. We give you that level of skill without the salary burden. Moreover, our efficient processes and automations often reduce administrative overhead. By outsourcing, you also save the hidden costs of turnover and training – no more worrying about your bookkeeper quitting right before year-end close. We\'re consistently there, and you pay only for what you need. This efficiency means more resources can be directed to front-of-house operations or marketing, where you see direct returns.',
     icon: DollarSign
   },
   {
     title: 'Integrated Systems & Tech-Savvy Processes',
-    description: 'Modern retail requires modern tools. We ensure your accounting is seamlessly integrated with your sales platforms and strive to set up real-time data flows.',
+    description: 'Modern retail requires modern tools. QuantiFi is highly technology-driven, and we ensure your accounting is seamlessly integrated with your sales platforms. Many bookkeeping firms might input data manually once a month; we strive to set up real-time data flows. Our comfort with retail tech (QuickBooks Point of Sale, Shopify, Vend, Lightspeed, Amazon Seller Central reports, etc.) means we can quickly connect and configure these systems. You\'ll benefit from automation (less human error, faster close times) and have a better overall view of your business. We also keep data secure and accessible – using trusted cloud solutions so you can review performance anytime, anywhere.',
     icon: Smartphone
   },
   {
     title: 'Multichannel Insight in One Place',
-    description: 'If you\'re selling both in-store and online, we provide omni-channel visibility. We\'ll show you how your web store is performing relative to your physical store.',
+    description: 'If you\'re selling both in-store and online, it can be challenging to consolidate information. One of QuantiFi\'s strengths is providing omni-channel visibility. We\'ll show you how your web store is performing relative to your physical store, or how one sales channel is subsidizing another. This insight helps you strategize (maybe doubling down on the more profitable channel, or bringing the lagging one up to speed). We break down silos in your data: no more separate reports that you have to manually combine – we do it for you. With all your financial info in one place, decisions become clearer. Retailers with multiple locations or multiple online marketplaces especially love that we bring coherence to what was once a tangle of reports.',
     icon: Globe
   },
   {
     title: 'Consistency and Reliability',
-    description: 'In retail, timing is everything – and we make sure your financial routine is rock-solid. We close your books on a dependable schedule and deliver reports when promised.',
+    description: 'In retail, timing is everything – and we make sure your financial routine is rock-solid. We close your books on a dependable schedule, deliver reports when promised, and keep your compliance filings on time. You won\'t have to chase us; rather, we\'ll often be the ones reminding you of deadlines or asking for info ahead of time. We understand that promotions, holidays, and end-of-season clearances are hectic times for you, so we plan around them to get what we need with minimal disruption. Our team approach also means there\'s redundancy – your accounting doesn\'t pause if someone\'s on vacation. This consistent, reliable service frees you from back-office anxiety and builds trust – you know that every week and month, you\'ll have a clear view of your finances.',
     icon: Clock
   },
   {
     title: 'Scalable Support for Growth',
-    description: 'Today you might run one boutique or a small online shop; in a year, you could be managing three locations. QuantiFi is a partner that scales with you.',
+    description: 'Today you might run one boutique or a small online shop; in a year, you could be managing three locations or a booming e-commerce brand. QuantiFi is a partner that scales with you. We can start with basic bookkeeping and tax services and easily expand to more complex offerings (like fractional CFO advisory or international tax handling if you start selling abroad). Because we document and streamline processes, adding a new store or channel becomes a smoother endeavor – we can clone the accounting setup and controls we established for you to new parts of your business. Additionally, our advisory input grows as you grow: the bigger you get, the more strategic insight we provide (like helping to evaluate new markets or major capital investments). You\'ll never outgrow QuantiFi\'s capabilities; instead, we adapt and marshal more resources to support your journey from startup to established retailer.',
     icon: Target
   }
 ];
@@ -135,23 +133,23 @@ const whyChooseQuantiFi = [
 const faqData = [
   {
     question: 'How will you help me manage my inventory accounting and prevent losses?',
-    answer: 'We set up robust inventory accounting practices tailored to your business. This includes tracking every product from purchase to sale, implementing periodic inventory counts, and reconciling any differences to pinpoint shrinkage. By recording inventory at cost and computing COGS with each sale, we ensure accurate gross profit calculations.'
+    answer: 'We set up robust inventory accounting practices tailored to your business. This includes tracking every product from purchase to sale. We\'ll implement periodic inventory counts (or work with your existing count schedule) and reconcile any differences – which pinpoints shrinkage. By recording inventory in your books at cost and then computing the cost of goods sold with each sale, we ensure your gross profit calculations are accurate. If we notice high shrinkage or product margin issues, we\'ll alert you. For example, if one category consistently shows losses, it could indicate theft or pricing problems – insights we\'ll bring to your attention. We can also help establish controls, like SKU-level tracking or better purchasing practices, to minimize inventory losses. In short, we not only account for your inventory, but also provide analysis to help you optimize it.'
   },
   {
     question: 'Can QuantiFi integrate with my POS system or online shopping cart?',
-    answer: 'Yes, integration is one of our specialties. We have experience connecting many point-of-sale systems (Square, Clover, Lightspeed) and e-commerce platforms (Shopify, Magento, Etsy, Amazon) to accounting software. Daily sales data flows into the books automatically, broken down by category or any classification you need.'
+    answer: 'Yes, integration is one of our specialties. We have experience connecting many point-of-sale (POS) and e-commerce systems to accounting software. If you use a POS like Square, Clover, or Lightspeed in-store, or an e-commerce platform like Shopify, Magento, Etsy, or Amazon for online sales, we\'ll link them up. This typically means daily sales data flows into the books automatically, broken down by category or any classification you need. We\'ll also integrate payment processors (Stripe, PayPal) so fees and payouts are accounted for. If direct integration isn\'t available, we use reliable import tools or develop a process to regularly get the data in (for instance, downloading a sales report from Shopify each week and importing). The goal is no (or minimal) manual data entry. This not only saves time, but it ensures accuracy – your sales and revenue numbers in accounting will always match what you see on your sales channels.'
   },
   {
     question: 'My business sells in multiple states online – can you handle all the different sales tax requirements?',
-    answer: 'Definitely. We know multi-state sales tax can be a headache, especially after regulations like Wayfair expanded tax obligations for online sellers. Our team will help determine where you have nexus, track your sales by state, register your business in required jurisdictions, and prepare and file all sales tax returns.'
+    answer: 'Definitely. We know multi-state sales tax can be a headache, especially after regulations like Wayfair expanded tax obligations for online sellers. Our team will help determine where you have nexus (the requirement to collect tax). We\'ll track your sales by state and even by city/county when needed. For each jurisdiction where you cross the threshold, we\'ll register your business and start collecting the correct tax on your platforms (we can help configure your Shopify or other cart to charge the right rates). Then we\'ll prepare and file all those sales tax returns (monthly, quarterly, annually – as required by each state). We stay up-to-date on rate changes and new rules. Additionally, we manage use tax or any specific obligations (for example, some states have different rules for clothing or food which we account for). With QuantiFi handling this, you won\'t dread the maze of sales tax – we\'ll ensure you\'re compliant everywhere you need to be, and we\'ll keep documentation organized in case of any inquiries.'
   },
   {
     question: 'We have two stores and an online shop – will your reporting show each separately?',
-    answer: 'Yes, we will tailor our reporting to give you the clarity you need. We can maintain class or location tracking in the accounting system, so each store\'s financial activity is tagged separately. Each month, we\'ll provide income statements for Store A, Store B, and Online, as well as a combined one for the total business.'
+    answer: 'Yes, we will tailor our reporting to give you the clarity you need. We can maintain class or location tracking in the accounting system, so each store\'s financial activity is tagged, and online sales are tagged as their own "location." Each month, we\'ll provide an income statement for Store A, Store B, and Online, as well as a combined one for the total business. This way, you can compare performance: maybe Store A is doing more revenue but Store B has better margins, or the online channel has lower overhead. We\'ll also standardize the reporting format for easy side-by-side comparison. If you allocate certain expenses across stores (like a shared marketing spend), we\'ll handle those allocations so the profitability of each segment is fairly represented. Overall, you\'ll gain insight into each part of your operation and can make location-specific decisions (like adjusting hours, staffing, or promotions) with data to back them.'
   },
   {
     question: 'What does day-to-day collaboration with QuantiFi look like for a retailer? Will I still have control over my finances?',
-    answer: 'Collaboration is straightforward and designed to keep you in control while offloading the heavy lifting to us. We establish shared folders or software where you can drop documents, and we process them without you having to enter data. You\'ll receive regular updates and always have access to your accounting file and bank accounts – we operate transparently.'
+    answer: 'Collaboration is straightforward and designed to keep you in control while offloading the heavy lifting to us. On a daily basis, if something needs your attention (say, an unclear transaction or a cash register discrepancy), we\'ll reach out promptly. We often establish a shared folder or use software where you can easily drop documents (like vendor invoices or receipts) – we then process those without you having to enter data. We\'ll likely set up a short check-in (maybe biweekly or monthly) to go over results and any issues. You\'ll receive regular updates – for instance, an email each week noting "all sales and bank transactions are reconciled through Sunday – here are the week\'s key figures..." Many clients find this proactive communication gives them more control: they know exactly what\'s happening financially, without having to chase down the info. Importantly, you always have access to your accounting file and bank accounts – we operate transparently. Think of us as your backstage crew: we handle the technical stuff, while you set the direction and strategy. And whenever you have a question ("Can I afford to buy more inventory now?" or "How are we doing versus last month?"), we\'re a phone call or email away with answers. We adapt to your style – if you prefer quick texts, scheduled Zoom meetings, or in-person visits (if local) – we\'ll communicate in the way that works best for you. Ultimately, you maintain decision-making power; we just arm you with accurate data and advice to make those decisions confidently.'
   }
 ];
 
@@ -170,13 +168,13 @@ export default function RetailEcommercePage() {
                 Retail & E-Commerce Accounting, Simplified
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-                Whether you run a local shop or a global online store, QuantiFi's specialized accounting services help you stay on top of inventory, sales tax, and cash flow. We handle your bookkeeping and financial planning so you can focus on selling and growing – online and off.
+                Whether you run a local shop or a global online store, QuantiFi&apos;s specialized accounting services help you stay on top of inventory, sales tax, and cash flow. We handle your bookkeeping and financial planning so you can focus on selling and growing – online and off.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <BookCallButton className="text-lg px-10 py-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
-                        Schedule a Free Consultation
-                        <ArrowRight className="h-5 w-5" />
-                      </BookCallButton>
+                <BookCallButton className="text-lg px-10 py-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                  Schedule a Free Consultation
+                  <ArrowRight className="h-5 w-5" />
+                </BookCallButton>
                 <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
                   <Link href="/services">View All Services</Link>
                 </Button>
@@ -198,22 +196,16 @@ export default function RetailEcommercePage() {
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p className="text-lg leading-relaxed">
-                  Retailers today face razor-thin margins, seasonal swings, and the complexities of selling across multiple channels. A mismanaged inventory or a missed sales tax filing can quickly hurt cash flow. Retail and e-commerce accounting requires juggling a lot of moving parts – tracking stock levels, syncing online sales data, handling multi-state taxes, and more.
+                  Retailers today face razor-thin margins, seasonal swings, and the complexities of selling across multiple channels. A mismanaged inventory or a missed sales tax filing can quickly hurt cash flow. Retail and e-commerce accounting requires juggling a lot of moving parts – tracking stock levels, syncing online sales data, handling multi-state taxes, and more. For example, inventory shrink (loss) alone averaged about 1.6% of sales for retailers recently, representing billions in losses industry-wide. Without solid accounting systems, issues like shrinkage, unrecorded sales, or inaccurate cost calculations can quietly erode your profits.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  For example, inventory shrink (loss) alone averaged about 1.6% of sales for retailers recently, representing billions in losses industry-wide. Without solid accounting systems, issues like shrinkage, unrecorded sales, or inaccurate cost calculations can quietly erode your profits.
+                  QuantiFi understands these challenges. We bring experience from working with brick-and-mortar stores, gas stations, liquor shops, and online sellers. Our approach is to streamline and integrate your financial processes so that every sale, return, and expense is accurately recorded and analyzed. We act as your retail accounting department, ensuring you always know which products are profitable, which expenses are eating into margins, and where you can save. From reconciling daily POS reports to managing the complexities of e-commerce payment fees and marketplace sales, we&apos;ve got you covered.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  QuantiFi understands these challenges. We bring experience from working with brick-and-mortar stores, gas stations, liquor shops, and online sellers. Our approach is to streamline and integrate your financial processes so that every sale, return, and expense is accurately recorded and analyzed.
+                  Whether you&apos;re a boutique retailer with one location, a multi-store operation, or an e-commerce entrepreneur selling nationwide, QuantiFi adapts to your needs. We can handle accounting for hybrid businesses (storefront + online) seamlessly. Our cloud-based tools connect to your systems (like Shopify, Amazon, or point-of-sale software), giving you real-time insights. With our support, you&apos;ll have clear financial visibility and expert guidance — so you can optimize pricing, reduce costs, and confidently plan expansions, rather than getting bogged down in spreadsheets.
                 </p>
-                
-                <div className="bg-blue-50 dark:bg-blue-950/20 p-8 rounded-2xl border-l-4 border-blue-500 mt-8">
-                  <p className="text-lg font-medium text-foreground mb-0">
-                    <strong>With our support, you'll have clear financial visibility and expert guidance</strong> — so you can optimize pricing, reduce costs, and confidently plan expansions, rather than getting bogged down in spreadsheets.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -227,39 +219,236 @@ export default function RetailEcommercePage() {
                 Retail & E-Commerce Accounting Services
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Our comprehensive services help retail and e-commerce businesses maintain financial health and compliance.
+                Our comprehensive services help retail and e-commerce businesses maintain financial health and compliance. Here are 10 key services QuantiFi provides, tailored to retailers and online merchants:
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {retailServices.map((service, index) => (
-                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 bg-white dark:bg-gray-900">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center mb-4">
+            <BentoGrid className="max-w-7xl mx-auto">
+              {/* Featured Services - Larger Cards */}
+              <BentoGridItem
+                title={retailServices[0].title}
+                description={retailServices[0].description}
+                header={
+                  <div className="flex items-center mb-2">
                       <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                        <service.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                      </div>
+                      {React.createElement(retailServices[0].icon, { className: "h-8 w-8 text-blue-600 dark:text-blue-400" })}
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-3">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
+                  </div>
+                }
+                className="md:col-span-2 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[0].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              <BentoGridItem
+                title={retailServices[1].title}
+                description={retailServices[1].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
+                      {React.createElement(retailServices[1].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
+                    </div>
+                  </div>
+                }
+                className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20 border-green-200 dark:border-green-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[1].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              {/* Second Row */}
+              <BentoGridItem
+                title={retailServices[2].title}
+                description={retailServices[2].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
+                      {React.createElement(retailServices[2].icon, { className: "h-8 w-8 text-purple-600 dark:text-purple-400" })}
+                    </div>
+                  </div>
+                }
+                className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border-purple-200 dark:border-purple-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[2].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              <BentoGridItem
+                title={retailServices[3].title}
+                description={retailServices[3].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
+                      {React.createElement(retailServices[3].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
+                    </div>
+                  </div>
+                }
+                className="md:col-span-2 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border-orange-200 dark:border-orange-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[3].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              {/* Third Row */}
+              <BentoGridItem
+                title={retailServices[4].title}
+                description={retailServices[4].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl">
+                      {React.createElement(retailServices[4].icon, { className: "h-8 w-8 text-red-600 dark:text-red-400" })}
+                    </div>
+                  </div>
+                }
+                className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20 border-red-200 dark:border-red-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[4].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              <BentoGridItem
+                title={retailServices[5].title}
+                description={retailServices[5].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
+                      {React.createElement(retailServices[5].icon, { className: "h-8 w-8 text-indigo-600 dark:text-indigo-400" })}
+                    </div>
+                  </div>
+                }
+                className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/20 dark:to-indigo-900/20 border-indigo-200 dark:border-indigo-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[5].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              <BentoGridItem
+                title={retailServices[6].title}
+                description={retailServices[6].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl">
+                      {React.createElement(retailServices[6].icon, { className: "h-8 w-8 text-teal-600 dark:text-teal-400" })}
+                    </div>
+                  </div>
+                }
+                className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950/20 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[6].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </BentoGridItem>
+
+              {/* Fourth Row */}
+              <BentoGridItem
+                title={retailServices[7].title}
+                description={retailServices[7].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
+                      {React.createElement(retailServices[7].icon, { className: "h-8 w-8 text-yellow-600 dark:text-yellow-400" })}
+                    </div>
+                  </div>
+                }
+                className="md:col-span-2 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950/20 dark:to-yellow-900/20 border-yellow-200 dark:border-yellow-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[7].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                      </div>
+              </BentoGridItem>
+
+              <BentoGridItem
+                title={retailServices[8].title}
+                description={retailServices[8].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
+                      {React.createElement(retailServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
+                    </div>
+                  </div>
+                }
+                className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[8].features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
                         </div>
                       ))}
+                </div>
+              </BentoGridItem>
+
+              {/* Fifth Row */}
+              <BentoGridItem
+                title={retailServices[9].title}
+                description={retailServices[9].description}
+                header={
+                  <div className="flex items-center mb-2">
+                    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl">
+                      {React.createElement(retailServices[9].icon, { className: "h-8 w-8 text-cyan-600 dark:text-cyan-400" })}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                }
+                className="md:col-span-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950/20 dark:to-cyan-900/20 border-cyan-200 dark:border-cyan-800"
+              >
+                <div className="space-y-1 mt-2">
+                  {retailServices[9].features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{feature}</span>
+                    </div>
               ))}
             </div>
+              </BentoGridItem>
+            </BentoGrid>
           </div>
         </section>
 
@@ -271,7 +460,7 @@ export default function RetailEcommercePage() {
                 Why Retailers Choose QuantiFi
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Retail and e-commerce businesses partner with QuantiFi because we deliver exactly what they need: specialized expertise, flexibility, and tools to thrive in a competitive market.
+                Retail and e-commerce businesses partner with QuantiFi because we deliver exactly what they need: specialized expertise, flexibility, and tools to thrive in a competitive market. Here are six reasons to work with QuantiFi for your retail accounting:
               </p>
             </div>
 
@@ -336,7 +525,7 @@ export default function RetailEcommercePage() {
                 Ready to Boost Your Retail Profits?
               </h2>
               <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                Don't let accounting challenges slow down your business. With QuantiFi handling your books, inventory tracking, and financial strategy, you can devote your energy to sales and customer service. We help retail and e-commerce companies of all sizes increase clarity and control over their finances.
+                Don&apos;t let accounting challenges slow down your business. With QuantiFi handling your books, inventory tracking, and financial strategy, you can devote your energy to sales and customer service. We help retail and e-commerce companies of all sizes increase clarity and control over their finances.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <BookCallButton className="text-xl px-12 py-8 bg-white text-blue-600 hover:bg-gray-100 font-bold">

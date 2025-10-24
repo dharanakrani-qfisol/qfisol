@@ -87,7 +87,7 @@ export function PainPoints() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 max-w-4xl mx-auto">
-            Not Outsourced. Not Detached.
+            Not External. Not Detached.
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
               Integrated.

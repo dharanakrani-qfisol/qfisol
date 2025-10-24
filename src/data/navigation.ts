@@ -63,9 +63,14 @@ export const navigationItems = [
         icon: Building2,
       },
       {
-        title: 'Startups & Emerging Business Accounting Services',
-        href: '/industries/startups',
-        icon: UserCheck,
+        title: 'Hospitality & Restaurant Accounting Services', 
+        href: '/industries/hospitality',
+        icon: Heart,
+      },
+      {
+        title: 'Retail & E-Commerce Accounting Services',
+        href: '/industries/retail-ecommerce',
+        icon: Factory,
       },
       {
         title: 'Healthcare & Medical Practice Accounting Services',
@@ -73,19 +78,14 @@ export const navigationItems = [
         icon: Heart,
       },
       {
-        title: 'Hospitality & Restaurant Accounting Services', 
-        href: '/industries/hospitality',
-        icon: Heart,
+        title: 'Startup & Emerging Business Accounting Services',
+        href: '/industries/startups',
+        icon: UserCheck,
       },
       {
         title: 'Real Estate & Property Management Accounting Services',
         href: '/industries/real-estate', 
         icon: UserCheck,
-      },
-      {
-        title: 'Retail & E-Commerce Accounting Services',
-        href: '/industries/retail-ecommerce',
-        icon: Factory,
       },
     ]
   },

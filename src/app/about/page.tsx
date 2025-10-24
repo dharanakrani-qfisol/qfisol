@@ -112,7 +112,7 @@ const leadership = [
     philosophy: 'She believes accounting should do more than report the past — it should empower the future. Her focus remains on turning complex numbers into meaningful insights that drive measurable results and long-term success.',
     quote: 'Accounting isn\'t just about accuracy — it\'s about alignment. When your numbers make sense, your business moves forward with confidence.',
     credentials: ['Master of Accounting (MAcc)', '15+ Years Experience', 'Strategic Financial Leadership'],
-    linkedin: 'https://linkedin.com/in/dhara-nakrani'
+    linkedin: 'https://www.linkedin.com/in/dhara-nakrani-32ab5142/'
   },
   {
     name: 'Deep Patel, B.Com., F.C.A., L.L.B., CPA',
@@ -132,7 +132,7 @@ const leadership = [
     philosophy: 'Known for her analytical mindset and dedication, Richa ensures every engagement reflects QuantiFi\'s commitment to quality, consistency, and measurable results.',
     quote: 'Behind every accurate number is a story of strategy, clarity, and progress.',
     credentials: ['Master of Accounting (MAcc)', '6+ Years Experience', 'Tax & Compliance Specialist'],
-    linkedin: 'https://linkedin.com/in/richa-patel'
+    linkedin: 'https://www.linkedin.com/in/richa-kotadia/'
   }
 ];
 

@@ -3,7 +3,7 @@ import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -393,10 +393,30 @@ const categories = ['All', 'Accounting', 'Bookkeeping', 'Construction', 'Hospita
 
 export default function BlogsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const postsPerPage = 9;
   
   const filteredPosts = selectedCategory === 'All' 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
+  
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const currentPosts = filteredPosts.slice(startIndex, endIndex);
+  
+  // Reset to page 1 when category changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+  
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <MarketingLayout>
@@ -434,7 +454,7 @@ export default function BlogsPage() {
                 <Button
                   key={category}
                   variant={selectedCategory === category ? 'default' : 'outline'}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     selectedCategory === category 
                       ? 'bg-[#0015ff] text-white hover:bg-[#0014e6]' 
@@ -448,7 +468,7 @@ export default function BlogsPage() {
 
             {/* Blog Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post) => (
+              {currentPosts.map((post) => (
                 <Link href={`/resources/blogs/${post.slug}`} key={post.id}>
                   <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer">
                   {/* Featured Image */}
@@ -511,39 +531,46 @@ export default function BlogsPage() {
               ))}
             </div>
 
-            {/* Load More Button */}
-            <div className="text-center mt-12">
-              <Button 
-                variant="outline" 
-                className="px-8 py-3 border-[#0015ff] text-[#0015ff] hover:bg-[#0015ff] hover:text-white transition-all duration-200"
-              >
-                Load More Articles
-              </Button>
-            </div>
-          </div>
-        </section>
+            {/* Pagination - Only show if more than 9 posts */}
+            {filteredPosts.length > postsPerPage && (
+              <div className="flex justify-center items-center mt-12 space-x-2">
+                {/* Previous Button */}
+                <Button
+                  variant="outline"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="px-3 py-2 border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff] disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </Button>
 
-        {/* Newsletter Signup */}
-        <section className="bg-gray-50 py-16">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-black mb-4">
-                Stay Updated with Our Latest Insights
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Get the latest accounting tips, industry updates, and business insights delivered to your inbox.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0015ff] focus:border-transparent"
-                />
-                <Button className="bg-[#0015ff] hover:bg-[#0014e6] text-white px-6 py-3 rounded-lg font-medium">
-                  Subscribe
+                {/* Page Numbers */}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <Button
+                    key={page}
+                    variant={currentPage === page ? 'default' : 'outline'}
+                    onClick={() => handlePageChange(page)}
+                    className={`px-4 py-2 ${
+                      currentPage === page
+                        ? 'bg-[#0015ff] text-white hover:bg-[#0014e6]'
+                        : 'border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff]'
+                    }`}
+                  >
+                    {page}
+                  </Button>
+                ))}
+
+                {/* Next Button */}
+                <Button
+                  variant="outline"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="px-3 py-2 border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff] disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <ChevronRight className="w-4 h-4" />
                 </Button>
               </div>
-            </div>
+            )}
           </div>
         </section>
       </div>

@@ -103,7 +103,7 @@ export const navigationItems = [
       },
       {
         title: 'Blogs',
-        href: '#',
+        href: '/resources/blogs',
         description: 'Insights, tips, and industry best practices',
         icon: FileText,
       }

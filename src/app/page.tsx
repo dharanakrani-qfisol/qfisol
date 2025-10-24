@@ -7,6 +7,7 @@ import { TrustedNationwide } from '@/components/sections/TrustedNationwide';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
 import FAQSection from '@/components/sections/FAQSection';
 import { FinalCTA } from '@/components/sections/FinalCTA';
+import { LatestArticles } from '@/components/sections/LatestArticles';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
         <TestimonialSection />
         <FAQSection />
         <FinalCTA />
+        <LatestArticles />
       </main>
       <Footer />
     </>

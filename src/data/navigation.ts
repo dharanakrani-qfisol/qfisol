@@ -60,37 +60,31 @@ export const navigationItems = [
       {
         title: 'Construction & Contracting Accounting Services',
         href: '/industries/construction',
-        description: 'Streamline construction projects with professional accounting',
         icon: Building2,
       },
       {
         title: 'Startups & Emerging Business Accounting Services',
         href: '/industries/startups',
-        description: 'Comprehensive financial solutions for startups, scale-ups, and emerging businesses',
         icon: UserCheck,
       },
       {
         title: 'Healthcare & Medical Practice Accounting Services',
         href: '/industries/healthcare',
-        description: 'Navigate complex healthcare compliance and reporting',
         icon: Heart,
       },
       {
         title: 'Hospitality & Restaurant Accounting Services', 
         href: '/industries/hospitality',
-        description: 'Optimize hospitality operations with expert financial management',
         icon: Heart,
       },
       {
         title: 'Real Estate & Property Management Accounting Services',
         href: '/industries/real-estate', 
-        description: 'Specialized accounting for real estate investors, property managers, and real estate professionals',
         icon: UserCheck,
       },
       {
         title: 'Retail & E-Commerce Accounting Services',
         href: '/industries/retail-ecommerce',
-        description: 'Optimize supply chains and retail operations financially',
         icon: Factory,
       },
     ]

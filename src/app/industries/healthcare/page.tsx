@@ -233,7 +233,7 @@ export default function HealthcarePage() {
                 description={healthcareServices[0].description}
                 header={
                   <div className="flex items-center mb-2">
-                    <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
+                      <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
                       {React.createElement(healthcareServices[0].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
                     </div>
                   </div>
@@ -404,7 +404,7 @@ export default function HealthcarePage() {
                       <span className="text-xs font-medium text-foreground">{feature}</span>
                     </div>
                   ))}
-                </div>
+                      </div>
               </BentoGridItem>
 
               <BentoGridItem
@@ -421,11 +421,11 @@ export default function HealthcarePage() {
               >
                 <div className="space-y-1 mt-2">
                   {healthcareServices[8].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
+                        <div key={featureIndex} className="flex items-center space-x-2">
                       <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
                       <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
+                        </div>
+                      ))}
                 </div>
               </BentoGridItem>
 
@@ -448,8 +448,8 @@ export default function HealthcarePage() {
                       <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
                       <span className="text-xs font-medium text-foreground">{feature}</span>
                     </div>
-                  ))}
-                </div>
+              ))}
+            </div>
               </BentoGridItem>
             </BentoGrid>
           </div>

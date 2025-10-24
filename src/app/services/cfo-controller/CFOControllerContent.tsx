@@ -34,7 +34,7 @@ const cfoServices = [
   {
     icon: TrendingUp,
     title: 'Financial Planning & Forecasting',
-    description: 'Our CFOs develop data-driven forecasts and rolling budgets that anticipate trends, strengthen resource allocation, and guide strategic growth. You\'ll always have the insight to make confident, informed decisions.',
+    description: 'Our Fractional CFOs develop data-driven forecasts and rolling budgets that anticipate trends, strengthen resource allocation, and guide strategic growth. You\'ll always have the insight to make confident, informed decisions.',
     color: 'from-green-500 to-green-600'
   },
   {
@@ -89,7 +89,7 @@ const benefits = [
   {
     icon: DollarSign,
     title: 'Cost-Effective Leadership',
-    description: 'CFO and controller expertise without the expense of full-time staff.'
+    description: 'Fractional CFO and controller expertise without the expense of full-time staff.'
   },
   {
     icon: BarChart3,
@@ -100,7 +100,7 @@ const benefits = [
 
 const faqs = [
   {
-    question: 'How does a virtual CFO differ from hiring a full-time CFO?',
+    question: 'How does a virtual Fractional CFO differ from hiring a full-time Fractional CFO?',
     answer: 'You get senior-level expertise on a flexible schedule—weekly, monthly, or as needed—without paying a full-time salary.'
   },
   {
@@ -143,11 +143,11 @@ export default function CFOControllerContent() {
               transition={{ duration: 1.3, ease: "easeOut" }}
             >
               <Badge className="mb-6 px-4 py-2 text-sm font-semibold bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300">
-                CFO & Controller Services
+                Fractional CFO & Controller Services
               </Badge>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
-                Greater Financial Visibility with CFO & Controller Services for Smarter Businesses
+                Greater Financial Visibility with Fractional CFO & Controller Services for Smarter Businesses
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
@@ -155,7 +155,7 @@ export default function CFOControllerContent() {
               </p>
               
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                QuantiFi delivers CFO-level insight and controller-level precision, giving you control over your numbers and confidence in every decision.
+                QuantiFi delivers Fractional CFO-level insight and controller-level precision, giving you control over your numbers and confidence in every decision.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -207,7 +207,7 @@ export default function CFOControllerContent() {
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     </div>
                     <div className="text-xs font-medium text-muted-foreground bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full">
-                      CFO Dashboard
+                      Fractional CFO Dashboard
                     </div>
                   </div>
 
@@ -274,7 +274,7 @@ export default function CFOControllerContent() {
                 Our experienced finance professionals design clear, actionable strategies that simplify your financial operations and strengthen your decision-making.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Instead of hiring a full-time CFO or controller, partner with QuantiFi to gain high-level financial leadership—on demand. You&apos;ll save significantly while gaining deep insight, structured reporting, and peace of mind.
+                Instead of hiring a full-time Fractional CFO or controller, partner with QuantiFi to gain high-level financial leadership—on demand. You&apos;ll save significantly while gaining deep insight, structured reporting, and peace of mind.
               </p>
             </motion.div>
 
@@ -328,10 +328,10 @@ export default function CFOControllerContent() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              Top-Tier CFO and Controller Services
+              Top-Tier Fractional CFO and Controller Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              At QuantiFi, we combine the foresight of a CFO with the discipline of a Controller. Our integrated financial leadership model ensures your books are clean, your reports are meaningful, and your strategy is future-focused.
+              At QuantiFi, we combine the foresight of a Fractional CFO with the discipline of a Controller. Our integrated financial leadership model ensures your books are clean, your reports are meaningful, and your strategy is future-focused.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
               We help small and mid-sized businesses across the U.S. gain the financial structure and insights once reserved for large corporations—at a fraction of the cost.
@@ -340,7 +340,7 @@ export default function CFOControllerContent() {
         </div>
       </section>
 
-      {/* What's Included: Our CFO & Controller Services */}
+      {/* What's Included: Our Fractional CFO & Controller Services */}
       <section className="py-32 md:py-40 bg-gradient-to-br from-blue-50/30 via-white to-indigo-50/30 dark:from-blue-950/20 dark:via-slate-900 dark:to-indigo-950/20">
         <div className="container-standard section-gutter">
           <motion.div
@@ -351,10 +351,16 @@ export default function CFOControllerContent() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              What&apos;s Included: Our CFO & Controller Services
+              What&apos;s Included: Our Fractional CFO & Controller Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              QuantiFi&apos;s CFO and Controller Services bring executive-level financial leadership to your business—without the full-time cost. Our experts oversee every financial function, from forecasting and cash flow to tax strategy and capital management, giving you the clarity and control needed to scale confidently.
+              QuantiFi&apos;s Fractional CFO & Controller Services bring executive-level financial leadership to your business—without the full-time cost. Our experts oversee every financial function, from forecasting and cash flow to tax strategy and capital management, giving you the clarity and control needed to scale confidently.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-6">
+              We combine the foresight of a CFO with the precision of a Controller to deliver strategic insight, disciplined execution, and actionable financial strategy and advisory—the kind of financial leadership for growing businesses that turns data into decisions and momentum into business growth guidance.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-6">
+              Our virtual CFO services provide executive-level leadership on a flexible basis, while our outsourced controller solutions ensure accuracy, compliance, and efficiency across your finance function. With QuantiFi as your strategic partner, you gain the clarity, control, and confidence to scale successfully.
             </p>
           </motion.div>
 
@@ -415,7 +421,7 @@ export default function CFOControllerContent() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              Why Businesses Choose QuantiFi for CFO & Controller Support
+              Why Businesses Choose QuantiFi for Fractional CFO & Controller Support
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We don&apos;t just provide reports—we provide clarity, strategy, and partnership.
@@ -507,10 +513,10 @@ export default function CFOControllerContent() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              FAQs About Our CFO & Controller Services
+              FAQs About Our Fractional CFO & Controller Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Get answers to the most common questions about our virtual CFO and controller services.
+              Get answers to the most common questions about our virtual Fractional CFO and controller services.
             </p>
           </motion.div>
 
@@ -568,7 +574,7 @@ export default function CFOControllerContent() {
             </h2>
             <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
               Ready to make your financial operations clear, compliant, and growth-focused?
-              Partner with QuantiFi for virtual CFO and Controller services that bring clarity and confidence to every decision.
+              Partner with QuantiFi for virtual Fractional CFO and Controller services that bring clarity and confidence to every decision.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -580,7 +586,7 @@ export default function CFOControllerContent() {
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6">
                 <Link href="/contact">
-                  Request a Sample CFO Report
+                  Request a Sample Fractional CFO Report
                 </Link>
               </Button>
             </div>

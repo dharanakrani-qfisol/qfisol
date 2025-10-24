@@ -209,11 +209,11 @@ export default function OutsourcedAccountingContent() {
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                QuantiFi is your trusted virtual accounting partner providing seamless, accurate, and reliable bookkeeping services for businesses across California, Georgia, North Carolina, Iowa, and nationwide. We simplify your financial operations so you can focus on growing your business.
+                Every business is unique and so are its financial needs. QuantiFi provides virtual bookkeeping and small business accounting (SMB accounting) services nationwide, delivering flexible, high-quality support tailored to your goals.
               </p>
               
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                Welcome to your one-stop virtual solution for complete financial clarity. Our accountants handle everything — from daily transactions and reconciliations to monthly reports and forecasts — giving you real-time accuracy and confidence in every decision.
+                Whether you need monthly bookkeeping or complete outsourced accounting, we ensure accurate, GAAP-compliant, and audit-ready financial records. Our virtual team integrates seamlessly with your systems to provide real-time reporting, clear insights, and total transparency so you can focus on growing your business with confidence.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">

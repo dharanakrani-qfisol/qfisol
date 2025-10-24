@@ -3,6 +3,7 @@ import { PainPoints } from '@/components/sections/PainPoints';
 import { HowWeWorkEnhanced } from '@/components/sections/HowWeWorkEnhanced';
 import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
 import { ServicesSection } from '@/components/sections/ServicesSection';
+import { TrustedNationwide } from '@/components/sections/TrustedNationwide';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
 import FAQSection from '@/components/sections/FAQSection';
 import { FinalCTA } from '@/components/sections/FinalCTA';
@@ -19,6 +20,7 @@ export default function HomePage() {
         <HowWeWorkEnhanced />
         <ServicesSection />
         <IndustriesGrid />
+        <TrustedNationwide />
         <TestimonialSection />
         <FAQSection />
         <FinalCTA />

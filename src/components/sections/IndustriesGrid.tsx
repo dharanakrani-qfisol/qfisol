@@ -10,7 +10,7 @@ const industries = [
   {
     id: 1,
     title: 'Construction & Contracting',
-    description: 'Track job costs, manage payroll, and forecast cash flow with precision from bid to build.',
+    description: 'Job costing, WIP (work-in-progress) tracking, certified payroll reporting, and project-based accounting that keeps you profitable from bid to build.',
     href: '/industries/construction',
     imageUrl: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-orange-500 to-red-600',
@@ -18,7 +18,7 @@ const industries = [
   {
     id: 2,
     title: 'Hospitality & Restaurants',
-    description: 'Automate POS reconciliations, payroll, and daily reporting for faster, more profitable operations.',
+    description: 'Daily sales and POS reconciliation, chargeback follow-up and dispute management, tip reporting, and multi-location payroll that streamline your operations and protect your margins.',
     href: '/industries/hospitality',
     imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-purple-500 to-pink-600',
@@ -26,7 +26,7 @@ const industries = [
   {
     id: 3,
     title: 'Retail & E-Commerce',
-    description: 'Simplify sales tax, inventory, and multi-channel bookkeeping across Shopify, Amazon, and POS.',
+    description: 'Simplified sales tax across states, inventory tracking, and multi-channel bookkeeping for Shopify, Amazon, brick-and-mortar and more – ensuring your online and retail sales data all align.',
     href: '/industries/retail',
     imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-pink-500 to-rose-600',
@@ -34,15 +34,15 @@ const industries = [
   {
     id: 4,
     title: 'Healthcare (Medical, Dental & Pharmacy)',
-    description: 'HIPAA-compliant accounting for practices that demand precision, confidentiality, and control.',
+    description: 'HIPAA-aware accounting for healthcare practices. We handle insurance billing reconciliation, regulatory compliance, and precise bookkeeping so you can focus on patient care.',
     href: '/industries/healthcare',
     imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-emerald-500 to-teal-600',
   },
   {
     id: 5,
-    title: 'Startups',
-    description: 'Fractional CFO and automated bookkeeping for startups that need clarity, not complexity.',
+    title: 'Startups & Tech',
+    description: 'Burn rate monitoring, runway forecasting, R&D cost tracking, and investor-ready financial statements for startups. Fractional CFO support helps you navigate growth milestones without the overhead.',
     href: '/industries/startups',
     imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-indigo-500 to-purple-600',
@@ -50,7 +50,7 @@ const industries = [
   {
     id: 6,
     title: 'Real Estate',
-    description: 'From cost segregation to investor reporting, we bring clarity and compliance to every property.',
+    description: 'Property accounting with cost segregation, rent roll management, investor reporting, and cash flow analysis for each property. We bring clarity and compliance from acquisition to depreciation.',
     href: '/industries/real-estate',
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop',
     gradient: 'from-blue-500 to-indigo-600',
@@ -105,7 +105,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
           transition-all duration-500 ease-in-out
           ${
             isActive
-              ? `${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'bottom-64' : 'bottom-44'} left-8 right-8` // Extra space for long titles
+              ? 'top-6 left-8 right-8' // Active: positioned at top
               : 'bottom-32 left-1/2 -translate-x-1/2' // Inactive: vertical, centered
           }
         `}
@@ -116,8 +116,8 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
             transition-all duration-500 ease-in-out
             ${
               isActive
-                ? `${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} rotate-0 tracking-tight` // Active: horizontal, smaller for long titles
-                : 'rotate-90 text-lg tracking-wide' // Inactive: vertical
+                ? 'text-xl md:text-2xl rotate-0 tracking-tight' // Active: horizontal, consistent size
+                : `${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'rotate-90 text-xs tracking-wide' : 'rotate-90 text-lg tracking-wide'}` // Inactive: vertical, smaller for long titles
             }
           `}
         >
@@ -133,7 +133,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
           y: isActive ? 0 : 20
         }}
         transition={{ duration: 0.4, delay: isActive ? 0.2 : 0 }}
-        className={`absolute ${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'bottom-8 mt-4' : 'bottom-8'} left-8 right-8 z-10`}
+        className="absolute bottom-8 left-8 right-8 z-10"
       >
         <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
           {item.description}

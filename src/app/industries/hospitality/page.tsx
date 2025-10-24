@@ -236,7 +236,7 @@ export default function HospitalityPage() {
                 description={hospitalityServices[0].description}
                 header={
                   <div className="flex items-center mb-2">
-                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
+                      <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
                       {React.createElement(hospitalityServices[0].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
                     </div>
                   </div>
@@ -417,19 +417,19 @@ export default function HospitalityPage() {
                   <div className="flex items-center mb-2">
                     <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
                       {React.createElement(hospitalityServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
+                      </div>
                     </div>
-                  </div>
                 }
                 className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
               >
                 <div className="space-y-1 mt-2">
                   {hospitalityServices[8].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
+                        <div key={featureIndex} className="flex items-center space-x-2">
                       <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
                       <span className="text-xs font-medium text-foreground">{feature}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
               </BentoGridItem>
 
               {/* Fifth Row */}
@@ -451,8 +451,8 @@ export default function HospitalityPage() {
                       <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
                       <span className="text-xs font-medium text-foreground">{feature}</span>
                     </div>
-                  ))}
-                </div>
+              ))}
+            </div>
               </BentoGridItem>
             </BentoGrid>
           </div>

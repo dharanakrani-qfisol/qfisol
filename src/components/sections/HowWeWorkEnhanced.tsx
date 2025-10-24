@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 
 const steps = [
   {
-    number: '1️⃣',
+    number: '01',
     icon: Search,
     title: 'Discovery & Understanding',
     description: 'We begin by getting to know your business your goals, systems, and challenges.',
@@ -19,7 +19,7 @@ const steps = [
     darkBgColor: 'from-blue-950/20 to-blue-900/20'
   },
   {
-    number: '2️⃣',
+    number: '02',
     icon: Handshake,
     title: 'Kickoff & Alignment',
     description: 'Once we move forward, we ensure a seamless start.',
@@ -31,7 +31,7 @@ const steps = [
     darkBgColor: 'from-teal-950/20 to-teal-900/20'
   },
   {
-    number: '3️⃣',
+    number: '03',
     icon: FileCheck,
     title: 'Cleanup & Reconciliation',
     description: 'We bring your books fully up to date identifying discrepancies, correcting errors, and aligning everything with GAAP standards.',
@@ -43,7 +43,7 @@ const steps = [
     darkBgColor: 'from-green-950/20 to-green-900/20'
   },
   {
-    number: '4️⃣',
+    number: '04',
     icon: Settings,
     title: 'Process Enhancement & Automation',
     description: 'Next, we focus on efficiency and scalability.',
@@ -55,7 +55,7 @@ const steps = [
     darkBgColor: 'from-slate-950/20 to-slate-900/20'
   },
   {
-    number: '5️⃣',
+    number: '05',
     icon: TrendingUp,
     title: 'Continuous Support & Insights',
     description: 'We stay with you not just as accountants, but as your strategic financial partners.',
@@ -122,9 +122,7 @@ export function HowWeWorkEnhanced() {
               <Card className={`h-full bg-gradient-to-br ${step.bgColor} dark:${step.darkBgColor} border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] overflow-hidden relative`}>
                 {/* Step Number Badge */}
                 <div className="absolute top-6 left-6 z-10">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                    <span className="text-white text-lg font-bold">{step.number}</span>
-                  </div>
+                  <span className="text-3xl font-light text-muted-foreground/60 tracking-wider">{step.number}</span>
                 </div>
 
                 {/* Content */}

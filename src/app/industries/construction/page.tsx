@@ -239,7 +239,7 @@ export default function ConstructionPage() {
                 description={constructionServices[0].description}
                 header={
                   <div className="flex items-center mb-2">
-                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
+                      <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
                       {React.createElement(constructionServices[0].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
                     </div>
                   </div>
@@ -410,7 +410,7 @@ export default function ConstructionPage() {
                       <span className="text-xs font-medium text-foreground">{feature}</span>
                     </div>
                   ))}
-                </div>
+                      </div>
               </BentoGridItem>
 
               <BentoGridItem
@@ -427,11 +427,11 @@ export default function ConstructionPage() {
               >
                 <div className="space-y-1 mt-2">
                   {constructionServices[8].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
+                        <div key={featureIndex} className="flex items-center space-x-2">
                       <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
                       <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
+                        </div>
+                      ))}
                 </div>
               </BentoGridItem>
 
@@ -454,8 +454,8 @@ export default function ConstructionPage() {
                       <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
                       <span className="text-xs font-medium text-foreground">{feature}</span>
                     </div>
-                  ))}
-                </div>
+              ))}
+            </div>
               </BentoGridItem>
             </BentoGrid>
           </div>

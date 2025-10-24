@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
-import { Building2, Award, Link, Heart, Utensils, ShoppingCart, Home, Rocket } from 'lucide-react';
+import { Building2, Award, Link } from 'lucide-react';
 
 // Company logos
 const ICONS_ROW1 = [
@@ -168,250 +168,6 @@ export function PainPoints() {
 
         </div>
 
-        {/* New Section: Trusted Nationwide */}
-        <motion.section 
-          className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.3, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {/* Background decoration */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="container-standard section-gutter relative z-10">
-            {/* Header Section */}
-            <motion.div
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full border border-blue-200/50 dark:border-blue-800/50 mb-6">
-                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
-                  Trusted Nationwide
-                </span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 max-w-4xl mx-auto">
-                Trusted Nationwide Across Industries & States
-              </h2>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                We deliver outsourced accounting, bookkeeping for small businesses, and virtual CFO services to clients across the U.S. with industry-specific expertise and local compliance know-how.
-              </p>
-            </motion.div>
-
-            {/* Industries Section */}
-            <motion.div
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Industries We Serve</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                {[
-                  { 
-                    icon: Building2, 
-                    label: "Construction & Contracting", 
-                    description: "Job costing, WIP, certified payroll",
-                    href: "/industries/construction-accounting",
-                    color: "from-orange-500 to-orange-600",
-                    alt: "Construction accounting services and contractor bookkeeping"
-                  },
-                  { 
-                    icon: Heart, 
-                    label: "Healthcare", 
-                    description: "Medical, Dental & Pharmacy – HIPAA-aware accounting",
-                    href: "/industries/healthcare-accounting",
-                    color: "from-emerald-500 to-emerald-600",
-                    alt: "Healthcare accounting for medical, dental and pharmacy practices"
-                  },
-                  { 
-                    icon: Utensils, 
-                    label: "Hospitality & Restaurants", 
-                    description: "POS reconciliation, tip reporting",
-                    href: "/industries/hospitality-accounting",
-                    color: "from-blue-500 to-blue-600",
-                    alt: "Restaurant bookkeeping and hospitality accounting"
-                  },
-                  { 
-                    icon: ShoppingCart, 
-                    label: "Retail & E-Commerce", 
-                    description: "Shopify/Amazon, sales tax, returns",
-                    href: "/industries/retail-ecommerce",
-                    color: "from-purple-500 to-purple-600",
-                    alt: "Retail and e-commerce accounting services"
-                  },
-                  { 
-                    icon: Home, 
-                    label: "Real Estate", 
-                    description: "Property, investor reporting, cost segregation",
-                    href: "/industries/real-estate-accounting",
-                    color: "from-indigo-500 to-indigo-600",
-                    alt: "Real estate accounting and property management bookkeeping"
-                  },
-                  { 
-                    icon: Rocket, 
-                    label: "Startups", 
-                    description: "Burn rate, forecasting, investor-ready reporting",
-                    href: "/industries/startups",
-                    color: "from-pink-500 to-pink-600",
-                    alt: "Startup accounting and fractional CFO services"
-                  }
-                ].map((industry, index) => (
-                  <motion.a
-                    key={index}
-                    href={industry.href}
-                    className="group cursor-pointer block"
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 300 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-2xl p-6 border border-white/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full">
-                      <div className={`w-12 h-12 bg-gradient-to-br ${industry.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-200`}>
-                        <industry.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <h4 className="text-sm font-semibold text-foreground mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {industry.label}
-                      </h4>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        {industry.description}
-                      </p>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* States Section */}
-            <motion.div
-              className="mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">States We Serve</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  { 
-                    state: "California", 
-                    abbreviation: "CA",
-                    cities: "Los Angeles, Bay Area, San Diego",
-                    href: "/locations/california-accounting",
-                    alt: "Virtual accounting services in California"
-                  },
-                  { 
-                    state: "Texas", 
-                    abbreviation: "TX",
-                    cities: "Dallas, Austin, Houston",
-                    href: "/locations/texas-accounting",
-                    alt: "Virtual accounting services in Texas"
-                  },
-                  { 
-                    state: "Georgia", 
-                    abbreviation: "GA",
-                    cities: "Atlanta",
-                    href: "/locations/georgia-accounting",
-                    alt: "Virtual accounting services in Georgia"
-                  },
-                  { 
-                    state: "North Carolina", 
-                    abbreviation: "NC",
-                    cities: "Charlotte, Raleigh",
-                    href: "/locations/north-carolina-accounting",
-                    alt: "Virtual accounting services in North Carolina"
-                  },
-                  { 
-                    state: "New York", 
-                    abbreviation: "NY",
-                    cities: "NYC",
-                    href: "/locations/new-york-accounting",
-                    alt: "Virtual accounting services in New York"
-                  },
-                  { 
-                    state: "Florida", 
-                    abbreviation: "FL",
-                    cities: "Miami, Orlando, Tampa",
-                    href: "/locations/florida-accounting",
-                    alt: "Virtual accounting services in Florida"
-                  },
-                  { 
-                    state: "Arizona", 
-                    abbreviation: "AZ",
-                    cities: "Phoenix",
-                    href: "/locations/arizona-accounting",
-                    alt: "Virtual accounting services in Arizona"
-                  },
-                  { 
-                    state: "Washington", 
-                    abbreviation: "WA",
-                    cities: "Seattle",
-                    href: "/locations/washington-accounting",
-                    alt: "Virtual accounting services in Washington"
-                  }
-                ].map((state, index) => (
-                  <motion.a
-                    key={index}
-                    href={state.href}
-                    className="group cursor-pointer block"
-                    whileHover={{ scale: 1.02 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.05, type: "spring", stiffness: 300 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-5 border border-gray-200/50 dark:border-slate-700/50 shadow-sm hover:shadow-md transition-all duration-300 text-center h-full">
-                      {/* State Abbreviation Badge */}
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200">
-                        <span className="text-white font-bold text-lg">
-                          {state.abbreviation}
-                        </span>
-                      </div>
-                      
-                      {/* State Name */}
-                      <h4 className="text-base font-semibold text-foreground mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {state.state}
-                      </h4>
-                      
-                      {/* Cities */}
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {state.cities}
-                      </p>
-                      
-                      {/* Subtle hover indicator */}
-                      <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-6 h-0.5 bg-blue-500 mx-auto rounded-full"></div>
-                      </div>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Footer line */}
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-sm text-muted-foreground font-medium">
-                100% virtual. We serve clients in all 50 states.
-              </p>
-            </motion.div>
-          </div>
-        </motion.section>
 
         {/* Enhanced Divider */}
         <motion.div
@@ -536,7 +292,7 @@ export function PainPoints() {
             viewport={{ once: true }}
           >
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
-              We work within your existing financial ecosystem connecting with the tools you already use.
+              We work within your existing financial ecosystem, connecting with the tools you already use for accounting and operations.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-950/30 rounded-full border border-green-200/50 dark:border-green-800/50">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -570,51 +326,45 @@ export function PainPoints() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          {/* Slider Container with Enhanced Styling */}
-          <div className="relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 border border-white/50 dark:border-slate-700/50 shadow-2xl">
-            {/* Header */}
-            <div className="text-center mb-8">
-              <h3 className="text-lg font-semibold text-foreground mb-2">Trusted Integration Partners</h3>
-              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mx-auto"></div>
-            </div>
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h3 className="text-lg font-semibold text-foreground mb-2">Trusted Integration Partners</h3>
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mx-auto"></div>
+          </div>
 
-            {/* Enhanced Logo Slider */}
-            <div className="relative">
-              <motion.div
-                className="flex gap-10 items-center"
-                style={{ x }}
-                animate={{ x: [0, -100 * ICONS_ROW1.length] }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 25,
-                    ease: "linear",
-                  },
-                }}
-                drag="x"
-                dragConstraints={{ left: -100 * ICONS_ROW1.length, right: 0 }}
-                dragElastic={0.1}
-                dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
-                onDragStart={() => { isDragging.current = true; }}
-                onDragEnd={() => { isDragging.current = false; }}
-              >
-                {repeatedIcons(ICONS_ROW1, 4).map((src, i) => (
-                  <motion.div
-                    key={i}
-                    className="h-20 w-20 flex-shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-600 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-200/50 dark:border-slate-600/50 hover:scale-110 transition-all duration-300"
-                    whileHover={{ y: -5, scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <img src={src} alt="company logo" className="h-12 w-12 object-contain pointer-events-none" />
-                  </motion.div>
-                ))}
-              </motion.div>
+          {/* Enhanced Logo Slider */}
+          <div className="relative max-w-4xl mx-auto">
+            <motion.div
+              className="flex gap-10 items-center"
+              style={{ x }}
+              animate={{ x: [0, -100 * ICONS_ROW1.length] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 25,
+                  ease: "linear",
+                },
+              }}
+              drag="x"
+              dragConstraints={{ left: -100 * ICONS_ROW1.length, right: 0 }}
+              dragElastic={0.1}
+              dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
+              onDragStart={() => { isDragging.current = true; }}
+              onDragEnd={() => { isDragging.current = false; }}
+            >
+              {repeatedIcons(ICONS_ROW1, 4).map((src, i) => (
+                <motion.div
+                  key={i}
+                  className="flex-shrink-0 flex items-center justify-center hover:scale-110 transition-all duration-300"
+                  whileHover={{ y: -5, scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <img src={src} alt="company logo" className="h-16 w-16 object-contain pointer-events-none" />
+                </motion.div>
+              ))}
+            </motion.div>
 
-              {/* Enhanced Fade Overlays */}
-              <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white/90 dark:from-slate-800/90 to-transparent pointer-events-none" />
-              <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white/90 dark:from-slate-800/90 to-transparent pointer-events-none" />
-            </div>
           </div>
         </motion.div>
 

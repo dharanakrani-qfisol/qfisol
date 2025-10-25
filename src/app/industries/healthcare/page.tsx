@@ -6,10 +6,8 @@ import { Button } from '@/components/ui/button';
 import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { StackingCards } from '@/components/ui/stacking-card';
 import { 
-  CheckCircle, 
-  Calculator, 
   ArrowRight, 
   Users, 
   Shield, 
@@ -37,62 +35,72 @@ const healthcareServices = [
   {
     title: 'Bookkeeping & Financial Statement Preparation',
     description: 'We handle all your day-to-day bookkeeping tasks to ensure your accounting records are accurate and up-to-date. This includes recording expenses (supplies, lab fees, medications), tracking revenue (patient payments, insurance reimbursements), and reconciling bank accounts and credit card statements every month. We close the books on a monthly or quarterly basis and prepare professional financial statements (Income Statement, Balance Sheet, Cash Flow) that reflect your practice\'s performance. With clean books, you\'ll always know where you stand financially and be ready for lenders or investors if needed.',
-    icon: Calculator,
-    features: ['Monthly book closing', 'Professional financial statements', 'Bank reconciliation', 'Expense categorization']
+    link: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Practice Management System (PMS) Reconciliation',
     description: 'Healthcare practices often use specialized systems – whether it\'s an Electronic Medical Records system (EMR/EHR) with billing features, a dental practice management software, or a pharmacy management system. We reconcile the data from these systems with your accounting software to ensure nothing falls through the cracks. For example, we\'ll tie out daily patient billings from your EMR to deposits in the bank, or match the prescriptions filled in your pharmacy system to recorded sales. By doing so, we catch discrepancies (like missed charges or unpaid copays) and provide assurance that your operational system and financial books are in sync.',
-    icon: Activity,
-    features: ['EMR/EHR integration', 'Daily billing reconciliation', 'System data matching', 'Discrepancy detection']
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/systems-integration',
   },
   {
     title: 'Insurance Billing & Revenue Cycle Management (RCM) Support',
-    description: 'One of the biggest headaches in healthcare is managing insurance receivables. QuantiFi supports your revenue cycle by working with your billing team (or service) to ensure that insurance payments and patient payments are properly posted and accounted for. We track accounts receivable aging – identifying old claims that haven\'t been paid – and flag high-dollar outstanding amounts. If needed, we can coordinate with your billing personnel to re-follow-up on denials or pending claims. Our accounting also distinguishes between gross charges, insurance adjustments/write-offs, and actual collections, giving you a clear picture of collection rates. In short, we make sure the revenue you earn for your services actually makes it into your bank account and books, and we provide reports to pinpoint issues in your billing process.',
-    icon: CreditCard,
-    features: ['Accounts receivable tracking', 'Claims monitoring', 'Collection rate analysis', 'Billing process optimization']
+    description: 'One of the biggest headaches in healthcare is managing insurance receivables. QuantiFi supports your revenue cycle by working with your billing team (or service) to ensure that insurance payments and patient payments are properly posted and accounted for. We track accounts receivable aging – identifying old claims that haven\'t been paid – and flag high-dollar outstanding amounts. If needed, we can coordinate with your billing personnel to re-follow-up on denials or pending claims. Our accounting also distinguishes between gross charges, insurance adjustments/write-offs, and actual collections, giving you a clear picture of collection rates.',
+    link: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Accounts Receivable Management & Collections',
-    description: 'Beyond insurance, many healthcare practices have to manage what patients owe (deductibles, co-insurances, cash services). We implement processes to monitor patient accounts receivable. For instance, we\'ll generate aging reports that show which patients or payers owe money for over 30, 60, 90 days, etc. If your practice sends statements or payment reminders, we can integrate those into the workflow or help coordinate with collection agencies for seriously overdue accounts. By keeping a close eye on receivables, we help you maintain healthy cash inflows and avoid revenue leakage. You\'ll know exactly how much money is tied up in outstanding invoices and we\'ll advise on when something may need special attention (like offering payment plans or writing off uncollectible amounts).',
-    icon: Receipt,
-    features: ['Patient AR aging', 'Payment plan management', 'Collection agency coordination', 'Revenue leakage prevention']
+    description: 'Beyond insurance, many healthcare practices have to manage what patients owe (deductibles, co-insurances, cash services). We implement processes to monitor patient accounts receivable. For instance, we\'ll generate aging reports that show which patients or payers owe money for over 30, 60, 90 days, etc. If your practice sends statements or payment reminders, we can integrate those into the workflow or help coordinate with collection agencies for seriously overdue accounts. By keeping a close eye on receivables, we help you maintain healthy cash inflows and avoid revenue leakage.',
+    link: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Payroll & Compensation Management',
-    description: 'We manage payroll for your healthcare staff — including hourly employees, salaried professionals, nurses, hygienists, administrative staff, and providers — ensuring everyone is paid accurately and on schedule. While we don\'t process or file payroll taxes, we coordinate with your in-house or third-party payroll system (such as ADP, Gusto, or Paychex) to review data, reconcile reports, and record payroll entries correctly in your books. For physician or dentist owners, we help facilitate owner draws or custom compensation structures, and we incorporate productivity-based pay like RVU or procedure-based bonuses. We also account for 401(k), SIMPLE IRA, and HSA/FSA contributions, giving you clear visibility into total labor costs. Our payroll accounting oversight ensures your financial records remain accurate, compliant, and audit-ready — reducing administrative workload and maintaining full confidentiality.',
-    icon: Users,
-    features: ['Multi-staff payroll', 'Provider compensation', 'Productivity-based pay', '401(k) and HSA management']
+    description: 'We manage payroll for your healthcare staff — including hourly employees, salaried professionals, nurses, hygienists, administrative staff, and providers — ensuring everyone is paid accurately and on schedule. While we don\'t process or file payroll taxes, we coordinate with your in-house or third-party payroll system (such as ADP, Gusto, or Paychex) to review data, reconcile reports, and record payroll entries correctly in your books. For physician or dentist owners, we help facilitate owner draws or custom compensation structures, and we incorporate productivity-based pay like RVU or procedure-based bonuses.',
+    link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/payroll-hr',
   },
   {
     title: 'Tax Compliance & Planning',
-    description: 'We help healthcare and dental practices stay fully compliant and financially optimized by preparing CPA-ready tax records — but we do not file income or payroll taxes ourselves. Our team organizes all the financial details your CPA or tax preparer needs, including reconciled books, categorized deductions, and accurate 1099s from your payroll system. We also provide strategic guidance on entity structure, equipment depreciation, and potential credits such as the Qualified Small Business Healthcare Tax Credit to help reduce liabilities. For practices that sell products or operate in multiple states, we track sales tax obligations and ensure everything is clearly documented for filing. Our proactive oversight keeps your financials organized, your reports compliant, and your CPA filings seamless.',
-    icon: Shield,
-    features: ['CPA-ready records', 'Entity structure guidance', 'Equipment depreciation', 'Healthcare tax credits']
+    description: 'We help healthcare and dental practices stay fully compliant and financially optimized by preparing CPA-ready tax records — but we do not file income or payroll taxes ourselves. Our team organizes all the financial details your CPA or tax preparer needs, including reconciled books, categorized deductions, and accurate 1099s from your payroll system. We also provide strategic guidance on entity structure, equipment depreciation, and potential credits such as the Qualified Small Business Healthcare Tax Credit to help reduce liabilities.',
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/tax-preparation-compliance',
   },
   {
     title: 'Cash Flow Management & Budgeting',
-    description: 'We help healthcare practices avoid cash crunches by forecasting inflows and outflows. We know that insurance reimbursements can lag weeks after services, which can create strain. Our team projects your expected cash receipts based on billing and historical payment patterns, and balances that against upcoming expenses (like payroll, rent, malpractice insurance, quarterly taxes). We\'ll create a budget for your practice that sets monthly targets for revenue and expenses, helping you plan around things like anticipated hiring of a new assistant or buying a new piece of equipment. We also advise on maintaining an appropriate cash reserve for emergencies (for instance, if insurance payments slow down). With a solid budget and cash flow plan, you can make operational decisions (like whether you can afford an expansion or an additional staff member) with confidence and not get blindsided by a dry spell in collections.',
-    icon: TrendingUp,
-    features: ['Cash flow forecasting', 'Budget creation', 'Insurance payment tracking', 'Emergency reserve planning']
+    description: 'We help healthcare practices avoid cash crunches by forecasting inflows and outflows. We know that insurance reimbursements can lag weeks after services, which can create strain. Our team projects your expected cash receipts based on billing and historical payment patterns, and balances that against upcoming expenses (like payroll, rent, malpractice insurance, quarterly taxes). We\'ll create a budget for your practice that sets monthly targets for revenue and expenses, helping you plan around things like anticipated hiring of a new assistant or buying a new piece of equipment.',
+    link: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   },
   {
     title: 'Accounts Payable & Expense Management',
-    description: 'Just like any business, medical practices and pharmacies have bills to pay – medical supplies, lab fees, office rent, vaccines, utility bills, and more. We handle your accounts payable process to keep your vendors happy and your costs under control. You or your office manager can forward invoices to us, and we\'ll enter them into the accounting system, categorize them (medical supplies vs. office expense vs. lab services, etc.), and prepare payments. We often set up a routine (weekly or bi-weekly) to process payments, and can utilize online bill pay or software to streamline approvals. By managing this, we ensure you never miss a critical payment (e.g., to a medical supplier or drug wholesaler) that could disrupt operations. We also provide spending reports, so you can see where your money is going – for example, tracking how supply costs change month-to-month or flagging if your utility costs spike unexpectedly.',
-    icon: FileText,
-    features: ['Vendor bill processing', 'Expense categorization', 'Payment scheduling', 'Spending analysis']
+    description: 'Just like any business, medical practices and pharmacies have bills to pay – medical supplies, lab fees, office rent, vaccines, utility bills, and more. We handle your accounts payable process to keep your vendors happy and your costs under control. You or your office manager can forward invoices to us, and we\'ll enter them into the accounting system, categorize them (medical supplies vs. office expense vs. lab services, etc.), and prepare payments. We often set up a routine (weekly or bi-weekly) to process payments, and can utilize online bill pay or software to streamline approvals.',
+    link: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Financial Reporting & KPI Tracking',
-    description: 'We deliver tailored financial reports that help you run your practice more effectively. Beyond standard financial statements, QuantiFi can prepare physician/dentist-specific metrics and dashboards. For example, we can report on KPIs such as: revenue per patient visit, overhead ratio (operating expenses as a percentage of collections), treatment acceptance rate (for dental plans presented vs. accepted), or pharmacy inventory turnover. We\'ll highlight trends like increasing supply costs or staff costs as a percentage of revenue. If you\'re a multi-provider clinic, we can create profit center reports for each provider or department. These insights let you identify areas for improvement – maybe your staffing costs are higher than industry benchmarks, or your collections rate on billed services could improve. We\'ll discuss these in our meetings, translating the numbers into actionable recommendations. Essentially, we turn your financial data into a tool for continuous improvement of your practice\'s financial health.',
-    icon: PieChart,
-    features: ['Practice-specific KPIs', 'Provider performance reports', 'Overhead analysis', 'Benchmark comparisons']
+    description: 'We deliver tailored financial reports that help you run your practice more effectively. Beyond standard financial statements, QuantiFi can prepare physician/dentist-specific metrics and dashboards. For example, we can report on KPIs such as: revenue per patient visit, overhead ratio (operating expenses as a percentage of collections), treatment acceptance rate (for dental plans presented vs. accepted), or pharmacy inventory turnover. We\'ll highlight trends like increasing supply costs or staff costs as a percentage of revenue. If you\'re a multi-provider clinic, we can create profit center reports for each provider or department.',
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Outsourced CFO Advisory for Healthcare Growth',
-    description: 'As your practice grows or faces big decisions, our outsourced CFO services are there to guide you. Thinking of expanding your clinic, adding a new location, or bringing on another partner? We\'ll model the financial implications – how many more patients you\'d need, what the break-even point is, etc. Considering investing in expensive new equipment (like an MRI machine or digital X-ray or a new compounding lab)? We\'ll perform ROI analysis and even help explore financing options. For pharmacies, we can assist with inventory optimization and cash management strategies, given the thin margins on reimbursements. If you\'re planning for succession or sale of the practice, we help get the financials in order and can liaise with valuation experts. We also offer strategic planning, like setting financial goals (e.g., improve net income margin by X% next year) and outlining steps to get there. In short, we become your strategic financial partner, much like a CFO, bringing perspective from working with many healthcare businesses. You get high-level advice on demand, without the full-time cost.',
-    icon: Building2,
-    features: ['Expansion planning', 'Equipment ROI analysis', 'Succession planning', 'Strategic financial guidance']
+    description: 'As your practice grows or faces big decisions, our outsourced CFO services are there to guide you. Thinking of expanding your clinic, adding a new location, or bringing on another partner? We\'ll model the financial implications – how many more patients you\'d need, what the break-even point is, etc. Considering investing in expensive new equipment (like an MRI machine or digital X-ray or a new compounding lab)? We\'ll perform ROI analysis and even help explore financing options. For pharmacies, we can assist with inventory optimization and cash management strategies, given the thin margins on reimbursements.',
+    link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   }
 ];
 
@@ -161,10 +169,10 @@ export default function HealthcarePage() {
     <MarketingLayout>
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-green-50 via-blue-50 to-teal-50 dark:from-green-950/20 dark:via-blue-950/20 dark:to-teal-950/20 py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/20 dark:via-gray-950 dark:to-blue-950/20 py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+              <Badge className="mb-6 px-6 py-3 text-base font-medium" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
                 Healthcare & Medical Practice Accounting Services
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
@@ -174,11 +182,11 @@ export default function HealthcarePage() {
                 QuantiFi specializes in accounting for healthcare practices – medical, dental, and pharmacy. From insurance reimbursements and medical payroll to inventory and compliance, we handle the financial side of your practice with surgical precision. Focus on delivering quality care while we keep your books healthy and up-to-date.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <BookCallButton className="text-lg px-10 py-6 bg-green-600 hover:bg-green-700 text-white font-semibold">
+                <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-5 w-5" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
                   <Link href="/services">View All Services</Link>
                 </Button>
               </div>
@@ -194,7 +202,7 @@ export default function HealthcarePage() {
                 <h2 className="text-4xl font-bold text-foreground mb-6">
                   Healthy Financials for Healthcare Providers
                 </h2>
-                <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
+                <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#0015ff' }}></div>
               </div>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
@@ -226,232 +234,7 @@ export default function HealthcarePage() {
               </p>
             </div>
 
-            <BentoGrid className="max-w-7xl mx-auto">
-              {/* Featured Services - Larger Cards */}
-              <BentoGridItem
-                title={healthcareServices[0].title}
-                description={healthcareServices[0].description}
-                header={
-                  <div className="flex items-center mb-2">
-                      <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[0].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20 border-green-200 dark:border-green-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[0].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={healthcareServices[1].title}
-                description={healthcareServices[1].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[1].icon, { className: "h-8 w-8 text-blue-600 dark:text-blue-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[1].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Second Row */}
-              <BentoGridItem
-                title={healthcareServices[2].title}
-                description={healthcareServices[2].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[2].icon, { className: "h-8 w-8 text-purple-600 dark:text-purple-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border-purple-200 dark:border-purple-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[2].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={healthcareServices[3].title}
-                description={healthcareServices[3].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[3].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border-orange-200 dark:border-orange-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[3].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Third Row */}
-              <BentoGridItem
-                title={healthcareServices[4].title}
-                description={healthcareServices[4].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[4].icon, { className: "h-8 w-8 text-red-600 dark:text-red-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20 border-red-200 dark:border-red-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[4].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={healthcareServices[5].title}
-                description={healthcareServices[5].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[5].icon, { className: "h-8 w-8 text-indigo-600 dark:text-indigo-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/20 dark:to-indigo-900/20 border-indigo-200 dark:border-indigo-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[5].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={healthcareServices[6].title}
-                description={healthcareServices[6].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[6].icon, { className: "h-8 w-8 text-teal-600 dark:text-teal-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950/20 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[6].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fourth Row */}
-              <BentoGridItem
-                title={healthcareServices[7].title}
-                description={healthcareServices[7].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[7].icon, { className: "h-8 w-8 text-yellow-600 dark:text-yellow-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950/20 dark:to-yellow-900/20 border-yellow-200 dark:border-yellow-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[7].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                      </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={healthcareServices[8].title}
-                description={healthcareServices[8].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[8].features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fifth Row */}
-              <BentoGridItem
-                title={healthcareServices[9].title}
-                description={healthcareServices[9].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl">
-                      {React.createElement(healthcareServices[9].icon, { className: "h-8 w-8 text-cyan-600 dark:text-cyan-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950/20 dark:to-cyan-900/20 border-cyan-200 dark:border-cyan-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {healthcareServices[9].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-              ))}
-            </div>
-              </BentoGridItem>
-            </BentoGrid>
+            <StackingCards projects={healthcareServices} />
           </div>
         </section>
 
@@ -469,19 +252,19 @@ export default function HealthcarePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseQuantiFi.map((reason, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                <Card key={index} className="p-8 text-left hover:shadow-lg transition-shadow border-0 bg-white dark:bg-gray-900">
                   <CardHeader className="pb-4">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-4 bg-green-100 dark:bg-green-900/30 rounded-2xl">
-                        <reason.icon className="h-10 w-10 text-green-600 dark:text-green-400" />
+                    <div className="flex justify-start mb-4">
+                      <div className="p-4 rounded-2xl" style={{ backgroundColor: '#e6e8ff' }}>
+                        <reason.icon className="h-10 w-10" style={{ color: '#0015ff' }} />
                       </div>
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-3">
+                    <CardTitle className="text-xl font-bold text-foreground mb-3 text-left">
                       {reason.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-left">
                       {reason.description}
                     </p>
                   </CardContent>
@@ -521,7 +304,7 @@ export default function HealthcarePage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-green-600 via-teal-600 to-blue-600 text-white">
+        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
           <div className="container-standard section-gutter text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -531,13 +314,15 @@ export default function HealthcarePage() {
                 Don&apos;t let complex accounting or insurance headaches pull you away from what you do best – caring for patients. QuantiFi is here to manage and optimize your practice&apos;s finances, giving you clarity, stability, and peace of mind. Let us handle the books, so you can focus on providing excellent care.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white text-green-600 hover:bg-gray-100 font-bold">
+                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-6 w-6" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-xl px-8 py-8 border-white text-white hover:bg-white hover:text-green-600">
-                  <Link href="/contact">Contact Us Today</Link>
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                    Contact Us Today
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

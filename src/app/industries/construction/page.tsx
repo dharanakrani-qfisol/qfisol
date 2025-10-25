@@ -6,11 +6,8 @@ import { Button } from '@/components/ui/button';
 import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { StackingCards } from '@/components/ui/stacking-card';
 import { 
-  CheckCircle, 
-  Calculator, 
-  BarChart, 
   ArrowRight, 
   DollarSign, 
   Users, 
@@ -33,62 +30,62 @@ const constructionServices = [
   {
     title: 'Bookkeeping & Job Cost Tracking',
     description: 'We maintain your general ledger with meticulous care — handling accounts payable/receivable, fixed asset tracking, and monthly bank reconciliations. Our team implements construction-specific bookkeeping, tagging every transaction by project. This means you get accurate, up-to-date cost records for each job site, ensuring nothing falls through the cracks. All records are kept audit-ready and tax-ready, giving you confidence in your numbers year-round.',
-    icon: Calculator,
-    features: ['Project-based transaction tagging', 'Audit-ready records', 'Monthly bank reconciliations', 'Fixed asset tracking']
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Payroll Management & Certified Payroll Compliance',
-    description: 'Outsource your complex payroll to us for error-free processing. We manage weekly and bi-weekly payroll for construction crews, including handling union wages, overtime, and certified payroll reports for government contracts. Our experts ensure full construction payroll compliance with state and federal requirements (e.g. Davis-Bacon Act prevailing wages), so your team gets paid correctly and on time without compliance headaches. Payroll taxes and filings are handled seamlessly, relieving you of this administrative burden.',
-    icon: Users,
-    features: ['Union wage management', 'Davis-Bacon Act compliance', 'Certified payroll reports', 'Payroll tax handling']
+    description: 'Outsource your complex payroll to us for error-free processing. We manage weekly and bi-weekly payroll for construction crews, including handling union wages, overtime, and certified payroll reports for government contracts. Our experts ensure full construction payroll compliance with state and federal requirements (e.g. Davis-Bacon Act prevailing wages), so your team gets paid correctly and on time without compliance headaches.',
+    color: '#0015ff',
+    href: '/services/payroll-hr',
   },
   {
     title: 'Tax Planning & Preparation',
-    description: 'Proactive tax strategy helps contractors minimize liability and avoid surprises. We provide year-round tax planning — reviewing financials for eligible deductions, credits, and entity structuring opportunities to save you money. Construction companies benefit from specialized tactics like cost segregation studies (accelerated depreciation of building, components, machinery, and equipment) to reduce tax burdens. When it\'s time to file, we coordinate closely with our in-house tax preparation & compliance team or your external CPA, ensuring smooth, timely filings for corporate partnership, and personal returns.',
-    icon: DollarSign,
-    features: ['Cost segregation studies', 'Entity structuring', 'Year-round tax planning', 'CPA coordination']
+    description: 'Proactive tax strategy helps contractors minimize liability and avoid surprises. We provide year-round tax planning — reviewing financials for eligible deductions, credits, and entity structuring opportunities to save you money. Construction companies benefit from specialized tactics like cost segregation studies (accelerated depreciation of building, components, machinery, and equipment) to reduce tax burdens.',
+    color: '#0015ff',
+    href: '/services/tax-preparation-compliance',
   },
   {
     title: 'Financial Reporting & Assurance',
-    description: 'Get clear, professional financial statements that stakeholders (and sureties) trust. We prepare monthly and quarterly financial reports – including Profit & Loss, Balance Sheet, job cost schedules, and budget vs. actual analyses – tailored to construction. Our team uses GAAP-compliant methods and applies the correct revenue recognition (percentage-of-completion or completed-contract) for your projects. Need a compilation, review, or audit? We\'ll help get your books in shape for external accountants (CPA) and provide all supporting documents. The result: you always have accurate financials for banks, investors, and bonding companies to review with confidence.',
-    icon: BarChart,
-    features: ['GAAP-compliant reporting', 'Job cost schedules', 'Budget vs. actual analysis', 'Audit preparation']
+    description: 'Get clear, professional financial statements that stakeholders (and sureties) trust. We prepare monthly and quarterly financial reports – including Profit & Loss, Balance Sheet, job cost schedules, and budget vs. actual analyses – tailored to construction. Our team uses GAAP-compliant methods and applies the correct revenue recognition (percentage-of-completion or completed-contract) for your projects.',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Job Costing & WIP Reporting',
-    description: 'Know exactly how each project is performing financially. We implement robust job costing for construction projects, tracking every material, labor, and subcontractor expense to its respective job. You receive detailed Job Cost Reports that show budget vs. actual spend, so you can pinpoint cost overruns or savings. We also produce Work-in-Progress (WIP) reports that update each project\'s percent complete, earned revenue, and under/over-billings. By accounting for change orders, retainage, and true project costs, we keep you informed on gross profit per job and alert to any margin fade – critical for staying on budget.',
-    icon: Target,
-    features: ['Real-time project tracking', 'Budget vs. actual reports', 'Change order accounting', 'Margin fade alerts']
+    description: 'Know exactly how each project is performing financially. We implement robust job costing for construction projects, tracking every material, labor, and subcontractor expense to its respective job. You receive detailed Job Cost Reports that show budget vs. actual spend, so you can pinpoint cost overruns or savings. We also produce Work-in-Progress (WIP) reports that update each project\'s percent complete, earned revenue, and under/over-billings.',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Project Cash Flow Management',
-    description: 'Construction businesses live and die by cash flow. We help you forecast and manage cash needs for each project and your company as a whole. Our team creates cash flow projections that factor in project schedules, billing milestones, retention releases, and expenses, giving you a clear look at what\'s ahead. We advise on timing invoices, accelerating collections, and managing vendor payments to avoid cash crunches. With proactive cash flow planning, you can confidently meet payroll, fund new projects, and handle surprises – no more scrambling to cover shortfalls.',
-    icon: TrendingUp,
-    features: ['Cash flow forecasting', 'Billing milestone tracking', 'Retention management', 'Vendor payment optimization']
+    description: 'Construction businesses live and die by cash flow. We help you forecast and manage cash needs for each project and your company as a whole. Our team creates cash flow projections that factor in project schedules, billing milestones, retention releases, and expenses, giving you a clear look at what\'s ahead. We advise on timing invoices, accelerating collections, and managing vendor payments to avoid cash crunches.',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   },
   {
     title: 'Internal Controls & Audit-Readiness',
-    description: 'We implement strong internal controls so you can trust your financial systems. QuantiFi will establish checks and balances for your construction accounting processes – from purchase approvals to reconciliation reviews – to help prevent fraud and errors. We ensure critical items like change orders, procurement, and payroll have proper oversight. The result is clean, reliable financial data. When it comes to external audits or surprise inspections, you\'ll be prepared: we keep detailed documentation and compliance records so that your books withstand scrutiny. Sleep easy knowing your financial house is in order.',
-    icon: Shield,
-    features: ['Fraud prevention', 'Process oversight', 'Compliance documentation', 'Audit preparation']
+    description: 'We implement strong internal controls so you can trust your financial systems. QuantiFi will establish checks and balances for your construction accounting processes – from purchase approvals to reconciliation reviews – to help prevent fraud and errors. We ensure critical items like change orders, procurement, and payroll have proper oversight. The result is clean, reliable financial data.',
+    color: '#0015ff',
+    href: '/services/systems-integration',
   },
   {
     title: 'Construction Software & Systems Consulting',
-    description: 'Leverage technology to streamline your accounting. Our team are experts in industry software like QuickBooks, Sage 300 (Timberline), Foundation Software, Acumatica, Viewpoint, and Procore. Whether you need to set up a new cloud accounting system or integrate your project management software with your ledger, we can help. We\'ll migrate data, implement job-cost accounting features, and train your staff on best practices. The goal is a seamless flow of information — no duplicate data entry and fewer errors. From linking your POS or time-tracking apps to customizing reports, we make sure your tech stack works for you, not against you.',
-    icon: Zap,
-    features: ['Software integration', 'Data migration', 'Staff training', 'Custom reporting']
+    description: 'Leverage technology to streamline your accounting. Our team are experts in industry software like QuickBooks, Sage 300 (Timberline), Foundation Software, Acumatica, Viewpoint, and Procore. Whether you need to set up a new cloud accounting system or integrate your project management software with your ledger, we can help. We\'ll migrate data, implement job-cost accounting features, and train your staff on best practices.',
+    color: '#0015ff',
+    href: '/services/systems-integration',
   },
   {
     title: 'Surety & Bonding Support',
-    description: 'Need better bonding capacity? We\'ve got your back. QuantiFi prepares the detailed financial statements and WIP schedules that surety underwriters require. We understand the ratios and benchmarks that bonding companies look for, and we\'ll advise you on improving them (like maintaining certain working capital levels or equity balances). From assembling contractor pre-qualification packages to producing on-demand financial reports for your bond agent, we ensure you can bid on bigger projects. With our support, you\'ll meet bonding requirements with less stress and be poised to take on that next big job.',
-    icon: Award,
-    features: ['Bonding capacity improvement', 'Financial statement preparation', 'WIP schedule creation', 'Underwriter coordination']
+    description: 'Need better bonding capacity? We\'ve got your back. QuantiFi prepares the detailed financial statements and WIP schedules that surety underwriters require. We understand the ratios and benchmarks that bonding companies look for, and we\'ll advise you on improving them (like maintaining certain working capital levels or equity balances). From assembling contractor pre-qualification packages to producing on-demand financial reports for your bond agent, we ensure you can bid on bigger projects.',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Fractional CFO & Advisory Services',
-    description: 'Get CFO-level guidance without the full-time cost. Our Fractional CFO service provides you with an experienced construction finance executive on-call. We help with strategic planning, such as annual budgeting, forecasting for project pipelines, and scenario analysis for big equipment purchases or expansions. If you\'re looking at new financing or an exit strategy, we\'ll provide valuation insights and prep your financials for investors. You\'ll receive high-level advice on profitability improvement, overhead cost control, KPI tracking, and more. It\'s like having a seasoned CFO or Controller as part of your team, scaled to the level you need – offering clarity for major decisions and financial leadership to drive growth.',
-    icon: Building2,
-    features: ['Strategic planning', 'Annual budgeting', 'Scenario analysis', 'Growth strategy']
+    description: 'Get CFO-level guidance without the full-time cost. Our Fractional CFO service provides you with an experienced construction finance executive on-call. We help with strategic planning, such as annual budgeting, forecasting for project pipelines, and scenario analysis for big equipment purchases or expansions. If you\'re looking at new financing or an exit strategy, we\'ll provide valuation insights and prep your financials for investors.',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   }
 ];
 
@@ -153,10 +150,10 @@ export default function ConstructionPage() {
     <MarketingLayout>
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-50 via-blue-50 to-green-50 dark:from-orange-950/20 dark:via-blue-950/20 dark:to-green-950/20 py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/20 dark:via-gray-950 dark:to-blue-950/20 py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
                 Construction & Contracting Accounting Services
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
@@ -166,11 +163,11 @@ export default function ConstructionPage() {
                 Project finances don&apos;t have to be complicated. QuantiFi&apos;s specialized construction accounting services help contractors keep their books accurate, projects profitable, and businesses fully compliant from the ground up. We handle the numbers — you focus on building.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <BookCallButton className="text-lg px-10 py-6 bg-orange-600 hover:bg-orange-700 text-white font-semibold">
+                <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-3 w-3" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
                   <Link href="/services">View All Services</Link>
                 </Button>
               </div>
@@ -186,7 +183,7 @@ export default function ConstructionPage() {
                 <h2 className="text-4xl font-bold text-foreground mb-6">
                   Building Solid Financial Foundations
                 </h2>
-                <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
+                <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#0015ff' }}></div>
               </div>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
@@ -210,7 +207,7 @@ export default function ConstructionPage() {
                   QuantiFi supports construction companies across the nation — from Atlanta to Dallas to the Los Angeles, delivering industry-specific expertise and scalable financial systems. Whether you need construction payroll support, contractor bookkeeping cleanup, or CPA-ready reporting for your tax preparer, we ensure your books are accurate, compliant, and ready for year-end filings.
                 </p>
                 
-                <div className="bg-orange-50 dark:bg-orange-950/20 p-8 rounded-2xl border-l-4 border-orange-500 mt-8">
+                <div className="bg-blue-50 dark:bg-blue-950/20 p-8 rounded-2xl border-l-4 mt-8" style={{ borderLeftColor: '#0015ff' }}>
                   <p className="text-lg font-medium text-foreground mb-0">
                     <strong>With QuantiFi, you get the perfect balance of big-firm experience and local insight</strong> — a dedicated accounting partner that understands contractors, builds financial strength, and keeps your numbers working as hard as your crews do.
                   </p>
@@ -232,232 +229,7 @@ export default function ConstructionPage() {
               </p>
             </div>
 
-            <BentoGrid className="max-w-7xl mx-auto">
-              {/* Featured Services - Larger Cards */}
-              <BentoGridItem
-                title={constructionServices[0].title}
-                description={constructionServices[0].description}
-                header={
-                  <div className="flex items-center mb-2">
-                      <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
-                      {React.createElement(constructionServices[0].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border-orange-200 dark:border-orange-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[0].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={constructionServices[1].title}
-                description={constructionServices[1].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                      {React.createElement(constructionServices[1].icon, { className: "h-8 w-8 text-blue-600 dark:text-blue-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[1].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Second Row */}
-              <BentoGridItem
-                title={constructionServices[2].title}
-                description={constructionServices[2].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                      {React.createElement(constructionServices[2].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20 border-green-200 dark:border-green-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[2].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={constructionServices[3].title}
-                description={constructionServices[3].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                      {React.createElement(constructionServices[3].icon, { className: "h-8 w-8 text-purple-600 dark:text-purple-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border-purple-200 dark:border-purple-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[3].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Third Row */}
-              <BentoGridItem
-                title={constructionServices[4].title}
-                description={constructionServices[4].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl">
-                      {React.createElement(constructionServices[4].icon, { className: "h-8 w-8 text-red-600 dark:text-red-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20 border-red-200 dark:border-red-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[4].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={constructionServices[5].title}
-                description={constructionServices[5].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
-                      {React.createElement(constructionServices[5].icon, { className: "h-8 w-8 text-indigo-600 dark:text-indigo-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/20 dark:to-indigo-900/20 border-indigo-200 dark:border-indigo-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[5].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={constructionServices[6].title}
-                description={constructionServices[6].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl">
-                      {React.createElement(constructionServices[6].icon, { className: "h-8 w-8 text-teal-600 dark:text-teal-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950/20 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[6].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fourth Row */}
-              <BentoGridItem
-                title={constructionServices[7].title}
-                description={constructionServices[7].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
-                      {React.createElement(constructionServices[7].icon, { className: "h-8 w-8 text-yellow-600 dark:text-yellow-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950/20 dark:to-yellow-900/20 border-yellow-200 dark:border-yellow-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[7].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                      </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={constructionServices[8].title}
-                description={constructionServices[8].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
-                      {React.createElement(constructionServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[8].features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fifth Row */}
-              <BentoGridItem
-                title={constructionServices[9].title}
-                description={constructionServices[9].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl">
-                      {React.createElement(constructionServices[9].icon, { className: "h-8 w-8 text-cyan-600 dark:text-cyan-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950/20 dark:to-cyan-900/20 border-cyan-200 dark:border-cyan-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {constructionServices[9].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-              ))}
-            </div>
-              </BentoGridItem>
-            </BentoGrid>
+            <StackingCards projects={constructionServices} />
           </div>
         </section>
 
@@ -475,19 +247,19 @@ export default function ConstructionPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseQuantiFi.map((reason, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                <Card key={index} className="p-8 text-left hover:shadow-lg transition-shadow border-0 bg-white dark:bg-gray-900">
                   <CardHeader className="pb-4">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl">
-                        <reason.icon className="h-10 w-10 text-blue-600 dark:text-blue-400" />
+                    <div className="flex justify-start mb-4">
+                      <div className="p-4 rounded-2xl" style={{ backgroundColor: '#e6e8ff' }}>
+                        <reason.icon className="h-10 w-10" style={{ color: '#0015ff' }} />
                       </div>
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-2">
+                    <CardTitle className="text-xl font-bold text-foreground mb-2 text-left">
                       {reason.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-left">
                       {reason.description}
                     </p>
                   </CardContent>
@@ -527,7 +299,7 @@ export default function ConstructionPage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white">
+        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
           <div className="container-standard section-gutter text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -537,13 +309,15 @@ export default function ConstructionPage() {
                 Don&apos;t let accounting issues undermine your projects. Let QuantiFi handle the finances while you focus on construction. We&apos;re here to provide clarity, strategy, and peace of mind in every job&apos;s numbers. Reach out today to start with a personalized consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white text-blue-600 hover:bg-gray-100 font-bold">
+                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-6 w-6" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-xl px-8 py-8 border-white text-white hover:bg-white hover:text-blue-600">
-                  <Link href="/contact">Contact Us Today</Link>
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                    Contact Us Today
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

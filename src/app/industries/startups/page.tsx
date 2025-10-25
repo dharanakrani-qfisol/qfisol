@@ -6,11 +6,8 @@ import { Button } from '@/components/ui/button';
 import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { StackingCards } from '@/components/ui/stacking-card';
 import { 
-  CheckCircle, 
-  Calculator, 
-  BarChart, 
   ArrowRight, 
   DollarSign, 
   Users, 
@@ -37,62 +34,72 @@ const startupServices = [
   {
     title: 'Bookkeeping & General Ledger Management',
     description: 'We take over the day-to-day bookkeeping so you don\'t have to. This includes recording all transactions – linking to your bank and credit card feeds, categorizing expenses (AWS bills to "Cloud Services," developer payouts to "Contractor Expenses," etc.), and ensuring every Stripe/PayPal deposit or customer payment is properly booked. We perform monthly reconciliations of accounts so that your ledgers are accurate. With professional bookkeeping, you\'ll have clean financial data from day one, which is crucial for decision-making and impressing investors. No more messy spreadsheets – consider your basic financial record-keeping handled.',
-    icon: Calculator,
-    features: ['Bank feed integration', 'Expense categorization', 'Monthly reconciliations', 'Clean financial data']
+    link: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Monthly Financial Statements & Reporting',
     description: 'Each month (or quarter), we produce a full set of financial statements for your startup. This includes an Income Statement (showing your revenue, if any, and all expenses – so you know your burn rate and net income/loss), a Balance Sheet (listing your assets like cash and any equipment, and liabilities like loans or credit card balances), and a Cash Flow Statement (crucial for startups, showing how cash is moving in and out). But we don\'t just send generic reports – we tailor them to what startups need. For example, we can show operational expenditures vs. capital expenditures, or separate your R&D expenses from SG&A. We\'ll also include key metrics like monthly burn and remaining runway (how many months of cash left at current burn). These investor-grade reports keep you on top of your finances and are ready to share at board meetings or due diligence.',
-    icon: BarChart,
-    features: ['Investor-grade reports', 'Burn rate tracking', 'Runway calculations', 'Board-ready statements']
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Cash Flow Management & Runway Forecasting',
-    description: 'Cash is the lifeblood of startups. We help you monitor and project your cash flow so you always know how much runway you have. We\'ll set up a cash management system to track inflows (sales revenue, investment tranches, loans) and outflows (payroll, rent, marketing, etc.). Using this, we create short-term and medium-term cash forecasts. For example, we might project that, given your plans, you\'ll run low on cash in 8 months – which means you should consider raising another round in 6 months to be safe. We\'ll also advise on timing expenditures or accelerating collections if possible to extend runway. In essence, we act as an early warning system for cash issues and help you avoid the nightmare of finding out you\'re almost broke when it\'s too late. Good cash flow management can be the difference between survival and premature shutdown for a startup.',
-    icon: TrendingUp,
-    features: ['Cash flow projections', 'Runway forecasting', 'Early warning system', 'Collection optimization']
+    description: 'Cash is the lifeblood of startups. We help you monitor and project your cash flow so you always know how much runway you have. We\'ll set up a cash management system to track inflows (sales revenue, investment tranches, loans) and outflows (payroll, rent, marketing, etc.). Using this, we create short-term and medium-term cash forecasts. For example, we might project that, given your plans, you\'ll run low on cash in 8 months – which means you should consider raising another round in 6 months to be safe. We\'ll also advise on timing expenditures or accelerating collections if possible to extend runway. In essence, we act as an early warning system for cash issues and help you avoid the nightmare of finding out you\'re almost broke when it\'s too late.',
+    link: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   },
   {
     title: 'Budgeting & Financial Modeling',
-    description: 'Strategic planning is critical as you grow. We collaborate with you to set up a budget (even if it\'s rough at first) and a dynamic financial model for your business. This could include revenue projections (maybe based on user growth and monetization rates), expense forecasts (hiring plans, marketing spend, infrastructure costs scaling with users, etc.), and scenario analysis (e.g., what if growth is 20% slower or faster?). If you don\'t have a model yet, we\'ll build one that fits your business drivers – for SaaS startups, we\'ll incorporate things like MRR, CAC, churn; for marketplaces, maybe GMV and take rates, etc. We also update the budget vs. actuals so you can see how reality compares to forecasts and adjust course. This forward-looking approach gives you targets to aim for and a framework to evaluate new opportunities (like, can we afford to hire 2 more engineers in Q3?). It\'s also immensely helpful when talking to investors, as you can confidently discuss your financial plan.',
-    icon: PieChart,
-    features: ['Revenue projections', 'Expense forecasting', 'Scenario analysis', 'Growth planning']
+    description: 'Strategic planning is critical as you grow. We collaborate with you to set up a budget (even if it\'s rough at first) and a dynamic financial model for your business. This could include revenue projections (maybe based on user growth and monetization rates), expense forecasts (hiring plans, marketing spend, infrastructure costs scaling with users, etc.), and scenario analysis (e.g., what if growth is 20% slower or faster?). If you don\'t have a model yet, we\'ll build one that fits your business drivers – for SaaS startups, we\'ll incorporate things like MRR, CAC, churn; for marketplaces, maybe GMV and take rates, etc. We also update the budget vs. actuals so you can see how reality compares to forecasts and adjust course.',
+    link: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   },
   {
     title: 'Accounts Payable & Expense Management',
-    description: 'We implement a smooth system for handling your startup\'s bills and expenses. Startups often have many subscription services, contractor invoices, and vendor bills. We\'ll organize these by setting you up with an expense management or bill pay tool (or use your existing one). You or your team can easily forward bills or snap receipts; we take it from there: recording the expense, assigning it to the right category or project, and scheduling payment (with your approval flow if you want). We\'ll ensure your vendors (or contractors) get paid on time and that you\'re not overpaying (we cross-check charges, flag duplicates, etc.). We also enforce spend policies if you have them, or help you develop one as you grow (like setting who can spend what, ensuring big expenses get your OK). This keeps spending under control and organized – crucial for avoiding cash leakage and for that due diligence folder when investors ask for details on your spends.',
-    icon: Receipt,
-    features: ['Bill processing', 'Expense categorization', 'Payment scheduling', 'Spend policy enforcement']
+    description: 'We implement a smooth system for handling your startup\'s bills and expenses. Startups often have many subscription services, contractor invoices, and vendor bills. We\'ll organize these by setting you up with an expense management or bill pay tool (or use your existing one). You or your team can easily forward bills or snap receipts; we take it from there: recording the expense, assigning it to the right category or project, and scheduling payment (with your approval flow if you want). We\'ll ensure your vendors (or contractors) get paid on time and that you\'re not overpaying (we cross-check charges, flag duplicates, etc.).',
+    link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Payroll & Equity Compensation Support',
-    description: 'We manage accurate payroll accounting for startups while coordinating with your chosen payroll provider (such as Gusto, Rippling, or ADP) — but we do not file payroll taxes. Our team ensures salaries, hourly wages, bonuses, and founder draws are recorded correctly, reconciled, and reflected accurately in your books. For startups offering equity, we help track and report stock-based compensation using your cap-table system or law firm\'s data. We record 83(b) elections, option pool grants, and stock-based expense allocations in your financial statements so you understand the true cost of equity and dilution. Whether your team is paid in cash, equity, or both, QuantiFi ensures payroll and compensation data stay accurate, compliant, and investor-ready.',
-    icon: Users,
-    features: ['Payroll coordination', 'Equity tracking', 'Stock-based compensation', 'Cap table integration']
+    description: 'We manage accurate payroll accounting for startups while coordinating with your chosen payroll provider (such as Gusto, Rippling, or ADP) — but we do not file payroll taxes. Our team ensures salaries, hourly wages, bonuses, and founder draws are recorded correctly, reconciled, and reflected accurately in your books. For startups offering equity, we help track and report stock-based compensation using your cap-table system or law firm\'s data. We record 83(b) elections, option pool grants, and stock-based expense allocations in your financial statements so you understand the true cost of equity and dilution.',
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/payroll-hr',
   },
   {
     title: 'Tax Compliance & Startup Tax Credits',
-    description: 'We help startups stay compliant and financially prepared by organizing CPA-ready tax records — but we do not file income or payroll taxes. Our team ensures your books, schedules, and reports are complete and accurate for your CPA or tax preparer to file. We also prepare and reconcile 1099s from your payroll system, track deductible expenses, and maintain documentation to support every filing. Beyond compliance, we provide strategic guidance on tax planning for startups — from entity structure optimization and depreciation schedules to identifying valuable incentives like the R&D Tax Credit. If your startup qualifies, we work with your CPA or tax specialist to document eligible expenses and maximize the credit\'s benefit. We also monitor sales tax exposure and Delaware franchise reporting to ensure nothing slips through the cracks. With QuantiFi, your financials stay audit-ready, organized, and optimized for smooth year-end filings.',
-    icon: Shield,
-    features: ['CPA-ready records', 'R&D tax credits', 'Entity optimization', 'Compliance support']
+    description: 'We help startups stay compliant and financially prepared by organizing CPA-ready tax records — but we do not file income or payroll taxes. Our team ensures your books, schedules, and reports are complete and accurate for your CPA or tax preparer to file. We also prepare and reconcile 1099s from your payroll system, track deductible expenses, and maintain documentation to support every filing. Beyond compliance, we provide strategic guidance on tax planning for startups — from entity structure optimization and depreciation schedules to identifying valuable incentives like the R&D Tax Credit.',
+    link: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/tax-preparation-compliance',
   },
   {
     title: 'Financial Systems Setup & Automation',
-    description: 'We help implement the right finance tech stack for your startup. Early on, many startups just use a simple setup, but as you grow, the volume of transactions and complexity grows too. We\'ll recommend and set up tools that save time and reduce errors: for example, connecting your e-commerce or subscription billing platform (Stripe, Shopify, etc.) directly into accounting software; using Receipt Bank or Expensify for receipt capture; integrating your bank feeds to auto-import transactions; setting up rules to auto-categorize regular transactions (so that monthly Google Cloud charge always goes to "Hosting" for instance). If you\'re on a basic accounting system that\'s not scaling, we\'ll help migrate you to one that can (e.g., moving from Wave/Excel to QuickBooks Online or Xero, or from QBO to Netsuite if you really scale up). We\'ll also ensure backup and security of your financial data. The result is a streamlined, largely automated finance backend. You get up-to-date numbers with minimal manual effort, and your focus can remain on product and customers. Plus, a solid system reduces risk of mistakes that could upset investors or regulators later.',
-    icon: Zap,
-    features: ['System integration', 'Automation setup', 'Data migration', 'Error reduction']
+    description: 'We help implement the right finance tech stack for your startup. Early on, many startups just use a simple setup, but as you grow, the volume of transactions and complexity grows too. We\'ll recommend and set up tools that save time and reduce errors: for example, connecting your e-commerce or subscription billing platform (Stripe, Shopify, etc.) directly into accounting software; using Receipt Bank or Expensify for receipt capture; integrating your bank feeds to auto-import transactions; setting up rules to auto-categorize regular transactions (so that monthly Google Cloud charge always goes to "Hosting" for instance).',
+    link: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/systems-integration',
   },
   {
     title: 'Fundraising Preparation & Investor Reporting',
-    description: 'When it\'s time to raise money (or report on how you\'re using it), QuantiFi has your back. We assist in preparing the financial materials needed for fundraising rounds – from seed pitch decks to Series B due diligence. This can include creating historical financial summaries, current metrics, and projected financials in a format investors expect. We\'ll ensure that your accounting records can stand up to investor scrutiny: everything reconciled, expenses categorized consistently, revenue recognition done right, etc. If an investor or VC firm does due diligence, we can help answer their questions and provide backup data quickly (so you appear well-organized and credible). Post-fundraising, we help with investor reporting: many VCs want quarterly updates with financials and KPIs. We\'ll help draft those sections, providing charts or tables as needed. Essentially, we make sure the financial story you tell investors is accurate, compelling, and backed by solid numbers. Having professionals on your side for this can increase your confidence and save you from headaches during the already stressful fundraising process.',
-    icon: Rocket,
-    features: ['Fundraising materials', 'Due diligence support', 'Investor reporting', 'Financial storytelling']
+    description: 'When it\'s time to raise money (or report on how you\'re using it), QuantiFi has your back. We assist in preparing the financial materials needed for fundraising rounds – from seed pitch decks to Series B due diligence. This can include creating historical financial summaries, current metrics, and projected financials in a format investors expect. We\'ll ensure that your accounting records can stand up to investor scrutiny: everything reconciled, expenses categorized consistently, revenue recognition done right, etc. If an investor or VC firm does due diligence, we can help answer their questions and provide backup data quickly (so you appear well-organized and credible).',
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   },
   {
     title: 'Fractional CFO Advisory & Strategy',
-    description: 'Our fractional CFO service is like having a seasoned financial executive on your team, scaled to the level you need. You might not need a full-time CFO at an early stage, but you can still benefit from high-level guidance. We provide that. We\'ll participate in strategic discussions: e.g., evaluating your SaaS metrics (LTV, CAC, churn) to see if your business model is on track, or analyzing unit economics on a product to ensure it can be profitable at scale. We can assist with pricing strategy, budgeting for hires, or deciding how much to raise in the next round. When you have investor board meetings, we\'ll help prepare reports and can even join to present the financials if you want support. If opportunities or challenges come up – such as considering an acquisition, or a pivot in business model – we\'ll model out scenarios and surface the financial implications. Also, we act as a sounding board: sometimes founders just need to talk through an idea ("What if we expand to Europe next year, what should we consider financially?") – we\'ll give honest, experienced input. Our goal as fractional CFOs is to improve your startup\'s financial decision-making and strategic planning, without you having to commit to a full-time salary. As you grow, we adapt the level of our involvement. Ultimately, we aim to be not just accountants, but true strategic partners in your journey to scale up.',
-    icon: Building2,
-    features: ['Strategic planning', 'SaaS metrics analysis', 'Pricing strategy', 'Board meeting support']
+    description: 'Our fractional CFO service is like having a seasoned financial executive on your team, scaled to the level you need. You might not need a full-time CFO at an early stage, but you can still benefit from high-level guidance. We provide that. We\'ll participate in strategic discussions: e.g., evaluating your SaaS metrics (LTV, CAC, churn) to see if your business model is on track, or analyzing unit economics on a product to ensure it can be profitable at scale. We can assist with pricing strategy, budgeting for hires, or deciding how much to raise in the next round. When you have investor board meetings, we\'ll help prepare reports and can even join to present the financials if you want support.',
+    link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   }
 ];
 
@@ -153,10 +160,10 @@ export default function StartupsPage() {
     <MarketingLayout>
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-indigo-950/20 py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/20 dark:via-gray-950 dark:to-blue-950/20 py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+              <Badge className="mb-6 px-6 py-3 text-base font-medium" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
                 Startups & Emerging Business Accounting Services
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
@@ -166,11 +173,11 @@ export default function StartupsPage() {
                 Launching and growing a startup is hard enough – let QuantiFi&apos;s tech-savvy accountants and fractional CFOs handle the finances. We&apos;ll keep your books investor-ready, monitor your burn rate, and help you plan for funding rounds, all at a startup-friendly cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <BookCallButton className="text-lg px-10 py-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold">
+                <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
                   Schedule a Free Startup Consultation
                   <ArrowRight className="h-5 w-5" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
                   <Link href="/services">View All Services</Link>
                 </Button>
               </div>
@@ -186,7 +193,7 @@ export default function StartupsPage() {
                 <h2 className="text-4xl font-bold text-foreground mb-6">
                   Finance that Scales with Your Startup
                 </h2>
-                <div className="w-24 h-1 bg-purple-500 mx-auto mb-8"></div>
+                <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#0015ff' }}></div>
               </div>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
@@ -218,232 +225,7 @@ export default function StartupsPage() {
               </p>
             </div>
 
-            <BentoGrid className="max-w-7xl mx-auto">
-              {/* Featured Services - Larger Cards */}
-              <BentoGridItem
-                title={startupServices[0].title}
-                description={startupServices[0].description}
-                header={
-                  <div className="flex items-center mb-2">
-                      <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                      {React.createElement(startupServices[0].icon, { className: "h-8 w-8 text-purple-600 dark:text-purple-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border-purple-200 dark:border-purple-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[0].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={startupServices[1].title}
-                description={startupServices[1].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                      {React.createElement(startupServices[1].icon, { className: "h-8 w-8 text-blue-600 dark:text-blue-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[1].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Second Row */}
-              <BentoGridItem
-                title={startupServices[2].title}
-                description={startupServices[2].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                      {React.createElement(startupServices[2].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20 border-green-200 dark:border-green-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[2].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={startupServices[3].title}
-                description={startupServices[3].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
-                      {React.createElement(startupServices[3].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border-orange-200 dark:border-orange-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[3].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Third Row */}
-              <BentoGridItem
-                title={startupServices[4].title}
-                description={startupServices[4].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl">
-                      {React.createElement(startupServices[4].icon, { className: "h-8 w-8 text-red-600 dark:text-red-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20 border-red-200 dark:border-red-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[4].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={startupServices[5].title}
-                description={startupServices[5].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
-                      {React.createElement(startupServices[5].icon, { className: "h-8 w-8 text-indigo-600 dark:text-indigo-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/20 dark:to-indigo-900/20 border-indigo-200 dark:border-indigo-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[5].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={startupServices[6].title}
-                description={startupServices[6].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl">
-                      {React.createElement(startupServices[6].icon, { className: "h-8 w-8 text-teal-600 dark:text-teal-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950/20 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[6].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fourth Row */}
-              <BentoGridItem
-                title={startupServices[7].title}
-                description={startupServices[7].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
-                      {React.createElement(startupServices[7].icon, { className: "h-8 w-8 text-yellow-600 dark:text-yellow-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950/20 dark:to-yellow-900/20 border-yellow-200 dark:border-yellow-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[7].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                      </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={startupServices[8].title}
-                description={startupServices[8].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
-                      {React.createElement(startupServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[8].features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fifth Row */}
-              <BentoGridItem
-                title={startupServices[9].title}
-                description={startupServices[9].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl">
-                      {React.createElement(startupServices[9].icon, { className: "h-8 w-8 text-cyan-600 dark:text-cyan-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950/20 dark:to-cyan-900/20 border-cyan-200 dark:border-cyan-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {startupServices[9].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-              ))}
-            </div>
-              </BentoGridItem>
-            </BentoGrid>
+            <StackingCards projects={startupServices} />
           </div>
         </section>
 
@@ -464,19 +246,19 @@ export default function StartupsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseQuantiFi.map((reason, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                <Card key={index} className="p-8 text-left hover:shadow-lg transition-shadow border-0 bg-white dark:bg-gray-900">
                   <CardHeader className="pb-4">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-4 bg-purple-100 dark:bg-purple-900/30 rounded-2xlch">
-                        <reason.icon className="h-10 w-10 text-purple-600 dark:text-purple-400" />
+                    <div className="flex justify-start mb-4">
+                      <div className="p-4 rounded-2xl" style={{ backgroundColor: '#e6e8ff' }}>
+                        <reason.icon className="h-10 w-10" style={{ color: '#0015ff' }} />
                       </div>
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-3">
+                    <CardTitle className="text-xl font-bold text-foreground mb-3 text-left">
                       {reason.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-left">
                       {reason.description}
                     </p>
                   </CardContent>
@@ -531,7 +313,7 @@ export default function StartupsPage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-600 text-white">
+        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
           <div className="container-standard section-gutter text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -541,13 +323,15 @@ export default function StartupsPage() {
                 Don&apos;t let financial growing pains stall your momentum. With QuantiFi as your partner, you gain clarity, strategy, and confidence in every stage of growth – without the overhead. Free up your time to innovate, while our experts handle the books and guide your financial decisions. Schedule your free startup consultation today ➜ and let&apos;s build your unicorn on a solid financial foundation.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white text-purple-600 hover:bg-gray-100 font-bold">
+                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
                   Schedule a Free Startup Consultation
                   <ArrowRight className="h-6 w-6" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-xl px-8 py-8 border-white text-white hover:bg-white hover:text-purple-600">
-                  <Link href="/contact">Contact Us Today</Link>
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                    Contact Us Today
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -6,10 +6,8 @@ import { Button } from '@/components/ui/button';
 import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { StackingCards } from '@/components/ui/stacking-card';
 import { 
-  CheckCircle, 
-  BarChart, 
   ArrowRight, 
   DollarSign, 
   Shield, 
@@ -36,62 +34,72 @@ const realEstateServices = [
   {
     title: 'Property Bookkeeping and Rent Roll Management',
     description: 'We maintain complete, property-specific books that track every dollar in and out. Our team records rental income, management fees, CAM recoveries, and all property-level expenses such as maintenance, utilities, and taxes. We keep your rent roll current, reconciling tenant ledgers so you always know which units are occupied, which rents are due, and what deposits are held. With this level of organization, you can instantly view property profitability and ensure every transaction is captured accurately for real estate bookkeeping and audit purposes.',
-    icon: Home,
-    features: ['Property-specific books', 'Rent roll management', 'Tenant ledger reconciliation', 'CAM recoveries tracking']
+    link: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Accounts Payable and Expense Tracking',
     description: 'We establish a streamlined accounts payable system for all your vendors, contractors, and service providers. Every invoice is coded to the right property and expense category, helping you track operating expenses and capital improvements separately. Our detailed cost coding supports fixed asset tracking and depreciation schedules, so your CPA receives clean data for tax reporting. With transparent expense tracking and payment scheduling, you avoid late fees, take advantage of early-pay discounts, and maintain tight control over property cash flow.',
-    icon: Receipt,
-    features: ['Vendor invoice processing', 'Property expense coding', 'Capital improvement tracking', 'Fixed asset management']
+    link: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Bank Reconciliations and Escrow Accounting',
     description: 'Real estate portfolios often manage multiple bank accounts, including operating, reserve, and escrow accounts. QuantiFi performs regular reconciliations for each account to ensure your books match your bank statements to the penny. We maintain separate trust ledgers for tenant deposits and reconcile them to your escrow balances to meet compliance requirements. Our escrow and trust accounting safeguards funds and eliminates errors, keeping your financial records audit-ready at all times.',
-    icon: CreditCard,
-    features: ['Multi-account reconciliation', 'Escrow account management', 'Trust ledger maintenance', 'Compliance reporting']
+    link: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Financial Reporting per Property and Consolidated',
     description: 'We prepare tailored real estate financial reporting that provides both property-specific and portfolio-wide insights. You receive detailed income statements, balance sheets, and cash flow summaries formatted for real estate metrics such as NOI, cap rate, and DSCR. Whether you have multiple LLCs or a single property entity, our multi-entity accounting approach delivers both granular and consolidated views for owners, lenders, and investors.',
-    icon: BarChart,
-    features: ['Property-specific reports', 'Portfolio consolidation', 'NOI calculations', 'Cap rate analysis']
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Cash Flow Management and Forecasting',
     description: 'Real estate success depends on liquidity. We develop cash flow forecasts that map rental inflows, mortgage payments, and capital expenses month by month. This proactive planning helps you anticipate shortfalls, schedule distributions, and plan acquisitions without surprises. Our detailed forecasting ensures stable operations and strategic timing for renovations, debt payments, and reinvestment decisions.',
-    icon: TrendingUp,
-    features: ['Cash flow forecasting', 'Liquidity planning', 'Distribution scheduling', 'Acquisition planning']
+    link: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Loan Compliance and Lender Reporting',
     description: 'We monitor your loans and prepare accurate lender-ready reports. Our team tracks loan balances, calculates DSCR, LTV, and covenant ratios, and ensures your books tie perfectly to lender statements. For construction and renovation projects, we prepare loan draw packages with updated cost tracking and lien documentation. With our loan compliance reporting, you stay in good standing with banks and maintain a strong borrowing reputation.',
-    icon: Landmark,
-    features: ['DSCR calculations', 'LTV monitoring', 'Covenant tracking', 'Construction loan draws']
+    link: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Tax Coordination, Cost Segregation, and 1031 Exchange Support',
     description: 'Our accounting team supports your tax preparer or CPA by maintaining clean depreciation schedules, tracking improvements, and organizing data for cost segregation accounting and 1031 exchange accounting. We prepare asset and improvement breakdowns, monitor basis, and coordinate with specialists for accelerated depreciation or like-kind exchanges. We also assist with real estate valuation support, ensuring your property records align with appraisal and financing requirements. This structure helps maximize deductions, defer gains, and optimize after-tax returns.',
-    icon: Shield,
-    features: ['Depreciation schedules', 'Cost segregation support', '1031 exchange accounting', 'Tax coordination']
+    link: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Investment and Portfolio Analysis',
     description: 'We provide in-depth real estate financial analysis and investor reporting that goes beyond basic bookkeeping. Our reports include key performance indicators like ROI, IRR, occupancy rates, and expense ratios. For syndications and partnerships, we maintain accurate investor ledgers, capital accounts, and distribution waterfalls. You\'ll receive clear, timely insights that reveal property trends, highlight high-performing assets, and guide long-term portfolio strategy.',
-    icon: PieChart,
-    features: ['ROI analysis', 'IRR tracking', 'Occupancy rates', 'Portfolio performance']
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Property Management Software Integration',
     description: 'QuantiFi integrates with your preferred property management software including Yardi, AppFolio, Buildium, Rent Manager, MRI, and QuickBooks. We align operational data with your accounting system to eliminate manual entry and ensure consistent, accurate reporting. Our team optimizes your chart of accounts and reporting templates for Yardi accounting, AppFolio bookkeeping, and other platforms, creating a unified workflow that saves time and reduces errors.',
-    icon: Zap,
-    features: ['Yardi integration', 'AppFolio bookkeeping', 'Buildium support', 'QuickBooks optimization']
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Fractional CFO and Real Estate Advisory',
     description: 'Beyond bookkeeping, QuantiFi acts as your fractional CFO, delivering strategic financial leadership tailored to real estate operations. We model acquisitions, dispositions, and refinancing scenarios, prepare development budgets, and analyze returns. Our experts advise on property acquisition accounting, property improvement accounting, and entity restructuring to enhance efficiency and profitability. With forward-looking forecasts and financial insight, we help you make confident, data-driven decisions that strengthen your portfolio\'s long-term growth.',
-    icon: Building2,
-    features: ['Acquisition modeling', 'Development budgets', 'Refinancing analysis', 'Strategic planning']
+    link: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   }
 ];
 
@@ -164,10 +172,10 @@ export default function RealEstatePage() {
     <MarketingLayout>
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-green-50 via-blue-50 to-teal-50 dark:from-green-950/20 dark:via-blue-950/20 dark:to-teal-950/20 py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/20 dark:via-gray-950 dark:to-blue-950/20 py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+              <Badge className="mb-6 px-6 py-3 text-base font-medium" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
                 Real Estate & Property Management Accounting Services
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
@@ -177,11 +185,11 @@ export default function RealEstatePage() {
                 QuantiFi provides specialized accounting for real estate businesses – from property managers and investors to developers. We&apos;ll handle rent rolls, expense tracking, loan compliance, and financial reporting for your properties, ensuring you have clear financial insight and more time to close deals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <BookCallButton className="text-lg px-10 py-6 bg-green-600 hover:bg-green-700 text-white font-semibold">
+                <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-5 w-5" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
                   <Link href="/services">View All Services</Link>
                 </Button>
               </div>
@@ -197,7 +205,7 @@ export default function RealEstatePage() {
                 <h2 className="text-4xl font-bold text-foreground mb-6">
                   Building Wealth on Solid Financial Foundations
                 </h2>
-                <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
+                <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#0015ff' }}></div>
               </div>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
@@ -229,232 +237,7 @@ export default function RealEstatePage() {
               </p>
             </div>
 
-            <BentoGrid className="max-w-7xl mx-auto">
-              {/* Featured Services - Larger Cards */}
-              <BentoGridItem
-                title={realEstateServices[0].title}
-                description={realEstateServices[0].description}
-                header={
-                  <div className="flex items-center mb-2">
-                      <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[0].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20 border-green-200 dark:border-green-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[0].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={realEstateServices[1].title}
-                description={realEstateServices[1].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[1].icon, { className: "h-8 w-8 text-blue-600 dark:text-blue-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[1].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Second Row */}
-              <BentoGridItem
-                title={realEstateServices[2].title}
-                description={realEstateServices[2].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[2].icon, { className: "h-8 w-8 text-purple-600 dark:text-purple-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border-purple-200 dark:border-purple-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[2].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={realEstateServices[3].title}
-                description={realEstateServices[3].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[3].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border-orange-200 dark:border-orange-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[3].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Third Row */}
-              <BentoGridItem
-                title={realEstateServices[4].title}
-                description={realEstateServices[4].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[4].icon, { className: "h-8 w-8 text-red-600 dark:text-red-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20 border-red-200 dark:border-red-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[4].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={realEstateServices[5].title}
-                description={realEstateServices[5].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[5].icon, { className: "h-8 w-8 text-indigo-600 dark:text-indigo-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/20 dark:to-indigo-900/20 border-indigo-200 dark:border-indigo-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[5].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={realEstateServices[6].title}
-                description={realEstateServices[6].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[6].icon, { className: "h-8 w-8 text-teal-600 dark:text-teal-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950/20 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[6].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fourth Row */}
-              <BentoGridItem
-                title={realEstateServices[7].title}
-                description={realEstateServices[7].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[7].icon, { className: "h-8 w-8 text-yellow-600 dark:text-yellow-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950/20 dark:to-yellow-900/20 border-yellow-200 dark:border-yellow-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[7].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                      </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={realEstateServices[8].title}
-                description={realEstateServices[8].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[8].features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fifth Row */}
-              <BentoGridItem
-                title={realEstateServices[9].title}
-                description={realEstateServices[9].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl">
-                      {React.createElement(realEstateServices[9].icon, { className: "h-8 w-8 text-cyan-600 dark:text-cyan-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950/20 dark:to-cyan-900/20 border-cyan-200 dark:border-cyan-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {realEstateServices[9].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-              ))}
-            </div>
-              </BentoGridItem>
-            </BentoGrid>
+            <StackingCards projects={realEstateServices} />
           </div>
         </section>
 
@@ -472,19 +255,19 @@ export default function RealEstatePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseQuantiFi.map((reason, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                <Card key={index} className="p-8 text-left hover:shadow-lg transition-shadow border-0 bg-white dark:bg-gray-900">
                   <CardHeader className="pb-4">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-4 bg-green-100 dark:bg-green-900/30 rounded-2xl">
-                        <reason.icon className="h-10 w-10 text-green-600 dark:text-green-400" />
+                    <div className="flex justify-start mb-4">
+                      <div className="p-4 rounded-2xl" style={{ backgroundColor: '#e6e8ff' }}>
+                        <reason.icon className="h-10 w-10" style={{ color: '#0015ff' }} />
                       </div>
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-3">
+                    <CardTitle className="text-xl font-bold text-foreground mb-3 text-left">
                       {reason.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-left">
                       {reason.description}
                     </p>
                   </CardContent>
@@ -524,7 +307,7 @@ export default function RealEstatePage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-green-600 via-teal-600 to-blue-600 text-white">
+        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
           <div className="container-standard section-gutter text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -534,13 +317,15 @@ export default function RealEstatePage() {
                 Don&apos;t let accounting complexities or compliance worries hold back your real estate success. With QuantiFi as your financial partner, you gain clarity, confidence, and control over every property and project. We&apos;ll handle the books and the details – you focus on deals, development, and growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white text-green-600 hover:bg-gray-100 font-bold">
+                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-6 w-6" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-xl px-8 py-8 border-white text-white hover:bg-white hover:text-green-600">
-                  <Link href="/contact">Contact Us Today</Link>
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                    Contact Us Today
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

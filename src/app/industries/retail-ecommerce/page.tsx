@@ -6,11 +6,8 @@ import { Button } from '@/components/ui/button';
 import { BookCallButton } from '@/components/ui/book-call-button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { StackingCards } from '@/components/ui/stacking-card';
 import { 
-  CheckCircle, 
-  Calculator, 
-  BarChart, 
   ArrowRight, 
   DollarSign, 
   Users, 
@@ -38,62 +35,72 @@ const retailServices = [
   {
     title: 'Bookkeeping & Daily Sales Reconciliation',
     description: 'We take the day-to-day number crunching off your plate. Our team records all your sales and expenses, reconciling daily register/POS totals and online payment reports to your bank deposits. Whether you have a cash register in a boutique or receive dozens of PayPal/Stripe transactions from an online store, we ensure every sale is captured. We also reconcile credit card statements and platform payouts (like Shopify or Amazon disbursements) to verify you received what you\'re owed. This vigilant bookkeeping means your financial records are always up to date and accurate.',
-    icon: Calculator,
-    features: ['Daily POS reconciliation', 'Online payment tracking', 'Credit card statement matching', 'Bank deposit verification']
+    link: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Inventory Tracking & Cost of Goods Sold (COGS)',
     description: 'Inventory is the heart of retail. We implement systems to track your inventory purchases, usage, and shrinkage. When you buy merchandise or stock, we record it properly; as you sell items, we adjust inventory and calculate COGS. For e-commerce, we can sync with your platform to automatically update inventory levels and valuation. We\'ll also help identify and account for shrinkage – losses due to theft, damage, or errors – so you truly understand your product costs. By accurately calculating COGS, you\'ll know your gross margins on each product line, enabling smarter pricing and purchasing decisions.',
-    icon: Package,
-    features: ['Inventory purchase tracking', 'Shrinkage identification', 'COGS calculation', 'SKU-level profitability']
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Accounts Payable & Supplier Management',
     description: 'QuantiFi handles your payables so you maintain great supplier relationships and avoid late fees. We manage the entire bill pay process: receiving vendor bills (stock purchases, utilities, rent, shipping fees, etc.), coding them to the correct expense or inventory accounts, and scheduling payments. We optimize payment timing to aid cash flow – for instance, taking advantage of early pay discounts from wholesalers or making sure critical inventory vendors are paid promptly to avoid supply disruptions. You\'ll always know what\'s due and when, and we\'ll provide cash requirements forecasts so there are no surprises.',
-    icon: Receipt,
-    features: ['Vendor bill processing', 'Payment optimization', 'Early pay discounts', 'Cash flow forecasting']
+    link: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/outsourced-accounting',
   },
   {
     title: 'Payroll & Labor Cost Management',
     description: 'In the world of retail, staff scheduling and wages directly impact your bottom line. We process payroll for your store employees or fulfillment team accurately and on time. Whether you have salaried managers, hourly sales associates, or seasonal/temp staff, we handle all wage calculations, withholdings, and payroll tax filings. Importantly, we also track your labor costs as a percentage of sales and can help implement controls (like alerts if weekly hours exceed a threshold). This ensures you\'re not overspending on staffing relative to your revenue. We\'ll also manage sales commissions or bonus calculations if you have them for your sales team.',
-    icon: Users,
-    features: ['Multi-employee payroll', 'Labor cost tracking', 'Commission calculations', 'Payroll tax compliance']
+    link: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/payroll-hr',
   },
   {
     title: 'Sales Tax Compliance (Multi-State)',
     description: 'Selling products means navigating sales tax, which can be especially tricky for e-commerce. Different states (and countries) have different rules about when you need to collect tax (nexus) and how to file. QuantiFi monitors your sales by state and advises where you have tax obligations. We handle obtaining any necessary sales tax permits, calculating the tax on each sale (in-store or online), and filing the required sales tax returns in each jurisdiction on time. This includes handling state-specific quirks, like threshold-based filings or local district taxes. By entrusting sales tax to us, you avoid the nightmare of audits and penalties, and ensure compliance even as laws (like economic nexus rules) evolve.',
-    icon: Shield,
-    features: ['Multi-state nexus tracking', 'Tax permit management', 'Automated tax calculations', 'Compliance filing']
+    link: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/tax-preparation-compliance',
   },
   {
     title: 'Financial Reporting & Multi-Store Consolidation',
     description: 'Get a clear view of your business performance with our tailored financial reports. We produce monthly financial statements (P&L, Balance Sheet, Cash Flow) and also create segment reports if needed – for example, separate P&Ls for your retail storefront vs. your e-commerce operations, or by location if you have multiple stores. We then consolidate these so you can see the overall picture. Our reports highlight key retail metrics: gross margin, inventory turnover, same-store sales growth, online vs. offline sales mix, etc. We\'ll review these numbers with you, translating accounting talk into plain English. With this insight, you can quickly spot trends, like a drop in one category\'s sales or an improvement in one store\'s performance, and act accordingly.',
-    icon: BarChart,
-    features: ['Multi-location reporting', 'Channel performance analysis', 'Key retail metrics', 'Consolidated statements']
+    link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Cash Flow Forecasting & Budgeting',
-    description: 'Cash is king in retail. We help you project and manage your cash flow so you\'re not caught off guard. Our team will work with you to create a budget for revenues and expenses, often broken down by month and by category (merchandise, rent, marketing, etc.). We factor in seasonal trends – e.g., higher sales and stock purchasing before holidays, or slow periods where cash might dip. Additionally, we prepare rolling cash flow forecasts that look ahead 8–12 weeks, predicting inflows (sales, tax refunds, etc.) and outflows (payroll, inventory purchases, loan payments). We\'ll alert you if we foresee a cash crunch and advise on strategies (like adjusting inventory orders or securing short-term financing). This proactive planning helps ensure you can meet obligations (like buying next season\'s inventory) and take advantage of opportunities (like bulk buying at a discount) without financial strain.',
-    icon: TrendingUp,
-    features: ['Seasonal budgeting', 'Cash flow projections', 'Inventory planning', 'Growth planning']
+    description: 'Cash is king in retail. We help you project and manage your cash flow so you\'re not caught off guard. Our team will work with you to create a budget for revenues and expenses, often broken down by month and by category (merchandise, rent, marketing, etc.). We factor in seasonal trends – e.g., higher sales and stock purchasing before holidays, or slow periods where cash might dip. Additionally, we prepare rolling cash flow forecasts that look ahead 8–12 weeks, predicting inflows (sales, tax refunds, etc.) and outflows (payroll, inventory purchases, loan payments). We\'ll alert you if we foresee a cash crunch and advise on strategies (like adjusting inventory orders or securing short-term financing).',
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   },
   {
     title: 'Systems Integration & E-Commerce Automation',
-    description: 'QuantiFi is tech-forward – we make sure your various systems talk to each other to reduce manual work. We can help you integrate your e-commerce platforms (Shopify, WooCommerce, Amazon Marketplace, Etsy, etc.) and payment processors (Stripe, PayPal, Square) with your accounting software. Daily sales, fees, and payouts can be imported automatically. We\'ll also integrate POS systems from your physical store and any third-party apps like expense tracking (Expensify) or bill payments. If you don\'t have an accounting system in place, we\'ll set up a robust cloud accounting platform (like QuickBooks Online or Xero) for you. Our goal is to create a unified, real-time financial dashboard for your business. No more disparate spreadsheets – you\'ll have one source of truth for all your sales channels and expenses.',
-    icon: Zap,
-    features: ['POS system integration', 'E-commerce platform sync', 'Payment processor linking', 'Automated reporting']
+    description: 'QuantiFi is tech-forward – we make sure your various systems talk to each other to reduce manual work. We can help you integrate your e-commerce platforms (Shopify, WooCommerce, Amazon Marketplace, Etsy, etc.) and payment processors (Stripe, PayPal, Square) with your accounting software. Daily sales, fees, and payouts can be imported automatically. We\'ll also integrate POS systems from your physical store and any third-party apps like expense tracking (Expensify) or bill payments. If you don\'t have an accounting system in place, we\'ll set up a robust cloud accounting platform (like QuickBooks Online or Xero) for you. Our goal is to create a unified, real-time financial dashboard for your business.',
+    link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/systems-integration',
   },
   {
     title: 'Benchmarking & KPI Dashboard',
-    description: 'We help you understand how your business stacks up and where to improve. QuantiFi can establish key performance indicators (KPIs) for your retail or e-commerce business – like conversion rate (for online), average transaction value, customer acquisition cost, and inventory sell-through rate. We\'ll then track these KPIs and even compare them to retail industry benchmarks when available. For example, if the industry average gross margin in your niche is 45% and you\'re at 38%, that\'s a flag we\'ll raise with suggestions (maybe renegotiate vendor costs or adjust pricing). Or if your online store\'s cart abandonment is high, we\'ll highlight that so you can investigate marketing or site improvements. We present this info in a simple dashboard that you can view anytime. By benchmarking, you gain context for your numbers and clarity on what "good" looks like, helping you prioritize improvements.',
-    icon: PieChart,
-    features: ['KPI establishment', 'Industry benchmarking', 'Performance tracking', 'Improvement insights']
+    description: 'We help you understand how your business stacks up and where to improve. QuantiFi can establish key performance indicators (KPIs) for your retail or e-commerce business – like conversion rate (for online), average transaction value, customer acquisition cost, and inventory sell-through rate. We\'ll then track these KPIs and even compare them to retail industry benchmarks when available. For example, if the industry average gross margin in your niche is 45% and you\'re at 38%, that\'s a flag we\'ll raise with suggestions (maybe renegotiate vendor costs or adjust pricing). Or if your online store\'s cart abandonment is high, we\'ll highlight that so you can investigate marketing or site improvements. We present this info in a simple dashboard that you can view anytime.',
+    link: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/financial-analytics',
   },
   {
     title: 'Fractional CFO Advisory & Growth Planning',
-    description: 'When it\'s time to level up your business, our fractional CFO services are here to guide you. For growing retailers and startups, we provide high-level financial advice on strategic decisions. Considering opening a new store or expanding your product line? We\'ll analyze the financial feasibility and help build a business case. Preparing to approach a bank or investor for funding? We make sure your financial model and statements are pitch-ready and we can even join conversations with lenders/investors to answer questions. We help with pricing strategy (ensuring your markups cover all overhead), profitability analysis by product/category, and cost reduction strategies. If you\'re an e-commerce startup, we can assist with metrics that investors scrutinize (CAC, LTV, monthly burn, etc.). Essentially, you get a seasoned financial partner who understands retail dynamics and can provide clarity and confidence as you make big decisions.',
-    icon: Building2,
-    features: ['Strategic planning', 'Feasibility analysis', 'Investor preparation', 'Growth strategy']
+    description: 'When it\'s time to level up your business, our fractional CFO services are here to guide you. For growing retailers and startups, we provide high-level financial advice on strategic decisions. Considering opening a new store or expanding your product line? We\'ll analyze the financial feasibility and help build a business case. Preparing to approach a bank or investor for funding? We make sure your financial model and statements are pitch-ready and we can even join conversations with lenders/investors to answer questions. We help with pricing strategy (ensuring your markups cover all overhead), profitability analysis by product/category, and cost reduction strategies. If you\'re an e-commerce startup, we can assist with metrics that investors scrutinize (CAC, LTV, monthly burn, etc.).',
+    link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    color: '#0015ff',
+    href: '/services/cfo-controller',
   }
 ];
 
@@ -158,10 +165,10 @@ export default function RetailEcommercePage() {
     <MarketingLayout>
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/20 dark:via-purple-950/20 dark:to-pink-950/20 py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/20 dark:via-gray-950 dark:to-blue-950/20 py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+              <Badge className="mb-6 px-6 py-3 text-base font-medium" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
                 Retail & E-Commerce Accounting Services
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
@@ -171,11 +178,11 @@ export default function RetailEcommercePage() {
                 Whether you run a local shop or a global online store, QuantiFi&apos;s specialized accounting services help you stay on top of inventory, sales tax, and cash flow. We handle your bookkeeping and financial planning so you can focus on selling and growing – online and off.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <BookCallButton className="text-lg px-10 py-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-5 w-5" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-gray-700 border-gray-300 hover:bg-gray-50 hover:text-gray-900">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
                   <Link href="/services">View All Services</Link>
                 </Button>
               </div>
@@ -191,7 +198,7 @@ export default function RetailEcommercePage() {
                 <h2 className="text-4xl font-bold text-foreground mb-6">
                   Driving Profits in a Dynamic Market
                 </h2>
-                <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+                <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#0015ff' }}></div>
               </div>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
@@ -223,232 +230,7 @@ export default function RetailEcommercePage() {
               </p>
             </div>
 
-            <BentoGrid className="max-w-7xl mx-auto">
-              {/* Featured Services - Larger Cards */}
-              <BentoGridItem
-                title={retailServices[0].title}
-                description={retailServices[0].description}
-                header={
-                  <div className="flex items-center mb-2">
-                      <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                      {React.createElement(retailServices[0].icon, { className: "h-8 w-8 text-blue-600 dark:text-blue-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[0].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={retailServices[1].title}
-                description={retailServices[1].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                      {React.createElement(retailServices[1].icon, { className: "h-8 w-8 text-green-600 dark:text-green-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20 border-green-200 dark:border-green-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[1].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Second Row */}
-              <BentoGridItem
-                title={retailServices[2].title}
-                description={retailServices[2].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                      {React.createElement(retailServices[2].icon, { className: "h-8 w-8 text-purple-600 dark:text-purple-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border-purple-200 dark:border-purple-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[2].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={retailServices[3].title}
-                description={retailServices[3].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
-                      {React.createElement(retailServices[3].icon, { className: "h-8 w-8 text-orange-600 dark:text-orange-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border-orange-200 dark:border-orange-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[3].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Third Row */}
-              <BentoGridItem
-                title={retailServices[4].title}
-                description={retailServices[4].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl">
-                      {React.createElement(retailServices[4].icon, { className: "h-8 w-8 text-red-600 dark:text-red-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20 border-red-200 dark:border-red-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[4].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={retailServices[5].title}
-                description={retailServices[5].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl">
-                      {React.createElement(retailServices[5].icon, { className: "h-8 w-8 text-indigo-600 dark:text-indigo-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/20 dark:to-indigo-900/20 border-indigo-200 dark:border-indigo-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[5].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={retailServices[6].title}
-                description={retailServices[6].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl">
-                      {React.createElement(retailServices[6].icon, { className: "h-8 w-8 text-teal-600 dark:text-teal-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950/20 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[6].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fourth Row */}
-              <BentoGridItem
-                title={retailServices[7].title}
-                description={retailServices[7].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
-                      {React.createElement(retailServices[7].icon, { className: "h-8 w-8 text-yellow-600 dark:text-yellow-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-2 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950/20 dark:to-yellow-900/20 border-yellow-200 dark:border-yellow-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[7].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                      </div>
-              </BentoGridItem>
-
-              <BentoGridItem
-                title={retailServices[8].title}
-                description={retailServices[8].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
-                      {React.createElement(retailServices[8].icon, { className: "h-8 w-8 text-pink-600 dark:text-pink-400" })}
-                    </div>
-                  </div>
-                }
-                className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/20 dark:to-pink-900/20 border-pink-200 dark:border-pink-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[8].features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                </div>
-              </BentoGridItem>
-
-              {/* Fifth Row */}
-              <BentoGridItem
-                title={retailServices[9].title}
-                description={retailServices[9].description}
-                header={
-                  <div className="flex items-center mb-2">
-                    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl">
-                      {React.createElement(retailServices[9].icon, { className: "h-8 w-8 text-cyan-600 dark:text-cyan-400" })}
-                    </div>
-                  </div>
-                }
-                className="md:col-span-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950/20 dark:to-cyan-900/20 border-cyan-200 dark:border-cyan-800"
-              >
-                <div className="space-y-1 mt-2">
-                  {retailServices[9].features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                      <span className="text-xs font-medium text-foreground">{feature}</span>
-                    </div>
-              ))}
-            </div>
-              </BentoGridItem>
-            </BentoGrid>
+            <StackingCards projects={retailServices} />
           </div>
         </section>
 
@@ -466,19 +248,19 @@ export default function RetailEcommercePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseQuantiFi.map((reason, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                <Card key={index} className="p-8 text-left hover:shadow-lg transition-shadow border-0 bg-white dark:bg-gray-900">
                   <CardHeader className="pb-4">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl">
-                        <reason.icon className="h-10 w-10 text-blue-600 dark:text-blue-400" />
+                    <div className="flex justify-start mb-4">
+                      <div className="p-4 rounded-2xl" style={{ backgroundColor: '#e6e8ff' }}>
+                        <reason.icon className="h-10 w-10" style={{ color: '#0015ff' }} />
                       </div>
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-3">
+                    <CardTitle className="text-xl font-bold text-foreground mb-3 text-left">
                       {reason.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-left">
                       {reason.description}
                     </p>
                   </CardContent>
@@ -518,7 +300,7 @@ export default function RetailEcommercePage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
+        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
           <div className="container-standard section-gutter text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -528,13 +310,15 @@ export default function RetailEcommercePage() {
                 Don&apos;t let accounting challenges slow down your business. With QuantiFi handling your books, inventory tracking, and financial strategy, you can devote your energy to sales and customer service. We help retail and e-commerce companies of all sizes increase clarity and control over their finances.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white text-blue-600 hover:bg-gray-100 font-bold">
+                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
                   Schedule a Free Consultation
                   <ArrowRight className="h-6 w-6" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-xl px-8 py-8 border-white text-white hover:bg-white hover:text-blue-600">
-                  <Link href="/contact">Contact Us Today</Link>
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                    Contact Us Today
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

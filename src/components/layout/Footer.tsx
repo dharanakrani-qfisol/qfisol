@@ -3,26 +3,28 @@ import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { BookCallButton } from '@/components/ui/book-call-button';
 
 const services = [
-  { name: 'Outsourced Accounting', href: '/services/outsourced-accounting' },
-  { name: 'Fractional CFO', href: '/services/fractional-cfo' },
-  { name: 'Tax Services', href: '/services/tax' },
-  { name: 'Controller Services', href: '/services/controller' },
+  { name: 'Outsourced Bookkeeping & Accounting', href: '/services/outsourced-accounting' },
+  { name: 'Controller & CFO Services', href: '/services/cfo-controller' },
+  { name: 'Tax Preparation & Compliance', href: '/services/tax-preparation-compliance' },
+  { name: 'Payroll & HR Support', href: '/services/payroll-hr' },
+  { name: 'Systems Integration & Tech Consulting', href: '/services/systems-integration' },
+  { name: 'Financial Analytics & Reporting', href: '/services/financial-analytics' },
 ];
 
 const industries = [
-  { name: 'Construction', href: '/industries/construction' },
-  { name: 'CPA Firms', href: '/industries/cpa-firms' },
-  { name: 'Dental', href: '/industries/dental' },
-  { name: 'Hospitality', href: '/industries/hospitality' },
-  { name: 'Medical', href: '/industries/medical' },
-  { name: 'Retail', href: '/industries/retail' },
+  { name: 'Construction & Contracting', href: '/industries/construction' },
+  { name: 'Hospitality & Restaurant', href: '/industries/hospitality' },
+  { name: 'Retail & E-Commerce', href: '/industries/retail-ecommerce' },
+  { name: 'Healthcare & Medical Practice', href: '/industries/healthcare' },
+  { name: 'Startup & Emerging Business', href: '/industries/startups' },
+  { name: 'Real Estate & Property Management', href: '/industries/real-estate' },
 ];
 
 const company = [
   { name: 'About Us', href: '/about' },
-  { name: 'Our Process', href: '/process' },
   { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Resources', href: '/resources' },
+  { name: 'Blogs', href: '/resources/blogs' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const legal = [

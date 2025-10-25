@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export function TrustedNationwide() {
   return (
     <motion.section 
-      className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
+      className="relative pt-32 md:pt-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}

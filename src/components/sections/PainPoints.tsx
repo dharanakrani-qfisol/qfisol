@@ -58,7 +58,7 @@ export function PainPoints() {
 
     {/* New Section: Who We Are And How We're Different */}
     <motion.section 
-      className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
+      className="relative pt-32 md:pt-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}
@@ -188,7 +188,7 @@ export function PainPoints() {
 
     {/* Enhanced Section: Seamless Integration with Your Tools */}
     <motion.section
-      className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50/50 dark:from-blue-950/30 dark:via-slate-900 dark:to-indigo-950/20"
+      className="relative pt-32 md:pt-40 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50/50 dark:from-blue-950/30 dark:via-slate-900 dark:to-indigo-950/20"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}

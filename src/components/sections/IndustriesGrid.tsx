@@ -165,7 +165,7 @@ export function IndustriesGrid() {
   return (
     <motion.section 
       id="industries" 
-      className="bg-background py-16 md:py-24 overflow-hidden"
+      className="bg-background pt-16 md:pt-24 overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}

@@ -71,7 +71,7 @@ const steps = [
 export function HowWeWorkEnhanced() {
   return (
     <motion.section
-      className="relative py-32 md:py-40 overflow-hidden bg-white dark:bg-gray-950"
+      className="relative pt-32 md:pt-40 overflow-hidden bg-white dark:bg-gray-950"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}

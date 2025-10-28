@@ -118,7 +118,7 @@ const blogPosts = [
 
         <div style="background: #e0f2fe; padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #0284c7;">
           <h4 style="color: #0369a1; margin-top: 0; font-size: 1.3rem;">🎯 Key Benefit</h4>
-          <p style="line-height: 1.8; color: #374151; margin: 0;">With outsourcing, you're not limited to one person's skill set. You gain a breadth of experience — for example, advice on complex accounting issues, tax planning, or financial strategy that an in-house junior bookkeeper might not provide. Quality control is often stronger with outsourced accounting due to structured review processes (e.g., one person enters transactions, another reviews/reconciles). On the other hand, an in-house accountant offers immediacy and deep internal familiarity. They "live" in your business daily, which can be an advantage for quick insight into minor operational details.</p>
+          <p style="line-height: 1.8; color: #374151; margin: 0;">With outsourcing, you're not limited to one person's skill set. You gain a breadth of experience for example, advice on complex accounting issues, tax planning, or financial strategy that an in-house junior bookkeeper might not provide. Quality control is often stronger with outsourced accounting due to structured review processes (e.g., one person enters transactions, another reviews/reconciles). On the other hand, an in-house accountant offers immediacy and deep internal familiarity. They "live" in your business daily, which can be an advantage for quick insight into minor operational details.</p>
         </div>
 
         <h2 style="color: #0015ff; margin-top: 3rem; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 3px solid #0015ff; padding-bottom: 0.5rem;">Key Benefits of Outsourced Accounting for Small Businesses</h2>
@@ -437,7 +437,7 @@ const blogPosts = [
           </div>
           
           <div style="background: #dbeafe; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #0015ff;">
-            <p style="margin: 0; line-height: 1.8; color: #374151;">Staying organized with records might feel tedious, but it saves time and money in the long run. You won't be frantically searching for "that one invoice" or recreating a paper trail from memory. For a small effort each week, you gain accuracy and peace of mind. (If this isn't your forte, a professional bookkeeper can also set up and manage a recordkeeping system for you — something to consider.)</p>
+            <p style="margin: 0; line-height: 1.8; color: #374151;">Staying organized with records might feel tedious, but it saves time and money in the long run. You won't be frantically searching for "that one invoice" or recreating a paper trail from memory. For a small effort each week, you gain accuracy and peace of mind. (If this isn't your forte, a professional bookkeeper can also set up and manage a recordkeeping system for you something to consider.)</p>
           </div>
         </div>
 

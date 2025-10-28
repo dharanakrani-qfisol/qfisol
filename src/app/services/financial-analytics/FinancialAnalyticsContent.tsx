@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { 
@@ -490,59 +491,65 @@ export default function FinancialAnalyticsContent() {
         </div>
       </section>
 
-      {/* Final CTA Banner */}
-      <section className="py-20 md:py-24 bg-[#0015ff] text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="h-full w-full" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
-
-        <div className="container-standard section-gutter text-center relative z-10">
+      {/* Final CTA Card */}
+      <section className="py-20 md:py-24 bg-white dark:bg-black">
+        <div className="container-standard section-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Ready to See Your Financials in a Whole New Light?
-            </h2>
-            <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              From variance analysis to cash flow clarity, QuantiFi delivers reports that reveal what your numbers are really saying.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-[#0015ff] hover:bg-white/90 text-lg px-8 py-6">
-                <Link href="/contact">
-                  Request a Financial Review
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0015ff] text-lg px-8 py-6">
-                <Link href="/contact">
-                  Schedule a Consultation
-                </Link>
-              </Button>
-            </div>
+            <Card className="bg-[#0015ff] text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16 relative">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="h-full w-full" style={{
+                    backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)`,
+                    backgroundSize: '40px 40px'
+                  }} />
+                </div>
 
-            {/* Internal Links */}
-            <div className="mt-10 pt-8 border-t border-white/20">
-              <p className="text-sm opacity-75 mb-4">Explore our related services:</p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Link href="/services/outsourced-accounting" className="text-sm hover:text-white/80 transition-colors flex items-center gap-1">
-                  Outsourced Accounting <ChevronRight className="h-3 w-3" />
-                </Link>
-                <Link href="/services/cfo-controller" className="text-sm hover:text-white/80 transition-colors flex items-center gap-1">
-                  Controller & CFO Services <ChevronRight className="h-3 w-3" />
-                </Link>
-                <Link href="/services/systems-integration" className="text-sm hover:text-white/80 transition-colors flex items-center gap-1">
-                  Systems Integration <ChevronRight className="h-3 w-3" />
-                </Link>
-              </div>
-            </div>
+                <div className="text-center relative z-10">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    Ready to See Your Financials in a Whole New Light?
+                  </h2>
+                  <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    From variance analysis to cash flow clarity, QuantiFi delivers reports that reveal what your numbers are really saying.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-white text-[#0015ff] hover:bg-white/90 text-lg px-8 py-6">
+                      <Link href="/contact">
+                        Request a Financial Review
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0015ff] text-lg px-8 py-6">
+                      <Link href="/contact">
+                        Schedule a Consultation
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Internal Links */}
+                  <div className="mt-10 pt-8 border-t border-white/20">
+                    <p className="text-sm opacity-75 mb-4">Explore our related services:</p>
+                    <div className="flex flex-wrap justify-center gap-6">
+                      <Link href="/services/outsourced-accounting" className="text-sm hover:text-white/80 transition-colors flex items-center gap-1">
+                        Outsourced Accounting <ChevronRight className="h-3 w-3" />
+                      </Link>
+                      <Link href="/services/cfo-controller" className="text-sm hover:text-white/80 transition-colors flex items-center gap-1">
+                        Controller & CFO Services <ChevronRight className="h-3 w-3" />
+                      </Link>
+                      <Link href="/services/systems-integration" className="text-sm hover:text-white/80 transition-colors flex items-center gap-1">
+                        Systems Integration <ChevronRight className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>

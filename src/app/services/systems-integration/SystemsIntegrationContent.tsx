@@ -70,7 +70,7 @@ const integrationServices = [
   {
     icon: Play,
     title: 'Go-Live Readiness',
-    description: 'From demo to deployment, we ensure you\'re fully prepared for launch — with clean data, tested systems, and documented workflows.',
+    description: 'From demo to deployment, we ensure you\'re fully prepared for launch with clean data, tested systems, and documented workflows.',
     color: 'from-[#0015ff] to-[#0015ff]'
   }
 ];
@@ -79,7 +79,7 @@ const benefits = [
   {
     icon: Lightbulb,
     title: 'End-to-End Support',
-    description: 'From demo to go-live, we guide your team through every phase — planning, testing, migration, and training.'
+    description: 'From demo to go-live, we guide your team through every phase: planning, testing, migration, and training.'
   },
   {
     icon: Database,
@@ -89,7 +89,7 @@ const benefits = [
   {
     icon: Settings,
     title: 'Expert System Knowledge',
-    description: 'Experienced with QuickBooks, Xero, NetSuite, and Sage Intacct — we know how to make them work together.'
+    description: 'Experienced with QuickBooks, Xero, NetSuite, and Sage Intacct, we know how to make them work together.'
   },
   {
     icon: Target,
@@ -111,11 +111,11 @@ const benefits = [
 const faqs = [
   {
     question: 'Do You Build Custom Integrations?',
-    answer: 'No — we specialize in implementing and connecting existing accounting platforms. Our focus is on setup, configuration, and process alignment.'
+    answer: 'No, we specialize in implementing and connecting existing accounting platforms. Our focus is on setup, configuration, and process alignment.'
   },
   {
     question: 'Which Systems Do You Work With?',
-    answer: 'We support QuickBooks Online, Xero, NetSuite, and Sage Intacct — as well as integration tools like Bill.com, Gusto, Shopify, and Stripe.'
+    answer: 'We support QuickBooks Online, Xero, NetSuite, and Sage Intacct, as well as integration tools like Bill.com, Gusto, Shopify, and Stripe.'
   },
   {
     question: 'Can You Help With Data Cleanup Before Migration?',
@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     question: 'Do You Provide Training After Migration?',
-    answer: 'Yes — we train your team on new workflows, reporting tools, and integrations so they can confidently operate post-launch.'
+    answer: 'Yes, we train your team on new workflows, reporting tools, and integrations so they can confidently operate post-launch.'
   },
   {
     question: 'Can You Coordinate With My Software Vendor?',
@@ -501,51 +501,57 @@ export default function SystemsIntegrationContent() {
         </div>
       </section>
 
-      {/* Final CTA Banner */}
-      <section className="py-20 md:py-28 bg-quantifi-primary text-white relative overflow-hidden">
-        <div className="container-standard section-gutter text-center relative z-10">
+      {/* Final CTA Card */}
+      <section className="py-20 md:py-28 bg-white dark:bg-slate-900">
+        <div className="container-standard section-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Ready to Streamline Your Accounting Technology?
-            </h2>
-            <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              From demo to deployment, we&apos;ll help you implement the right systems accurately, efficiently, and confidently.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-quantifi-primary hover:bg-white/90 text-lg px-8 py-6">
-                <Link href="/contact">
-                  Schedule a Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-quantifi-primary text-lg px-8 py-6">
-                <Link href="/contact">
-                  Talk to Our Integration Specialist
-                </Link>
-              </Button>
-            </div>
+            <Card className="bg-quantifi-primary text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16 relative">
+                <div className="text-center relative z-10">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    Ready to Streamline Your Accounting Technology?
+                  </h2>
+                  <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    From demo to deployment, we&apos;ll help you implement the right systems accurately, efficiently, and confidently.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-white text-quantifi-primary hover:bg-white/90 text-lg px-8 py-6">
+                      <Link href="/contact">
+                        Schedule a Demo
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button asChild size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-quantifi-primary text-lg px-8 py-6">
+                      <Link href="/contact">
+                        Talk to Our Integration Specialist
+                      </Link>
+                    </Button>
+                  </div>
 
-            {/* Internal Links */}
-            <div className="mt-16 pt-8 border-t border-white/20">
-              <p className="text-sm opacity-75 mb-4">Explore our related services:</p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Link href="/services/outsourced-accounting" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
-                  Outsourced Accounting <ChevronRight className="h-3 w-3" />
-                </Link>
-                <Link href="/services/cfo-controller" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
-                  Controller & CFO Services <ChevronRight className="h-3 w-3" />
-                </Link>
-                <Link href="/services/payroll-hr" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
-                  Payroll & HR Support <ChevronRight className="h-3 w-3" />
-                </Link>
-              </div>
-            </div>
+                  {/* Internal Links */}
+                  <div className="mt-16 pt-8 border-t border-white/20">
+                    <p className="text-sm opacity-75 mb-4">Explore our related services:</p>
+                    <div className="flex flex-wrap justify-center gap-6">
+                      <Link href="/services/outsourced-accounting" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
+                        Outsourced Accounting <ChevronRight className="h-3 w-3" />
+                      </Link>
+                      <Link href="/services/cfo-controller" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
+                        Controller & CFO Services <ChevronRight className="h-3 w-3" />
+                      </Link>
+                      <Link href="/services/payroll-hr" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
+                        Payroll & HR Support <ChevronRight className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>

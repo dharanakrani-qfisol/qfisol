@@ -20,7 +20,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Startup Accounting & CFO Services | QuantiFi',
-  description: 'Outsourced accounting and fractional CFO services for startups. We manage your bookkeeping, cash flow, and financial strategy — from seed stage to scale-up — so you can focus on growth. Get a free consultation.',
+  description: 'Outsourced accounting and fractional CFO services for startups. We manage your bookkeeping, cash flow, and financial strategy, from seed stage to scale-up, so you can focus on growth. Get a free consultation.',
 };
 
 const startupServices = [
@@ -61,14 +61,14 @@ const startupServices = [
   },
   {
     title: 'Payroll & Equity Compensation Support',
-    description: 'We manage accurate payroll accounting for startups while coordinating with your chosen payroll provider (such as Gusto, Rippling, or ADP) — but we do not file payroll taxes. Our team ensures salaries, hourly wages, bonuses, and founder draws are recorded correctly, reconciled, and reflected accurately in your books. For startups offering equity, we help track and report stock-based compensation using your cap-table system or law firm\'s data. We record 83(b) elections, option pool grants, and stock-based expense allocations in your financial statements so you understand the true cost of equity and dilution.',
+    description: 'We manage accurate payroll accounting for startups while coordinating with your chosen payroll provider (such as Gusto, Rippling, or ADP), but we do not file payroll taxes. Our team ensures salaries, hourly wages, bonuses, and founder draws are recorded correctly, reconciled, and reflected accurately in your books. For startups offering equity, we help track and report stock-based compensation using your cap-table system or law firm\'s data. We record 83(b) elections, option pool grants, and stock-based expense allocations in your financial statements so you understand the true cost of equity and dilution.',
     link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     color: '#0015ff',
     href: '/services/payroll-hr',
   },
   {
     title: 'Tax Compliance & Startup Tax Credits',
-    description: 'We help startups stay compliant and financially prepared by organizing CPA-ready tax records — but we do not file income or payroll taxes. Our team ensures your books, schedules, and reports are complete and accurate for your CPA or tax preparer to file. We also prepare and reconcile 1099s from your payroll system, track deductible expenses, and maintain documentation to support every filing. Beyond compliance, we provide strategic guidance on tax planning for startups — from entity structure optimization and depreciation schedules to identifying valuable incentives like the R&D Tax Credit.',
+    description: 'We help startups stay compliant and financially prepared by organizing CPA-ready tax records, but we do not file income or payroll taxes. Our team ensures your books, schedules, and reports are complete and accurate for your CPA or tax preparer to file. We also prepare and reconcile 1099s from your payroll system, track deductible expenses, and maintain documentation to support every filing. Beyond compliance, we provide strategic guidance on tax planning for startups, from entity structure optimization and depreciation schedules to identifying valuable incentives like the R&D Tax Credit.',
     link: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop',
     color: '#0015ff',
     href: '/services/tax-preparation-compliance',
@@ -99,32 +99,32 @@ const startupServices = [
 const whyChooseQuantiFi = [
   {
     title: 'Cost-Effective Expertise Without the Overhead',
-    description: 'Startups need senior-level guidance without the cost of a full finance team. QuantiFi gives you access to a complete outsourced accounting and CFO department — bookkeepers, accountants, and financial advisors — for a fraction of the cost of hiring in-house. You save on salaries, benefits, recruiting, and turnover while gaining professionals who understand startup finance inside and out. For less than the cost of one senior hire, you get end-to-end financial coverage — from reconciliations and budgeting to investor reporting and board-ready statements. That\'s how we help founders preserve cash for growth while maintaining top-tier financial control.',
+    description: 'Startups need senior-level guidance without the cost of a full finance team. QuantiFi gives you access to a complete outsourced accounting and CFO department (bookkeepers, accountants, and financial advisors) for a fraction of the cost of hiring in-house. You save on salaries, benefits, recruiting, and turnover while gaining professionals who understand startup finance inside and out. For less than the cost of one senior hire, you get end-to-end financial coverage, from reconciliations and budgeting to investor reporting and board-ready statements. That\'s how we help founders preserve cash for growth while maintaining top-tier financial control.',
     icon: DollarSign
   },
   {
     title: 'Scalable Support for Every Growth Stage',
-    description: 'Your financial needs will change as your company grows — and we scale right alongside you. Start with light bookkeeping during incubation, add outsourced CFO advisory when preparing for fundraising, or expand support when revenue surges. Our structure is built for volatility. When business slows, you can scale down seamlessly. When you raise capital or double transaction volume, we ramp up instantly. This agility ensures you always have the right level of financial support without paying for what you don\'t need.',
+    description: 'Your financial needs will change as your company grows, and we scale right alongside you. Start with light bookkeeping during incubation, add outsourced CFO advisory when preparing for fundraising, or expand support when revenue surges. Our structure is built for volatility. When business slows, you can scale down seamlessly. When you raise capital or double transaction volume, we ramp up instantly. This agility ensures you always have the right level of financial support without paying for what you don\'t need.',
     icon: TrendingUp
   },
   {
     title: 'Startup-Savvy Guidance and Strategic Insight',
-    description: 'QuantiFi isn\'t just an accounting firm — we\'re a strategic finance partner who understands how startups operate. We know SaaS metrics like MRR, CAC:LTV ratios, churn, and burn rate. We know investor expectations, how to build data-driven forecasts, and how to prepare financials for due diligence. We\'ve seen what works — and what doesn\'t — across hundreds of early-stage companies. Whether you\'re debating pricing strategy, capital structure, or timing your next raise, we offer experienced, practical advice that aligns with your growth goals. Think of us as your finance co-founder: proactive, grounded, and deeply invested in your success.',
+    description: 'QuantiFi isn\'t just an accounting firm. We\'re a strategic finance partner who understands how startups operate. We know SaaS metrics like MRR, CAC:LTV ratios, churn, and burn rate. We know investor expectations, how to build data-driven forecasts, and how to prepare financials for due diligence. We\'ve seen what works and what doesn\'t across hundreds of early-stage companies. Whether you\'re debating pricing strategy, capital structure, or timing your next raise, we offer experienced, practical advice that aligns with your growth goals. Think of us as your finance co-founder: proactive, grounded, and deeply invested in your success.',
     icon: Lightbulb
   },
   {
     title: 'Founder Focus and Peace of Mind',
-    description: 'Running a startup demands your full attention. We handle your accounting, payroll, compliance, and financial reporting so you can focus on building your product, customers, and team. With QuantiFi, you gain complete financial clarity — up-to-date books, accurate burn tracking, clean cash flow visibility, and timely reporting. You\'ll never wonder if your numbers are right or if a tax deadline was missed. Our goal is to lift the financial burden off your shoulders so you can make fast, confident business decisions backed by reliable data.',
+    description: 'Running a startup demands your full attention. We handle your accounting, payroll, compliance, and financial reporting so you can focus on building your product, customers, and team. With QuantiFi, you gain complete financial clarity: up-to-date books, accurate burn tracking, clean cash flow visibility, and timely reporting. You\'ll never wonder if your numbers are right or if a tax deadline was missed. Our goal is to lift the financial burden off your shoulders so you can make fast, confident business decisions backed by reliable data.',
     icon: Target
   },
   {
     title: 'Tech Integration and Real-Time Transparency',
-    description: 'We meet you where you are technologically. Our team is fluent in today\'s SaaS accounting tools — including QuickBooks, Xero, Gusto, Rippling, Deel, Expensify, Bill.com, Stripe, and Shopify — and we make them work together seamlessly. By integrating your financial systems, we automate data flow, reduce manual entry, and eliminate errors. You\'ll have real-time dashboards and live performance metrics, giving you continuous visibility into cash flow, revenue, and runway. Communication is frictionless — Slack, email, or dashboards — so your financial updates move as fast as your startup.',
+    description: 'We meet you where you are technologically. Our team is fluent in today\'s SaaS accounting tools (including QuickBooks, Xero, Gusto, Rippling, Deel, Expensify, Bill.com, Stripe, and Shopify) and we make them work together seamlessly. By integrating your financial systems, we automate data flow, reduce manual entry, and eliminate errors. You\'ll have real-time dashboards and live performance metrics, giving you continuous visibility into cash flow, revenue, and runway. Communication is frictionless via Slack, email, or dashboards, so your financial updates move as fast as your startup.',
     icon: Smartphone
   },
   {
     title: 'Reliability, Forecasting, and Zero Surprises',
-    description: 'In a world where uncertainty is the norm, QuantiFi brings stability. We manage your books, close financials on time, and forecast months ahead so you\'re never caught off guard. Our financial forecasting and cash flow modeling show exactly how long your runway extends and what levers can optimize it. We also flag potential risks early — from upcoming tax obligations to liquidity gaps — giving you the ability to pivot before problems arise. And if external changes (like tax laws or economic shifts) affect your business, we analyze the impact immediately and guide your next steps.',
+    description: 'In a world where uncertainty is the norm, QuantiFi brings stability. We manage your books, close financials on time, and forecast months ahead so you\'re never caught off guard. Our financial forecasting and cash flow modeling show exactly how long your runway extends and what levers can optimize it. We also flag potential risks early, from upcoming tax obligations to liquidity gaps, giving you the ability to pivot before problems arise. And if external changes (like tax laws or economic shifts) affect your business, we analyze the impact immediately and guide your next steps.',
     icon: Lock
   }
 ];
@@ -132,19 +132,19 @@ const whyChooseQuantiFi = [
 const faqData = [
   {
     question: 'When should a startup start outsourcing accounting or CFO services?',
-    answer: 'The earlier, the better. Even at the pre-seed stage, clean books and a sound financial setup are essential. Having startup accounting services in place from day one helps you understand burn rate, manage investor funds, and make informed spending decisions. Many founders reach out after raising their first seed round or when revenue and payroll start growing — that\'s when things get too complex for spreadsheets. Our team sets up accounting systems, reconciles bank feeds, and ensures investor cash is tracked properly. As your business grows, our outsourced CFO services become even more valuable. We help with forecasting, budgeting, scenario planning, and board reporting — especially during key inflection points like a Series A raise, hiring expansions, or entering new markets. We can start with light-touch bookkeeping support and scale up to strategic CFO advisory as your needs evolve.'
+    answer: 'The earlier, the better. Even at the pre-seed stage, clean books and a sound financial setup are essential. Having startup accounting services in place from day one helps you understand burn rate, manage investor funds, and make informed spending decisions. Many founders reach out after raising their first seed round or when revenue and payroll start growing; that\'s when things get too complex for spreadsheets. Our team sets up accounting systems, reconciles bank feeds, and ensures investor cash is tracked properly. As your business grows, our outsourced CFO services become even more valuable. We help with forecasting, budgeting, scenario planning, and board reporting, especially during key inflection points like a Series A raise, hiring expansions, or entering new markets. We can start with light-touch bookkeeping support and scale up to strategic CFO advisory as your needs evolve.'
   },
   {
     question: 'Can QuantiFi help with fundraising or investor communications?',
-    answer: 'Absolutely. We\'ve guided dozens of startups through funding rounds and investor diligence. Before you fundraise, we\'ll ensure your financial statements, cash flow forecasts, and budgets are investor-ready and formatted for clarity. We build key startup metrics such as MRR, ARR, CAC:LTV ratios, runway, and churn, so you can present credible data that builds investor trust. During the raise, we assist with due-diligence packages and can join investor meetings to explain your financials clearly. After the raise, we help with post-funding reporting, creating investor update decks, tracking use of funds, and maintaining transparent communication with VCs and angels. Essentially, we act as your financial liaison — translating complex data into insights that strengthen your story and credibility.'
+    answer: 'Absolutely. We\'ve guided dozens of startups through funding rounds and investor diligence. Before you fundraise, we\'ll ensure your financial statements, cash flow forecasts, and budgets are investor-ready and formatted for clarity. We build key startup metrics such as MRR, ARR, CAC:LTV ratios, runway, and churn, so you can present credible data that builds investor trust. During the raise, we assist with due-diligence packages and can join investor meetings to explain your financials clearly. After the raise, we help with post-funding reporting, creating investor update decks, tracking use of funds, and maintaining transparent communication with VCs and angels. Essentially, we act as your financial liaison, translating complex data into insights that strengthen your story and credibility.'
   },
   {
     question: 'We already use tools like Stripe, QuickBooks, Gusto, and Expensify. Will you work with them?',
-    answer: 'Definitely. QuantiFi is tool-agnostic and fluent in the modern SaaS accounting ecosystem. Whether you use QuickBooks Online, Xero, Gusto, Rippling, Deel, Bill.com, or Expensify, we\'ll optimize your workflow for accuracy, automation, and efficiency. We integrate your systems — connecting Stripe, Shopify, or PayPal for revenue, linking payroll through Gusto or Rippling, and syncing expense platforms to your general ledger. Our goal is to give you a cohesive, automated environment where every transaction flows cleanly into your books. If we spot opportunities to improve (for instance, automating invoicing or consolidating tools to cut costs), we\'ll recommend them — but final decisions are always yours. We adapt to your tech stack, not the other way around.'
+    answer: 'Definitely. QuantiFi is tool-agnostic and fluent in the modern SaaS accounting ecosystem. Whether you use QuickBooks Online, Xero, Gusto, Rippling, Deel, Bill.com, or Expensify, we\'ll optimize your workflow for accuracy, automation, and efficiency. We integrate your systems by connecting Stripe, Shopify, or PayPal for revenue, linking payroll through Gusto or Rippling, and syncing expense platforms to your general ledger. Our goal is to give you a cohesive, automated environment where every transaction flows cleanly into your books. If we spot opportunities to improve (for instance, automating invoicing or consolidating tools to cut costs), we\'ll recommend them, but final decisions are always yours. We adapt to your tech stack, not the other way around.'
   },
   {
     question: 'How do we collaborate day to day? Will I lose control of my finances?',
-    answer: 'Not at all. You maintain full access and authority over your accounts, systems, and approvals. We integrate into your workflow — whether that\'s Slack, email, or recurring video check-ins — to keep communication effortless. We provide frequent updates on reconciliations, balances, and KPIs, so you\'re never guessing about your financial position. Many founders even have us use an internal startup email (e.g., finance@yourcompany.com) to handle vendor communication while maintaining visibility. Every process is documented, and all payments or approvals follow the controls you set. We make financial management more transparent, not less — so you feel fully informed while freeing your time to focus on growth and product.'
+    answer: 'Not at all. You maintain full access and authority over your accounts, systems, and approvals. We integrate into your workflow, whether that\'s Slack, email, or recurring video check-ins, to keep communication effortless. We provide frequent updates on reconciliations, balances, and KPIs, so you\'re never guessing about your financial position. Many founders even have us use an internal startup email (e.g., finance@yourcompany.com) to handle vendor communication while maintaining visibility. Every process is documented, and all payments or approvals follow the controls you set. We make financial management more transparent, not less, so you feel fully informed while freeing your time to focus on growth and product.'
   }
 ];
 
@@ -227,10 +227,10 @@ export default function StartupsPage() {
                 Why Startups Partner with QuantiFi
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Startup founders choose QuantiFi because we deliver exactly what fast-growing companies need from a finance partner — a balance of precision, flexibility, and strategic insight. We understand how quickly startups evolve and structure our services to grow with you, from seed stage to Series A and beyond.
+                Startup founders choose QuantiFi because we deliver exactly what fast-growing companies need from a finance partner: a balance of precision, flexibility, and strategic insight. We understand how quickly startups evolve and structure our services to grow with you, from seed stage to Series A and beyond.
               </p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-                At QuantiFi, your accounting isn&apos;t just compliance — it&apos;s a foundation for growth. We transform your financial operations into a strategic advantage: organized, investor-ready, and built to scale confidently.
+                At QuantiFi, your accounting isn&apos;t just compliance. It&apos;s a foundation for growth. We transform your financial operations into a strategic advantage: organized, investor-ready, and built to scale confidently.
               </p>
             </div>
 
@@ -266,7 +266,7 @@ export default function StartupsPage() {
                   At QuantiFi, we believe great startups deserve great financial foundations. When your books are accurate, your cash flow is predictable, and your reports are investor-ready, you operate with confidence. You make faster decisions, negotiate better deals, and attract stronger investors because your financials reflect your professionalism.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                  That&apos;s why startups partner with QuantiFi — not just to outsource accounting, but to build long-term financial clarity, control, and credibility. We turn accounting into a growth strategy, ensuring your startup is ready for whatever comes next.
+                  That&apos;s why startups partner with QuantiFi, not just to outsource accounting, but to build long-term financial clarity, control, and credibility. We turn accounting into a growth strategy, ensuring your startup is ready for whatever comes next.
                 </p>
               </div>
             </div>
@@ -302,30 +302,34 @@ export default function StartupsPage() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
-          <div className="container-standard section-gutter text-center">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to Supercharge Your Startup&apos;s Finances?
-              </h2>
-              <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                Don&apos;t let financial growing pains stall your momentum. With QuantiFi as your partner, you gain clarity, strategy, and confidence in every stage of growth – without the overhead. Free up your time to innovate, while our experts handle the books and guide your financial decisions. Schedule your free startup consultation today ➜ and let&apos;s build your unicorn on a solid financial foundation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/contact">
-                  <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
-                    Schedule a Free Consultation
-                    <ArrowRight className="h-5 w-5" />
-                  </BookCallButton>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
-                    Contact Us Today
-                  </Button>
-                </Link>
-              </div>
-            </div>
+        {/* Final CTA Card */}
+        <section className="py-24 bg-background">
+          <div className="container-standard section-gutter">
+            <Card className="bg-[#0015ff] text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16">
+                <div className="text-center max-w-4xl mx-auto">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    Ready to Supercharge Your Startup&apos;s Finances?
+                  </h2>
+                  <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
+                    Don&apos;t let financial growing pains stall your momentum. With QuantiFi as your partner, you gain clarity, strategy, and confidence in every stage of growth – without the overhead. Free up your time to innovate, while our experts handle the books and guide your financial decisions. Schedule your free startup consultation today ➜ and let&apos;s build your unicorn on a solid financial foundation.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                    <Link href="/contact">
+                      <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                        Schedule a Free Consultation
+                        <ArrowRight className="h-5 w-5" />
+                      </BookCallButton>
+                    </Link>
+                    <Link href="/contact">
+                      <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                        Contact Us Today
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

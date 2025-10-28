@@ -109,7 +109,7 @@ const whyChooseQuantiFi = [
   },
   {
     title: 'Technology-Driven Processes',
-    description: 'At QuantiFi, we combine cloud accounting systems with hands-on financial expertise to deliver accuracy, transparency, and speed. Our team uses secure client portals, digital document management, and automated data entry tools to streamline workflows and keep your records organized. While we don\'t create real-time dashboards, every analysis is performed manually by accounting professionals, ensuring context, accuracy, and CPA-ready insight. This balance of modern technology and human intelligence gives you reliable financial clarity—without the complexity of managing new systems yourself. QuantiFi\'s tech-enabled accounting approach helps construction and service businesses gain the benefits of automation with the precision of expert review, leading to faster decisions, fewer errors, and complete financial confidence.',
+    description: 'At QuantiFi, we combine cloud accounting systems with hands-on financial expertise to deliver accuracy, transparency, and speed. Our team uses secure client portals, digital document management, and automated data entry tools to streamline workflows and keep your records organized. While we don\'t create real-time dashboards, every analysis is performed manually by accounting professionals, ensuring context, accuracy, and CPA-ready insight. This balance of modern technology and human intelligence gives you reliable financial clarity without the complexity of managing new systems yourself. QuantiFi\'s tech-enabled accounting approach helps construction and service businesses gain the benefits of automation with the precision of expert review, leading to faster decisions, fewer errors, and complete financial confidence.',
     icon: Zap
   },
   {
@@ -157,7 +157,7 @@ export default function ConstructionPage() {
                 Build Profitably, Control Costs, and Grow with Confidence
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-                Project finances don&apos;t have to be complicated. QuantiFi&apos;s specialized construction accounting services help contractors keep their books accurate, projects profitable, and businesses fully compliant from the ground up. We handle the numbers — you focus on building.
+                Project finances don&apos;t have to be complicated. QuantiFi&apos;s specialized construction accounting services help contractors keep their books accurate, projects profitable, and businesses fully compliant from the ground up. We handle the numbers, you focus on building.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
@@ -292,30 +292,34 @@ export default function ConstructionPage() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
-          <div className="container-standard section-gutter text-center">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to Build a Strong Financial Foundation?
-              </h2>
-              <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                Don&apos;t let accounting issues undermine your projects. Let QuantiFi handle the finances while you focus on construction. We&apos;re here to provide clarity, strategy, and peace of mind in every job&apos;s numbers. Reach out today to start with a personalized consultation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/contact">
-                  <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 !from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
-                    Schedule a Free Consultation
-                    <ArrowRight className="h-5 w-5" />
-                  </BookCallButton>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
-                    Contact Us Today
-                  </Button>
-                </Link>
-              </div>
-            </div>
+        {/* Final CTA Card */}
+        <section className="py-24 bg-background">
+          <div className="container-standard section-gutter">
+            <Card className="bg-[#0015ff] text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16">
+                <div className="text-center max-w-4xl mx-auto">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    Ready to Build a Strong Financial Foundation?
+                  </h2>
+                  <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
+                    Don&apos;t let accounting issues undermine your projects. Let QuantiFi handle the finances while you focus on construction. We&apos;re here to provide clarity, strategy, and peace of mind in every job&apos;s numbers. Reach out today to start with a personalized consultation.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                    <Link href="/contact">
+                      <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 !from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                        Schedule a Free Consultation
+                        <ArrowRight className="h-5 w-5" />
+                      </BookCallButton>
+                    </Link>
+                    <Link href="/contact">
+                      <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                        Contact Us Today
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

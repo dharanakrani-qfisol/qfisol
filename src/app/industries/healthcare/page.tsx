@@ -292,30 +292,34 @@ export default function HealthcarePage() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
-          <div className="container-standard section-gutter text-center">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to Prescribe a Healthier Financial Future for Your Practice?
-              </h2>
-              <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                Don&apos;t let complex accounting or insurance headaches pull you away from what you do best – caring for patients. QuantiFi is here to manage and optimize your practice&apos;s finances, giving you clarity, stability, and peace of mind. Let us handle the books, so you can focus on providing excellent care.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/contact">
-                  <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
-                    Schedule a Free Consultation
-                    <ArrowRight className="h-5 w-5" />
-                  </BookCallButton>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
-                    Contact Us Today
-                  </Button>
-                </Link>
-              </div>
-            </div>
+        {/* Final CTA Card */}
+        <section className="py-24 bg-background">
+          <div className="container-standard section-gutter">
+            <Card className="bg-[#0015ff] text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16">
+                <div className="text-center max-w-4xl mx-auto">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    Ready to Prescribe a Healthier Financial Future for Your Practice?
+                  </h2>
+                  <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
+                    Don&apos;t let complex accounting or insurance headaches pull you away from what you do best – caring for patients. QuantiFi is here to manage and optimize your practice&apos;s finances, giving you clarity, stability, and peace of mind. Let us handle the books, so you can focus on providing excellent care.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                    <Link href="/contact">
+                      <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                        Schedule a Free Consultation
+                        <ArrowRight className="h-5 w-5" />
+                      </BookCallButton>
+                    </Link>
+                    <Link href="/contact">
+                      <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                        Contact Us Today
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

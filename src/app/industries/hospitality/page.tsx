@@ -93,7 +93,7 @@ const hospitalityServices = [
   },
   {
     title: 'Fractional CFO & Advisory Services',
-    description: 'We provide fractional CFO support designed specifically for hotels, restaurants, and multi-location hospitality groups — giving you executive-level financial expertise without the full-time overhead. Our advisors work as an extension of your leadership team to analyze profit margins, assess performance KPIs (like GOPPAR, RevPAR, labor-to-sales ratios, and table turnover), and uncover opportunities to boost profitability. Thinking about expanding, renovating, or preparing for a sale or capital raise? We conduct detailed feasibility studies, build cash flow projections, and develop investor-ready financial models that speak the language of franchisors, lenders, and stakeholders.',
+    description: 'We provide fractional CFO support designed specifically for hotels, restaurants, and multi-location hospitality groups giving you executive-level financial expertise without the full-time overhead. Our advisors work as an extension of your leadership team to analyze profit margins, assess performance KPIs (like GOPPAR, RevPAR, labor-to-sales ratios, and table turnover), and uncover opportunities to boost profitability. Thinking about expanding, renovating, or preparing for a sale or capital raise? We conduct detailed feasibility studies, build cash flow projections, and develop investor-ready financial models that speak the language of franchisors, lenders, and stakeholders.',
     link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
     color: '#0015ff',
     href: '/services/cfo-controller',
@@ -292,30 +292,34 @@ export default function HospitalityPage() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="py-24 text-white" style={{ backgroundColor: '#0015ff' }}>
-          <div className="container-standard section-gutter text-center">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to Elevate Your Hospitality Finances?
-              </h2>
-              <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                Don&apos;t let bookkeeping headaches or tax worries detract from your guest experience. Let QuantiFi handle the financial details while you focus on delighting guests and growing your business. We bring clarity, confidence, and control to your hotel or restaurant&apos;s finances.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/contact">
-                  <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
-                    Schedule a Free Consultation
-                    <ArrowRight className="h-5 w-5" />
-                  </BookCallButton>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
-                    Contact Us Today
-                  </Button>
-                </Link>
-              </div>
-            </div>
+        {/* Final CTA Card */}
+        <section className="py-24 bg-background">
+          <div className="container-standard section-gutter">
+            <Card className="bg-[#0015ff] text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16">
+                <div className="text-center max-w-4xl mx-auto">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    Ready to Elevate Your Hospitality Finances?
+                  </h2>
+                  <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
+                    Don&apos;t let bookkeeping headaches or tax worries detract from your guest experience. Let QuantiFi handle the financial details while you focus on delighting guests and growing your business. We bring clarity, confidence, and control to your hotel or restaurant&apos;s finances.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                    <Link href="/contact">
+                      <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                        Schedule a Free Consultation
+                        <ArrowRight className="h-5 w-5" />
+                      </BookCallButton>
+                    </Link>
+                    <Link href="/contact">
+                      <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                        Contact Us Today
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

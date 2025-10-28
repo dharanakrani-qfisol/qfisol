@@ -391,7 +391,7 @@ export default function OutsourcedAccountingContent() {
               Comprehensive Bookkeeping Services Built for Clarity and Control
             </h2>
             <p className="text-xl text-black/70 dark:text-white/70 max-w-4xl mx-auto leading-relaxed mb-8">
-              We manage every aspect of your financial operations — from daily transaction recording and reconciliations to budgeting and forecasting — so you can focus on strategy, not spreadsheets.
+              We manage every aspect of your financial operations, from daily transaction recording and reconciliations to budgeting and forecasting, so you can focus on strategy, not spreadsheets.
             </p>
             <p className="text-lg text-black/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed">
               At QuantiFi, our outsourced bookkeeping and accounting services bring accuracy, transparency, and peace of mind to your finances. Our virtual accounting team keeps your books organized, compliant, and always ready for confident decision-making.
@@ -441,7 +441,7 @@ export default function OutsourcedAccountingContent() {
               Why Outsourced Bookkeeping & Monthly Accounting Matter for Business Growth
             </h2>
             <p className="text-xl text-black/70 dark:text-white/70 max-w-4xl mx-auto leading-relaxed">
-              Outsourcing your bookkeeping isn&apos;t just a cost-saving choice — it&apos;s a strategic investment. At QuantiFi, we blend accounting expertise with advanced automation to give you accuracy, insight, and freedom to focus on what matters most: growing your business.
+              Outsourcing your bookkeeping isn&apos;t just a cost-saving choice. It&apos;s a strategic investment. At QuantiFi, we blend accounting expertise with advanced automation to give you accuracy, insight, and freedom to focus on what matters most: growing your business.
             </p>
           </motion.div>
 
@@ -481,10 +481,10 @@ export default function OutsourcedAccountingContent() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-tight mb-6">
-                Your Accounting Partner — Not Just Your Service Provider
+                Your Accounting Partner, Not Just Your Service Provider
               </h2>
               <p className="text-xl text-black/70 dark:text-white/70 leading-relaxed">
-                With QuantiFi, you don&apos;t just outsource your books — you gain a partner. Our Liaison Accounting Partnership (LAP) model turns your accounting into a growth advantage. We act as your virtual finance department, combining CPA oversight, automation, and proactive communication for complete financial clarity.
+                With QuantiFi, you don&apos;t just outsource your books, you gain a partner. Our Liaison Accounting Partnership (LAP) model turns your accounting into a growth advantage. We act as your virtual finance department, combining CPA oversight, automation, and proactive communication for complete financial clarity.
               </p>
             </motion.div>
 
@@ -565,59 +565,65 @@ export default function OutsourcedAccountingContent() {
         </div>
       </section>
 
-      {/* Final CTA Banner */}
-      <section className="py-32 md:py-40 bg-[#0015ff] text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="h-full w-full" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
-
-        <div className="container-standard section-gutter text-center relative z-10">
+      {/* Final CTA Card */}
+      <section className="py-32 md:py-40 bg-white dark:bg-black">
+        <div className="container-standard section-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
-              Ready to Gain Clarity and Control Over Your Finances?
-            </h2>
-            <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed text-white">
-              Partner with QuantiFi — your trusted virtual accounting team for smarter, simpler, and scalable financial management.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-[#0015ff] hover:bg-white/90 text-lg px-8 py-6">
-                <Link href="/contact">
-                  Schedule a Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0015ff] text-lg px-8 py-6">
-                <Link href="/contact">
-                  Contact Us
-                </Link>
-              </Button>
-            </div>
+            <Card className="bg-[#0015ff] text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 md:p-16 relative">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="h-full w-full" style={{
+                    backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)`,
+                    backgroundSize: '40px 40px'
+                  }} />
+                </div>
 
-            {/* Internal Links */}
-            <div className="mt-16 pt-8 border-t border-white/20">
-              <p className="text-sm opacity-75 mb-4 text-white">Explore our other services:</p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Link href="/services/payroll-hr" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                  Payroll & HR <ChevronRight className="h-3 w-3" />
-                </Link>
-                <Link href="/services/tax-preparation-compliance" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                  Tax & Compliance <ChevronRight className="h-3 w-3" />
-                </Link>
-                <Link href="/services/cfo-controller" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                  Controller & CFO <ChevronRight className="h-3 w-3" />
-                </Link>
-              </div>
-            </div>
+                <div className="text-center relative z-10">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    Ready to Gain Clarity and Control Over Your Finances?
+                  </h2>
+                  <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed text-white">
+                    Partner with QuantiFi, your trusted virtual accounting team for smarter, simpler, and scalable financial management.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-white text-[#0015ff] hover:bg-white/90 text-lg px-8 py-6">
+                      <Link href="/contact">
+                        Schedule a Free Consultation
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0015ff] text-lg px-8 py-6">
+                      <Link href="/contact">
+                        Contact Us
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Internal Links */}
+                  <div className="mt-16 pt-8 border-t border-white/20">
+                    <p className="text-sm opacity-75 mb-4 text-white">Explore our other services:</p>
+                    <div className="flex flex-wrap justify-center gap-6">
+                      <Link href="/services/payroll-hr" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
+                        Payroll & HR <ChevronRight className="h-3 w-3" />
+                      </Link>
+                      <Link href="/services/tax-preparation-compliance" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
+                        Tax & Compliance <ChevronRight className="h-3 w-3" />
+                      </Link>
+                      <Link href="/services/cfo-controller" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
+                        Controller & CFO <ChevronRight className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>

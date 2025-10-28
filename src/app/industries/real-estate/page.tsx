@@ -10,18 +10,11 @@ import { StackingCards } from '@/components/ui/stacking-card';
 import { 
   ArrowRight, 
   DollarSign, 
-  Shield, 
-  TrendingUp, 
-  Building2, 
-  Zap,
   Target,
   Award,
-  CreditCard,
-  Receipt,
-  Home,
   Building,
-  PieChart,
-  Landmark
+  Zap,
+  TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -182,7 +175,7 @@ export default function RealEstatePage() {
                 Keep Your Properties Profitable with Expert Real Estate Accounting
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-                QuantiFi provides specialized accounting for real estate businesses – from property managers and investors to developers. We&apos;ll handle rent rolls, expense tracking, loan compliance, and financial reporting for your properties, ensuring you have clear financial insight and more time to close deals.
+                QuantiFi provides specialized accounting for real estate businesses, from property managers and investors to developers. We&apos;ll handle rent rolls, expense tracking, loan compliance, and financial reporting for your properties, ensuring you have clear financial insight and more time to close deals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <BookCallButton className="text-lg px-10 py-6 text-white font-semibold !bg-[#0015ff] hover:!bg-[#0012cc]">
@@ -210,11 +203,11 @@ export default function RealEstatePage() {
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p className="text-lg leading-relaxed">
-                  Real estate is an industry of big assets and big decisions – and one where financial complexity abounds. Owners and managers must track income and expenses across multiple properties or projects, navigate mortgage and loan covenants, handle security deposits and escrow accounts, and adhere to tax rules that can change by locality. It&apos;s a lot to juggle. Many real estate firms struggle with disparate systems and labor-intensive spreadsheets that can lead to errors or missed opportunities. Hiring in-house accounting talent with real estate expertise is costly and often hard to find, which is why more industry leaders are turning to outsourced accounting as a solution.
+                  Real estate is an industry of big assets and big decisions, and one where financial complexity abounds. Owners and managers must track income and expenses across multiple properties or projects, navigate mortgage and loan covenants, handle security deposits and escrow accounts, and adhere to tax rules that can change by locality. It&apos;s a lot to juggle. Many real estate firms struggle with disparate systems and labor-intensive spreadsheets that can lead to errors or missed opportunities. Hiring in-house accounting talent with real estate expertise is costly and often hard to find, which is why more industry leaders are turning to outsourced accounting as a solution.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  QuantiFi delivers the financial clarity and control that real estate businesses need. We understand the nuances of property accounting – from tracking individual building performance and reconciling tenant ledgers, to managing development project budgets and cost allocations. Our team acts as your back-office accounting department (or works seamlessly with your current staff) to keep your books accurate, compliant, and up-to-date. With our help, you&apos;ll know exactly how each property or project is performing and have the reliable financial reports needed for lenders, investors, and your own strategic decisions.
+                  QuantiFi delivers the financial clarity and control that real estate businesses need. We understand the nuances of property accounting, from tracking individual building performance and reconciling tenant ledgers, to managing development project budgets and cost allocations. Our team acts as your back-office accounting department (or works seamlessly with your current staff) to keep your books accurate, compliant, and up-to-date. With our help, you&apos;ll know exactly how each property or project is performing and have the reliable financial reports needed for lenders, investors, and your own strategic decisions.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
@@ -314,7 +307,7 @@ export default function RealEstatePage() {
                 Ready to Elevate Your Real Estate Profits with Rock-Solid Financial Management?
               </h2>
               <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                Don&apos;t let accounting complexities or compliance worries hold back your real estate success. With QuantiFi as your financial partner, you gain clarity, confidence, and control over every property and project. We&apos;ll handle the books and the details – you focus on deals, development, and growth.
+                Don&apos;t let accounting complexities or compliance worries hold back your real estate success. With QuantiFi as your financial partner, you gain clarity, confidence, and control over every property and project. We&apos;ll handle the books and the details while you focus on deals, development, and growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">

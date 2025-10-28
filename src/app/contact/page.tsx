@@ -33,13 +33,13 @@ export default function ContactPage() {
     <MarketingLayout>
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 py-20">
+        <section className="bg-white dark:bg-black py-20 border-b-2 border-[#0015ff]">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
                 Get In Touch
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-black dark:text-white mb-8">
                 Ready to transform your business financials? Schedule your free consultation and discover the difference professional accounting makes.
               </p>
             </div>
@@ -47,14 +47,14 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Main Content */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {/* Contact Form */}
-              <Card className="p-8">
+              <Card className="p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Send us a message</CardTitle>
-                  <p className="text-muted-foreground">
+                  <CardTitle className="text-2xl text-black dark:text-white">Send us a message</CardTitle>
+                  <p className="text-black dark:text-white">
                     Fill out the form below and we&apos;ll get back to you within 24 hours.
                   </p>
                 </CardHeader>
@@ -62,31 +62,31 @@ export default function ContactPage() {
                   <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium mb-2 text-black dark:text-white">
                           Full Name *
                         </label>
-                        <Input id="name" placeholder="John Doe" required />
+                        <Input id="name" placeholder="John Doe" required className="border-2 border-black dark:border-white" />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium mb-2 text-black dark:text-white">
                           Email *
                         </label>
-                        <Input id="email" type="email" placeholder="john@example.com" required />
+                        <Input id="email" type="email" placeholder="john@example.com" required className="border-2 border-black dark:border-white" />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium mb-2">
+                      <label htmlFor="company" className="block text-sm font-medium mb-2 text-black dark:text-white">
                         Company
                       </label>
-                      <Input id="company" placeholder="Your Company Inc." />
+                      <Input id="company" placeholder="Your Company Inc." className="border-2 border-black dark:border-white" />
                     </div>
 
                     <div>
-                      <label htmlFor="industry" className="block text-sm font-medium mb-2">
+                      <label htmlFor="industry" className="block text-sm font-medium mb-2 text-black dark:text-white">
                         Industry
                       </label>
-                      <select className="w-full p-3 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-transparent">
+                      <select className="w-full p-3 border-2 border-black dark:border-white bg-white dark:bg-black text-black dark:text-white rounded-md focus:ring-2 focus:ring-[#0015ff] focus:border-[#0015ff]">
                         <option>Select an industry</option>
                         <option>Construction</option>
                         <option>Healthcare/Dental</option>
@@ -98,19 +98,19 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium mb-2 text-black dark:text-white">
                         Message *
                       </label>
                       <Textarea 
                         id="message" 
                         placeholder="Tell us about your accounting needs..." 
                         rows={5} 
-                        className="resize-none"
+                        className="resize-none border-2 border-black dark:border-white"
                         required 
                       />
                     </div>
 
-                    <Button type="submit" className="w-full" size="lg">
+                    <Button type="submit" className="w-full bg-[#0015ff] hover:bg-[#0012cc] text-white" size="lg">
                       <Send className="mr-2 h-4 w-4" />
                       Send Message
                     </Button>
@@ -121,42 +121,42 @@ export default function ContactPage() {
               {/* Contact Information & FAQ */}
               <div className="space-y-8">
                 {/* Direct Contact */}
-                <Card className="p-8">
+                <Card className="p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
                   <CardHeader>
-                    <CardTitle>Direct Contact</CardTitle>
+                    <CardTitle className="text-black dark:text-white">Direct Contact</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Mail className="h-5 w-5 text-blue-600" />
+                      <div className="w-10 h-10 bg-[#0015ff] rounded-lg flex items-center justify-center">
+                        <Mail className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium">Email</p>
-                        <a href="mailto:info@qfisol.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        <p className="font-medium text-black dark:text-white">Email</p>
+                        <a href="mailto:info@qfisol.com" className="text-black dark:text-white hover:text-[#0015ff] transition-colors">
                           info@qfisol.com
                         </a>
                       </div>
                     </div>
 
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <Phone className="h-5 w-5 text-green-600" />
+                      <div className="w-10 h-10 bg-[#0015ff] rounded-lg flex items-center justify-center">
+                        <Phone className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium">Phone</p>
-                        <a href="tel:+13016595995" className="text-muted-foreground hover:text-primary transition-colors">
+                        <p className="font-medium text-black dark:text-white">Phone</p>
+                        <a href="tel:+13016595995" className="text-black dark:text-white hover:text-[#0015ff] transition-colors">
                           +1 (301) 659-5995
                         </a>
                       </div>
                     </div>
 
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                        <MapPin className="h-5 w-5 text-purple-600" />
+                      <div className="w-10 h-10 bg-[#0015ff] rounded-lg flex items-center justify-center">
+                        <MapPin className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium">Locations</p>
-                        <p className="text-muted-foreground">
+                        <p className="font-medium text-black dark:text-white">Locations</p>
+                        <p className="text-black dark:text-white">
                           Atlanta, Georgia<br />
                           Los Angeles, California<br />
                           Dallas, Texas<br />
@@ -165,9 +165,9 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <Separator className="my-6" />
+                    <Separator className="my-6 bg-black dark:bg-white" />
 
-                    <Button asChild className="w-full" size="lg">
+                    <Button asChild className="w-full bg-[#0015ff] hover:bg-[#0012cc] text-white" size="lg">
                       <a href="https://calendly.com/quantifi" target="_blank" rel="noopener noreferrer">
                         Schedule Free Consultation
                       </a>
@@ -176,19 +176,19 @@ export default function ContactPage() {
                 </Card>
 
                 {/* FAQ Section */}
-                <Card className="p-8">
+                <Card className="p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
                   <CardHeader>
-                    <CardTitle>Frequently Asked Questions</CardTitle>
+                    <CardTitle className="text-black dark:text-white">Frequently Asked Questions</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <Accordion type="single" collapsible className="w-full">
                       {faqs.map((faq, index) => (
-                        <AccordionItem key={index} value={`item-${index}`}>
-                          <AccordionTrigger className="text-left">
+                        <AccordionItem key={index} value={`item-${index}`} className="border-b border-black dark:border-white">
+                          <AccordionTrigger className="text-left text-black dark:text-white hover:text-[#0015ff]">
                             {faq.question}
                           </AccordionTrigger>
                           <AccordionContent>
-                            <p className="text-muted-foreground leading-relaxed">
+                            <p className="text-black dark:text-white leading-relaxed">
                               {faq.answer}
                             </p>
                           </AccordionContent>

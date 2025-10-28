@@ -9,20 +9,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { StackingCards } from '@/components/ui/stacking-card';
 import { 
   ArrowRight, 
-  Users, 
-  Shield, 
-  TrendingUp, 
-  Building2, 
   Clock, 
-  Zap,
   Target,
-  CreditCard,
-  Receipt,
   Stethoscope,
-  Activity,
-  PieChart,
   Lock,
-  FileText
+  Shield,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -62,14 +54,14 @@ const healthcareServices = [
   },
   {
     title: 'Payroll & Compensation Management',
-    description: 'We manage payroll for your healthcare staff — including hourly employees, salaried professionals, nurses, hygienists, administrative staff, and providers — ensuring everyone is paid accurately and on schedule. While we don\'t process or file payroll taxes, we coordinate with your in-house or third-party payroll system (such as ADP, Gusto, or Paychex) to review data, reconcile reports, and record payroll entries correctly in your books. For physician or dentist owners, we help facilitate owner draws or custom compensation structures, and we incorporate productivity-based pay like RVU or procedure-based bonuses.',
+    description: 'We manage payroll for your healthcare staff, including hourly employees, salaried professionals, nurses, hygienists, administrative staff, and providers, ensuring everyone is paid accurately and on schedule. While we don\'t process or file payroll taxes, we coordinate with your in-house or third-party payroll system (such as ADP, Gusto, or Paychex) to review data, reconcile reports, and record payroll entries correctly in your books. For physician or dentist owners, we help facilitate owner draws or custom compensation structures, and we incorporate productivity-based pay like RVU or procedure-based bonuses.',
     link: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
     color: '#0015ff',
     href: '/services/payroll-hr',
   },
   {
     title: 'Tax Compliance & Planning',
-    description: 'We help healthcare and dental practices stay fully compliant and financially optimized by preparing CPA-ready tax records — but we do not file income or payroll taxes ourselves. Our team organizes all the financial details your CPA or tax preparer needs, including reconciled books, categorized deductions, and accurate 1099s from your payroll system. We also provide strategic guidance on entity structure, equipment depreciation, and potential credits such as the Qualified Small Business Healthcare Tax Credit to help reduce liabilities.',
+    description: 'We help healthcare and dental practices stay fully compliant and financially optimized by preparing CPA-ready tax records, but we do not file income or payroll taxes ourselves. Our team organizes all the financial details your CPA or tax preparer needs, including reconciled books, categorized deductions, and accurate 1099s from your payroll system. We also provide strategic guidance on entity structure, equipment depreciation, and potential credits such as the Qualified Small Business Healthcare Tax Credit to help reduce liabilities.',
     link: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     color: '#0015ff',
     href: '/services/tax-preparation-compliance',

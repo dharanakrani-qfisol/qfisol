@@ -10,19 +10,11 @@ import { StackingCards } from '@/components/ui/stacking-card';
 import { 
   ArrowRight, 
   DollarSign, 
-  Users, 
-  Shield, 
-  TrendingUp, 
-  Building2, 
   Clock, 
-  Zap,
   Target,
-  Receipt,
-  Package,
   Store,
   Globe,
-  Smartphone,
-  PieChart
+  Smartphone
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -211,7 +203,7 @@ export default function RetailEcommercePage() {
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  Whether you&apos;re a boutique retailer with one location, a multi-store operation, or an e-commerce entrepreneur selling nationwide, QuantiFi adapts to your needs. We can handle accounting for hybrid businesses (storefront + online) seamlessly. Our cloud-based tools connect to your systems (like Shopify, Amazon, or point-of-sale software), giving you real-time insights. With our support, you&apos;ll have clear financial visibility and expert guidance — so you can optimize pricing, reduce costs, and confidently plan expansions, rather than getting bogged down in spreadsheets.
+                  Whether you&apos;re a boutique retailer with one location, a multi-store operation, or an e-commerce entrepreneur selling nationwide, QuantiFi adapts to your needs. We can handle accounting for hybrid businesses (storefront + online) seamlessly. Our cloud-based tools connect to your systems (like Shopify, Amazon, or point-of-sale software), giving you real-time insights. With our support, you&apos;ll have clear financial visibility and expert guidance - so you can optimize pricing, reduce costs, and confidently plan expansions, rather than getting bogged down in spreadsheets.
                 </p>
               </div>
             </div>

@@ -11,13 +11,10 @@ import {
   ArrowRight, 
   DollarSign, 
   Users, 
-  Shield, 
   TrendingUp, 
-  Building2, 
   Clock,
   Zap,
-  Target,
-  Award
+  Building2
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
 const constructionServices = [
   {
     title: 'Bookkeeping & Job Cost Tracking',
-    description: 'We maintain your general ledger with meticulous care — handling accounts payable/receivable, fixed asset tracking, and monthly bank reconciliations. Our team implements construction-specific bookkeeping, tagging every transaction by project. This means you get accurate, up-to-date cost records for each job site, ensuring nothing falls through the cracks. All records are kept audit-ready and tax-ready, giving you confidence in your numbers year-round.',
+    description: 'We maintain your general ledger with meticulous care, handling accounts payable/receivable, fixed asset tracking, and monthly bank reconciliations. Our team implements construction-specific bookkeeping, tagging every transaction by project. This means you get accurate, up-to-date cost records for each job site, ensuring nothing falls through the cracks. All records are kept audit-ready and tax-ready, giving you confidence in your numbers year-round.',
     color: '#0015ff',
     href: '/services/outsourced-accounting',
   },
@@ -41,13 +38,13 @@ const constructionServices = [
   },
   {
     title: 'Tax Planning & Preparation',
-    description: 'Proactive tax strategy helps contractors minimize liability and avoid surprises. We provide year-round tax planning — reviewing financials for eligible deductions, credits, and entity structuring opportunities to save you money. Construction companies benefit from specialized tactics like cost segregation studies (accelerated depreciation of building, components, machinery, and equipment) to reduce tax burdens.',
+    description: 'Proactive tax strategy helps contractors minimize liability and avoid surprises. We provide year-round tax planning, reviewing financials for eligible deductions, credits, and entity structuring opportunities to save you money. Construction companies benefit from specialized tactics like cost segregation studies (accelerated depreciation of building, components, machinery, and equipment) to reduce tax burdens.',
     color: '#0015ff',
     href: '/services/tax-preparation-compliance',
   },
   {
     title: 'Financial Reporting & Assurance',
-    description: 'Get clear, professional financial statements that stakeholders (and sureties) trust. We prepare monthly and quarterly financial reports – including Profit & Loss, Balance Sheet, job cost schedules, and budget vs. actual analyses – tailored to construction. Our team uses GAAP-compliant methods and applies the correct revenue recognition (percentage-of-completion or completed-contract) for your projects.',
+    description: 'Get clear, professional financial statements that stakeholders (and sureties) trust. We prepare monthly and quarterly financial reports, including Profit & Loss, Balance Sheet, job cost schedules, and budget vs. actual analyses, tailored to construction. Our team uses GAAP-compliant methods and applies the correct revenue recognition (percentage-of-completion or completed-contract) for your projects.',
     color: '#0015ff',
     href: '/services/financial-analytics',
   },
@@ -65,7 +62,7 @@ const constructionServices = [
   },
   {
     title: 'Internal Controls & Audit-Readiness',
-    description: 'We implement strong internal controls so you can trust your financial systems. QuantiFi will establish checks and balances for your construction accounting processes – from purchase approvals to reconciliation reviews – to help prevent fraud and errors. We ensure critical items like change orders, procurement, and payroll have proper oversight. The result is clean, reliable financial data.',
+    description: 'We implement strong internal controls so you can trust your financial systems. QuantiFi will establish checks and balances for your construction accounting processes, from purchase approvals to reconciliation reviews, to help prevent fraud and errors. We ensure critical items like change orders, procurement, and payroll have proper oversight. The result is clean, reliable financial data.',
     color: '#0015ff',
     href: '/services/systems-integration',
   },
@@ -92,7 +89,7 @@ const constructionServices = [
 const whyChooseQuantiFi = [
   {
     title: 'Outsourced & Liaison Support',
-    description: 'Flexible engagement to fit your needs. We can operate as your fully outsourced accounting department or integrate with your existing staff as a liaison. This means you get help where you need it most – whether it\'s managing everything end-to-end or collaborating on specific tasks – adapting as your projects and team change.',
+    description: 'Flexible engagement to fit your needs. We can operate as your fully outsourced accounting department or integrate with your existing staff as a liaison. This means you get help where you need it most, whether it\'s managing everything end-to-end or collaborating on specific tasks, adapting as your projects and team change.',
     icon: Users
   },
   {
@@ -102,12 +99,12 @@ const whyChooseQuantiFi = [
   },
   {
     title: 'Consistent & Reliable Service',
-    description: 'Never worry about vacations or turnover derailing your accounting. Our team provides year-round consistency and dependable delivery. We establish routines and deadlines (weekly reports, monthly closes) and stick to them. With QuantiFi, you won\'t face the common in-house challenges of staff attrition or sick leave – your books are always up-to-date and accurate, period.',
+    description: 'Never worry about vacations or turnover derailing your accounting. Our team provides year-round consistency and dependable delivery. We establish routines and deadlines (weekly reports, monthly closes) and stick to them. With QuantiFi, you won\'t face the common in-house challenges of staff attrition or sick leave; your books are always up-to-date and accurate, period.',
     icon: Clock
   },
   {
     title: 'Construction Industry Expertise',
-    description: 'We know construction inside and out. From AIA billing and retainage to job costing, WIP reports, and bonding requirements, our specialists speak the language of contractors. We stay on top of construction accounting rules and best practices (percentage-of-completion revenue, sales tax on materials, union payroll, etc.). You don\'t have to teach us – instead, we\'ll share insights that sharpen your competitive edge.',
+    description: 'We know construction inside and out. From AIA billing and retainage to job costing, WIP reports, and bonding requirements, our specialists speak the language of contractors. We stay on top of construction accounting rules and best practices (percentage-of-completion revenue, sales tax on materials, union payroll, etc.). You don\'t have to teach us; instead, we\'ll share insights that sharpen your competitive edge.',
     icon: Building2
   },
   {
@@ -117,7 +114,7 @@ const whyChooseQuantiFi = [
   },
   {
     title: 'Scalable Support as You Grow',
-    description: 'A partner that grows with your business. Whether you\'re a small subcontractor taking on bigger jobs or an established GC expanding into new markets, we scale our services accordingly. Need more strategic advice? We\'ll provide CFO-level guidance. Taking on more projects? We\'ll add bookkeeping capacity. Our Liaison Accounting Partnership model is designed to flex – ramping up or dialing back services as your needs evolve, so you\'re never paying for more than you require, and never left without support when challenges arise.',
+    description: 'A partner that grows with your business. Whether you\'re a small subcontractor taking on bigger jobs or an established GC expanding into new markets, we scale our services accordingly. Need more strategic advice? We\'ll provide CFO-level guidance. Taking on more projects? We\'ll add bookkeeping capacity. Our Liaison Accounting Partnership model is designed to flex, ramping up or dialing back services as your needs evolve, so you\'re never paying for more than you require, and never left without support when challenges arise.',
     icon: TrendingUp
   }
 ];
@@ -133,11 +130,11 @@ const faqData = [
   },
   {
     question: 'Can you assist with construction payroll and certified payroll reports?',
-    answer: 'Yes — we provide comprehensive construction payroll services that help contractors, subcontractors, and construction companies manage payroll efficiently and stay fully compliant. Our team supports your payroll process within your in-house system, whether it\'s Gusto, QuickBooks, ADP, or Paychex, ensuring accurate setup, reporting, and reconciliation every pay cycle. While we do not calculate or file payroll taxes, we manage every aspect of payroll data entry, certified payroll reporting, and construction payroll compliance documentation to keep your books accurate and audit-ready. We prepare and maintain certified payroll reports — including WH-347 forms — for government-funded construction projects, ensuring full compliance with prevailing wage laws and Davis-Bacon Act requirements. For companies employing union workers or multi-state crews, our experts handle varying wage rates, fringe benefits, and deductions with precision. We also produce job-costed labor reports, workers\' compensation summaries, and certified payroll submissions that meet federal, state, and local standards. QuantiFi\'s construction payroll reporting services simplify complex payroll requirements, reduce compliance risks, and save valuable administrative time. With accurate reporting, timely submissions, and full visibility into labor costs, we help construction firms run payroll seamlessly—so you can focus on building projects while we handle the numbers behind them.'
+    answer: 'Yes, we provide comprehensive construction payroll services that help contractors, subcontractors, and construction companies manage payroll efficiently and stay fully compliant. Our team supports your payroll process within your in-house system, whether it\'s Gusto, QuickBooks, ADP, or Paychex, ensuring accurate setup, reporting, and reconciliation every pay cycle. While we do not calculate or file payroll taxes, we manage every aspect of payroll data entry, certified payroll reporting, and construction payroll compliance documentation to keep your books accurate and audit-ready. We prepare and maintain certified payroll reports, including WH-347 forms, for government-funded construction projects, ensuring full compliance with prevailing wage laws and Davis-Bacon Act requirements. For companies employing union workers or multi-state crews, our experts handle varying wage rates, fringe benefits, and deductions with precision. We also produce job-costed labor reports, workers\' compensation summaries, and certified payroll submissions that meet federal, state, and local standards. QuantiFi\'s construction payroll reporting services simplify complex payroll requirements, reduce compliance risks, and save valuable administrative time. With accurate reporting, timely submissions, and full visibility into labor costs, we help construction firms run payroll seamlessly so you can focus on building projects while we handle the numbers behind them.'
   },
   {
     question: 'Will you work with our existing accounting software and project management tools?',
-    answer: 'Absolutely. QuantiFi can work with whatever systems you currently use. We have experience with all major construction accounting software, including QuickBooks, Sage 100/300 Contractor, Foundation software, and more, as well as project management platforms like Procore, PlanGrid, or Buildertrend, Contractor Foreman. Our team will adapt to your workflow — or help you improve it by integrating your systems. For example, we can sync your project management tool with your accounting ledger to automatically import field data (timesheets, expenses) into your books. If you\'re not satisfied with your current setup, we\'ll recommend and implement better solutions. In any case, you won\'t have to "start from scratch" – we leverage your existing tech and make sure you get the most out of it.'
+    answer: 'Absolutely. QuantiFi can work with whatever systems you currently use. We have experience with all major construction accounting software, including QuickBooks, Sage 100/300 Contractor, Foundation software, and more, as well as project management platforms like Procore, PlanGrid, or Buildertrend, Contractor Foreman. Our team will adapt to your workflow or help you improve it by integrating your systems. For example, we can sync your project management tool with your accounting ledger to automatically import field data (timesheets, expenses) into your books. If you\'re not satisfied with your current setup, we\'ll recommend and implement better solutions. In any case, you won\'t have to "start from scratch"; we leverage your existing tech and make sure you get the most out of it.'
   },
   {
     question: 'Will QuantiFi help with bonding and preparing financials for surety companies?',
@@ -188,11 +185,11 @@ export default function ConstructionPage() {
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p className="text-lg leading-relaxed">
-                  At QuantiFi, we make construction finance simple, strategic, and CPA-ready. We understand that construction accounting isn&apos;t like typical bookkeeping — it demands job-based costing, progress billing, retainage tracking, and real-time insight into every project&apos;s financial health.
+                  At QuantiFi, we make construction finance simple, strategic, and CPA-ready. We understand that construction accounting isn&apos;t like typical bookkeeping; it demands job-based costing, progress billing, retainage tracking, and real-time insight into every project&apos;s financial health.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  Many contractors struggle because generic bookkeepers or small accounting services don&apos;t understand how to manage change orders, WIP reports, and revenue recognition correctly — leading to inaccurate profits and higher risk.
+                  Many contractors struggle because generic bookkeepers or small accounting services don&apos;t understand how to manage change orders, WIP reports, and revenue recognition correctly, leading to inaccurate profits and higher risk.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
@@ -204,12 +201,12 @@ export default function ConstructionPage() {
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  QuantiFi supports construction companies across the nation — from Atlanta to Dallas to the Los Angeles, delivering industry-specific expertise and scalable financial systems. Whether you need construction payroll support, contractor bookkeeping cleanup, or CPA-ready reporting for your tax preparer, we ensure your books are accurate, compliant, and ready for year-end filings.
+                  QuantiFi supports construction companies across the nation, from Atlanta to Dallas to the Los Angeles, delivering industry-specific expertise and scalable financial systems. Whether you need construction payroll support, contractor bookkeeping cleanup, or CPA-ready reporting for your tax preparer, we ensure your books are accurate, compliant, and ready for year-end filings.
                 </p>
                 
                 <div className="bg-blue-50 dark:bg-blue-950/20 p-8 rounded-2xl border-l-4 mt-8" style={{ borderLeftColor: '#0015ff' }}>
                   <p className="text-lg font-medium text-foreground mb-0">
-                    <strong>With QuantiFi, you get the perfect balance of big-firm experience and local insight</strong> — a dedicated accounting partner that understands contractors, builds financial strength, and keeps your numbers working as hard as your crews do.
+                    <strong>With QuantiFi, you get the perfect balance of big-firm experience and local insight</strong>, a dedicated accounting partner that understands contractors, builds financial strength, and keeps your numbers working as hard as your crews do.
                   </p>
                 </div>
               </div>
@@ -241,7 +238,7 @@ export default function ConstructionPage() {
                 Why Contractors Trust QuantiFi for Construction Accounting
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Construction accounting is more than just crunching numbers — it&apos;s the backbone of successful projects. At QuantiFi, we pride ourselves on being more than an accounting vendor; we&apos;re a partner in your business&apos;s success. Here&apos;s why construction companies nationwide choose to work with QuantiFi:
+                Construction accounting is more than just crunching numbers; it&apos;s the backbone of successful projects. At QuantiFi, we pride ourselves on being more than an accounting vendor; we&apos;re a partner in your business&apos;s success. Here&apos;s why construction companies nationwide choose to work with QuantiFi:
               </p>
             </div>
 
@@ -278,7 +275,7 @@ export default function ConstructionPage() {
                   Construction Accounting FAQs
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Still have questions? Below are some common questions we hear from contractors — along with answers to help you understand how QuantiFi&apos;s construction accounting services can benefit your business.
+                  Still have questions? Below are some common questions we hear from contractors, along with answers to help you understand how QuantiFi&apos;s construction accounting services can benefit your business.
                 </p>
               </div>
 

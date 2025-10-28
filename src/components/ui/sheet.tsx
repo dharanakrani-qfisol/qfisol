@@ -18,6 +18,7 @@ const SheetOverlay = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
+    suppressHydrationWarning
     className={cn(
       "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm",
       className
@@ -58,6 +59,7 @@ const SheetContent = React.forwardRef<
   <SheetPrimitive.Portal>
     <SheetOverlay />
     <SheetPrimitive.Content
+      suppressHydrationWarning
       ref={ref}
       className={cn(sheetVariants({ side }), className)}
       {...props}

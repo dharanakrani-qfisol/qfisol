@@ -1,30 +1,53 @@
 import Link from 'next/link';
-import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { 
+  Facebook, 
+  Linkedin, 
+  Twitter, 
+  Mail, 
+  Phone, 
+  MapPin,
+  Calculator,
+  TrendingUp,
+  FileText,
+  Users,
+  Settings,
+  BarChart3,
+  HardHat,
+  UtensilsCrossed,
+  ShoppingCart,
+  HeartPulse,
+  Rocket,
+  Home,
+  Info,
+  Briefcase,
+  BookOpen,
+  MessageCircle
+} from 'lucide-react';
 import { BookCallButton } from '@/components/ui/book-call-button';
 
 const services = [
-  { name: 'Outsourced Bookkeeping & Accounting', href: '/services/outsourced-accounting' },
-  { name: 'Controller & CFO Services', href: '/services/cfo-controller' },
-  { name: 'Tax Preparation & Compliance', href: '/services/tax-preparation-compliance' },
-  { name: 'Payroll & HR Support', href: '/services/payroll-hr' },
-  { name: 'Systems Integration & Tech Consulting', href: '/services/systems-integration' },
-  { name: 'Financial Analytics & Reporting', href: '/services/financial-analytics' },
+  { name: 'Outsourced Bookkeeping & Accounting', href: '/services/outsourced-accounting', icon: Calculator },
+  { name: 'Controller & CFO Services', href: '/services/cfo-controller', icon: TrendingUp },
+  { name: 'Tax Preparation & Compliance', href: '/services/tax-preparation-compliance', icon: FileText },
+  { name: 'Payroll & HR Support', href: '/services/payroll-hr', icon: Users },
+  { name: 'Systems Integration & Tech Consulting', href: '/services/systems-integration', icon: Settings },
+  { name: 'Financial Analytics & Reporting', href: '/services/financial-analytics', icon: BarChart3 },
 ];
 
 const industries = [
-  { name: 'Construction & Contracting', href: '/industries/construction' },
-  { name: 'Hospitality & Restaurant', href: '/industries/hospitality' },
-  { name: 'Retail & E-Commerce', href: '/industries/retail-ecommerce' },
-  { name: 'Healthcare & Medical Practice', href: '/industries/healthcare' },
-  { name: 'Startup & Emerging Business', href: '/industries/startups' },
-  { name: 'Real Estate & Property Management', href: '/industries/real-estate' },
+  { name: 'Construction & Contracting', href: '/industries/construction', icon: HardHat },
+  { name: 'Hospitality & Restaurant', href: '/industries/hospitality', icon: UtensilsCrossed },
+  { name: 'Retail & E-Commerce', href: '/industries/retail-ecommerce', icon: ShoppingCart },
+  { name: 'Healthcare & Medical Practice', href: '/industries/healthcare', icon: HeartPulse },
+  { name: 'Startup & Emerging Business', href: '/industries/startups', icon: Rocket },
+  { name: 'Real Estate & Property Management', href: '/industries/real-estate', icon: Home },
 ];
 
 const company = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Blogs', href: '/resources/blogs' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'About Us', href: '/about', icon: Info },
+  { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
+  { name: 'Blogs', href: '/resources/blogs', icon: BookOpen },
+  { name: 'Contact', href: '/contact', icon: MessageCircle },
 ];
 
 const legal = [
@@ -42,16 +65,20 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    href={service.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <li key={service.name}>
+                    <Link
+                      href={service.href}
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors group"
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 group-hover:text-[#0015ff] transition-colors" />
+                      <span>{service.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -59,16 +86,20 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Industries</h3>
             <ul className="space-y-2">
-              {industries.map((industry) => (
-                <li key={industry.name}>
-                  <Link
-                    href={industry.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {industry.name}
-                  </Link>
-                </li>
-              ))}
+              {industries.map((industry) => {
+                const Icon = industry.icon;
+                return (
+                  <li key={industry.name}>
+                    <Link
+                      href={industry.href}
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors group"
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 group-hover:text-[#0015ff] transition-colors" />
+                      <span>{industry.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -76,16 +107,20 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              {company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              {company.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors group"
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 group-hover:text-[#0015ff] transition-colors" />
+                      <span>{item.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

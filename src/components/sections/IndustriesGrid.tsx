@@ -117,7 +117,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
             ${
               isActive
                 ? 'text-xl md:text-2xl rotate-0 tracking-tight' // Active: horizontal, consistent size
-                : `${['Healthcare (Medical, Dental & Pharmacy)', 'Construction & Contracting', 'Hospitality & Restaurants', 'Retail & E-Commerce'].includes(item.title) ? 'rotate-90 text-xs tracking-wide' : 'rotate-90 text-lg tracking-wide'}` // Inactive: vertical, smaller for long titles
+                : 'rotate-90 text-xs tracking-wide' // Inactive: vertical, consistent small size for all
             }
           `}
         >
@@ -228,20 +228,6 @@ export function IndustriesGrid() {
               </p>
             </motion.div>
             
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <Link
-                href="/industries"
-                className="inline-flex items-center gap-2 bg-foreground hover:bg-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 text-background font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-              >
-                View All Industries
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
           </motion.div>
 
           {/* Right Side: Image Accordion */}
@@ -267,7 +253,7 @@ export function IndustriesGrid() {
 
         {/* Bottom CTA Section */}
         <motion.div
-          className="text-center bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-sm border border-gray-200 dark:border-gray-700 mt-16"
+          className="text-center bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-sm border border-gray-200 dark:border-gray-700 mt-16 mb-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -284,7 +270,7 @@ export function IndustriesGrid() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-quantifi-primary hover:bg-quantifi-primary/90 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900 to-black hover:from-black hover:to-gray-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               Contact Us
               <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />

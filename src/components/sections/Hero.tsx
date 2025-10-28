@@ -242,18 +242,6 @@ export function Hero() {
                   </div>
                 </motion.div>
               </div>
-
-              {/* Services tagline */}
-              <motion.div
-                className="mt-8 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-              >
-                <p className="text-sm text-muted-foreground font-light">
-                  Bookkeeping • Payroll • Tax Return Processing
-                </p>
-              </motion.div>
             </motion.div>
 
           </motion.div>

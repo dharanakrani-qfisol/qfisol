@@ -29,49 +29,49 @@ const integrationServices = [
     icon: Settings,
     title: 'System Implementation Support',
     description: 'We help you evaluate, configure, and deploy QuickBooks, Xero, or NetSuite systems that best fit your business operations.',
-    color: 'from-blue-500 to-blue-600'
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: Database,
     title: 'Data Migration & Cleanup',
-    description: 'We prepare, validate, and load your historical financial data into the new platform — ensuring accuracy and consistency.',
-    color: 'from-green-500 to-green-600'
+    description: 'We prepare, validate, and load your historical financial data into the new platform, ensuring accuracy and consistency.',
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: CheckCircle2,
     title: 'Testing & Validation',
     description: 'Before go-live, we help you run simulations in a test environment to confirm that every number, report, and workflow works as expected.',
-    color: 'from-purple-500 to-purple-600'
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: LinkIcon,
     title: 'Integration Setup',
-    description: 'We guide you in connecting financial tools and APIs — such as Ramp, Bill.com, Gusto, or Shopify — to your accounting platform. We coordinate with vendors to ensure smooth integration and accurate data mapping, without building custom APIs.',
-    color: 'from-orange-500 to-orange-600'
+    description: 'We guide you in connecting financial tools and APIs such as Ramp, Bill.com, Gusto, or Shopify to your accounting platform. We coordinate with vendors to ensure smooth integration and accurate data mapping, without building custom APIs.',
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: Zap,
     title: 'Workflow Optimization',
     description: 'Our experts identify redundant steps and automate processes to save time and reduce manual entries.',
-    color: 'from-indigo-500 to-indigo-600'
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: Users,
     title: 'Training & User Support',
     description: 'We conduct end-user walkthroughs and provide guidance for smoother system adoption post-launch.',
-    color: 'from-teal-500 to-teal-600'
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: Wrench,
     title: 'Ongoing Technical Coordination',
     description: 'We collaborate with your software vendors during updates or transitions to maintain system performance and data integrity.',
-    color: 'from-pink-500 to-pink-600'
+    color: 'from-[#0015ff] to-[#0015ff]'
   },
   {
     icon: Play,
     title: 'Go-Live Readiness',
     description: 'From demo to deployment, we ensure you\'re fully prepared for launch — with clean data, tested systems, and documented workflows.',
-    color: 'from-slate-500 to-slate-600'
+    color: 'from-[#0015ff] to-[#0015ff]'
   }
 ];
 
@@ -139,11 +139,11 @@ export default function SystemsIntegrationContent() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-white via-teal-50/30 to-blue-50/50 dark:from-slate-900 dark:via-teal-950/20 dark:to-blue-950/30">
+      <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-blue-50/40 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="h-full w-full" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(20, 184, 166, 0.3) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 21, 255, 0.3) 1px, transparent 0)`,
             backgroundSize: '40px 40px'
           }} />
         </div>
@@ -156,7 +156,7 @@ export default function SystemsIntegrationContent() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.3, ease: "easeOut" }}
             >
-              <Badge className="mb-6 px-4 py-2 text-sm font-semibold bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300">
+              <Badge className="mb-6 px-4 py-2 text-sm font-semibold bg-blue-100 text-[#0015ff] dark:bg-blue-950 dark:text-blue-300">
                 Systems Integration & Tech Consulting
               </Badge>
               
@@ -165,11 +165,11 @@ export default function SystemsIntegrationContent() {
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                QuantiFi helps businesses migrate, integrate, and optimize their accounting and ERP systems — ensuring a smooth transition from demo to go-live without data loss or disruption.
+                QuantiFi helps businesses migrate, integrate, and optimize their accounting and ERP systems, ensuring a smooth transition from demo to go-live without data loss or disruption.
               </p>
               
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                Our team supports you every step of the way — from platform selection and data migration to user testing and launch. With experience in QuickBooks, Xero, NetSuite, and Sage Intacct, we help you streamline workflows and gain complete visibility into your financial performance.
+                Our team supports you every step of the way, from platform selection and data migration to user testing and launch. With experience in QuickBooks, Xero, NetSuite, and Sage Intacct, we help you streamline workflows and gain complete visibility into your financial performance.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -216,9 +216,9 @@ export default function SystemsIntegrationContent() {
                 <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-gray-800/20">
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-slate-300 rounded-full"></div>
+                      <div className="w-3 h-3 bg-slate-300 rounded-full"></div>
+                      <div className="w-3 h-3 bg-slate-300 rounded-full"></div>
                     </div>
                     <div className="text-xs font-medium text-muted-foreground bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full">
                       System Integration
@@ -226,37 +226,37 @@ export default function SystemsIntegrationContent() {
                   </div>
 
                   <div className="space-y-6">
-                    <div className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/30 dark:to-teal-800/30 rounded-xl p-4 border border-teal-200 dark:border-teal-800">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
                       <div className="flex items-center gap-3 mb-2">
-                        <Server className="h-5 w-5 text-teal-600" />
-                        <span className="text-sm font-semibold text-teal-700 dark:text-teal-300">QuickBooks</span>
+                        <Server className="h-5 w-5 text-[#0015ff]" />
+                        <span className="text-sm font-semibold text-[#0015ff] dark:text-blue-300">QuickBooks</span>
                       </div>
-                      <div className="text-lg font-bold text-teal-600 dark:text-teal-400">Connected</div>
-                      <div className="text-xs text-teal-700 dark:text-teal-300">Data synced</div>
+                      <div className="text-lg font-bold text-[#0015ff] dark:text-blue-400">Connected</div>
+                      <div className="text-xs text-[#0015ff] dark:text-blue-300">Data synced</div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
                       <div className="flex items-center gap-3 mb-2">
-                        <LinkIcon className="h-5 w-5 text-blue-600" />
-                        <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">Integrations</span>
+                        <LinkIcon className="h-5 w-5 text-[#0015ff]" />
+                        <span className="text-sm font-semibold text-[#0015ff] dark:text-blue-300">Integrations</span>
                       </div>
-                      <div className="text-lg font-bold text-blue-600 dark:text-blue-400">8 Active</div>
-                      <div className="text-xs text-blue-700 dark:text-blue-300">APIs connected</div>
+                      <div className="text-lg font-bold text-[#0015ff] dark:text-blue-400">8 Active</div>
+                      <div className="text-xs text-[#0015ff] dark:text-blue-300">APIs connected</div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl p-4 border border-green-200 dark:border-green-800">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
                       <div className="flex items-center gap-3 mb-2">
-                        <CheckCircle2 className="h-5 w-5 text-green-600" />
-                        <span className="text-sm font-semibold text-green-700 dark:text-green-300">Migration</span>
+                        <CheckCircle2 className="h-5 w-5 text-[#0015ff]" />
+                        <span className="text-sm font-semibold text-[#0015ff] dark:text-blue-300">Migration</span>
                       </div>
-                      <div className="text-lg font-bold text-green-600 dark:text-green-400">Complete</div>
-                      <div className="text-xs text-green-700 dark:text-green-300">Ready for go-live</div>
+                      <div className="text-lg font-bold text-[#0015ff] dark:text-blue-400">Complete</div>
+                      <div className="text-xs text-[#0015ff] dark:text-blue-300">Ready for go-live</div>
                     </div>
                   </div>
 
                   <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-[#0015ff] rounded-full animate-pulse"></div>
                       <span className="text-xs text-gray-600 dark:text-gray-400">All systems operational</span>
                     </div>
                     <span className="text-xs text-gray-500 dark:text-gray-400">Updated 3 min ago</span>
@@ -282,10 +282,10 @@ export default function SystemsIntegrationContent() {
                 Implementation. Migration. Go-Live. We&apos;re With You Every Step.
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Technology should make accounting easier — not more complicated. At QuantiFi, we guide businesses through the entire integration process, ensuring accuracy, efficiency, and minimal downtime.
+                Technology should make accounting easier, not more complicated. At QuantiFi, we guide businesses through the entire integration process, ensuring accuracy, efficiency, and minimal downtime.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We don&apos;t build systems — we make sure yours works perfectly. From data migration and test environments to final validation before go-live, we ensure your financial systems talk to each other seamlessly.
+                We don&apos;t build systems, we make sure yours works perfectly. From data migration and test environments to final validation before go-live, we ensure your financial systems talk to each other seamlessly.
               </p>
             </motion.div>
 
@@ -297,9 +297,9 @@ export default function SystemsIntegrationContent() {
               viewport={{ once: true }}
             >
               <div className="relative w-full max-w-md">
-                <div className="bg-gradient-to-br from-teal-50 to-blue-50 dark:from-teal-950/30 dark:to-blue-950/30 rounded-2xl p-8 border border-teal-200/50 dark:border-teal-800/50">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#0015ff] rounded-xl flex items-center justify-center">
                       <Settings className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -309,15 +309,15 @@ export default function SystemsIntegrationContent() {
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-[#0015ff]" />
                       <span className="text-sm text-foreground">Data migration</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-[#0015ff]" />
                       <span className="text-sm text-foreground">API integration</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-[#0015ff]" />
                       <span className="text-sm text-foreground">Testing & validation</span>
                     </div>
                   </div>
@@ -328,13 +328,13 @@ export default function SystemsIntegrationContent() {
 
           {/* Stat Box */}
           <motion.div
-            className="mt-16 bg-gradient-to-r from-teal-50 to-blue-50 dark:from-teal-950/30 dark:to-blue-950/30 rounded-2xl p-8 border border-teal-200/50 dark:border-teal-800/50 max-w-2xl mx-auto text-center"
+            className="mt-16 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50 max-w-2xl mx-auto text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg font-semibold text-teal-800 dark:text-teal-200">
+            <p className="text-lg font-semibold text-[#0015ff] dark:text-blue-200">
               100% Migration Accuracy in Test-to-Live Transitions.
             </p>
           </motion.div>
@@ -355,7 +355,7 @@ export default function SystemsIntegrationContent() {
               Our Integration & Migration Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              We help you get the most out of your accounting technology — connecting platforms, cleaning data, and creating reliable financial visibility across systems.
+              We help you get the most out of your accounting technology by connecting platforms, cleaning data, and creating reliable financial visibility across systems.
             </p>
           </motion.div>
 
@@ -369,14 +369,14 @@ export default function SystemsIntegrationContent() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className={`h-full transition-all duration-300 border-0 shadow-lg group-hover:shadow-xl group-hover:border-teal-200 dark:group-hover:border-teal-800 ${
+                <Card className={`h-full transition-all duration-300 border-0 shadow-lg group-hover:shadow-xl group-hover:border-blue-200 dark:group-hover:border-blue-800 ${
                   index % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-800/50'
                 }`}>
                   <CardContent className="p-8">
                     <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200`}>
                       <service.icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-[#0015ff] dark:group-hover:text-blue-400 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
@@ -391,7 +391,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* Why Businesses Choose QuantiFi */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-teal-50/30 via-blue-50/20 to-white dark:from-teal-950/20 dark:via-blue-950/10 dark:to-slate-900">
+      <section className="py-32 md:py-40 bg-gradient-to-br from-blue-50/30 via-blue-50/20 to-white dark:from-blue-950/20 dark:via-blue-950/10 dark:to-slate-900">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -404,7 +404,7 @@ export default function SystemsIntegrationContent() {
               Why Companies Trust QuantiFi for Seamless Accounting System Integration
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Migrating to a new accounting system can be stressful — but with the right partner, it doesn&apos;t have to be.
+              Migrating to a new accounting system can be stressful, but with the right partner, it doesn&apos;t have to be.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
               QuantiFi ensures every integration and migration is handled with precision, communication, and confidence. Our experts work alongside your team and vendors to deliver smooth, compliant transitions that save time and prevent data errors.
@@ -421,7 +421,7 @@ export default function SystemsIntegrationContent() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#0015ff] to-[#0015ff] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200">
                   <benefit.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">
@@ -502,15 +502,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-emerald-600 via-emerald-700 to-slate-900 text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="h-full w-full" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
-
+      <section className="py-32 md:py-40 bg-quantifi-primary text-white relative overflow-hidden">
         <div className="container-standard section-gutter text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -522,17 +514,17 @@ export default function SystemsIntegrationContent() {
               Ready to Streamline Your Accounting Technology?
             </h2>
             <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              From demo to deployment, we&apos;ll help you implement the right systems — accurately, efficiently, and confidently.
+              From demo to deployment, we&apos;ll help you implement the right systems accurately, efficiently, and confidently.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-6">
+              <Button asChild size="lg" className="bg-white text-quantifi-primary hover:bg-white/90 text-lg px-8 py-6">
                 <Link href="/contact">
                   Schedule a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-emerald-600 text-lg px-8 py-6">
+              <Button asChild size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-quantifi-primary text-lg px-8 py-6">
                 <Link href="/contact">
                   Talk to Our Integration Specialist
                 </Link>
@@ -543,13 +535,13 @@ export default function SystemsIntegrationContent() {
             <div className="mt-16 pt-8 border-t border-white/20">
               <p className="text-sm opacity-75 mb-4">Explore our related services:</p>
               <div className="flex flex-wrap justify-center gap-6">
-                <Link href="/services/outsourced-accounting" className="text-sm hover:text-emerald-300 transition-colors flex items-center gap-1">
+                <Link href="/services/outsourced-accounting" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
                   Outsourced Accounting <ChevronRight className="h-3 w-3" />
                 </Link>
-                <Link href="/services/cfo-controller" className="text-sm hover:text-emerald-300 transition-colors flex items-center gap-1">
+                <Link href="/services/cfo-controller" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
                   Controller & CFO Services <ChevronRight className="h-3 w-3" />
                 </Link>
-                <Link href="/services/payroll-hr" className="text-sm hover:text-emerald-300 transition-colors flex items-center gap-1">
+                <Link href="/services/payroll-hr" className="text-sm hover:opacity-80 transition-opacity flex items-center gap-1">
                   Payroll & HR Support <ChevronRight className="h-3 w-3" />
                 </Link>
               </div>

@@ -10,18 +10,11 @@ import { StackingCards } from '@/components/ui/stacking-card';
 import { 
   ArrowRight, 
   DollarSign, 
-  Users, 
-  Shield, 
-  TrendingUp, 
-  Building2, 
-  Zap,
   Target,
-  Receipt,
-  Rocket,
   Lightbulb,
-  PieChart,
   Smartphone,
-  Lock
+  Lock,
+  TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 

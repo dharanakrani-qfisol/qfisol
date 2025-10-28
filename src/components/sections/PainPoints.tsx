@@ -116,7 +116,7 @@ export function PainPoints() {
               whileHover={{ y: -5 }}
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-quantifi-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Building2 className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -134,7 +134,7 @@ export function PainPoints() {
               whileHover={{ y: -5 }}
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-quantifi-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Award className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export function PainPoints() {
               whileHover={{ y: -5 }}
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-quantifi-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Link className="h-6 w-6 text-white" />
                 </div>
                 <div>

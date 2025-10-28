@@ -144,7 +144,7 @@ export default function PayrollHRContent() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden bg-white dark:from-black dark:to-black">
+      <section className="relative py-20 md:py-28 overflow-hidden bg-white dark:from-black dark:to-black">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="h-full w-full" style={{
@@ -274,7 +274,7 @@ export default function PayrollHRContent() {
       </section>
 
       {/* Overview / Value Statement */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -303,14 +303,14 @@ export default function PayrollHRContent() {
             viewport={{ once: true }}
           >
             <p className="text-lg font-semibold text-black dark:text-white">
-              Trusted by businesses across 4 states, serving 99% payroll accuracy.
+              Trusted by businesses across Nations.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Payroll & HR Services We Offer */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -357,7 +357,7 @@ export default function PayrollHRContent() {
       </section>
 
       {/* Why Businesses Choose QuantiFi */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -418,7 +418,7 @@ export default function PayrollHRContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -468,7 +468,7 @@ export default function PayrollHRContent() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="py-32 md:py-40 bg-[#0015ff] text-white relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-[#0015ff] text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="h-full w-full" style={{

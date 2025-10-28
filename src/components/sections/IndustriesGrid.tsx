@@ -27,7 +27,7 @@ const industries = [
     id: 3,
     title: 'Retail & E-Commerce',
     description: 'Simplified sales tax across states, inventory tracking, and multi-channel bookkeeping for Shopify, Amazon, brick-and-mortar and more – ensuring your online and retail sales data all align.',
-    href: '/industries/retail',
+    href: '/industries/retail-ecommerce',
     imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
     gradient: 'from-pink-500 to-rose-600',
   },
@@ -73,9 +73,10 @@ interface AccordionItemProps {
 
 const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => {
   return (
-    <div
+    <Link
+      href={item.href}
       className={`
-        relative h-[450px] md:h-[500px] rounded-3xl overflow-hidden cursor-pointer
+        relative h-[450px] md:h-[500px] rounded-3xl overflow-hidden cursor-pointer block
         transition-all duration-700 ease-in-out
         ${isActive ? 'w-[300px] md:w-[400px]' : 'w-[80px]'}
       `}
@@ -138,20 +139,17 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
         <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
           {item.description}
         </p>
-        <Link 
-          href={item.href}
-          className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-all duration-300 group"
-        >
+        <div className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-all duration-300 group">
           Learn More
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </Link>
+        </div>
       </motion.div>
 
       {/* Decorative corner accent */}
       <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${item.gradient} opacity-0 transition-opacity duration-500 ${isActive ? 'opacity-30' : 'opacity-0'}`}
         style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
       />
-    </div>
+    </Link>
   );
 };
 

@@ -5,7 +5,7 @@ import { TestimonialsColumn } from '@/components/ui/testimonials-columns-1';
 
 const testimonials = [
   {
-    text: "Partnering with QuantiFi has completely transformed how we manage client accounting work. Their back-end team handles everything from reconciliations to report automation — seamlessly, accurately, and always ahead of deadlines. It's like having an entire in-house department, without the overhead.",
+    text: "Partnering with QuantiFi has completely transformed how we manage client accounting work. Their back-end team handles everything from reconciliations to report automation, seamlessly, accurately, and always ahead of deadlines. It's like having an entire in-house department, without the overhead.",
     name: "Richard Patterson",
     role: "CPA Firm – Managing Partner | Atlanta, GA",
     gender: 'male' as const,
@@ -17,37 +17,37 @@ const testimonials = [
     gender: 'male' as const,
   },
   {
-    text: "Our partnership with QuantiFi feels effortless. Their team manages multi-entity cleanups, WIP analysis, and payroll reconciliations for several of our clients — with consistency, precision, and excellent communication. They're the extension of our firm we always needed.",
+    text: "Our partnership with QuantiFi feels effortless. Their team manages multi-entity cleanups, WIP analysis, and payroll reconciliations for several of our clients with consistency, precision, and excellent communication. They're the extension of our firm we always needed.",
     name: "Jennifer Walsh",
     role: "CPA Firm – Partner | Los Angeles, CA",
     gender: 'female' as const,
   },
   {
-    text: "Before QuantiFi, our month-end close was chaos. Now, everything — from job costing to retainage and WIP tracking — runs smoothly. Their team feels like part of our internal finance department, and the visibility we have today is incredible.",
+    text: "Before QuantiFi, our month-end close was chaos. Now, everything from job costing to retainage and WIP tracking runs smoothly. Their team feels like part of our internal finance department, and the visibility we have today is incredible.",
     name: "Michael Roberts",
     role: "General Contractor – CFO | Atlanta, GA",
     gender: 'male' as const,
   },
   {
-    text: "QuantiFi helped us clean up years of backlog, implemented job-cost dashboards, and gave us confidence in our numbers. Our CPA and bank both noticed the improvement — we finally have financials we can rely on.",
+    text: "QuantiFi helped us clean up years of backlog, implemented job-cost dashboards, and gave us confidence in our numbers. Our CPA and bank both noticed the improvement, we finally have financials we can rely on.",
     name: "Carlos Martinez",
     role: "General Contractor – Owner | Los Angeles, CA",
     gender: 'male' as const,
   },
   {
-    text: "Our medical group was overwhelmed with billing and reconciliation issues. QuantiFi streamlined everything — from patient receipts to insurance reimbursements. Their structure and responsiveness helped us stabilize cash flow and stay focused on patient care.",
+    text: "Our medical group was overwhelmed with billing and reconciliation issues. QuantiFi streamlined everything from patient receipts to insurance reimbursements. Their structure and responsiveness helped us stabilize cash flow and stay focused on patient care.",
     name: "Dr. Rachel Cohen",
     role: "Medical Practice – Administrator | Baltimore, MD",
     gender: 'female' as const,
   },
   {
-    text: "We struggled for years to get accurate financial visibility across our clinics. QuantiFi gave us a system that actually works — daily dashboards, claim tracking, and forecasting we can trust. Their insight has helped us grow confidently.",
+    text: "We struggled for years to get accurate financial visibility across our clinics. QuantiFi gave us a system that actually works: daily dashboards, claim tracking, and forecasting we can trust. Their insight has helped us grow confidently.",
     name: "Dr. Sarah Patel",
     role: "Dental Group – Operations Director | Newark, NJ",
     gender: 'female' as const,
   },
   {
-    text: "Managing multiple hotel entities used to mean endless spreadsheets. QuantiFi consolidated our systems into one view — now I can see performance across every property in real time. Their reporting precision and proactive communication are top-notch.",
+    text: "Managing multiple hotel entities used to mean endless spreadsheets. QuantiFi consolidated our systems into one view. Now I can see performance across every property in real time. Their reporting precision and proactive communication are top-notch.",
     name: "James Anderson",
     role: "Hospitality Group – CFO | Iowa",
     gender: 'male' as const,
@@ -114,7 +114,7 @@ export function TestimonialSection() {
         </motion.div>
 
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <TestimonialsColumn testimonials={firstColumn} duration={20} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
         </div>

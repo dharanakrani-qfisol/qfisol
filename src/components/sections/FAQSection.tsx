@@ -8,17 +8,17 @@ export default function FAQSection() {
     {
       id: 'item-1',
       question: 'How does QuantiFi keep my business and financial data confidential?',
-      answer: 'We take confidentiality and data security extremely seriously. All client records are handled under strict NDAs and stored in encrypted, access-controlled systems. Every file, login, and workflow follows industry-grade protection protocols — ensuring your financial data is safe, private, and fully compliant at all times.',
+      answer: 'We take confidentiality and data security extremely seriously. All client records are handled under strict NDAs and stored in encrypted, access-controlled systems. Every file, login, and workflow follows industry-grade protection protocols, ensuring your financial data is safe, private, and fully compliant at all times.',
     },
     {
       id: 'item-2',
       question: 'What if I prefer working with a local accountant instead of a virtual team?',
-      answer: 'That\'s a common concern — and we completely understand. While our team operates virtually, we provide flexible support that aligns with your time zone and business hours, ensuring responsiveness and personal connection. You\'ll have a dedicated accounting lead and regular video or phone check-ins, so it feels like working with a local partner — just with more consistency and reach.',
+      answer: 'That\'s a common concern, and we completely understand. While our team operates virtually, we provide flexible support that aligns with your time zone and business hours, ensuring responsiveness and personal connection. You\'ll have a dedicated accounting lead and regular video or phone check-ins, so it feels like working with a local partner, just with more consistency and reach.',
     },
     {
       id: 'item-3',
       question: 'How do virtual accounting services actually work?',
-      answer: 'Our virtual model combines secure cloud platforms with real human expertise. You\'ll collaborate with your QuantiFi team through tools like QuickBooks Online, Bill.com, and Gusto, sharing data securely while we handle reconciliations, reporting, and analysis. You get real-time access to financials and reports — anytime, anywhere.',
+      answer: 'Our virtual model combines secure cloud platforms with real human expertise. You\'ll collaborate with your QuantiFi team through tools like QuickBooks Online, Bill.com, and Gusto, sharing data securely while we handle reconciliations, reporting, and analysis. You get real-time access to financials and reports, anytime, anywhere.',
     },
     {
       id: 'item-4',
@@ -28,12 +28,12 @@ export default function FAQSection() {
     {
       id: 'item-5',
       question: 'Can you coordinate with my CPA or in-house finance team?',
-      answer: 'Absolutely. We collaborate directly with your CPA, tax preparer, or in-house staff to streamline workflows and ensure compliance. QuantiFi can serve as your daily finance team, keeping books, managing cash flow, and preparing reports — while your CPA handles tax filings and advisory work.',
+      answer: 'Absolutely. We collaborate directly with your CPA, tax preparer, or in-house staff to streamline workflows and ensure compliance. QuantiFi can serve as your daily finance team, keeping books, managing cash flow, and preparing reports, while your CPA handles tax filings and advisory work.',
     },
     {
       id: 'item-6',
       question: 'What makes QuantiFi different from other virtual accounting providers?',
-      answer: 'We\'re more than an outsourced service — we operate as part of your business. Through our Liaison Accounting Partnership (LAP) model, we integrate into your tools, processes, and decision-making. The result is CPA-level accuracy, proactive insights, and consistent communication that drive smarter financial outcomes.',
+      answer: 'We\'re more than an outsourced service. We operate as part of your business. Through our Liaison Accounting Partnership (LAP) model, we integrate into your tools, processes, and decision-making. The result is CPA-level accuracy, proactive insights, and consistent communication that drive smarter financial outcomes.',
     },
   ];
 

@@ -139,7 +139,7 @@ export default function SystemsIntegrationContent() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-blue-50/40 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950">
+      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-blue-50/40 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="h-full w-full" style={{
@@ -269,7 +269,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* Overview / Value Statement */}
-      <section className="py-32 md:py-40 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50">
         <div className="container-standard section-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -342,7 +342,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* Our Integration & Migration Services */}
-      <section className="py-32 md:py-40 bg-white dark:bg-slate-900">
+      <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -391,7 +391,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* Why Businesses Choose QuantiFi */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-blue-50/30 via-blue-50/20 to-white dark:from-blue-950/20 dark:via-blue-950/10 dark:to-slate-900">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50/30 via-blue-50/20 to-white dark:from-blue-950/20 dark:via-blue-950/10 dark:to-slate-900">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -452,7 +452,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 md:py-40 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -502,7 +502,7 @@ export default function SystemsIntegrationContent() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="py-32 md:py-40 bg-quantifi-primary text-white relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-quantifi-primary text-white relative overflow-hidden">
         <div className="container-standard section-gutter text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -137,7 +137,7 @@ export default function TaxPreparationContent() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden bg-white dark:from-black dark:to-black">
+      <section className="relative py-20 md:py-28 overflow-hidden bg-white dark:from-black dark:to-black">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="h-full w-full" style={{
@@ -267,7 +267,7 @@ export default function TaxPreparationContent() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -327,7 +327,7 @@ export default function TaxPreparationContent() {
       </section>
 
       {/* Our Tax Preparation & Compliance Services */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -374,7 +374,7 @@ export default function TaxPreparationContent() {
       </section>
 
       {/* Why Partner with QuantiFi */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -435,7 +435,7 @@ export default function TaxPreparationContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-20 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -485,7 +485,7 @@ export default function TaxPreparationContent() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="py-32 md:py-40 bg-[#0015ff] text-white relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-[#0015ff] text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="h-full w-full" style={{

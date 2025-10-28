@@ -170,9 +170,6 @@ export default function StartupsPage() {
                   Schedule a Free Startup Consultation
                   <ArrowRight className="h-5 w-5" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
-                  <Link href="/services">View All Services</Link>
-                </Button>
               </div>
             </div>
           </div>
@@ -316,12 +313,14 @@ export default function StartupsPage() {
                 Don&apos;t let financial growing pains stall your momentum. With QuantiFi as your partner, you gain clarity, strategy, and confidence in every stage of growth – without the overhead. Free up your time to innovate, while our experts handle the books and guide your financial decisions. Schedule your free startup consultation today ➜ and let&apos;s build your unicorn on a solid financial foundation.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
-                  Schedule a Free Startup Consultation
-                  <ArrowRight className="h-6 w-6" />
-                </BookCallButton>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                  <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                    Schedule a Free Consultation
+                    <ArrowRight className="h-5 w-5" />
+                  </BookCallButton>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
                     Contact Us Today
                   </Button>
                 </Link>

@@ -140,7 +140,7 @@ export function PainPoints() {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">CPA-Level Expertise</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Every client engagement is led by experienced CPAs and controllers who combine financial precision, automation, and strategy — ensuring accuracy, compliance, and insight that drive smarter decisions.
+                    Every client engagement is led by experienced CPAs and controllers who combine financial precision, automation, and strategy, ensuring accuracy, compliance, and insight that drive smarter decisions.
                   </p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export function PainPoints() {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">LAP Integration Model</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations — functioning as your in-house accounting and finance team, not a distant vendor.
+                    Through our <strong className="text-foreground">Liaison Accounting Partnership (LAP) model</strong>, we integrate directly with your operations, functioning as your in-house accounting and finance team, not a distant vendor.
                   </p>
                 </div>
               </div>

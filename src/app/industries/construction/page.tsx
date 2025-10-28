@@ -164,9 +164,6 @@ export default function ConstructionPage() {
                   Schedule a Free Consultation
                   <ArrowRight className="h-3 w-3" />
                 </BookCallButton>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50">
-                  <Link href="/services">View All Services</Link>
-                </Button>
               </div>
             </div>
           </div>
@@ -306,12 +303,14 @@ export default function ConstructionPage() {
                 Don&apos;t let accounting issues undermine your projects. Let QuantiFi handle the finances while you focus on construction. We&apos;re here to provide clarity, strategy, and peace of mind in every job&apos;s numbers. Reach out today to start with a personalized consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <BookCallButton className="text-xl px-12 py-8 bg-white hover:bg-gray-100 font-bold !text-[#0015ff]">
-                  Schedule a Free Consultation
-                  <ArrowRight className="h-6 w-6" />
-                </BookCallButton>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                  <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 !from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                    Schedule a Free Consultation
+                    <ArrowRight className="h-5 w-5" />
+                  </BookCallButton>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
                     Contact Us Today
                   </Button>
                 </Link>

@@ -153,7 +153,7 @@ export default function AboutPage() {
                 <div className="space-y-8">
                   <div>
                     <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
-                      Simplify Finance. Quantify Growth. Empower Your Business.
+                      Simplify Finance. <span className="whitespace-nowrap">Quantify Growth</span>. Empower Your Business.
                     </h1>
                     <p className="text-xl text-black dark:text-white leading-relaxed">
                       QuantiFi is more than an accounting provider. We&apos;re your strategic finance partner. We ensure your numbers work for you, not against you, delivering clarity, confidence, and control at every step.

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QuantiFi | Strategic Accounting & Fractional CFO Services",
+  title: "QuantiFi | Strategic Accounting & CFO Services",
   description: "QuantiFi is an outsourced accounting and fractional CFO partner that simplifies finance and drives growth. Discover our mission, values, and leadership team.",
 };
 

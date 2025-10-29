@@ -163,7 +163,7 @@ export function IndustriesGrid() {
   return (
     <motion.section 
       id="industries" 
-      className="bg-background pt-16 md:pt-24 overflow-hidden"
+      className="bg-background pt-8 md:pt-12 overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}
@@ -251,7 +251,7 @@ export function IndustriesGrid() {
 
         {/* Bottom CTA Section */}
         <motion.div
-          className="text-center bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-sm border border-gray-200 dark:border-gray-700 mt-16 mb-0"
+          className="text-center bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-sm border border-gray-200 dark:border-gray-700 mt-8 mb-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}

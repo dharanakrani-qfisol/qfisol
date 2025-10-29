@@ -80,7 +80,7 @@ export function LatestArticles() {
   const visiblePosts = blogPosts.slice(currentIndex, currentIndex + itemsPerView);
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-8">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="mb-12">

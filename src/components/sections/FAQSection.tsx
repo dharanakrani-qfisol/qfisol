@@ -38,7 +38,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="pt-32 md:pt-40 bg-white dark:bg-slate-900">
+    <section className="pt-16 md:pt-20 bg-white dark:bg-slate-900">
       <div className="container-standard section-gutter">
         <div className="grid gap-8 md:grid-cols-5 md:gap-12">
           <div className="md:col-span-2">

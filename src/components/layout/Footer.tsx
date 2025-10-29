@@ -179,20 +179,16 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
-            <div className="flex space-x-4 text-sm text-muted-foreground">
+            <div className="hidden">
               {legal.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="hover:text-foreground transition-colors"
-                >
+                <span key={item.name}>
                   {item.name}
-                </Link>
+                </span>
               ))}
             </div>
           </div>
           <div className="text-center text-sm text-muted-foreground mt-4">
-            © 2024 QuantiFi. All rights reserved.
+            © 2025 QuantiFi. All rights reserved.
           </div>
         </div>
       </div>

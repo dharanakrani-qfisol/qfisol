@@ -58,7 +58,7 @@ export function PainPoints() {
 
     {/* New Section: Who We Are And How We're Different */}
     <motion.section 
-      className="relative pt-32 md:pt-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
+      className="relative pt-16 md:pt-20 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}
@@ -74,7 +74,7 @@ export function PainPoints() {
       <div className="container-standard section-gutter relative z-10">
         {/* Header Section */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -171,7 +171,7 @@ export function PainPoints() {
 
         {/* Enhanced Divider */}
         <motion.div
-          className="mt-20 flex justify-center"
+          className="mt-10 flex justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
@@ -188,7 +188,7 @@ export function PainPoints() {
 
     {/* Enhanced Section: Seamless Integration with Your Tools */}
     <motion.section
-      className="relative pt-32 md:pt-40 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50/50 dark:from-blue-950/30 dark:via-slate-900 dark:to-indigo-950/20"
+      className="relative pt-16 md:pt-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50/50 dark:from-blue-950/30 dark:via-slate-900 dark:to-indigo-950/20"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
@@ -248,7 +248,7 @@ export function PainPoints() {
       <div className="container-standard section-gutter relative z-10">
         {/* Enhanced Header Section with Badge */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -305,7 +305,7 @@ export function PainPoints() {
 
         {/* Enhanced Supporting Line with Visual Elements */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -320,7 +320,7 @@ export function PainPoints() {
 
         {/* Enhanced Logo Slider with Better Visual Design */}
         <motion.div
-          className="mb-16"
+          className="mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -393,7 +393,7 @@ export function PainPoints() {
 
         {/* Enhanced Divider with Animated Elements */}
         <motion.div
-          className="mt-24 flex justify-center"
+          className="mt-12 flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1 }}

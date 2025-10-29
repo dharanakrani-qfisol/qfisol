@@ -583,17 +583,19 @@ export default function CFOControllerContent() {
 
                   {/* Internal Links */}
                   <div className="mt-16 pt-8 border-t border-white/20">
-                    <p className="text-sm opacity-75 mb-4 text-white">Explore our related services:</p>
+                    <p className="text-sm opacity-75 mb-4 text-white">Explore our other services:</p>
                     <div className="flex flex-wrap justify-center gap-6">
-                      <Link href="/services/outsourced-accounting" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                        Outsourced Accounting <ChevronRight className="h-3 w-3" />
-                      </Link>
-                      <Link href="/services/tax-preparation-compliance" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                        Tax Preparation & Compliance <ChevronRight className="h-3 w-3" />
-                      </Link>
-                      <Link href="/services/payroll-hr" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                        Payroll & HR Support <ChevronRight className="h-3 w-3" />
-                      </Link>
+                      {[
+                        { href: '/services/outsourced-accounting', label: 'Outsourced Accounting' },
+                        { href: '/services/tax-preparation-compliance', label: 'Tax & Compliance' },
+                        { href: '/services/payroll-hr', label: 'Payroll & HR' },
+                        { href: '/services/financial-analytics', label: 'Financial Analytics' },
+                        { href: '/services/systems-integration', label: 'Systems Integration' }
+                      ].filter((service) => service.href !== '/services/cfo-controller').map((service) => (
+                        <Link key={service.href} href={service.href} className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
+                          {service.label} <ChevronRight className="h-3 w-3" />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>

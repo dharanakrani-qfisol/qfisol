@@ -62,7 +62,7 @@ export function ServicesSection() {
       viewport={{ once: true, margin: "-100px" }}
     >
       {/* Header Section */}
-      <div className="w-full pt-24 md:pt-32 pb-8 flex flex-col justify-center relative overflow-hidden">
+      <div className="w-full pt-12 md:pt-16 pb-4 flex flex-col justify-center relative overflow-hidden">
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}

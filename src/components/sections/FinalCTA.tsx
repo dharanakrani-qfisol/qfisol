@@ -8,7 +8,7 @@ import { BlurredStagger } from '@/components/ui/blurred-stagger-text';
 export function FinalCTA() {
   return (
     <motion.section 
-      className="py-20 bg-background relative overflow-hidden"
+      className="py-10 bg-background relative overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}

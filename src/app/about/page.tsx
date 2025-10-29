@@ -107,30 +107,30 @@ const leadership = [
     name: 'Dhara Nakrani, MAcc',
     title: 'Founder & President',
     bio: 'A financial leader with deep expertise in accounting and business strategy, Dhara Nakrani founded QuantiFi with one mission: to transform how businesses experience accounting. With over a decade of experience across public and private sectors, she brings a forward-thinking approach that blends strategic financial insight with operational excellence.',
-    detailedBio: 'Under her leadership, QuantiFi has grown into a trusted partner for businesses nationwide — simplifying processes, strengthening financial control, and empowering smarter, data-driven decisions. Dhara\'s expertise lies in bridging the gap between accounting systems, technology, and business growth — ensuring every client operates with clarity, precision, and purpose.',
-    philosophy: 'She believes accounting should do more than report the past — it should empower the future. Her focus remains on turning complex numbers into meaningful insights that drive measurable results and long-term success.',
-    quote: 'Accounting isn\'t just about accuracy — it\'s about alignment. When your numbers make sense, your business moves forward with confidence.',
+    detailedBio: 'Under her leadership, QuantiFi has grown into a trusted partner for businesses nationwide simplifying processes, strengthening financial control, and empowering smarter, data-driven decisions. Dhara\'s expertise lies in bridging the gap between accounting systems, technology, and business growth ensuring every client operates with clarity, precision, and purpose.',
+    philosophy: 'She believes accounting should do more than report the past it should empower the future. Her focus remains on turning complex numbers into meaningful insights that drive measurable results and long-term success.',
+    quote: 'Accounting isn\'t just about accuracy it\'s about alignment. When your numbers make sense, your business moves forward with confidence.',
     credentials: ['Master of Accounting (MAcc)', '15+ Years Experience', 'Strategic Financial Leadership'],
     linkedin: 'https://www.linkedin.com/in/dhara-nakrani-32ab5142/'
   },
   {
     name: 'Deep Patel, B.Com., F.C.A., L.L.B., CPA',
     title: 'Chief Operating Officer',
-    bio: 'A finance professional with over 15 years of experience, Deep Patel leads QuantiFi\'s operational strategy with precision and foresight. His expertise spans accounting, auditing, valuation, cost segregation, and regulatory compliance — backed by a comprehensive understanding of both U.S. and international financial standards.',
+    bio: 'A finance professional with over 15 years of experience, Deep Patel leads QuantiFi\'s operational strategy with precision and foresight. His expertise spans accounting, auditing, valuation, cost segregation, and regulatory compliance backed by a comprehensive understanding of both U.S. and international financial standards.',
     detailedBio: 'As COO, Deep ensures every client engagement is executed with structure, transparency, and measurable impact. His advisory experience and holistic financial insight allow him to guide businesses through complex regulatory and operational challenges with clarity and confidence.',
     philosophy: 'Deep plays a pivotal role in strengthening client relationships and fostering long-term trust through thoughtful, results-driven leadership.',
-    quote: 'True financial clarity isn\'t about perfection — it\'s about purpose. Every number should guide, not confuse.',
-    credentials: ['Fellow Chartered Accountant (FCA)', '15+ Years Experience', 'International Standards Expert'],
+    quote: 'True financial clarity isn\'t about perfection it\'s about purpose. Every number should guide, not confuse.',
+    credentials: ['Certified Public Accountant (CPA)', 'Fellow Chartered Accountant (FCA)', '15+ Years Experience', 'International Standards Expert'],
     linkedin: null
   },
   {
     name: 'Richa Patel, MAcc',
     title: 'Senior Accounting Manager',
     bio: 'A results-driven accounting professional, Richa Patel brings over six years of experience in financial reporting, taxation, and audit support. Her expertise spans complex federal and multi-state tax returns, audit preparation, and ensuring full compliance with IRS and state regulations.',
-    detailedBio: 'At QuantiFi, Richa bridges financial precision with strategic insight — leading accounting operations that combine accuracy, timeliness, and forward-thinking analysis. Her approach goes beyond compliance; she focuses on turning numbers into meaningful insights that drive smarter, more confident business decisions.',
+    detailedBio: 'At QuantiFi, Richa bridges financial precision with strategic insight leading accounting operations that combine accuracy, timeliness, and forward-thinking analysis. Her approach goes beyond compliance; she focuses on turning numbers into meaningful insights that drive smarter, more confident business decisions.',
     philosophy: 'Known for her analytical mindset and dedication, Richa ensures every engagement reflects QuantiFi\'s commitment to quality, consistency, and measurable results.',
     quote: 'Behind every accurate number is a story of strategy, clarity, and progress.',
-    credentials: ['Master of Accounting (MAcc)', '6+ Years Experience', 'Tax & Compliance Specialist'],
+    credentials: ['CPA Candidate', 'Master of Accounting (MAcc)', '6+ Years Experience', 'Tax & Compliance Specialist'],
     linkedin: 'https://www.linkedin.com/in/richa-kotadia/'
   }
 ];
@@ -342,20 +342,20 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {leadership.map((member, index) => (
                   <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-black dark:border-white bg-white dark:bg-black">
-                      <div className="text-center mb-6">
-                      <Badge variant="outline" className="mb-4 px-3 py-1 border-[#0015ff] text-[#0015ff]">
+                      <div className="text-center mb-1">
+                      <Badge variant="outline" className="mb-1 px-3 py-1 border-[#0015ff] text-[#0015ff]">
                           {member.title}
                         </Badge>
-                      <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
+                      <h3 className="text-2xl font-bold text-black dark:text-white mb-1">
                           {member.name.split(',')[0]}
                         </h3>
-                        <p className="text-sm text-black dark:text-white mb-6">
+                        <p className="text-sm text-black dark:text-white mb-1">
                           {member.name.split(',').slice(1).join(',').trim()}
                         </p>
                       </div>
 
-                      <div className="mb-6">
-                        <p className="text-sm text-black dark:text-white leading-relaxed mb-4">
+                      <div className="mb-1">
+                        <p className="text-xs text-black dark:text-white leading-relaxed mb-1">
                           {member.bio}
                         </p>
                         <p className="text-xs text-black dark:text-white leading-relaxed">
@@ -363,7 +363,7 @@ export default function AboutPage() {
                         </p>
                       </div>
 
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-2 mb-1">
                         {member.credentials.map((credential, credIndex) => (
                           <Badge key={credIndex} className="py-1 px-2 text-xs bg-[#0015ff] text-white border-0">
                             {credential}

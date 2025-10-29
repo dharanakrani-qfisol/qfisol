@@ -103,7 +103,7 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 container-standard section-gutter pt-32 pb-20">
+      <div className="relative z-10 container-standard section-gutter pt-16 pb-12">
         <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
           {/* Main Content */}
           <motion.div

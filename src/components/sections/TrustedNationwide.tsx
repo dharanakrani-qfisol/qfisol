@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export function TrustedNationwide() {
   return (
     <motion.section 
-      className="relative pt-32 md:pt-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
+      className="relative pt-16 md:pt-20 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-indigo-950/30"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.3, ease: "easeOut" }}
@@ -20,7 +20,7 @@ export function TrustedNationwide() {
       <div className="container-standard section-gutter relative z-10">
         {/* Header Section */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -123,10 +123,9 @@ export function TrustedNationwide() {
                 alt: "Virtual accounting services in New Jersey"
               }
             ].map((state, index) => (
-              <motion.a
+              <motion.div
                 key={index}
-                href={state.href}
-                className="group cursor-pointer block"
+                className="group block"
                 whileHover={{ scale: 1.02 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +155,7 @@ export function TrustedNationwide() {
                     <div className="w-6 h-0.5 bg-blue-500 mx-auto rounded-full"></div>
                   </div>
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </motion.div>

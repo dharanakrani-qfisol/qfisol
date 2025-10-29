@@ -183,7 +183,7 @@ export default function OutsourcedAccountingContent() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden bg-white dark:from-black dark:to-black">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-white dark:from-black dark:to-black">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="h-full w-full" style={{
@@ -234,7 +234,7 @@ export default function OutsourcedAccountingContent() {
               <div className="mt-12 pt-8 border-t border-black/20 dark:border-white/20">
                 <div className="flex items-center justify-center gap-8 text-sm text-black/70 dark:text-white/70">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-black dark:text-white">50+</div>
+                    <div className="text-2xl font-bold text-black dark:text-white">100+</div>
                     <div>Clients</div>
                   </div>
                   <div className="text-center">
@@ -304,7 +304,7 @@ export default function OutsourcedAccountingContent() {
       </section>
 
       {/* Expertise Statement */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -378,7 +378,7 @@ export default function OutsourcedAccountingContent() {
       </section>
 
       {/* What Bookkeeping Services Do We Offer */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -428,7 +428,7 @@ export default function OutsourcedAccountingContent() {
       </section>
 
       {/* Why Outsourced Bookkeeping Matters */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -471,7 +471,7 @@ export default function OutsourcedAccountingContent() {
       </section>
 
       {/* Why Partner with QuantiFi */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div
@@ -531,7 +531,7 @@ export default function OutsourcedAccountingContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             className="text-center mb-20"
@@ -566,7 +566,7 @@ export default function OutsourcedAccountingContent() {
       </section>
 
       {/* Final CTA Card */}
-      <section className="py-32 md:py-40 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container-standard section-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -610,15 +610,17 @@ export default function OutsourcedAccountingContent() {
                   <div className="mt-16 pt-8 border-t border-white/20">
                     <p className="text-sm opacity-75 mb-4 text-white">Explore our other services:</p>
                     <div className="flex flex-wrap justify-center gap-6">
-                      <Link href="/services/payroll-hr" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                        Payroll & HR <ChevronRight className="h-3 w-3" />
-                      </Link>
-                      <Link href="/services/tax-preparation-compliance" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                        Tax & Compliance <ChevronRight className="h-3 w-3" />
-                      </Link>
-                      <Link href="/services/cfo-controller" className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
-                        Controller & CFO <ChevronRight className="h-3 w-3" />
-                      </Link>
+                      {[
+                        { href: '/services/payroll-hr', label: 'Payroll & HR' },
+                        { href: '/services/tax-preparation-compliance', label: 'Tax & Compliance' },
+                        { href: '/services/cfo-controller', label: 'Controller & CFO' },
+                        { href: '/services/financial-analytics', label: 'Financial Analytics' },
+                        { href: '/services/systems-integration', label: 'Systems Integration' }
+                      ].filter((service) => service.href !== '/services/outsourced-accounting').map((service) => (
+                        <Link key={service.href} href={service.href} className="text-sm text-white hover:text-white/70 transition-colors flex items-center gap-1">
+                          {service.label} <ChevronRight className="h-3 w-3" />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>

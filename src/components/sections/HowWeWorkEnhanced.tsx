@@ -155,7 +155,7 @@ export function HowWeWorkEnhanced() {
     <>
       {/* Header Section */}
       <motion.section
-        className="relative pt-32 md:pt-40 pb-16 overflow-hidden bg-white dark:bg-gray-950"
+        className="relative pt-16 md:pt-20 pb-8 overflow-hidden bg-white dark:bg-gray-950"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.3, ease: "easeOut" }}
@@ -211,7 +211,7 @@ export function HowWeWorkEnhanced() {
       </section>
 
       {/* CTA Section */}
-      <motion.section className="relative bg-white dark:bg-gray-950 pb-32">
+      <motion.section className="relative bg-white dark:bg-gray-950 pb-16">
         <div className="container-standard relative z-10">
           <motion.div
             className="text-center bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-950/30 rounded-3xl p-12 md:p-16 border border-slate-200/50 dark:border-slate-700/50"

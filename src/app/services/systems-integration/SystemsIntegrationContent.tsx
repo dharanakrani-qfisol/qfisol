@@ -137,7 +137,7 @@ const faqs = [
 
 export default function SystemsIntegrationContent() {
   return (
-    <div className="pt-20">
+    <div className="pt-16 md:pt-20">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-blue-50/40 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950">
         {/* Background Pattern */}

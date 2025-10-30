@@ -76,9 +76,9 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
     <Link
       href={item.href}
       className={`
-        relative h-[450px] md:h-[500px] rounded-3xl overflow-hidden cursor-pointer block
+        relative h-[400px] sm:h-[450px] md:h-[500px] rounded-3xl overflow-hidden cursor-pointer block
         transition-all duration-700 ease-in-out
-        ${isActive ? 'w-[300px] md:w-[400px]' : 'w-[80px]'}
+        ${isActive ? 'w-[250px] sm:w-[300px] md:w-[400px]' : 'w-[60px] sm:w-[80px]'}
       `}
       onMouseEnter={onMouseEnter}
     >

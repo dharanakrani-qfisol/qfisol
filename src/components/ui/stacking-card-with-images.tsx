@@ -1,6 +1,7 @@
 'use client';
 import { useTransform, motion, useScroll, MotionValue } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 interface ProjectData {
   title: string;
@@ -45,18 +46,19 @@ export const StackingCardWithImages = ({
       ref={container}
       className='h-screen flex items-center justify-center sticky top-0'
     >
-      <motion.div
-        style={{
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className={`flex flex-col relative -top-[25%] h-[450px] w-[90%] md:w-[80%] lg:w-[70%] rounded-2xl p-6 md:p-10 origin-top
-          bg-white/70 dark:bg-gray-900/70 
-          backdrop-blur-xl 
-          border border-white/20 dark:border-gray-700/30
-          shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]
-          dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] overflow-hidden`}
-      >
+      <Link href={href || '#'} className="w-full h-full flex items-center justify-center">
+        <motion.div
+          style={{
+            scale,
+            top: `calc(-5vh + ${i * 25}px)`,
+          }}
+          className={`flex flex-col relative -top-[25%] h-[450px] w-[90%] md:w-[80%] lg:w-[70%] rounded-2xl p-6 md:p-10 origin-top
+            bg-white/70 dark:bg-gray-900/70 
+            backdrop-blur-xl 
+            border border-white/20 dark:border-gray-700/30
+            shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]
+            dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] overflow-hidden cursor-pointer hover:shadow-[0_12px_40px_0_rgba(31,38,135,0.25)] transition-shadow duration-300`}
+        >
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden rounded-2xl">
           <motion.div
@@ -83,10 +85,7 @@ export const StackingCardWithImages = ({
             <div className={`w-full flex flex-col justify-between flex-grow`}>
               <p className='text-sm md:text-base text-white leading-relaxed flex-grow drop-shadow-md'>{description}</p>
               <span className='flex items-center gap-2 pt-4'>
-                <a
-                  href={href || '#'}
-                  className='inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors group bg-black/20 px-4 py-2 rounded-lg backdrop-blur-sm'
-                >
+                <span className='inline-flex items-center gap-2 text-white font-semibold group bg-black/20 px-4 py-2 rounded-lg backdrop-blur-sm'>
                   Learn more
                   <svg
                     width='22'
@@ -101,12 +100,13 @@ export const StackingCardWithImages = ({
                       fill='currentColor'
                     />
                   </svg>
-                </a>
+                </span>
               </span>
             </div>
           </div>
         </div>
       </motion.div>
+    </Link>
     </div>
   );
 };

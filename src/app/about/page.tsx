@@ -143,30 +143,30 @@ const states = [
 export default function AboutPage() {
   return (
     <MarketingLayout>
-      <div className="pt-20">
+      <div className="pt-16 md:pt-20">
         {/* Hero Section */}
-        <section className="bg-white dark:bg-black py-24">
+        <section className="bg-white dark:bg-black py-12 md:py-16 lg:py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
                 <div className="space-y-8">
                   <div>
-                    <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                       Simplify Finance. <span className="whitespace-nowrap">Quantify Growth</span>. Empower Your Business.
                     </h1>
-                    <p className="text-xl text-black dark:text-white leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-black dark:text-white leading-relaxed">
                       QuantiFi is more than an accounting provider. We&apos;re your strategic finance partner. We ensure your numbers work for you, not against you, delivering clarity, confidence, and control at every step.
                     </p>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button asChild size="lg" className="text-lg px-8 py-6 bg-[#0015ff] hover:bg-[#0012cc] text-white font-semibold">
+                    <Button asChild size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-[#0015ff] hover:bg-[#0012cc] text-white font-semibold">
                       <Link href="/contact">
                         Schedule a Free Consultation
                         <ArrowRight className="h-5 w-5" />
                       </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
+                    <Button asChild size="lg" variant="outline" className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
                       <Link href="/contact">Meet Our Experts</Link>
                     </Button>
                   </div>
@@ -194,7 +194,7 @@ export default function AboutPage() {
         </section>
 
         {/* Who We Are */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex justify-center mb-6">
@@ -202,11 +202,11 @@ export default function AboutPage() {
                   <Calculator className="h-8 w-8 text-white" />
                 </div>
               </div>
-              <h2 className="text-4xl font-bold text-black dark:text-white mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white mb-8">
                 We Help You Quantify What Matters Most
               </h2>
               <div className="prose prose-lg max-w-none text-black dark:text-white space-y-6">
-                <p className="text-lg leading-relaxed">
+                <p className="text-base sm:text-lg leading-relaxed">
                   At QuantiFi, every number tells a story. Our name is inspired by the word &quot;quantify&quot; because we help businesses bring clarity, precision, and meaning to their financial data. We specialize in accounting and financial consulting for industries like construction, hospitality, restaurants, healthcare, retail, real estate, and start-ups.
                 </p>
                 <p className="text-lg leading-relaxed">
@@ -218,7 +218,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission & Core Values */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -251,7 +251,7 @@ export default function AboutPage() {
         </section>
 
         {/* How We Work */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -281,7 +281,7 @@ export default function AboutPage() {
         </section>
 
         {/* Why Choose QuantiFi */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -324,7 +324,7 @@ export default function AboutPage() {
         </section>
 
         {/* Meet Our Leadership */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -398,7 +398,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Philosophy & Vision */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -447,7 +447,7 @@ export default function AboutPage() {
         </section>
 
         {/* Nationwide Reach */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -517,13 +517,13 @@ export default function AboutPage() {
                 Start with a conversation, end with clarity. Whether you need a full accounting partner or targeted financial guidance, we&apos;re ready to help you operate with confidence and control.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button asChild size="lg" className="text-xl px-12 py-8 bg-white text-[#0015ff] hover:bg-black hover:text-white font-bold">
+                <Button asChild size="lg" className="text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 bg-white text-[#0015ff] hover:bg-black hover:text-white font-bold">
                   <Link href="/contact">
                     Book a Free Consultation
                     <ArrowRight className="h-6 w-6" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-xl px-8 py-8 border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#0015ff] font-semibold">
+                <Button asChild size="lg" variant="outline" className="text-base sm:text-lg md:text-xl px-6 sm:px-8 py-4 sm:py-6 md:py-8 border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#0015ff] font-semibold">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
               </div>

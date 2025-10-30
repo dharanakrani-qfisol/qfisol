@@ -131,7 +131,7 @@ const faqs = [
 
 export default function FinancialAnalyticsContent() {
   return (
-    <div className="pt-20">
+    <div className="pt-16 md:pt-20">
       {/* Hero Section */}
       <section className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-cyan-950/30">
         {/* Background Pattern */}

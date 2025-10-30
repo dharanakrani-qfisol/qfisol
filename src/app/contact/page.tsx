@@ -31,15 +31,15 @@ const faqs = [
 export default function ContactPage() {
   return (
     <MarketingLayout>
-      <div className="pt-20">
+      <div className="pt-16 md:pt-20">
         {/* Hero Section */}
-        <section className="bg-white dark:bg-black py-20 border-b-2 border-[#0015ff]">
+        <section className="bg-white dark:bg-black py-12 md:py-16 lg:py-20 border-b-2 border-[#0015ff]">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
                 Get In Touch
               </h1>
-              <p className="text-xl text-black dark:text-white mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-black dark:text-white mb-8">
                 Ready to transform your business financials? Schedule your free consultation and discover the difference professional accounting makes.
               </p>
             </div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Main Content */}
-        <section className="py-20 bg-white dark:bg-black">
+        <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {/* Contact Form */}
@@ -121,7 +121,7 @@ export default function ContactPage() {
               {/* Contact Information & FAQ */}
               <div className="space-y-8">
                 {/* Direct Contact */}
-                <Card className="p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
+                <Card className="p-4 sm:p-6 md:p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
                   <CardHeader>
                     <CardTitle className="text-black dark:text-white">Direct Contact</CardTitle>
                   </CardHeader>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                 </Card>
 
                 {/* FAQ Section */}
-                <Card className="p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
+                <Card className="p-4 sm:p-6 md:p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
                   <CardHeader>
                     <CardTitle className="text-black dark:text-white">Frequently Asked Questions</CardTitle>
                   </CardHeader>

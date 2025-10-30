@@ -135,7 +135,7 @@ const faqs = [
 
 export default function TaxPreparationContent() {
   return (
-    <div className="pt-20">
+    <div className="pt-16 md:pt-20">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-white dark:from-black dark:to-black">
         {/* Background Pattern */}

@@ -181,7 +181,7 @@ const faqs = [
 
 export default function OutsourcedAccountingContent() {
   return (
-    <div className="pt-20">
+    <div className="pt-16 md:pt-20">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-white dark:from-black dark:to-black">
         {/* Background Pattern */}

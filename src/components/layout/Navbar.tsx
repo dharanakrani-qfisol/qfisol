@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { MenuIcon, XIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { navigationItems } from '@/data/navigation';
@@ -43,7 +43,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`sticky lg:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg'
           : 'bg-background/80 backdrop-blur-sm border-b border-border/50 shadow-md'
@@ -52,7 +52,7 @@ export function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 relative z-10">
+          <Link href="/" className="flex items-center space-x-3 relative z-10 flex-shrink-0">
             <Image
               src="/QuantiFi.svg"
               alt="QuantiFi Logo"
@@ -110,12 +110,12 @@ export function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Mobile Menu */}
-          <div className="lg:hidden relative z-10" suppressHydrationWarning>
+          {/* Mobile Menu - Fixed positioning for mobile/tablet */}
+          <div className="lg:hidden absolute right-0 top-0 h-16 flex items-center z-20" suppressHydrationWarning>
             {isMounted ? (
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="hover:bg-quantifi-primary hover:text-white w-10 h-10 flex-shrink-0">
                     <MenuIcon className="h-5 w-5" />
                     <span className="sr-only">Open menu</span>
                   </Button>
@@ -124,14 +124,6 @@ export function Navbar() {
                   className="bg-background/95 supports-[backdrop-filter]:bg-background/80 w-full gap-0 backdrop-blur-lg"
                 >
                   <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  <div className="flex h-14 items-center justify-end border-b px-4">
-                    <SheetClose asChild>
-                      <Button variant="ghost" size="icon">
-                        <XIcon className="h-5 w-5" />
-                        <span className="sr-only">Close</span>
-                      </Button>
-                    </SheetClose>
-                  </div>
                   <div className="container grid gap-y-2 overflow-y-auto px-4 pt-5 pb-12">
                     <Accordion type="single" collapsible>
                       {navigationItems.map((item) => {
@@ -175,7 +167,7 @@ export function Navbar() {
                 </SheetContent>
               </Sheet>
             ) : (
-              <Button variant="ghost" size="icon" aria-label="Menu">
+              <Button variant="ghost" size="icon" aria-label="Menu" className="hover:bg-quantifi-primary hover:text-white w-10 h-10 flex-shrink-0">
                 <MenuIcon className="h-5 w-5" />
               </Button>
             )}

@@ -30,6 +30,7 @@ export function BookCallButton({ className, onClick, children = "Book a Call" }:
         "transform active:scale-95",
         "border border-gray-700/30",
         "focus:outline-none focus:ring-2 focus:ring-gray-500/50",
+        "w-full sm:w-auto",
         className,
       )}
     >
@@ -60,7 +61,7 @@ export function BookCallButton({ className, onClick, children = "Book a Call" }:
       </div>
 
       {/* Subtle shine effect on hover */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg overflow-hidden">
         <div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
                         transform -skew-x-12 -translate-x-full group-hover:translate-x-full 

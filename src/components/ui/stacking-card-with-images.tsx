@@ -44,15 +44,15 @@ export const StackingCardWithImages = ({
   return (
     <div
       ref={container}
-      className='h-screen flex items-center justify-center sticky top-0'
+      className='min-h-screen flex items-center justify-center sticky top-0 py-8 md:py-10 lg:py-20'
     >
-      <Link href={href || '#'} className="w-full h-full flex items-center justify-center">
+      <Link href={href || '#'} className="w-full flex items-center justify-center">
         <motion.div
           style={{
             scale,
             top: `calc(-5vh + ${i * 25}px)`,
           }}
-          className={`flex flex-col relative -top-[25%] h-[450px] w-[90%] md:w-[80%] lg:w-[70%] rounded-2xl p-6 md:p-10 origin-top
+          className={`flex flex-col relative -top-[10%] md:-top-[25%] w-[90%] md:w-[80%] lg:w-[70%] rounded-2xl p-6 md:p-10 origin-top
             bg-white/70 dark:bg-gray-900/70 
             backdrop-blur-xl 
             border border-white/20 dark:border-gray-700/30
@@ -79,30 +79,10 @@ export const StackingCardWithImages = ({
         <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
         
         {/* Content Overlay */}
-        <div className="relative z-10 flex flex-col h-full">
+        <div className="relative z-10 flex flex-col">
           <h2 className='text-2xl md:text-3xl text-center font-bold text-white mb-4 drop-shadow-lg'>{title}</h2>
-          <div className={`flex flex-col h-full mt-2`}>
-            <div className={`w-full flex flex-col justify-between flex-grow`}>
-              <p className='text-sm md:text-base text-white leading-relaxed flex-grow drop-shadow-md'>{description}</p>
-              <span className='flex items-center gap-2 pt-4'>
-                <span className='inline-flex items-center gap-2 text-white font-semibold group bg-black/20 px-4 py-2 rounded-lg backdrop-blur-sm'>
-                  Learn more
-                  <svg
-                    width='22'
-                    height='12'
-                    viewBox='0 0 22 12'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='group-hover:translate-x-1 transition-transform'
-                  >
-                    <path
-                      d='M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z'
-                      fill='currentColor'
-                    />
-                  </svg>
-                </span>
-              </span>
-            </div>
+          <div className={`flex flex-col mt-2`}>
+            <p className='text-sm md:text-base text-white leading-relaxed drop-shadow-md'>{description}</p>
           </div>
         </div>
       </motion.div>

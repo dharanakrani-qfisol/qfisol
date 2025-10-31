@@ -123,7 +123,7 @@ const faqs = [
 
 export default function CFOControllerContent() {
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="md:pt-20">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-white dark:from-black dark:to-black">
         {/* Background Pattern */}
@@ -398,10 +398,10 @@ export default function CFOControllerContent() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Button asChild size="lg" className="bg-[#0015ff] hover:bg-[#0012cc] text-white text-lg px-8 py-6">
+            <Button asChild size="lg" className="bg-[#0015ff] hover:bg-[#0012cc] text-white text-base sm:text-lg px-6 sm:px-8 py-6 sm:py-6 whitespace-normal lg:whitespace-nowrap">
               <Link href="/contact">
                 Gain Clarity with Executive-Level Financial Guidance
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
               </Link>
             </Button>
           </motion.div>
@@ -568,13 +568,13 @@ export default function CFOControllerContent() {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button asChild size="lg" className="bg-white text-[#0015ff] hover:bg-white/90 text-lg px-8 py-6">
+                    <Button asChild size="lg" className="bg-white text-[#0015ff] hover:bg-white/90 text-base sm:text-lg px-4 sm:px-8 py-4 sm:py-6 whitespace-normal sm:whitespace-nowrap">
                       <Link href="/contact">
                         Book a Free Consultation
-                        <ArrowRight className="ml-2 h-5 w-5" />
+                        <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
                       </Link>
                     </Button>
-                    <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0015ff] text-lg px-8 py-6">
+                    <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0015ff] text-base sm:text-lg px-4 sm:px-8 py-4 sm:py-6 whitespace-normal sm:whitespace-nowrap">
                       <Link href="/contact">
                         Request a Sample CFO Report
                       </Link>

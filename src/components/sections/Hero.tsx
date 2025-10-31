@@ -152,27 +152,27 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             >
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+              <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center lg:flex-nowrap items-center gap-6 md:gap-6 lg:gap-16">
                 
                 {/* Stat 1 */}
                 <motion.div
-                  className="flex items-center gap-4"
+                  className="flex items-center gap-3 md:gap-3 lg:gap-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
                 >
-                  <div className="text-5xl md:text-6xl font-light text-quantifi-primary">
+                  <div className="text-5xl md:text-4xl lg:text-6xl font-light text-quantifi-primary">
                     <CounterAnimation end={100} duration={3} suffix="+" />
                   </div>
                   <div className="text-left">
-                    <div className="text-lg font-medium text-foreground">Clients</div>
-                    <div className="text-sm text-muted-foreground">Served</div>
+                    <div className="text-base md:text-sm lg:text-lg font-medium text-foreground">Clients</div>
+                    <div className="text-xs md:text-xs lg:text-sm text-muted-foreground">Served</div>
                   </div>
                 </motion.div>
 
                 {/* Divider */}
                 <motion.div
-                  className="hidden md:block w-px h-16 bg-gray-300 dark:bg-gray-600"
+                  className="hidden md:block lg:block w-px h-12 md:h-12 lg:h-16 bg-gray-300 dark:bg-gray-600"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.9 }}
@@ -180,23 +180,23 @@ export function Hero() {
 
                 {/* Stat 2 */}
                 <motion.div
-                  className="flex items-center gap-4"
+                  className="flex items-center gap-3 md:gap-3 lg:gap-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <div className="text-5xl md:text-6xl font-light text-quantifi-primary">
+                  <div className="text-5xl md:text-4xl lg:text-6xl font-light text-quantifi-primary">
                     <CounterAnimation end={15} duration={3} suffix="+" />
                   </div>
                   <div className="text-left">
-                    <div className="text-lg font-medium text-foreground">Years</div>
-                    <div className="text-sm text-muted-foreground">Experience</div>
+                    <div className="text-base md:text-sm lg:text-lg font-medium text-foreground">Years</div>
+                    <div className="text-xs md:text-xs lg:text-sm text-muted-foreground">Experience</div>
                   </div>
                 </motion.div>
 
                 {/* Divider */}
                 <motion.div
-                  className="hidden md:block w-px h-16 bg-gray-300 dark:bg-gray-600"
+                  className="hidden md:block lg:block w-px h-12 md:h-12 lg:h-16 bg-gray-300 dark:bg-gray-600"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
@@ -204,23 +204,23 @@ export function Hero() {
 
                 {/* Stat 3 */}
                 <motion.div
-                  className="flex items-center gap-4"
+                  className="flex items-center gap-3 md:gap-3 lg:gap-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.9 }}
                 >
-                  <div className="text-5xl md:text-6xl font-light text-quantifi-primary">
+                  <div className="text-5xl md:text-4xl lg:text-6xl font-light text-quantifi-primary">
                     <CounterAnimation end={15} duration={3} suffix="K" />
                   </div>
                   <div className="text-left">
-                    <div className="text-lg font-medium text-foreground">Monthly</div>
-                    <div className="text-sm text-muted-foreground">Reconciliations</div>
+                    <div className="text-base md:text-sm lg:text-lg font-medium text-foreground">Monthly</div>
+                    <div className="text-xs md:text-xs lg:text-sm text-muted-foreground">Reconciliations</div>
                   </div>
                 </motion.div>
 
                 {/* Divider */}
                 <motion.div
-                  className="hidden md:block w-px h-16 bg-gray-300 dark:bg-gray-600"
+                  className="hidden md:block lg:block w-px h-12 md:h-12 lg:h-16 bg-gray-300 dark:bg-gray-600"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.1 }}
@@ -228,17 +228,17 @@ export function Hero() {
 
                 {/* Stat 4 */}
                 <motion.div
-                  className="flex items-center gap-4"
+                  className="flex items-center gap-3 md:gap-3 lg:gap-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
                 >
-                  <div className="text-5xl md:text-6xl font-light text-quantifi-primary">
+                  <div className="text-5xl md:text-4xl lg:text-6xl font-light text-quantifi-primary">
                     <CounterAnimation end={100} duration={3} suffix="K" />
                   </div>
                   <div className="text-left">
-                    <div className="text-lg font-medium text-foreground">Hours</div>
-                    <div className="text-sm text-muted-foreground">Services Provided</div>
+                    <div className="text-base md:text-sm lg:text-lg font-medium text-foreground">Hours</div>
+                    <div className="text-xs md:text-xs lg:text-sm text-muted-foreground">Services Provided</div>
                   </div>
                 </motion.div>
               </div>

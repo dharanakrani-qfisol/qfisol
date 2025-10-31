@@ -321,7 +321,7 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
 export default function CaseStudiesPage() {
   return (
     <MarketingLayout>
-      <div className="pt-20">
+      <div className="md:pt-20">
         {/* Hero Section */}
         <section className="bg-white dark:bg-black py-24 border-b-2 border-black dark:border-white">
           <div className="container-standard section-gutter">

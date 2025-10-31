@@ -245,23 +245,25 @@ function NavItemMobile({
 	return (
 		<a
 			className={cn(
-				"data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground group relative flex gap-1 gap-x-2 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+				"data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground group relative flex items-center gap-3 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 w-full",
 				className,
 			)}
 			{...props}
 		>
 			<div
 				className={cn(
-					'bg-muted/20 flex size-10 items-center justify-center rounded-lg border',
+					'bg-muted/20 flex size-8 items-center justify-center rounded-lg border flex-shrink-0',
 				)}
 			>
-				{item.icon && <item.icon />}
+				{item.icon && <item.icon className="h-4 w-4" />}
 			</div>
-			<div className={cn('flex h-10 flex-col justify-center')}>
+			<div className={cn('flex flex-col justify-center flex-1 min-w-0')}>
 				<p className="text-sm">{item.title}</p>
-				<span className="text-muted-foreground line-clamp-1 text-xs leading-snug">
-					{item.description}
-				</span>
+				{item.description && (
+					<span className="text-muted-foreground line-clamp-1 text-xs leading-snug">
+						{item.description}
+					</span>
+				)}
 			</div>
 		</a>
 	);

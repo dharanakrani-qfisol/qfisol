@@ -145,14 +145,16 @@ const faqData = [
 export default function ConstructionPage() {
   return (
     <MarketingLayout>
-      <div className="pt-20">
+      <div className="md:pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/20 dark:via-gray-950 dark:to-blue-950/20 py-24">
           <div className="container-standard section-gutter">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 px-6 py-3 text-base font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
-                Construction & Contracting Accounting Services
-              </Badge>
+              <div className="flex justify-center mb-6">
+                <Badge className="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" style={{ backgroundColor: '#e6e8ff', color: '#0015ff' }}>
+                  Construction & Contracting Accounting Services
+                </Badge>
+              </div>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
                 Build Profitably, Control Costs, and Grow with Confidence
               </h1>
@@ -304,15 +306,15 @@ export default function ConstructionPage() {
                   <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
                     Don&apos;t let accounting issues undermine your projects. Let QuantiFi handle the finances while you focus on construction. We&apos;re here to provide clarity, strategy, and peace of mind in every job&apos;s numbers. Reach out today to start with a personalized consultation.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                    <Link href="/contact">
-                      <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 !from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
-                        Schedule a Free Consultation
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <Link href="/contact" className="w-full sm:w-auto flex justify-center">
+                      <BookCallButton className="!text-base !px-8 !py-6 !bg-white hover:!bg-gray-100 !font-bold !text-[#0015ff] !w-full sm:!w-[360px] !h-[64px] !rounded-xl !shadow-lg !border-0 !from-white to-white hover:from-gray-100 hover:to-gray-100 whitespace-nowrap">
+                        Book a Free Consultation
                         <ArrowRight className="h-5 w-5" />
                       </BookCallButton>
                     </Link>
-                    <Link href="/contact">
-                      <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
+                    <Link href="/contact" className="w-full sm:w-auto flex justify-center">
+                      <Button size="lg" variant="outline" className="text-lg px-10 py-6 !w-full sm:!w-[280px] !h-[64px] border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-[#0015ff] transition-colors">
                         Contact Us Today
                       </Button>
                     </Link>

@@ -137,7 +137,7 @@ const faqs = [
 
 export default function SystemsIntegrationContent() {
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="md:pt-20">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-blue-50/40 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950">
         {/* Background Pattern */}
@@ -156,7 +156,7 @@ export default function SystemsIntegrationContent() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.3, ease: "easeOut" }}
             >
-              <Badge className="mb-6 px-4 py-2 text-sm font-semibold bg-blue-100 text-[#0015ff] dark:bg-blue-950 dark:text-blue-300">
+              <Badge className="mb-6 px-4 py-2 text-sm font-semibold bg-[#0015ff] text-white dark:bg-[#0015ff] dark:text-white">
                 Systems Integration & Tech Consulting
               </Badge>
               

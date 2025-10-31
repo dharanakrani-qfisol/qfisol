@@ -143,7 +143,7 @@ const states = [
 export default function AboutPage() {
   return (
     <MarketingLayout>
-      <div className="pt-16 md:pt-20">
+      <div className="md:pt-20">
         {/* Hero Section */}
         <section className="bg-white dark:bg-black py-12 md:py-16 lg:py-24">
           <div className="container-standard section-gutter">

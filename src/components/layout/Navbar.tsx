@@ -124,21 +124,23 @@ export function Navbar() {
                   className="bg-background/95 supports-[backdrop-filter]:bg-background/80 w-full gap-0 backdrop-blur-lg"
                 >
                   <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  <div className="container grid gap-y-2 overflow-y-auto px-4 pt-5 pb-12">
+                  <div className="container flex flex-col gap-y-0 overflow-y-auto px-4 pt-5 pb-12">
                     <Accordion type="single" collapsible>
                       {navigationItems.map((item) => {
                         if (item.type === 'submenu') {
                           const IconComponent = item.icon;
                           return (
-                            <AccordionItem key={item.title.toLowerCase()} value={item.title.toLowerCase()}>
-                              <AccordionTrigger className="capitalize hover:no-underline flex items-center space-x-2 font-semibold group/mobile-accordion">
-                                {IconComponent && <IconComponent className="h-4 w-4 text-muted-foreground group-hover/mobile-accordion:text-white transition-colors" />}
-                                <span>{item.title}</span>
+                            <AccordionItem key={item.title.toLowerCase()} value={item.title.toLowerCase()} className="border-b">
+                              <AccordionTrigger className="capitalize hover:no-underline flex items-center font-semibold group/mobile-accordion w-full text-left px-0 py-3">
+                                <div className="flex items-center w-full gap-3">
+                                  {IconComponent && <IconComponent className="h-4 w-4 flex-shrink-0 text-muted-foreground group-hover/mobile-accordion:text-white transition-colors" />}
+                                  <span>{item.title}</span>
+                                </div>
                               </AccordionTrigger>
-                              <AccordionContent className="space-y-1">
-                                <ul className="grid gap-1">
+                              <AccordionContent className="space-y-1 pb-3">
+                                <ul className="flex flex-col gap-1">
                                   {item.submenu?.map((link, index) => (
-                                    <li key={`${item.title}-${link.title}-${index}`}>
+                                    <li key={`${item.title}-${link.title}-${index}`} className="w-full">
                                       <SheetClose asChild>
                                         <NavItemMobile item={link} href={link.href} />
                                       </SheetClose>
@@ -151,10 +153,10 @@ export function Navbar() {
                         } else {
                           const IconComponent = item.icon;
                           return (
-                            <div key={item.title} className="px-4 py-2 border-b">
+                            <div key={item.title} className="border-b py-3">
                               <SheetClose asChild>
-                                <Link href={item.href} className="flex items-center space-x-2 text-sm font-semibold hover:bg-[#0015ff] hover:text-white group/mobile-link rounded px-2 py-1">
-                                  {IconComponent && <IconComponent className="h-4 w-4 text-muted-foreground group-hover/mobile-link:text-white transition-colors" />}
+                                <Link href={item.href} className="flex items-center gap-3 text-sm font-semibold hover:bg-[#0015ff] hover:text-white group/mobile-link rounded px-0 py-1 w-full">
+                                  {IconComponent && <IconComponent className="h-4 w-4 flex-shrink-0 text-muted-foreground group-hover/mobile-link:text-white transition-colors" />}
                                   <span>{item.title}</span>
                                 </Link>
                               </SheetClose>

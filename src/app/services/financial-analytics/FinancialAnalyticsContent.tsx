@@ -131,7 +131,7 @@ const faqs = [
 
 export default function FinancialAnalyticsContent() {
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="md:pt-20">
       {/* Hero Section */}
       <section className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 dark:from-slate-900 dark:via-blue-950/20 dark:to-cyan-950/30">
         {/* Background Pattern */}
@@ -167,12 +167,6 @@ export default function FinancialAnalyticsContent() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-[#0015ff] hover:bg-[#0015ff]/90 text-white text-lg px-8 py-6">
-                  <Link href="/contact">
-                    See Your Financial Story
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
                 <Button asChild size="lg" className="bg-[#0015ff] hover:bg-[#0015ff]/90 text-white border-2 border-white text-lg px-8 py-6">
                   <Link href="/contact">
                     Schedule a Review
@@ -369,12 +363,14 @@ export default function FinancialAnalyticsContent() {
               <p className="text-lg font-semibold text-[#0015ff] mb-4">
                 Ready to Transform Your Financial Data into Strategic Insights?
               </p>
-              <Button asChild size="lg" className="bg-[#0015ff] hover:bg-[#0015ff]/90 text-white text-lg px-8 py-6">
-                <Link href="/contact">
-                  Get Started with Financial Analytics
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+              <div className="flex justify-center">
+                <Button asChild size="lg" className="bg-[#0015ff] hover:bg-[#0015ff]/90 text-white text-lg px-8 py-6">
+                  <Link href="/contact">
+                    Get Started with Financial Analytics
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </motion.div>
         </div>

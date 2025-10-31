@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BlurredStagger } from '@/components/ui/blurred-stagger-text';
 
 const industries = [
@@ -57,7 +57,67 @@ const industries = [
   },
 ];
 
-// Accordion Item Component
+// Carousel Card Component for Mobile/Tablet
+interface CarouselCardProps {
+  item: {
+    id: number;
+    title: string;
+    description: string;
+    href: string;
+    imageUrl: string;
+    gradient: string;
+  };
+}
+
+const CarouselCard = ({ item }: CarouselCardProps) => {
+  return (
+    <Link
+      href={item.href}
+      className="relative h-[500px] sm:h-[550px] w-full rounded-3xl overflow-hidden cursor-pointer block group"
+    >
+      {/* Background Image */}
+      <img
+        src={item.imageUrl}
+        alt={item.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+      />
+      
+      {/* Gradient overlay */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-40 mix-blend-multiply`}></div>
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      {/* Content overlay with gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+
+      {/* Title Text */}
+      <div className="absolute top-8 left-6 right-6 text-white font-bold z-10">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl rotate-0 tracking-tight leading-tight">
+          {item.title}
+        </h3>
+      </div>
+
+      {/* Description */}
+      <div className="absolute bottom-8 left-6 right-6 z-10">
+        <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-6">
+          {item.description}
+        </p>
+        <div className="inline-flex items-center gap-2 text-white font-semibold text-base sm:text-lg hover:gap-3 transition-all duration-300 group/link">
+          Learn More
+          <ArrowRight className="h-5 w-5 group-hover/link:translate-x-1 transition-transform" />
+        </div>
+      </div>
+
+      {/* Decorative corner accent */}
+      <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${item.gradient} opacity-30`}
+        style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
+      />
+    </Link>
+  );
+};
+
+// Accordion Item Component (Desktop)
 interface AccordionItemProps {
   item: {
     id: number;
@@ -155,9 +215,47 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
 
 export function IndustriesGrid() {
   const [activeIndex, setActiveIndex] = useState(3);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const handleItemHover = (index: number) => {
     setActiveIndex(index);
+  };
+
+  // Carousel navigation handlers
+  const nextSlide = () => {
+    setCarouselIndex((prev) => (prev + 1) % industries.length);
+  };
+
+  const prevSlide = () => {
+    setCarouselIndex((prev) => (prev - 1 + industries.length) % industries.length);
+  };
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   return (
@@ -228,7 +326,7 @@ export function IndustriesGrid() {
             
           </motion.div>
 
-          {/* Right Side: Image Accordion */}
+          {/* Right Side: Carousel (Mobile/Tablet) & Accordion (Desktop) */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -236,7 +334,63 @@ export function IndustriesGrid() {
             viewport={{ once: true }}
             className="lg:col-span-7 overflow-hidden relative z-0 lg:ml-2 xl:ml-4"
           >
-            <div className="flex flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 overflow-x-auto p-4 lg:pl-10 xl:pl-12 scrollbar-hide">
+            {/* Mobile/Tablet Carousel */}
+            <div 
+              className="lg:hidden relative"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div className="relative h-[500px] sm:h-[550px] w-full overflow-hidden rounded-3xl">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={carouselIndex}
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -300 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <CarouselCard item={industries[carouselIndex]} />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 rounded-full p-2 shadow-lg transition-all duration-200"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="h-6 w-6 text-gray-900 dark:text-white" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 rounded-full p-2 shadow-lg transition-all duration-200"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="h-6 w-6 text-gray-900 dark:text-white" />
+              </button>
+
+              {/* Indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                {industries.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCarouselIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === carouselIndex
+                        ? 'w-8 bg-white'
+                        : 'w-2 bg-white/50 hover:bg-white/75'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Accordion */}
+            <div className="hidden lg:flex flex-row items-center justify-start gap-3 md:gap-4 p-4 lg:pl-10 xl:pl-12">
               {industries.map((item, index) => (
                 <AccordionItem
                   key={item.id}

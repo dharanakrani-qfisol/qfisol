@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BlurredStagger } from '@/components/ui/blurred-stagger-text';
@@ -76,10 +77,14 @@ const CarouselCard = ({ item }: CarouselCardProps) => {
       className="relative h-[500px] sm:h-[550px] w-full rounded-3xl overflow-hidden cursor-pointer block group"
     >
       {/* Background Image */}
-      <img
+      <Image
         src={item.imageUrl}
         alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        loading="lazy"
+        quality={85}
       />
       
       {/* Gradient overlay */}
@@ -143,11 +148,15 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
       onMouseEnter={onMouseEnter}
     >
       {/* Background Image */}
-      <img
+      <Image
         src={item.imageUrl}
         alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out"
+        fill
+        sizes="(max-width: 1024px) 80px, (max-width: 1280px) 300px, 400px"
+        className="object-cover transition-transform duration-700 ease-out"
         style={{ transform: isActive ? 'scale(1.1)' : 'scale(1)' }}
+        loading="lazy"
+        quality={85}
       />
       
       {/* Gradient overlay */}

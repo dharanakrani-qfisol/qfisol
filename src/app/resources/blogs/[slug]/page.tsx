@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
@@ -1146,10 +1147,14 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         <section className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] overflow-hidden">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
-            <img 
+            <Image 
               src={post.image} 
               alt={post.title}
-              className="w-full h-full object-cover transform scale-105 transition-transform duration-1000 hover:scale-110"
+              fill
+              sizes="100vw"
+              className="object-cover transform scale-105 transition-transform duration-1000 hover:scale-110"
+              priority
+              quality={90}
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
           </div>
@@ -1266,11 +1271,15 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
                   style={{ animationDelay: `${index * 200 + 1000}ms` }}
                 >
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                    <div className="aspect-video overflow-hidden">
-                      <img 
+                    <div className="aspect-video overflow-hidden relative">
+                      <Image 
                         src={relatedPost.image} 
                         alt={relatedPost.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        quality={85}
                       />
                     </div>
                     <div className="p-6">

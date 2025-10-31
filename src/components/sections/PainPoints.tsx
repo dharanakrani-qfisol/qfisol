@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from "react";
+import Image from 'next/image';
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
 import { Building2, Award, Link } from 'lucide-react';
 
@@ -356,11 +357,11 @@ export function PainPoints() {
               {repeatedIcons(ICONS_ROW1, 4).map((src, i) => (
                 <motion.div
                   key={i}
-                  className="flex-shrink-0 flex items-center justify-center hover:scale-110 transition-all duration-300"
+                  className="flex-shrink-0 flex items-center justify-center hover:scale-110 transition-all duration-300 relative h-16 w-16"
                   whileHover={{ y: -5, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <img src={src} alt="company logo" className="h-16 w-16 object-contain pointer-events-none" />
+                  <Image src={src} alt="company logo" fill className="object-contain pointer-events-none" sizes="64px" loading="lazy" quality={75} />
                 </motion.div>
               ))}
             </motion.div>

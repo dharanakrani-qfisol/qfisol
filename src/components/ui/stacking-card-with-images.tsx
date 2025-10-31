@@ -1,6 +1,7 @@
 'use client';
 import { useTransform, motion, useScroll, MotionValue } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProjectData {
@@ -65,12 +66,16 @@ export const StackingCardWithImages = ({
             style={{
               scale: imageScale,
             }}
-            className="w-full h-full"
+            className="w-full h-full relative"
           >
-            <img
+            <Image
               src={url}
               alt={title}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+              className="object-cover"
+              loading="lazy"
+              quality={85}
             />
           </motion.div>
         </div>

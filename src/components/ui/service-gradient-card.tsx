@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from "react";
+import Image from "next/image";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -78,13 +79,21 @@ const ServiceGradientCard = React.forwardRef<HTMLDivElement, ServiceGradientCard
         >
           {/* Decorative image or icon with animation */}
           {imageUrl ? (
-            <motion.img
-              src={imageUrl}
-              alt={`${title} illustration`}
+            <motion.div
               variants={imageAnimation}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="absolute -right-8 -bottom-8 w-48 h-48 object-contain opacity-60 pointer-events-none dark:opacity-40"
-            />
+              className="absolute -right-8 -bottom-8 w-48 h-48 opacity-60 pointer-events-none dark:opacity-40 relative"
+            >
+              <Image
+                src={imageUrl}
+                alt={`${title} illustration`}
+                fill
+                sizes="192px"
+                className="object-contain"
+                loading="lazy"
+                quality={75}
+              />
+            </motion.div>
           ) : Icon ? (
             <motion.div
               variants={imageAnimation}

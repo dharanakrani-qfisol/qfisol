@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -129,11 +130,14 @@ export function LatestArticles() {
               >
                 <article className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-gray-200">
                   {/* Image */}
-                  <div className="aspect-video overflow-hidden bg-gray-100">
-                    <img
+                  <div className="aspect-video overflow-hidden bg-gray-100 relative">
+                    <Image
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
                   

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -473,13 +474,17 @@ export default function BlogsPage() {
                   <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer">
                   {/* Featured Image */}
                   <div className="aspect-video relative overflow-hidden">
-                    <img 
+                    <Image 
                       src={post.image} 
                       alt={post.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
+                      loading="lazy"
+                      quality={85}
                     />
                     {post.featured && (
-                      <div className="absolute top-4 left-4">
+                      <div className="absolute top-4 left-4 z-10">
                         <Badge className="bg-[#0015ff] text-white">Featured</Badge>
                       </div>
                     )}

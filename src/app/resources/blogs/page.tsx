@@ -422,7 +422,7 @@ export default function BlogsPage() {
     <MarketingLayout>
       <div className="md:pt-20">
         {/* Header Section */}
-        <section className="relative bg-gradient-to-br from-gray-50 to-gray-100 py-20 border-b border-gray-200">
+        <section className="relative bg-gradient-to-br from-gray-50 to-gray-100 py-12 sm:py-16 md:py-20 border-b border-gray-200">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
@@ -432,30 +432,30 @@ export default function BlogsPage() {
           ></div>
           
           {/* Content */}
-          <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-5 md:mb-6">
                 Your Gateway to Financial Clarity
               </h1>
-              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-7 md:mb-8 max-w-3xl mx-auto leading-relaxed">
                 Looking to strengthen your understanding of business finances? Explore our blogs designed to simplify concepts and help you make smarter financial decisions.
               </p>
-              <div className="w-24 h-1 bg-[#0015ff] mx-auto"></div>
+              <div className="w-20 sm:w-24 h-1 bg-[#0015ff] mx-auto"></div>
             </div>
           </div>
         </section>
 
         {/* Blog Grid Section */}
-        <section className="bg-white py-16">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <section className="bg-white py-8 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
             {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-2 mb-12">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 md:mb-12">
               {categories.map((category) => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? 'default' : 'outline'}
                   onClick={() => handleCategoryChange(category)}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                     selectedCategory === category 
                       ? 'bg-[#0015ff] text-white hover:bg-[#0014e6]' 
                       : 'border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff]'
@@ -467,7 +467,7 @@ export default function BlogsPage() {
             </div>
 
             {/* Blog Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {currentPosts.map((post) => (
                 <Link href={`/resources/blogs/${post.slug}`} key={post.id}>
                   <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer">
@@ -485,45 +485,45 @@ export default function BlogsPage() {
                     )}
                   </div>
 
-                  <CardContent className="p-6">
+                  <CardContent className="p-4 sm:p-5 md:p-6">
                     {/* Category Badge */}
                     <Badge 
                       variant="outline" 
-                      className="mb-3 text-xs border-gray-300 text-gray-600"
+                      className="mb-2 sm:mb-3 text-xs border-gray-300 text-gray-600"
                     >
                       {post.category}
                     </Badge>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#0015ff] transition-colors duration-200 line-clamp-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-black mb-2 sm:mb-3 group-hover:text-[#0015ff] transition-colors duration-200 line-clamp-2">
                       {post.title}
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-3 leading-relaxed">
                       {post.excerpt}
                     </p>
 
                     {/* Meta Information */}
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <div className="flex items-center space-x-4">
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
+                      <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
                         <div className="flex items-center space-x-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{new Date(post.publishDate).toLocaleDateString()}</span>
+                          <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                          <span className="whitespace-nowrap">{new Date(post.publishDate).toLocaleDateString()}</span>
                         </div>
                         <div className="flex items-center space-x-1">
-                          <Clock className="w-4 h-4" />
-                          <span>{post.readTime}</span>
+                          <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                          <span className="whitespace-nowrap">{post.readTime}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Read More Button */}
                     <Button 
-                      className="w-full bg-[#0015ff] hover:bg-[#0014e6] text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 group/btn"
+                      className="w-full bg-[#0015ff] hover:bg-[#0014e6] text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 group/btn text-sm sm:text-base"
                     >
                       Read More
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200 shrink-0" />
                     </Button>
                   </CardContent>
                   </Card>
@@ -533,15 +533,15 @@ export default function BlogsPage() {
 
             {/* Pagination - Only show if more than 9 posts */}
             {filteredPosts.length > postsPerPage && (
-              <div className="flex justify-center items-center mt-12 space-x-2">
+              <div className="flex justify-center items-center mt-8 sm:mt-10 md:mt-12 space-x-1 sm:space-x-2 flex-wrap gap-2">
                 {/* Previous Button */}
                 <Button
                   variant="outline"
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-3 py-2 border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2 sm:px-3 py-2 border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff] disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Button>
 
                 {/* Page Numbers */}
@@ -550,7 +550,7 @@ export default function BlogsPage() {
                     key={page}
                     variant={currentPage === page ? 'default' : 'outline'}
                     onClick={() => handlePageChange(page)}
-                    className={`px-4 py-2 ${
+                    className={`px-3 sm:px-4 py-2 text-sm sm:text-base ${
                       currentPage === page
                         ? 'bg-[#0015ff] text-white hover:bg-[#0014e6]'
                         : 'border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff]'
@@ -565,9 +565,9 @@ export default function BlogsPage() {
                   variant="outline"
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="px-3 py-2 border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2 sm:px-3 py-2 border-gray-300 text-gray-700 hover:border-[#0015ff] hover:text-[#0015ff] disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Button>
               </div>
             )}

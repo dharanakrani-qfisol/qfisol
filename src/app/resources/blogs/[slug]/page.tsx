@@ -1123,7 +1123,7 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
   if (!post) {
     return (
       <MarketingLayout>
-        <div className="pt-20">
+        <div className="md:pt-20">
           <div className="container mx-auto px-4 max-w-4xl py-16">
             <h1 className="text-3xl font-bold text-black mb-4">Blog Post Not Found</h1>
             <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
@@ -1141,9 +1141,9 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
 
   return (
     <MarketingLayout>
-      <div className="pt-20">
+      <div className="md:pt-20">
         {/* Hero Section with Background Image */}
-        <section className="relative h-96 overflow-hidden">
+        <section className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] overflow-hidden">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
             <img 
@@ -1156,32 +1156,32 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           
           {/* Content Overlay */}
           <div className="relative z-10 h-full flex items-end">
-            <div className="container mx-auto px-4 max-w-6xl pb-12 pt-8">
+            <div className="container mx-auto px-4 sm:px-6 max-w-6xl pb-6 sm:pb-8 md:pb-12 pt-6 sm:pt-8">
               <div className="max-w-4xl">
                 {/* Title */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up animation-delay-200">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-5 md:mb-6 leading-tight animate-fade-in-up animation-delay-200">
                   {post.title}
                 </h1>
                 
                 {/* Meta Information with Category Badge */}
-                <div className="flex items-center space-x-4 text-white animate-fade-in-up animation-delay-400 flex-wrap gap-4">
+                <div className="flex items-center flex-wrap gap-2 sm:gap-3 md:gap-4 text-white animate-fade-in-up animation-delay-400">
                   {/* Category Badge */}
                   <div className="flex items-center">
-                    <span className="inline-block bg-[#0015ff] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg border border-white border-opacity-50">
+                    <span className="inline-block bg-[#0015ff] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg border border-white border-opacity-50">
                       {post.category}
                     </span>
                   </div>
                   
                   {/* Date Badge */}
-                  <div className="flex items-center space-x-2 bg-black bg-opacity-50 px-4 py-2 rounded-full backdrop-blur-sm border border-white border-opacity-50">
-                    <Calendar className="w-4 h-4 text-white" />
-                    <span className="font-medium text-white">{new Date(post.publishDate).toLocaleDateString()}</span>
+                  <div className="flex items-center space-x-1.5 sm:space-x-2 bg-black bg-opacity-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm border border-white border-opacity-50">
+                    <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
+                    <span className="font-medium text-white text-xs sm:text-sm whitespace-nowrap">{new Date(post.publishDate).toLocaleDateString()}</span>
                   </div>
                   
                   {/* Read Time Badge */}
-                  <div className="flex items-center space-x-2 bg-black bg-opacity-50 px-4 py-2 rounded-full backdrop-blur-sm border border-white border-opacity-50">
-                    <Clock className="w-4 h-4 text-white" />
-                    <span className="font-medium text-white">{post.readTime}</span>
+                  <div className="flex items-center space-x-1.5 sm:space-x-2 bg-black bg-opacity-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm border border-white border-opacity-50">
+                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
+                    <span className="font-medium text-white text-xs sm:text-sm whitespace-nowrap">{post.readTime}</span>
                   </div>
                 </div>
               </div>
@@ -1190,16 +1190,16 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         </section>
 
         {/* Main Content */}
-        <section className="bg-white py-16">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section className="bg-white py-8 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             {/* Back Button */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <Link href="/resources/blogs">
                 <Button 
                   variant="outline" 
-                  className="text-[#0015ff] border-[#0015ff] hover:bg-[#0015ff] hover:text-white transition-all duration-300"
+                  className="text-[#0015ff] border-[#0015ff] hover:bg-[#0015ff] hover:text-white transition-all duration-300 text-sm sm:text-base"
                 >
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  <ArrowLeft className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
                   Back to Blogs
                 </Button>
               </Link>
@@ -1223,17 +1223,17 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         </section>
 
         {/* Author/CTA Section */}
-        <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-16">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-8 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             <div className="text-center animate-fade-in-up animation-delay-800">
-              <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-black mb-4">
+              <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto">
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4">
                   Need Professional Accounting Help?
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                   Our team of experienced accountants and CFOs can help you implement the strategies discussed in this article.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Link href="/contact">
                     <Button className="bg-[#0015ff] hover:bg-[#0014e6] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
                       Get Free Consultation
@@ -1252,12 +1252,12 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         </section>
 
         {/* Related Articles Preview */}
-        <section className="bg-white py-16">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h3 className="text-3xl font-bold text-black text-center mb-12 animate-fade-in-up">
+        <section className="bg-white py-8 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+            <h3 className="text-2xl sm:text-3xl font-bold text-black text-center mb-6 sm:mb-8 md:mb-12 animate-fade-in-up">
               More Insights
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((relatedPost, index) => (
                 <Link 
                   href={`/resources/blogs/${relatedPost.slug}`} 
@@ -1392,6 +1392,22 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           box-sizing: border-box;
         }
         
+        /* Mobile: Force cost-analysis to stack vertically - HIGHEST PRIORITY */
+        @media (max-width: 639px) {
+          .blog-content .cost-analysis > div {
+            display: flex !important;
+            flex-direction: column !important;
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+          
+          .blog-content .cost-analysis > div[style] {
+            display: flex !important;
+            flex-direction: column !important;
+            grid-template-columns: 1fr !important;
+          }
+        }
+        
         /* Responsive grids - mobile first approach */
         .blog-content .comparison-grid,
         .blog-content .mistakes-overview,
@@ -1402,18 +1418,98 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         .blog-content .impact-section > div,
         .blog-content .success-story > div,
         .blog-content .benefits-section > div,
-        .blog-content .analysis-section > div {
+        .blog-content .analysis-section > div,
+        .blog-content .cost-analysis > div,
+        .blog-content .expertise-section > div,
+        .blog-content .decision-framework > div {
           display: grid !important;
           grid-template-columns: 1fr !important;
           gap: 1rem !important;
         }
         
+        /* Force cost-analysis grid to flex column (stack vertically) on mobile only */
+        @media (max-width: 639px) {
+          .blog-content .cost-analysis > div[style*="display: grid"],
+          .blog-content .cost-analysis > div[style*="grid-template-columns"],
+          .blog-content .cost-analysis > div[style*="grid-template-columns: 1fr 1fr"],
+          .blog-content .cost-analysis div[style*="display: grid"] {
+            display: flex !important;
+            flex-direction: column !important;
+            grid-template-columns: none !important;
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+            margin-top: 1rem !important;
+          }
+          
+          /* Target the direct child div with grid styles */
+          .blog-content .cost-analysis > div {
+            display: flex !important;
+            flex-direction: column !important;
+          }
+        }
+        
+        /* Use grid for tablet and above */
+        @media (min-width: 640px) {
+          .blog-content .cost-analysis > div[style*="display: grid"],
+          .blog-content .cost-analysis > div[style*="grid-template-columns"] {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            margin-top: 1.5rem !important;
+          }
+          
+          /* Ensure grid layout on tablet and above */
+          .blog-content .cost-analysis > div {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        
+        /* Override inline styles that specify 2 columns - except cost-analysis which has mobile-specific rules */
+        .blog-content [style*="grid-template-columns: 1fr 1fr"]:not(.blog-content .cost-analysis > div),
+        .blog-content [style*="grid-template-columns:1fr 1fr"]:not(.blog-content .cost-analysis > div),
+        .blog-content [style*="grid-template-columns"]:not(.blog-content .cost-analysis > div) {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
+        
+        /* Cost-analysis mobile override - stack vertically */
+        @media (max-width: 639px) {
+          .blog-content .cost-analysis > div[style*="grid-template-columns: 1fr 1fr"],
+          .blog-content .cost-analysis > div[style*="grid-template-columns"],
+          .blog-content .cost-analysis > div {
+            display: flex !important;
+            flex-direction: column !important;
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+        }
+        
         /* Tablet and Desktop Responsive Breakpoints */
         @media (min-width: 640px) {
           .blog-content .comparison-grid,
-          .blog-content .detailed-solutions > div {
+          .blog-content .detailed-solutions > div,
+          .blog-content .cost-analysis > div,
+          .blog-content .expertise-section > div {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 1.5rem !important;
+          }
+          
+          /* Override inline styles for 2 columns on tablet - use grid layout */
+          .blog-content [style*="grid-template-columns: 1fr 1fr"]:not(.blog-content .cost-analysis > div),
+          .blog-content [style*="grid-template-columns:1fr 1fr"]:not(.blog-content .cost-analysis > div) {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            margin-top: 1.5rem !important;
+            display: grid !important;
+          }
+          
+          /* Cost-analysis uses grid on tablet and above */
+          .blog-content .cost-analysis > div[style*="display: grid"] {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            margin-top: 1.5rem !important;
           }
           
           .blog-content .mistakes-overview,
@@ -1485,9 +1581,28 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         .blog-content .success-story,
         .blog-content .benefits-section,
         .blog-content .analysis-section,
-        .blog-content .conclusion-section {
+        .blog-content .conclusion-section,
+        .blog-content .cost-analysis,
+        .blog-content .expertise-section,
+        .blog-content .decision-framework,
+        .blog-content [style*="padding: 2rem"],
+        .blog-content [style*="padding: 2.5rem"],
+        .blog-content [style*="padding: 1.5rem"] {
           padding: 1rem !important;
           margin: 1rem 0 !important;
+        }
+        
+        /* Override inline padding styles */
+        .blog-content [style*="padding: 2rem"] {
+          padding: 1rem !important;
+        }
+        
+        .blog-content [style*="padding: 2.5rem"] {
+          padding: 1.25rem !important;
+        }
+        
+        .blog-content [style*="padding: 1.5rem"] {
+          padding: 1rem !important;
         }
         
         @media (min-width: 640px) {
@@ -1501,9 +1616,30 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content .success-story,
           .blog-content .benefits-section,
           .blog-content .analysis-section,
-          .blog-content .conclusion-section {
+          .blog-content .conclusion-section,
+          .blog-content .cost-analysis,
+          .blog-content .expertise-section,
+          .blog-content .decision-framework {
             padding: 1.5rem !important;
             margin: 1.5rem 0 !important;
+          }
+          
+          .blog-content [style*="padding: 2rem"] {
+            padding: 1.5rem !important;
+          }
+          
+          .blog-content [style*="padding: 2.5rem"] {
+            padding: 1.75rem !important;
+          }
+          
+          /* Bottom line section responsive on tablet */
+          .blog-content .cost-analysis [style*="background: #0015ff"] {
+            padding: 1.25rem !important;
+            font-size: 1rem !important;
+          }
+          
+          .blog-content .cost-analysis [style*="background: #0015ff"] p {
+            font-size: 1rem !important;
           }
         }
         
@@ -1518,13 +1654,42 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content .success-story,
           .blog-content .benefits-section,
           .blog-content .analysis-section,
-          .blog-content .conclusion-section {
+          .blog-content .conclusion-section,
+          .blog-content .cost-analysis,
+          .blog-content .expertise-section,
+          .blog-content .decision-framework {
             padding: 2rem !important;
             margin: 2rem 0 !important;
+          }
+          
+          .blog-content [style*="padding: 2rem"] {
+            padding: 2rem !important;
+          }
+          
+          .blog-content [style*="padding: 2.5rem"] {
+            padding: 2.5rem !important;
+          }
+          
+          /* Bottom line section responsive on desktop */
+          .blog-content .cost-analysis [style*="background: #0015ff"] {
+            padding: 1.5rem !important;
+            font-size: 1.2rem !important;
+          }
+          
+          .blog-content .cost-analysis [style*="background: #0015ff"] p {
+            font-size: 1.2rem !important;
           }
         }
         
         /* Responsive text sizes */
+        .blog-content h2 {
+          font-size: 1.5rem !important;
+          line-height: 1.4 !important;
+          margin-top: 1.5rem !important;
+          margin-bottom: 0.75rem !important;
+          padding-left: 0.75rem !important;
+        }
+        
         .blog-content h3 {
           font-size: 1.25rem !important;
           line-height: 1.4 !important;
@@ -1540,7 +1705,25 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           line-height: 1.6 !important;
         }
         
+        .blog-content ul,
+        .blog-content ol {
+          padding-left: 1.25rem !important;
+        }
+        
+        .blog-content li {
+          font-size: 0.875rem !important;
+          line-height: 1.6 !important;
+          margin-bottom: 0.5rem !important;
+        }
+        
         @media (min-width: 640px) {
+          .blog-content h2 {
+            font-size: 1.75rem !important;
+            margin-top: 2rem !important;
+            margin-bottom: 1rem !important;
+            padding-left: 1rem !important;
+          }
+          
           .blog-content h3 {
             font-size: 1.5rem !important;
           }
@@ -1552,9 +1735,19 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content p {
             font-size: 1rem !important;
           }
+          
+          .blog-content li {
+            font-size: 1rem !important;
+          }
         }
         
         @media (min-width: 768px) {
+          .blog-content h2 {
+            font-size: 2rem !important;
+            margin-top: 3rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          
           .blog-content h3 {
             font-size: 1.75rem !important;
           }
@@ -1566,6 +1759,10 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content p {
             font-size: 1.125rem !important;
           }
+          
+          .blog-content li {
+            font-size: 1.125rem !important;
+          }
         }
         
         /* Responsive card padding */
@@ -1574,8 +1771,17 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         .blog-content .detailed-solutions > div > div,
         .blog-content .impact-section > div > div,
         .blog-content .success-story > div > div,
-        .blog-content .analysis-section > div > div {
+        .blog-content .analysis-section > div > div,
+        .blog-content .cost-analysis > div > div,
+        .blog-content .cost-analysis [style*="background: white"],
+        .blog-content .expertise-section > div > div,
+        .blog-content .decision-framework > div > div,
+        .blog-content [style*="padding: 2rem"][style*="background"] {
           padding: 1rem !important;
+          min-width: 0 !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+          word-wrap: break-word !important;
         }
         
         @media (min-width: 640px) {
@@ -1584,7 +1790,11 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content .detailed-solutions > div > div,
           .blog-content .impact-section > div > div,
           .blog-content .success-story > div > div,
-          .blog-content .analysis-section > div > div {
+          .blog-content .analysis-section > div > div,
+          .blog-content .cost-analysis > div > div,
+          .blog-content .cost-analysis [style*="background: white"],
+          .blog-content .expertise-section > div > div,
+          .blog-content .decision-framework > div > div {
             padding: 1.25rem !important;
           }
         }
@@ -1595,8 +1805,23 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content .detailed-solutions > div > div,
           .blog-content .impact-section > div > div,
           .blog-content .success-story > div > div,
-          .blog-content .analysis-section > div > div {
+          .blog-content .analysis-section > div > div,
+          .blog-content .cost-analysis > div > div,
+          .blog-content .cost-analysis [style*="background: white"],
+          .blog-content .expertise-section > div > div,
+          .blog-content .decision-framework > div > div {
             padding: 1.5rem !important;
+          }
+          
+          .blog-content [style*="padding: 2rem"][style*="background"] {
+            padding: 2rem !important;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .blog-content .cost-analysis > div > div,
+          .blog-content .cost-analysis [style*="background: white"] {
+            padding: 2rem !important;
           }
         }
         
@@ -1605,6 +1830,32 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           max-width: 100% !important;
           height: auto !important;
           border-radius: 8px !important;
+        }
+        
+        /* Override inline image styles */
+        .blog-content img[style*="width: 100%"] {
+          width: 100% !important;
+          height: auto !important;
+        }
+        
+        .blog-content img[style*="height: 300px"] {
+          height: auto !important;
+          min-height: 200px !important;
+          max-height: 400px !important;
+          object-fit: cover !important;
+        }
+        
+        @media (min-width: 640px) {
+          .blog-content img[style*="height: 300px"] {
+            height: 250px !important;
+            max-height: 300px !important;
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .blog-content img[style*="height: 300px"] {
+            height: 300px !important;
+          }
         }
         
         /* Responsive icon sizes */
@@ -1669,6 +1920,7 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         @media (max-width: 639px) {
           .blog-content .intro-section p {
             font-size: 1rem !important;
+            line-height: 1.7 !important;
           }
           
           .blog-content .detailed-solutions {
@@ -1678,6 +1930,89 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
           .blog-content .detailed-solutions > div {
             grid-template-columns: 1fr !important;
             gap: 1rem !important;
+          }
+          
+          /* Force single column on mobile for all grids with inline styles - STACK VERTICALLY */
+          .blog-content [style*="grid-template-columns"]:not(.blog-content .cost-analysis > div),
+          .blog-content .cost-analysis [style*="display: grid"]:not(.blog-content .cost-analysis > div),
+          .blog-content .cost-analysis [style*="grid-template-columns"]:not(.blog-content .cost-analysis > div) {
+            display: flex !important;
+            flex-direction: column !important;
+            grid-template-columns: none !important;
+            gap: 1rem !important;
+          }
+          
+          /* CRITICAL: Force cost-analysis container to stack on mobile */
+          .blog-content .cost-analysis > div {
+            display: flex !important;
+            flex-direction: column !important;
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+          
+          /* Ensure cost-analysis cards don't overflow on mobile and take full width */
+          .blog-content .cost-analysis > div > div {
+            min-width: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            flex-shrink: 0 !important;
+          }
+          
+          /* Make sure cost-analysis section padding is mobile-friendly */
+          .blog-content .cost-analysis {
+            padding: 1rem !important;
+            margin: 1rem 0 !important;
+          }
+          
+          /* Ensure text in cost-analysis doesn't overflow */
+          .blog-content .cost-analysis p,
+          .blog-content .cost-analysis ul,
+          .blog-content .cost-analysis li {
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
+          }
+          
+          /* Make bottom line section responsive */
+          .blog-content .cost-analysis [style*="background: #0015ff"] {
+            padding: 1rem !important;
+            font-size: 0.9rem !important;
+          }
+          
+          .blog-content .cost-analysis [style*="background: #0015ff"] p {
+            font-size: 0.9rem !important;
+            line-height: 1.6 !important;
+          }
+          
+          /* Reduce font sizes in styled sections */
+          .blog-content [style*="font-size: 1.2rem"],
+          .blog-content [style*="font-size: 1.5rem"],
+          .blog-content [style*="font-size: 1.3rem"],
+          .blog-content [style*="font-size: 1.4rem"] {
+            font-size: 1.1rem !important;
+          }
+          
+          .blog-content [style*="font-size: 2rem"] {
+            font-size: 1.5rem !important;
+          }
+        }
+        
+        /* Ensure all inline font sizes scale properly */
+        .blog-content [style*="font-size: 1.2rem"] {
+          font-size: 1rem !important;
+        }
+        
+        @media (min-width: 640px) {
+          .blog-content [style*="font-size: 1.2rem"] {
+            font-size: 1.15rem !important;
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .blog-content [style*="font-size: 1.2rem"] {
+            font-size: 1.2rem !important;
           }
         }
       `}</style>

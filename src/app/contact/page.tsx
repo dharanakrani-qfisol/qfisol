@@ -31,7 +31,7 @@ const faqs = [
 export default function ContactPage() {
   return (
     <MarketingLayout>
-      <div className="pt-16 md:pt-20">
+      <div className="md:pt-20">
         {/* Hero Section */}
         <section className="bg-white dark:bg-black py-12 md:py-16 lg:py-20 border-b-2 border-[#0015ff]">
           <div className="container-standard section-gutter">

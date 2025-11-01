@@ -361,7 +361,16 @@ export function PainPoints() {
                   whileHover={{ y: -5, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Image src={src} alt="company logo" fill className="object-contain pointer-events-none" sizes="64px" loading="lazy" quality={75} />
+                  <Image 
+                    src={src} 
+                    alt="company logo" 
+                    fill 
+                    className="object-contain pointer-events-none" 
+                    sizes="64px" 
+                    loading="lazy" 
+                    quality={75}
+                    unoptimized={src.endsWith('.svg')}
+                  />
                 </motion.div>
               ))}
             </motion.div>

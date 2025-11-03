@@ -35,7 +35,7 @@ export function BookCallButton({ className, onClick, children = "Book a Call" }:
       )}
     >
       <div className="relative flex items-center justify-center gap-2">
-        <span className="relative flex items-center justify-center" style={{ width: 16, height: 16 }}>
+        <span className="relative hidden sm:flex items-center justify-center" style={{ width: 16, height: 16 }}>
           <motion.span
             initial={false}
             animate={isHovered ? { y: -16, opacity: 0 } : { y: 0, opacity: 1 }}

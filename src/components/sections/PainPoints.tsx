@@ -15,7 +15,7 @@ const ICONS_ROW1 = [
   "https://www.acumatica.com/content/plugins/ac-marketplace/uploads/ACUMATICAESIGNINTEGRATION/ISV-Solutions-4128-14ISV-Solutions3511-14acumatica-logo-stacked-2024-dark.png", // Acumatica
   "https://logos-world.net/wp-content/uploads/2021/09/NetSuite-Symbol.png", // Salesforce
   "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", // SAP
-  "https://e7.pngegg.com/pngimages/245/8/png-clipart-smartsheet-logo-icon-tech-companies.png", //Smartsheet
+  "https://assets.stickpng.com/images/629b486f95f79dc9fa7256f7.png", //Smartsheet
   "https://cdn.prod.website-files.com/63e3da3df35cd62f54751985/649488c838360d22ac08b864_bill-logo.svg", // Bill.com
   "https://tipalti.com/wp-content/themes/Tipalti-Synergy/resources/logos/header-logo.svg", // Tipalti
   "https://mma.prnewswire.com/media/1769845/Ramp_Logo.jpg", // Ramp

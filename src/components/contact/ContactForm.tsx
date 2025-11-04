@@ -50,18 +50,34 @@ function ContactFormContent({ className }: ContactFormProps) {
         const recaptchaToken = await executeRecaptcha('contact_form');
 
         // Submit form data with reCAPTCHA token
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...formData,
-            recaptchaToken,
-          }),
-        });
-
-        const data = await response.json();
+        let response: Response;
+        let data: any;
+        
+        try {
+          response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              ...formData,
+              recaptchaToken,
+            }),
+          });
+          
+          // Parse JSON response
+          try {
+            data = await response.json();
+          } catch (jsonError) {
+            throw new Error('Failed to parse server response. Please try again.');
+          }
+        } catch (fetchError) {
+          // Network error or fetch failed
+          const fetchMsg = fetchError instanceof Error 
+            ? fetchError.message 
+            : (fetchError !== null && fetchError !== undefined ? String(fetchError) : 'Network error occurred');
+          throw new Error(`Failed to submit form: ${fetchMsg}`);
+        }
 
         if (response.ok) {
           setSubmitStatus({
@@ -77,16 +93,28 @@ function ContactFormContent({ className }: ContactFormProps) {
             message: '',
           });
         } else {
+          const errorMessage = data.error || 'Failed to send message. Please try again.';
+          const errorDetails = data.details ? ` ${data.details}` : '';
           setSubmitStatus({
             type: 'error',
-            message: data.error || 'Failed to send message. Please try again.',
+            message: `${errorMessage}${errorDetails}`,
           });
         }
       } catch (error) {
         console.error('Form submission error:', error);
+        
+        // Ensure we always have a valid error message
+        let errorMessage = 'An unexpected error occurred. Please try again later.';
+        
+        if (error instanceof Error) {
+          errorMessage = error.message || errorMessage;
+        } else if (error !== null && error !== undefined) {
+          errorMessage = String(error);
+        }
+        
         setSubmitStatus({
           type: 'error',
-          message: 'An unexpected error occurred. Please try again later.',
+          message: errorMessage,
         });
       } finally {
         setIsSubmitting(false);

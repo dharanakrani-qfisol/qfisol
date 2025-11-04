@@ -77,24 +77,57 @@ async function sendEmail(formData: {
   industry?: string;
   message: string;
 }) {
-  // Create transporter - configure based on your email service
-  // For production, use environment variables for credentials
-  // Example configurations:
-  // - Gmail: Use App Password
-  // - SendGrid: Use SMTP with API key
-  // - Resend: Use SMTP with API key
-  // - Custom SMTP: Configure with your provider details
+  // Check environment variables
+  const smtpHost = process.env.SMTP_HOST || 'smtp.mailjet.com';
+  const smtpPort = parseInt(process.env.SMTP_PORT || '587');
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
+  // Remove quotes from EMAIL_FROM if present
+  const emailFrom = (process.env.EMAIL_FROM || 'info@qfisol.com').replace(/^["']|["']$/g, '');
+
+  console.log('Email Configuration:', {
+    host: smtpHost,
+    port: smtpPort,
+    user: smtpUser ? `${smtpUser.substring(0, 10)}...` : 'NOT SET',
+    password: smtpPassword ? 'SET' : 'NOT SET',
+    from: emailFrom,
+  });
+
+  if (!smtpUser || !smtpPassword) {
+    throw new Error('SMTP credentials are not configured. Please check your .env.local file.');
+  }
 
   // Mailjet SMTP configuration
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.mailjet.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
+    host: smtpHost,
+    port: smtpPort,
     secure: false, // Use TLS (true for 465, false for other ports)
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASSWORD,
+      user: smtpUser,
+      pass: smtpPassword,
     },
+    // Add timeout and debug options
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 10000,
   });
+
+  // Verify transporter connection
+  console.log('Verifying SMTP connection...');
+  try {
+    await transporter.verify();
+    console.log('SMTP connection verified successfully');
+  } catch (verifyError) {
+    const verifyMsg = verifyError instanceof Error 
+      ? verifyError.message 
+      : (verifyError !== null && verifyError !== undefined ? String(verifyError) : 'Unknown verification error');
+    console.error('SMTP verification failed:', {
+      error: verifyError,
+      message: verifyMsg,
+      type: typeof verifyError,
+    });
+    throw new Error(`SMTP connection failed: ${verifyMsg}`);
+  }
 
   const subject = generateSubject(formData);
   
@@ -135,8 +168,14 @@ Message:
 ${formData.message}
   `.trim();
 
+  // For Mailjet, the "from" email must be a verified sender in your Mailjet account
+  // Format: "Display Name <email@domain.com>" or just "email@domain.com"
+  const fromAddress = emailFrom.includes('<') 
+    ? emailFrom 
+    : `"Contact Form" <${emailFrom}>`;
+
   const mailOptions = {
-    from: process.env.EMAIL_FROM || `"Contact Form" <${process.env.SMTP_USER || 'noreply@qfisol.com'}>`,
+    from: fromAddress,
     to: RECIPIENT_EMAIL,
     replyTo: formData.email,
     subject: subject,
@@ -144,7 +183,30 @@ ${formData.message}
     html: htmlContent,
   };
 
-  await transporter.sendMail(mailOptions);
+  console.log('Sending email...', {
+    from: mailOptions.from,
+    to: mailOptions.to,
+    subject: mailOptions.subject,
+  });
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', {
+      messageId: info.messageId,
+      response: info.response,
+    });
+    return info;
+  } catch (sendError) {
+    const sendMsg = sendError instanceof Error 
+      ? sendError.message 
+      : (sendError !== null && sendError !== undefined ? String(sendError) : 'Unknown send error');
+    console.error('Email sending failed:', {
+      error: sendError,
+      message: sendMsg,
+      type: typeof sendError,
+    });
+    throw new Error(`Failed to send email: ${sendMsg}`);
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -160,7 +222,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate reCAPTCHA token
+        // Validate reCAPTCHA token
     if (!recaptchaToken) {
       return NextResponse.json(
         { error: 'reCAPTCHA token is missing' },
@@ -169,7 +231,7 @@ export async function POST(request: NextRequest) {
     }
 
     const isValidRecaptcha = await validateRecaptcha(recaptchaToken);
-    
+
     if (!isValidRecaptcha) {
       return NextResponse.json(
         { error: 'reCAPTCHA validation failed. Please try again.' },
@@ -191,9 +253,32 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
+    // Ensure we always have a valid error message
+    let errorMessage = 'Unknown error';
+    let errorDetails: string | undefined;
+    
+    if (error instanceof Error) {
+      errorMessage = error.message || 'Failed to send email';
+      errorDetails = error.stack;
+    } else if (error !== null && error !== undefined) {
+      errorMessage = String(error);
+    } else {
+      errorMessage = 'Failed to send email. No error details available.';
+    }
+    
+    console.error('Contact form error:', {
+      message: errorMessage,
+      details: errorDetails,
+      error: error,
+      errorType: typeof error,
+    });
+
+    // Return more detailed error message for debugging
     return NextResponse.json(
-      { error: 'Failed to send email. Please try again later.' },
+      { 
+        error: 'Failed to send email. Please try again later.',
+        details: process.env.NODE_ENV === 'development' ? errorMessage : undefined,
+      },
       { status: 500 }
     );
   }

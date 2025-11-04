@@ -50,8 +50,14 @@ function ContactFormContent({ className }: ContactFormProps) {
         const recaptchaToken = await executeRecaptcha('contact_form');
 
         // Submit form data with reCAPTCHA token
+        interface ApiResponse {
+          message?: string;
+          error?: string;
+          details?: string;
+        }
+        
         let response: Response;
-        let data: any;
+        let data: ApiResponse;
         
         try {
           response = await fetch('/api/contact', {
@@ -67,8 +73,8 @@ function ContactFormContent({ className }: ContactFormProps) {
           
           // Parse JSON response
           try {
-            data = await response.json();
-          } catch (jsonError) {
+            data = await response.json() as ApiResponse;
+          } catch {
             throw new Error('Failed to parse server response. Please try again.');
           }
         } catch (fetchError) {

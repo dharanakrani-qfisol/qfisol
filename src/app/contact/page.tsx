@@ -2,11 +2,10 @@ import { Metadata } from 'next';
 import { MarketingLayout } from '@/components/layout/MarketingLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -50,73 +49,8 @@ export default function ContactPage() {
         <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black">
           <div className="container-standard section-gutter">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              {/* Contact Form */}
-              <Card className="p-8 border-2 border-black dark:border-white bg-white dark:bg-black">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-black dark:text-white">Send us a message</CardTitle>
-                  <p className="text-black dark:text-white">
-                    Fill out the form below and we&apos;ll get back to you within 24 hours.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2 text-black dark:text-white">
-                          Full Name *
-                        </label>
-                        <Input id="name" placeholder="John Doe" required className="border-2 border-black dark:border-white" />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2 text-black dark:text-white">
-                          Email *
-                        </label>
-                        <Input id="email" type="email" placeholder="john@example.com" required className="border-2 border-black dark:border-white" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium mb-2 text-black dark:text-white">
-                        Company
-                      </label>
-                      <Input id="company" placeholder="Your Company Inc." className="border-2 border-black dark:border-white" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="industry" className="block text-sm font-medium mb-2 text-black dark:text-white">
-                        Industry
-                      </label>
-                      <select className="w-full p-3 border-2 border-black dark:border-white bg-white dark:bg-black text-black dark:text-white rounded-md focus:ring-2 focus:ring-[#0015ff] focus:border-[#0015ff]">
-                        <option>Select an industry</option>
-                        <option>Construction</option>
-                        <option>Healthcare/Dental</option>
-                        <option>Hospitality</option>
-                        <option>Professional Services</option>
-                        <option>Retail</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2 text-black dark:text-white">
-                        Message *
-                      </label>
-                      <Textarea 
-                        id="message" 
-                        placeholder="Tell us about your accounting needs..." 
-                        rows={5} 
-                        className="resize-none border-2 border-black dark:border-white"
-                        required 
-                      />
-                    </div>
-
-                    <Button type="submit" className="w-full bg-[#0015ff] hover:bg-[#0012cc] text-white" size="lg">
-                      <Send className="mr-2 h-4 w-4" />
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                            {/* Contact Form */}
+              <ContactForm />
 
               {/* Contact Information & FAQ */}
               <div className="space-y-8">

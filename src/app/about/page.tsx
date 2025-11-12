@@ -21,7 +21,6 @@ import {
   Smartphone, 
   Globe, 
   MapPin,
-  Quote,
   Lightbulb,
   Shield,
   Eye
@@ -155,7 +154,7 @@ export default function AboutPage() {
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                       Simplify Finance. <span className="whitespace-nowrap">Quantify Growth</span>. Empower Your Business.
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl text-black dark:text-white leading-relaxed">
+                    <p className="text-base text-black dark:text-white leading-relaxed">
                       QuantiFi is more than an accounting provider. We&apos;re your strategic finance partner. We ensure your numbers work for you, not against you, delivering clarity, confidence, and control at every step.
                     </p>
                   </div>
@@ -181,7 +180,7 @@ export default function AboutPage() {
                           <BarChart className="w-12 h-12 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-black dark:text-white mb-3">Strategic Financial Partnership</h3>
-                        <p className="text-sm text-black dark:text-white leading-relaxed">
+                        <p className="text-base text-black dark:text-white leading-relaxed">
                           Empowering businesses through innovative accounting solutions and strategic financial guidance.
                         </p>
                       </div>
@@ -206,10 +205,10 @@ export default function AboutPage() {
                 We Help You Quantify What Matters Most
               </h2>
               <div className="prose prose-lg max-w-none text-black dark:text-white space-y-6">
-                <p className="text-base sm:text-lg leading-relaxed">
+                <p className="text-base leading-relaxed">
                   At QuantiFi, every number tells a story. Our name is inspired by the word &quot;quantify&quot; because we help businesses bring clarity, precision, and meaning to their financial data. We specialize in accounting and financial consulting for industries like construction, hospitality, restaurants, healthcare, retail, real estate, and start-ups.
                 </p>
-                <p className="text-lg leading-relaxed">
+                <p className="text-base leading-relaxed">
                   Whether you&apos;re managing job costs, tracking daily revenue, or consolidating multi-entity operations, we make sure your numbers work for you, not against you.
                 </p>
               </div>
@@ -227,7 +226,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="bg-white dark:bg-black p-8 rounded-2xl border-l-4 border-[#0015ff] border-r-0 border-t-0 border-b-0 mb-12">
                   <h3 className="text-2xl font-semibold text-black dark:text-white mb-4">Our Mission</h3>
-                  <p className="text-xl text-black dark:text-white italic">
+                  <p className="text-base text-black dark:text-white italic">
                     To simplify finance, quantify growth, and empower businesses with clarity, confidence, and control.
                   </p>
                 </div>
@@ -242,7 +241,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-4">{value.title}</h3>
-                    <p className="text-black dark:text-white leading-relaxed">{value.description}</p>
+                    <p className="text-base text-black dark:text-white leading-relaxed">{value.description}</p>
                   </Card>
                 ))}
               </div>
@@ -258,7 +257,7 @@ export default function AboutPage() {
                 <h2 className="text-4xl font-bold text-black dark:text-white mb-6">
                   Flexible, Strategic, and Seamlessly Integrated
                 </h2>
-                <p className="text-xl text-black dark:text-white max-w-3xl mx-auto">
+                <p className="text-base text-black dark:text-white max-w-3xl mx-auto">
                   Whether you need a full-service accounting department or an expert to support your in-house team, QuantiFi adapts to your workflow with a model that fits your needs.
                 </p>
               </div>
@@ -272,7 +271,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-4 text-center">{model.title}</h3>
-                    <p className="text-black dark:text-white leading-relaxed text-center">{model.description}</p>
+                    <p className="text-base text-black dark:text-white leading-relaxed text-center">{model.description}</p>
                   </Card>
                 ))}
               </div>
@@ -288,7 +287,7 @@ export default function AboutPage() {
                 <h2 className="text-4xl font-bold text-black dark:text-white mb-6">
                   Not Just Accurate, Strategic
                 </h2>
-                <p className="text-xl text-black dark:text-white max-w-3xl mx-auto">
+                <p className="text-base text-black dark:text-white max-w-3xl mx-auto">
                   What sets QuantiFi apart is our ability to translate numbers into insights and insights into strategy. We don&apos;t just deliver accurate books; we deliver confidence and foresight.
                 </p>
               </div>
@@ -302,22 +301,9 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-4 text-center">{benefit.title}</h3>
-                    <p className="text-black dark:text-white leading-relaxed text-center">{benefit.description}</p>
+                    <p className="text-base text-black dark:text-white leading-relaxed text-center">{benefit.description}</p>
                   </Card>
                 ))}
-              </div>
-              
-              {/* Quote */}
-              <div className="bg-white dark:bg-black p-8 rounded-2xl border-2 border-[#0015ff]">
-                <div className="flex justify-center mb-6">
-                  <Quote className="h-12 w-12 text-[#0015ff]" />
-                </div>
-                <blockquote className="text-2xl font-semibold text-black dark:text-white italic text-center leading-relaxed mb-6">
-                  &quot;Accounting isn&apos;t just about accuracy, it&apos;s about alignment. When your numbers make sense, your business moves forward with confidence.&quot;
-                </blockquote>
-                <div className="text-center">
-                  <p className="font-semibold text-black dark:text-white">Dhara Nakrani, Founder</p>
-                </div>
               </div>
             </div>
           </div>
@@ -334,7 +320,7 @@ export default function AboutPage() {
                 <h2 className="text-4xl font-bold text-black dark:text-white mb-6">
                   Meet Our Leadership
                 </h2>
-                <p className="text-xl text-black dark:text-white max-w-3xl mx-auto">
+                <p className="text-base text-black dark:text-white max-w-3xl mx-auto">
                   Our diverse team of financial experts brings decades of experience and a shared commitment to transforming how businesses approach accounting and financial management.
                 </p>
               </div>
@@ -408,29 +394,17 @@ export default function AboutPage() {
               </div>
               
               <div className="prose prose-lg max-w-none text-black dark:text-white space-y-8 mb-16">
-                <p className="text-lg leading-relaxed">
+                <p className="text-base leading-relaxed">
                   Dhara established QuantiFi to redefine accounting as a true partnership, not just an outsourced function. Her philosophy is built on collaboration, precision, and transparency. At its core, QuantiFi is designed for the modern business: nimble, strategic, and deeply invested in long-term success.
                 </p>
-                <p className="text-lg leading-relaxed">
+                <p className="text-base leading-relaxed">
                   Today, QuantiFi partners with founders, operators, and management teams across the U.S., helping them streamline operations, gain financial control, and stay ready for what&apos;s next. We provide strategic accounting, financial consulting, and process optimization to clients across industries (construction, healthcare, hospitality, professional services, retail and more).
                 </p>
-                <p className="text-lg leading-relaxed">
+                <p className="text-base leading-relaxed">
                   Our team bridges the gap between financial systems, internal operations, and leadership strategy, ensuring every client has accurate data, meaningful insights, and a clear financial direction.
                   </p>
                 </div>
 
-              <div className="bg-white dark:bg-black p-8 rounded-2xl border-2 border-[#0015ff] mb-16">
-                <div className="flex justify-center mb-6">
-                  <Quote className="h-12 w-12 text-[#0015ff]" />
-                        </div>
-                <blockquote className="text-2xl font-semibold text-black dark:text-white italic text-center leading-relaxed mb-6">
-                  &quot;Accounting isn&apos;t just about accuracy, it&apos;s about alignment with your goals, your growth, and your vision.&quot;
-                </blockquote>
-                <div className="text-center">
-                  <p className="font-semibold text-black dark:text-white">Dhara Nakrani, Founder</p>
-                      </div>
-                    </div>
-                    
               <div className="bg-[#0015ff] text-white p-8 rounded-2xl">
                 <div className="flex justify-center mb-6">
                   <Lightbulb className="h-12 w-12 text-white" />
@@ -462,7 +436,7 @@ export default function AboutPage() {
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                <div className="space-y-6 text-lg text-black dark:text-white leading-relaxed">
+                <div className="space-y-6 text-base text-black dark:text-white leading-relaxed">
                   <p>
                     We lead a nationwide team that delivers clarity and control to clients across the country. Whether we&apos;re supporting an in-house accounting department or managing a fully outsourced finance function, QuantiFi operates as an extension of your team, connecting people, processes, and technology under one cohesive system.
                   </p>
@@ -479,7 +453,7 @@ export default function AboutPage() {
                           <MapPin className="w-12 h-12 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-black dark:text-white mb-3">Coast-to-Coast Coverage</h3>
-                        <p className="text-sm text-black dark:text-white leading-relaxed">
+                        <p className="text-base text-black dark:text-white leading-relaxed">
                           Serving clients nationwide with local expertise and global insights.
                         </p>
                       </div>
@@ -513,7 +487,7 @@ export default function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Let&apos;s Talk Strategy.
             </h2>
-              <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
+              <p className="text-base mb-10 opacity-90 leading-relaxed">
                 Start with a conversation, end with clarity. Whether you need a full accounting partner or targeted financial guidance, we&apos;re ready to help you operate with confidence and control.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">

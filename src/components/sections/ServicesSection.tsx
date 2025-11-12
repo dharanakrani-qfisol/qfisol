@@ -77,8 +77,15 @@ export function ServicesSection() {
           <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight tracking-tight mb-4 text-foreground">
             <BlurredStagger text="Services We Offer" className="inline-block whitespace-normal text-center" />
           </div>
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-center leading-snug sm:leading-tight tracking-tight mb-4 sm:mb-6 text-muted-foreground max-w-4xl mx-auto px-2 sm:px-4">
-            <BlurredStagger text="Smarter Accounting, Tailored to How You Operate" className="inline-block whitespace-normal text-center break-words" />
+          <div className="w-full mx-auto px-3 sm:px-4 mb-4 sm:mb-6">
+            {/* Mobile: Plain text for proper wrapping */}
+            <div className="block sm:hidden text-sm font-semibold text-center leading-snug tracking-tight text-muted-foreground max-w-full mx-auto break-words px-2">
+              Smarter Accounting, Tailored to How You Operate
+            </div>
+            {/* Desktop: BlurredStagger animation */}
+            <div className="hidden sm:block text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-center leading-snug sm:leading-tight tracking-tight text-muted-foreground max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
+              <BlurredStagger text="Smarter Accounting, Tailored to How You Operate" className="inline-block whitespace-normal text-center" />
+            </div>
           </div>
           <div className="text-sm sm:text-base md:text-lg text-center text-muted-foreground leading-relaxed max-w-[900px] mx-auto px-4">
             <p className="whitespace-normal">

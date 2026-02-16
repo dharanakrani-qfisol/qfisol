@@ -113,8 +113,8 @@ const leadership = [
     linkedin: 'https://www.linkedin.com/in/dhara-nakrani-32ab5142/'
   },
   {
-    name: 'Deep Patel, B.Com., F.C.A., L.L.B., CPA',
-    title: 'Chief Operating Officer',
+    name: 'Deep Patel, B.Com., F.C.A., L.L.B., CPA, EA',
+    title: 'Co-Founder & Chief Operating Officer',
     bio: 'A finance professional with over 15 years of experience, Deep Patel leads QuantiFi\'s operational strategy with precision and foresight. His expertise spans accounting, auditing, valuation, cost segregation, and regulatory compliance backed by a comprehensive understanding of both U.S. and international financial standards.',
     detailedBio: 'As COO, Deep ensures every client engagement is executed with structure, transparency, and measurable impact. His advisory experience and holistic financial insight allow him to guide businesses through complex regulatory and operational challenges with clarity and confidence.',
     philosophy: 'Deep plays a pivotal role in strengthening client relationships and fostering long-term trust through thoughtful, results-driven leadership.',

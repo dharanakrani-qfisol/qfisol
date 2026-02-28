@@ -5,8 +5,14 @@ import Image from 'next/image';
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
 import { Building2, Award, Link } from 'lucide-react';
 
-// Company logos
+// Company logos (Salesforce, Oracle NetSuite, Workday, AWS, Oracle, Epicor first, then rest)
 const ICONS_ROW1 = [
+  "https://login.salesforce.com/img/logo214.svg", // Salesforce
+  "/images/oracle-netsuite.png", // Oracle NetSuite
+  "https://www.workday.com/content/dam/web/en-us/images/logos/logo_wday.png/_jcr_content/renditions/cq5dam.logomd.300.122.png", // Workday
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png", // AWS
+  "/images/services/Oracle-Logo.png", // Oracle
+  "/images/services/Epicor_Logo_Teal_RGB.jpg", // Epicor
   "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-xero-is-a-new-zealand-public-technology-company-logo-color-tal-revivo.png", // Xero
   "https://www.pennylaneaccountants.co.uk/wp-content/uploads/2025/01/quickbooks-logo-e1736435247548.webp", // Quickbooks
   "https://upload.wikimedia.org/wikipedia/commons/9/94/Sage-logo_svg.svg", // Sage

@@ -18,8 +18,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://qfisol.com"),
   title: "QuantiFi | Strategic Accounting & Fractional CFO Services",
   description: "QuantiFi is an outsourced accounting and fractional CFO partner that simplifies finance and drives growth. Discover our mission, values, and leadership team.",
+  openGraph: {
+    title: "QuantiFi | Strategic Accounting & Fractional CFO Services",
+    description: "QuantiFi is an outsourced accounting and fractional CFO partner that simplifies finance and drives growth.",
+    url: "https://qfisol.com",
+    siteName: "QuantiFi",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QuantiFi | Strategic Accounting & Fractional CFO Services",
+    description: "QuantiFi is an outsourced accounting and fractional CFO partner that simplifies finance and drives growth.",
+  },
+  icons: {
+    icon: "/QuantiFi-favicon.png",
+    apple: "/QuantiFi-favicon.png",
+  },
 };
 
 export default function RootLayout({
